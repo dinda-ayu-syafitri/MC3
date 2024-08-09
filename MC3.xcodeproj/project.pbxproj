@@ -51,6 +51,10 @@
 		2058D15B2C65C65200D0557D /* MC3 */ = {
 			isa = PBXGroup;
 			children = (
+				2058D16B2C65C99400D0557D /* Presentation */,
+				2058D16C2C65C99D00D0557D /* Domain */,
+				2058D16D2C65C9A700D0557D /* Data */,
+				2058D16A2C65C98300D0557D /* Common */,
 				2058D15C2C65C65200D0557D /* MC3App.swift */,
 				2058D15E2C65C65200D0557D /* ContentView.swift */,
 				2058D1602C65C65400D0557D /* Assets.xcassets */,
@@ -65,6 +69,98 @@
 				2058D1632C65C65400D0557D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2058D16A2C65C98300D0557D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2058D1752C65CA5E00D0557D /* Extensions */,
+				2058D1742C65CA5800D0557D /* Utils */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2058D16B2C65C99400D0557D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2058D16F2C65C9CD00D0557D /* ViewModels */,
+				2058D16E2C65C9C400D0557D /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2058D16C2C65C99D00D0557D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2058D1712C65CA0100D0557D /* UseCases */,
+				2058D1702C65C9D800D0557D /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2058D16D2C65C9A700D0557D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2058D1732C65CA1600D0557D /* DataSources */,
+				2058D1722C65CA0C00D0557D /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2058D16E2C65C9C400D0557D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2058D16F2C65C9CD00D0557D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2058D1702C65C9D800D0557D /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		2058D1712C65CA0100D0557D /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		2058D1722C65CA0C00D0557D /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		2058D1732C65CA1600D0557D /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		2058D1742C65CA5800D0557D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2058D1752C65CA5E00D0557D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
