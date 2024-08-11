@@ -21,6 +21,7 @@
 		DDEB4B252C68D08E00375460 /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB4B242C68D08E00375460 /* SHA256.swift */; };
 		DDEB4B282C68D98200375460 /* HomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB4B272C68D98200375460 /* HomepageView.swift */; };
 		DDEB4B2A2C68DCD800375460 /* HomepageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB4B292C68DCD800375460 /* HomepageViewModel.swift */; };
+		DDEB4B2C2C69146300375460 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB4B2B2C69146300375460 /* UIApplication+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		DDEB4B242C68D08E00375460 /* SHA256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SHA256.swift; path = Utils/Auth/SHA256.swift; sourceTree = SOURCE_ROOT; };
 		DDEB4B272C68D98200375460 /* HomepageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageView.swift; sourceTree = "<group>"; };
 		DDEB4B292C68DCD800375460 /* HomepageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewModel.swift; sourceTree = "<group>"; };
+		DDEB4B2B2C69146300375460 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIApplication+Extension.swift"; path = "MC3/Presentation/Homepage/UIApplication+Extension.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 		2058D1752C65CA5E00D0557D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DDEB4B2B2C69146300375460 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				DDEB4B102C68C32F00375460 /* LoginView.swift in Sources */,
 				DDEB4B252C68D08E00375460 /* SHA256.swift in Sources */,
 				DDEB4B232C68D07200375460 /* RandomNonceString.swift in Sources */,
+				DDEB4B2C2C69146300375460 /* UIApplication+Extension.swift in Sources */,
 				DDEB4B2A2C68DCD800375460 /* HomepageViewModel.swift in Sources */,
 				2058D15F2C65C65200D0557D /* ContentView.swift in Sources */,
 				DDEB4B282C68D98200375460 /* HomepageView.swift in Sources */,

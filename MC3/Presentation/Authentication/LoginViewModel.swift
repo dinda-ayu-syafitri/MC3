@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
 import AuthenticationServices
 import FirebaseAuth
+import GoogleSignIn
 
 class LoginViewModel: ObservableObject {
     @Published var nonce: String = ""
@@ -21,7 +23,44 @@ class LoginViewModel: ObservableObject {
         self.authenticate(credential: credential)
     }
     
-    func authenticate(credential: ASAuthorizationAppleIDCredential) {
+    func authByGoogle(user: GIDGoogleUser) {
+        Task {
+            do {
+                guard let idToken = user.idToken?.tokenString else {
+                    print("Error: Missing ID token")
+                    return
+                }
+                let accessToken = user.accessToken.tokenString
+                
+                let credential = OAuthProvider.credential(
+                    providerID: AuthProviderID(rawValue: "google.com")!,
+                    idToken: idToken,
+                    accessToken: accessToken
+                )
+                
+                try await Auth.auth().signIn(with: credential)
+                
+                if let email = user.profile?.email {
+                    UserDefaults.standard.set(email, forKey: "userEmail")
+                }
+                if let name = user.profile?.name {
+                    UserDefaults.standard.set(name, forKey: "userName")
+                }
+                
+                print("Logged in by Google")
+                
+                await MainActor.run(body: {
+                    withAnimation(.easeInOut) {
+                        UserDefaults.standard.set(true, forKey: "logStatus")
+                    }
+                })
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func authenticate(credential: ASAuthorizationAppleIDCredential) {
         guard let token = credential.identityToken else {
             print("Error when get a token")
             return
@@ -50,13 +89,12 @@ class LoginViewModel: ObservableObject {
             }
             
             print("Successfully logged in with Apple ID")
-            print("User ID: \(user.uid)")
-            print("User Email: \(user.email ?? "No Email")")
             
-            // Save user email and login status
-            UserDefaults.standard.set(user.email, forKey: "userEmail")
-            UserDefaults.standard.set(user.uid, forKey: "userId")
-            UserDefaults.standard.set(true, forKey: "logStatus")
+            withAnimation(.easeInOut) {
+                UserDefaults.standard.set(user.email, forKey: "userEmail")
+                UserDefaults.standard.set(user.uid, forKey: "userId")
+                UserDefaults.standard.set(true, forKey: "logStatus")
+            }
         }
     }
 }

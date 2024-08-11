@@ -24,7 +24,6 @@ struct HomepageView: View {
             
             Button(action: {
                 homepageVM.logOut()
-                
                 print("Logged Out")
             }, label: {
                 Text("Log Out")
@@ -34,7 +33,11 @@ struct HomepageView: View {
                     .padding(.vertical, 14)
                     .padding(.horizontal, 32)
                     .background(
-                        LinearGradient(gradient: Gradient(colors: [.red, .orange]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color.black, Color.gray]),
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
                     )
                     .foregroundColor(.white)
                     .clipShape(Capsule())
