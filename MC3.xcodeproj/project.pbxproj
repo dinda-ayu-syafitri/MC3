@@ -7,13 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20190CF42C6A336B001A2AB6 /* WatchMC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20190CF32C6A336B001A2AB6 /* WatchMC3App.swift */; };
+		20190CF62C6A336B001A2AB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20190CF52C6A336B001A2AB6 /* ContentView.swift */; };
+		20190CF82C6A336B001A2AB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CF72C6A336B001A2AB6 /* Assets.xcassets */; };
+		20190CFB2C6A336B001A2AB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */; };
+		20190CFE2C6A336B001A2AB6 /* WatchMC3 Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 20190CF12C6A336A001A2AB6 /* WatchMC3 Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2058D15D2C65C65200D0557D /* MC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15C2C65C65200D0557D /* MC3App.swift */; };
 		2058D15F2C65C65200D0557D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15E2C65C65200D0557D /* ContentView.swift */; };
 		2058D1612C65C65400D0557D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1602C65C65400D0557D /* Assets.xcassets */; };
 		2058D1642C65C65400D0557D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1632C65C65400D0557D /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		20190CFC2C6A336B001A2AB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2058D1512C65C65200D0557D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20190CF02C6A336A001A2AB6;
+			remoteInfo = "WatchMC3 Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		20190CFF2C6A336B001A2AB6 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				20190CFE2C6A336B001A2AB6 /* WatchMC3 Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		20190CF12C6A336A001A2AB6 /* WatchMC3 Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchMC3 Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20190CF32C6A336B001A2AB6 /* WatchMC3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchMC3App.swift; sourceTree = "<group>"; };
+		20190CF52C6A336B001A2AB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		20190CF72C6A336B001A2AB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2058D1592C65C65200D0557D /* MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2058D15C2C65C65200D0557D /* MC3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3App.swift; sourceTree = "<group>"; };
 		2058D15E2C65C65200D0557D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -22,6 +56,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		20190CEE2C6A336A001A2AB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2058D1562C65C65200D0557D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -32,10 +73,126 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20190CF22C6A336A001A2AB6 /* WatchMC3 Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				20190D062C6A339D001A2AB6 /* Common */,
+				20190D052C6A3396001A2AB6 /* Data */,
+				20190D042C6A338C001A2AB6 /* Domain */,
+				20190D032C6A3382001A2AB6 /* Presentation */,
+				20190CF32C6A336B001A2AB6 /* WatchMC3App.swift */,
+				20190CF52C6A336B001A2AB6 /* ContentView.swift */,
+				20190CF72C6A336B001A2AB6 /* Assets.xcassets */,
+				20190CF92C6A336B001A2AB6 /* Preview Content */,
+			);
+			path = "WatchMC3 Watch App";
+			sourceTree = "<group>";
+		};
+		20190CF92C6A336B001A2AB6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		20190D032C6A3382001A2AB6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				20190D082C6A33AB001A2AB6 /* Views */,
+				20190D072C6A33A5001A2AB6 /* ViewModels */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		20190D042C6A338C001A2AB6 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				20190D0A2C6A33BC001A2AB6 /* Entities */,
+				20190D092C6A33B5001A2AB6 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		20190D052C6A3396001A2AB6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				20190D0C2C6A33D1001A2AB6 /* Repositories */,
+				20190D0B2C6A33C6001A2AB6 /* DataSources */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		20190D062C6A339D001A2AB6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				20190D0E2C6A33E7001A2AB6 /* Utils */,
+				20190D0D2C6A33DB001A2AB6 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		20190D072C6A33A5001A2AB6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		20190D082C6A33AB001A2AB6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		20190D092C6A33B5001A2AB6 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		20190D0A2C6A33BC001A2AB6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		20190D0B2C6A33C6001A2AB6 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		20190D0C2C6A33D1001A2AB6 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		20190D0D2C6A33DB001A2AB6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		20190D0E2C6A33E7001A2AB6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		2058D1502C65C65200D0557D = {
 			isa = PBXGroup;
 			children = (
 				2058D15B2C65C65200D0557D /* MC3 */,
+				20190CF22C6A336A001A2AB6 /* WatchMC3 Watch App */,
 				2058D15A2C65C65200D0557D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				2058D1592C65C65200D0557D /* MC3.app */,
+				20190CF12C6A336A001A2AB6 /* WatchMC3 Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,6 +324,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		20190CF02C6A336A001A2AB6 /* WatchMC3 Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20190D022C6A336B001A2AB6 /* Build configuration list for PBXNativeTarget "WatchMC3 Watch App" */;
+			buildPhases = (
+				20190CED2C6A336A001A2AB6 /* Sources */,
+				20190CEE2C6A336A001A2AB6 /* Frameworks */,
+				20190CEF2C6A336A001A2AB6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WatchMC3 Watch App";
+			productName = "WatchMC3 Watch App";
+			productReference = 20190CF12C6A336A001A2AB6 /* WatchMC3 Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 		2058D1582C65C65200D0557D /* MC3 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2058D1672C65C65400D0557D /* Build configuration list for PBXNativeTarget "MC3" */;
@@ -173,10 +348,12 @@
 				2058D1552C65C65200D0557D /* Sources */,
 				2058D1562C65C65200D0557D /* Frameworks */,
 				2058D1572C65C65200D0557D /* Resources */,
+				20190CFF2C6A336B001A2AB6 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				20190CFD2C6A336B001A2AB6 /* PBXTargetDependency */,
 			);
 			name = MC3;
 			productName = MC3;
@@ -193,6 +370,9 @@
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
+					20190CF02C6A336A001A2AB6 = {
+						CreatedOnToolsVersion = 15.3;
+					};
 					2058D1582C65C65200D0557D = {
 						CreatedOnToolsVersion = 15.3;
 					};
@@ -212,11 +392,21 @@
 			projectRoot = "";
 			targets = (
 				2058D1582C65C65200D0557D /* MC3 */,
+				20190CF02C6A336A001A2AB6 /* WatchMC3 Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		20190CEF2C6A336A001A2AB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20190CFB2C6A336B001A2AB6 /* Preview Assets.xcassets in Resources */,
+				20190CF82C6A336B001A2AB6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2058D1572C65C65200D0557D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -229,6 +419,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		20190CED2C6A336A001A2AB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20190CF62C6A336B001A2AB6 /* ContentView.swift in Sources */,
+				20190CF42C6A336B001A2AB6 /* WatchMC3App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2058D1552C65C65200D0557D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -240,7 +439,75 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		20190CFD2C6A336B001A2AB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20190CF02C6A336A001A2AB6 /* WatchMC3 Watch App */;
+			targetProxy = 20190CFC2C6A336B001A2AB6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		20190D002C6A336B001A2AB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchMC3 Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 2RQ6LB993C;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchMC3;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = mc3.MC3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mc3.MC3.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.4;
+			};
+			name = Debug;
+		};
+		20190D012C6A336B001A2AB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchMC3 Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 2RQ6LB993C;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchMC3;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = mc3.MC3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mc3.MC3.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.4;
+			};
+			name = Release;
+		};
 		2058D1652C65C65400D0557D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -363,6 +630,7 @@
 		2058D1682C65C65400D0557D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -392,6 +660,7 @@
 		2058D1692C65C65400D0557D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -421,6 +690,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		20190D022C6A336B001A2AB6 /* Build configuration list for PBXNativeTarget "WatchMC3 Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20190D002C6A336B001A2AB6 /* Debug */,
+				20190D012C6A336B001A2AB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2058D1542C65C65200D0557D /* Build configuration list for PBXProject "MC3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
