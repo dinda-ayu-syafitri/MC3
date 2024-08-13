@@ -65,7 +65,7 @@ struct LoginView: View {
                         print(error.localizedDescription)
                         return
                     }
-                    
+
                     if let signInResult = signInResult {
                         let user = signInResult.user
                         loginVM.authByGoogle(user: user)
@@ -74,6 +74,10 @@ struct LoginView: View {
             }
             .frame(height: 50)
             .clipShape(Capsule())
+            .overlay(
+                Capsule()
+                    .stroke(Color.blue, lineWidth: 2)
+            )
             .padding(.horizontal, 30)
         }
     }
