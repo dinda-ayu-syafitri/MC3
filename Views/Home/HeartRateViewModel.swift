@@ -75,7 +75,11 @@ class HeartRateViewModel: ObservableObject {
     func notif() {
         print("heartrate: \(heartRateModel.heartRate)")
         if self.heartRateModel.heartRate >= 70 {
-            print("High heart rate detected. Alerting SOS in (countdown)")
+            //            print("High heart rate detected. Alerting SOS in (countdown)")
+            NotificationManager.shared.scheduleNotification(
+                title: "High Heart Rate",
+                body: "Your heart rate is at \(Int(self.heartRateModel.heartRate)) BPM. SOS message will be sent in (coundown)",
+                category: "SOS_Category")
         }
     }
     
