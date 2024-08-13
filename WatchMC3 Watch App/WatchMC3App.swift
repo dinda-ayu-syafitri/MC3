@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct WatchMC3_Watch_AppApp: App {
+    
+    @StateObject var healthKitManager = HealthKitManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if healthKitManager.isAuthorized {
+                HomeView()
+            } else {
+                Text("Requesting health data access...")
+                    .onAppear {
+                        healthKitManager.requestAuthorization()
+                    }
+            }
         }
     }
 }
