@@ -20,6 +20,8 @@
 		DA8B4A312C6B503400BC5987 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */; };
 		DA8B4A332C6B50AD00BC5987 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A322C6B50AD00BC5987 /* HeartRateManager.swift */; };
 		DA8B4A352C6B516500BC5987 /* HeartRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A342C6B516500BC5987 /* HeartRateModel.swift */; };
+		DA8B4A382C6B652400BC5987 /* HeartRateHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A372C6B652400BC5987 /* HeartRateHandling.swift */; };
+		DA8B4A3C2C6B75A700BC5987 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3B2C6B75A700BC5987 /* WatchConnectivityManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		DA8B4A322C6B50AD00BC5987 /* HeartRateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateManager.swift; path = Views/Home/HeartRateManager.swift; sourceTree = SOURCE_ROOT; };
 		DA8B4A342C6B516500BC5987 /* HeartRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateModel.swift; path = Views/Home/HeartRateModel.swift; sourceTree = SOURCE_ROOT; };
 		DA8B4A362C6B550100BC5987 /* WatchMC3 Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WatchMC3 Watch App.entitlements"; sourceTree = "<group>"; };
+		DA8B4A372C6B652400BC5987 /* HeartRateHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateHandling.swift; path = Views/Home/HeartRateHandling.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A3B2C6B75A700BC5987 /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchConnectivityManager.swift; path = MC3/WatchConnectivityManager.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 			children = (
 				DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */,
 				DA8B4A322C6B50AD00BC5987 /* HeartRateManager.swift */,
+				DA8B4A3B2C6B75A700BC5987 /* WatchConnectivityManager.swift */,
 				20190D0E2C6A33E7001A2AB6 /* Utils */,
 				20190D0D2C6A33DB001A2AB6 /* Extensions */,
 			);
@@ -339,6 +344,7 @@
 			children = (
 				DA8B4A2B2C6B4BDF00BC5987 /* HomeView.swift */,
 				DA8B4A2E2C6B4E3500BC5987 /* HeartRateViewModel.swift */,
+				DA8B4A372C6B652400BC5987 /* HeartRateHandling.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -447,8 +453,10 @@
 			files = (
 				DA8B4A2F2C6B4E3500BC5987 /* HeartRateViewModel.swift in Sources */,
 				DA8B4A2C2C6B4BDF00BC5987 /* HomeView.swift in Sources */,
+				DA8B4A3C2C6B75A700BC5987 /* WatchConnectivityManager.swift in Sources */,
 				DA8B4A352C6B516500BC5987 /* HeartRateModel.swift in Sources */,
 				DA8B4A312C6B503400BC5987 /* HealthKitManager.swift in Sources */,
+				DA8B4A382C6B652400BC5987 /* HeartRateHandling.swift in Sources */,
 				20190CF42C6A336B001A2AB6 /* WatchMC3App.swift in Sources */,
 				DA8B4A332C6B50AD00BC5987 /* HeartRateManager.swift in Sources */,
 			);
@@ -678,6 +686,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -708,6 +717,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
