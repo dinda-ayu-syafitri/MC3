@@ -12,6 +12,7 @@
 		20190CF82C6A336B001A2AB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CF72C6A336B001A2AB6 /* Assets.xcassets */; };
 		20190CFB2C6A336B001A2AB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */; };
 		20190CFE2C6A336B001A2AB6 /* WatchMC3 Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 20190CF12C6A336A001A2AB6 /* WatchMC3 Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		203AB99D2C6AF79700D7AD86 /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203AB99C2C6AF79700D7AD86 /* TestExtension.swift */; };
 		2058D15D2C65C65200D0557D /* MC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15C2C65C65200D0557D /* MC3App.swift */; };
 		2058D15F2C65C65200D0557D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15E2C65C65200D0557D /* ContentView.swift */; };
 		2058D1612C65C65400D0557D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1602C65C65400D0557D /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 		20190CF52C6A336B001A2AB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		20190CF72C6A336B001A2AB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		203AB99C2C6AF79700D7AD86 /* TestExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtension.swift; sourceTree = "<group>"; };
 		2058D1592C65C65200D0557D /* MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2058D15C2C65C65200D0557D /* MC3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3App.swift; sourceTree = "<group>"; };
 		2058D15E2C65C65200D0557D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 		2058D1752C65CA5E00D0557D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				203AB99C2C6AF79700D7AD86 /* TestExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2058D15F2C65C65200D0557D /* ContentView.swift in Sources */,
+				203AB99D2C6AF79700D7AD86 /* TestExtension.swift in Sources */,
 				2058D15D2C65C65200D0557D /* MC3App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
