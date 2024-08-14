@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-@Model
+//@Model
 class User: Identifiable, Equatable, Hashable {
     var id: UUID
     var idFirebase: String
