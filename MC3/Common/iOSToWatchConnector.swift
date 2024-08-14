@@ -40,44 +40,28 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
     }
     
     private func handleReceivedMessage(_ message: [String : Any]) {
-        //DEBUG
+        //DEBUG: print message
         print(message)
         
         if let action = message["action"] as? String, action == "sosAlert" {
-            // Trigger SOS alert here
+            //trigger SOS alert here
             print("SOS alert triggered from Apple Watch!")
-            // Notify the user or trigger a local notification
+            
+            //notify the user or trigger a local notification
             NotificationManager.shared.scheduleNotification(
                 title: "SOS Alert Triggered",
                 body: "The Apple Watch has sent an SOS alert.",
                 category: "SOS_Category"
             )
+            
+            //DEBUG: update content view
+            DispatchQueue.main.async {
+                self.messageText = message["action"] as? String ?? "Unknown"
+            }
         } else {
             print("Unknown action received: \(message)")
         }
     }
-    
-    //    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-    //        print(message)
-    //        print(message["action"] as? String ?? "Unknown")
-    //        self.messageText = message["action"] as? String ?? "Unknown"
-    //
-    //        //DEBUG: local notif to notify message has been received
-    //        NotificationManager.shared.scheduleNotification(
-    //            title: "trigger send alert", body: "None", category: "SOS_Category")
-    //
-    //        DispatchQueue.main.async {
-    //            self.messageText = message["action"] as? String ?? "Unknown"
-    //        }
-    //    }
-    
-    
 }
 
-//        if let action = message["action"] as? String, action == "sosAlert" {
-//                // Trigger SOS alert here
-//                print("SOS alert triggered from Apple Watch!")
-//                // Add your SOS alert logic here
-//            } else {
-//                print("Unknown action received: \(message)")
-//            }
+

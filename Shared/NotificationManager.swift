@@ -1,16 +1,16 @@
 //
 //  NotificationManager.swift
-//  MC3
+//  WatchMC3 Watch App
 //
-//  Created by Michelle Chau on 14/08/24.
+//  Created by Michelle Chau on 13/08/24.
 //
 
 import Foundation
 import UserNotifications
 
 class NotificationManager {
-    
     static let shared = NotificationManager()
+    
     private init() {
         registerActionsWithCategories()
     }
@@ -27,6 +27,7 @@ class NotificationManager {
     
     //register actions with categories
     func registerActionsWithCategories() {
+        
         let okayAction = UNNotificationAction(identifier: "Okay_Action",
                                               title: "I'm okay",
                                               options: [])
