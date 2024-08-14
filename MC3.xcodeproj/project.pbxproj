@@ -21,9 +21,14 @@
 		DA8B4A332C6B50AD00BC5987 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A322C6B50AD00BC5987 /* HeartRateManager.swift */; };
 		DA8B4A352C6B516500BC5987 /* HeartRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A342C6B516500BC5987 /* HeartRateModel.swift */; };
 		DA8B4A382C6B652400BC5987 /* HeartRateHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A372C6B652400BC5987 /* HeartRateHandling.swift */; };
-		DA8B4A3C2C6B75A700BC5987 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3B2C6B75A700BC5987 /* WatchConnectivityManager.swift */; };
 		DA8B4A3E2C6B923400BC5987 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */; };
 		DA8B4A402C6B935F00BC5987 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */; };
+		DA8B4A422C6BA3FE00BC5987 /* WatchToiOSConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A412C6BA3FE00BC5987 /* WatchToiOSConnector.swift */; };
+		DA8B4A442C6BA48F00BC5987 /* iOSToWatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A432C6BA48F00BC5987 /* iOSToWatchConnector.swift */; };
+		DA8B4A472C6BA53F00BC5987 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */; };
+		DA8B4A4B2C6BAE9D00BC5987 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */; };
+		DA8B4A4D2C6C65AF00BC5987 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A4C2C6C65AF00BC5987 /* NotificationDelegate.swift */; };
+		DA8B4A4F2C6C65CC00BC5987 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A4E2C6C65CC00BC5987 /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,9 +72,14 @@
 		DA8B4A342C6B516500BC5987 /* HeartRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateModel.swift; path = Views/Home/HeartRateModel.swift; sourceTree = SOURCE_ROOT; };
 		DA8B4A362C6B550100BC5987 /* WatchMC3 Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WatchMC3 Watch App.entitlements"; sourceTree = "<group>"; };
 		DA8B4A372C6B652400BC5987 /* HeartRateHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateHandling.swift; path = Views/Home/HeartRateHandling.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A3B2C6B75A700BC5987 /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchConnectivityManager.swift; path = MC3/WatchConnectivityManager.swift; sourceTree = SOURCE_ROOT; };
 		DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationManager.swift; path = MC3/NotificationManager.swift; sourceTree = SOURCE_ROOT; };
 		DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationDelegate.swift; path = MC3/NotificationDelegate.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A412C6BA3FE00BC5987 /* WatchToiOSConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchToiOSConnector.swift; path = MC3/WatchToiOSConnector.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A432C6BA48F00BC5987 /* iOSToWatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = iOSToWatchConnector.swift; path = MC3/Common/iOSToWatchConnector.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS10.2.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
+		DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		DA8B4A4C2C6C65AF00BC5987 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
+		DA8B4A4E2C6C65CC00BC5987 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA8B4A472C6BA53F00BC5987 /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA8B4A4B2C6BAE9D00BC5987 /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,9 +157,9 @@
 			children = (
 				DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */,
 				DA8B4A322C6B50AD00BC5987 /* HeartRateManager.swift */,
-				DA8B4A3B2C6B75A700BC5987 /* WatchConnectivityManager.swift */,
 				DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */,
 				DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */,
+				DA8B4A412C6BA3FE00BC5987 /* WatchToiOSConnector.swift */,
 				20190D0E2C6A33E7001A2AB6 /* Utils */,
 				20190D0D2C6A33DB001A2AB6 /* Extensions */,
 			);
@@ -218,6 +230,7 @@
 				2058D15B2C65C65200D0557D /* MC3 */,
 				20190CF22C6A336A001A2AB6 /* WatchMC3 Watch App */,
 				2058D15A2C65C65200D0557D /* Products */,
+				DA8B4A452C6BA53F00BC5987 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -256,6 +269,9 @@
 		2058D16A2C65C98300D0557D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DA8B4A4E2C6C65CC00BC5987 /* NotificationManager.swift */,
+				DA8B4A4C2C6C65AF00BC5987 /* NotificationDelegate.swift */,
+				DA8B4A432C6BA48F00BC5987 /* iOSToWatchConnector.swift */,
 				2058D1752C65CA5E00D0557D /* Extensions */,
 				2058D1742C65CA5800D0557D /* Utils */,
 			);
@@ -353,6 +369,15 @@
 				DA8B4A372C6B652400BC5987 /* HeartRateHandling.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		DA8B4A452C6BA53F00BC5987 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */,
+				DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,13 +484,13 @@
 			files = (
 				DA8B4A2F2C6B4E3500BC5987 /* HeartRateViewModel.swift in Sources */,
 				DA8B4A2C2C6B4BDF00BC5987 /* HomeView.swift in Sources */,
-				DA8B4A3C2C6B75A700BC5987 /* WatchConnectivityManager.swift in Sources */,
 				DA8B4A3E2C6B923400BC5987 /* NotificationManager.swift in Sources */,
 				DA8B4A352C6B516500BC5987 /* HeartRateModel.swift in Sources */,
 				DA8B4A402C6B935F00BC5987 /* NotificationDelegate.swift in Sources */,
 				DA8B4A312C6B503400BC5987 /* HealthKitManager.swift in Sources */,
 				DA8B4A382C6B652400BC5987 /* HeartRateHandling.swift in Sources */,
 				20190CF42C6A336B001A2AB6 /* WatchMC3App.swift in Sources */,
+				DA8B4A422C6BA3FE00BC5987 /* WatchToiOSConnector.swift in Sources */,
 				DA8B4A332C6B50AD00BC5987 /* HeartRateManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,7 +500,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2058D15F2C65C65200D0557D /* ContentView.swift in Sources */,
+				DA8B4A442C6BA48F00BC5987 /* iOSToWatchConnector.swift in Sources */,
+				DA8B4A4F2C6C65CC00BC5987 /* NotificationManager.swift in Sources */,
 				2058D15D2C65C65200D0557D /* MC3App.swift in Sources */,
+				DA8B4A4D2C6C65AF00BC5987 /* NotificationDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

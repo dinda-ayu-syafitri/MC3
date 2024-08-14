@@ -13,6 +13,7 @@ struct WatchMC3_Watch_AppApp: App {
     
     @StateObject var healthKitManager = HealthKitManager()
     private let notificationDelegate = NotificationDelegate()
+    @StateObject var watchConnector = WatchToiOSConnector()
     
     init() {
         // Set the UNUserNotificationCenter's delegate to our custom delegate

@@ -9,6 +9,7 @@ import Foundation
 import HealthKit
 
 class HeartRateViewModel: ObservableObject {
+//    @ObservedObject var watchToiOSConnector = WatchToiOSConnector()
     @Published var heartRateModel: HeartRateModel = HeartRateModel(heartRate: 0.0)
     @Published var isEnableBackgroundDelivery = false {
         didSet {
@@ -74,13 +75,18 @@ class HeartRateViewModel: ObservableObject {
     //print notification (DEBUG)
     func notif() {
         print("heartrate: \(heartRateModel.heartRate)")
-        if self.heartRateModel.heartRate >= 70 {
-            //            print("High heart rate detected. Alerting SOS in (countdown)")
+        if self.heartRateModel.heartRate >= 70 && isEnableBackgroundDelivery {
+            
             NotificationManager.shared.scheduleNotification(
                 title: "High Heart Rate",
                 body: "Your heart rate is at \(Int(self.heartRateModel.heartRate)) BPM. SOS message will be sent in (coundown)",
                 category: "SOS_Category")
+            
+            //trigger send sos
+            WatchToiOSConnector.shared.sendTriggerToiOS()
         }
+        
+        
     }
     
 }

@@ -8,12 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var reachable = "No"
+    @StateObject var watchConnector = iOSToWatchConnector()
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Spacer()
+            
+            if watchConnector.messageText == "sosAlert" {
+                Text(watchConnector.messageText)
+            }
+            
+            
+            Spacer()
+            
+            Text("Reachable \(reachable)")
+            
+            Button(action: {
+                if watchConnector.session.isReachable{
+                    self.reachable = "Yes"
+                }
+                else{
+                    self.reachable = "No"
+                }
+                
+            }) {
+                Text("Update")
+            }
+            
+            Spacer()
+            
+            //            Image(systemName: "globe")
+            //                .imageScale(.large)
+            //                .foregroundStyle(.tint)
+            //            Text("Hello, world!")
         }
         .padding()
     }
