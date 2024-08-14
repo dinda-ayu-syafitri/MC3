@@ -16,12 +16,8 @@ import SwiftUI
 class HomepageViewModel: ObservableObject {
     @Published var userName: String = ""
     @Published var userEmail: String = ""
-    @Published var mapRegion: MKCoordinateRegion = MKCoordinateRegion()
-    @Published var mapCamera: MapCameraPosition
     
     init() {
-        self.mapRegion = .userRegion
-        self.mapCamera = .region(.userRegion)
         self.fetchUserInfo()
     }
     
@@ -45,24 +41,5 @@ class HomepageViewModel: ObservableObject {
         UserDefaults.standard.removeObject(forKey: "userId")
         UserDefaults.standard.removeObject(forKey: "userEmail")
         UserDefaults.standard.removeObject(forKey: "logStatus")
-    }
-}
-
-extension MKCoordinateRegion {
-    static var userRegion: MKCoordinateRegion {
-        return .init(
-            center: .userLoct,
-            latitudinalMeters: 10000,
-            longitudinalMeters: 10000
-        )
-    }
-}
-
-extension CLLocationCoordinate2D {
-    static var userLoct: CLLocationCoordinate2D {
-        return .init(
-            latitude: -6.303338,
-            longitude: 106.638168
-        )
     }
 }

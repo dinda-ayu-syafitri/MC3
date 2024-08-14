@@ -24,7 +24,10 @@ struct PublisherView: View {
             Spacer()
             
             Button(action: {
-                service.publishMessage(toPort: "Port1", fromPort: "Port2")
+                service.sendMessageToRoom(roomName: "Listener", message: [
+                    "longitude": 106.656,
+                    "latitude": -6.264
+                ])
             }, label: {
                 Text("Send data to device 2")
                     .foregroundStyle(.white)
@@ -34,11 +37,10 @@ struct PublisherView: View {
             })
         }
         .onAppear {
-            service.listenSocket(port: "Port2")
+            service.setUpCreateOrJoinRoom(roomeName: "Listener", isListener: false)
         }
         .onDisappear {
             service.disconnectSocket()
-            service.stopListeningSocket(port: "Port2")
         }
         .navigationTitle("Publisher")
     }

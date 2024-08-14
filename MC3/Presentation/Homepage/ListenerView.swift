@@ -14,7 +14,7 @@ struct ListenerView: View {
     
     var body: some View {
         VStack {
-            Text("Listener View Port1")
+            Text("Listener View testing")
                 .font(.largeTitle)
                 .padding()
             
@@ -22,32 +22,51 @@ struct ListenerView: View {
             Text(service.messages)
                 .padding()
             
-//            Map(position: $homepageVM.mapCamera) {
-//                Annotation("My Location", coordinate: CLLocationCoordinate2D(latitude: service.longitude, longitude: service.latitude)) {
-//                    UserAnnotation()
-//                }
-//            }
-//            
+            Text("long lat: \(service.longitude), \(service.latitude)")
+            
+            Map(position: $service.mapCamera) {
+                Annotation("Victim Location", coordinate: CLLocationCoordinate2D(latitude: service.latitude, longitude: service.longitude)) {
+                    UserAnnotation()
+                }
+            }
+            
             Spacer()
             
-            Button(action: {
-                service.publishMessage(toPort: "Port2", fromPort: "Port1")
-            }, label: {
-                Text("Send data to device 1")
-                    .foregroundStyle(.white)
-                    .frame(width: 300)
-                    .padding()
-                    .background(.yellow)
-            })
+//            Button(action: {
+////                service.publishMessage(socketReceiver: "Publisher")
+//            }, label: {
+//                Text("Send data to device 1")
+//                    .foregroundStyle(.white)
+//                    .frame(width: 300)
+//                    .padding()
+//                    .background(.yellow)
+//            })
         }
         .onAppear {
-            service.listenSocket(port: "Port1")
+            service.setUpCreateOrJoinRoom(roomeName: "Listener", isListener: true)
         }
         .onDisappear {
             service.disconnectSocket()
-            service.stopListeningSocket(port: "Port1")
         }
         .navigationTitle("Listener")
+    }
+}
+
+struct UserAnnotation: View {
+    var body: some View {
+        ZStack {
+            Circle()
+                .frame(width: 48, height: 48)
+                .foregroundStyle(Color.blue.opacity(0.3))
+            
+            Circle()
+                .frame(width: 32, height: 32)
+                .foregroundStyle(.white)
+            
+            Circle()
+                .frame(width: 16, height: 16)
+                .foregroundStyle(Color.blue)
+        }
     }
 }
 

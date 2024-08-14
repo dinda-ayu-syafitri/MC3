@@ -12,7 +12,7 @@ import GoogleSignInSwift
 import Firebase
 
 struct LoginView: View {
-    @StateObject var loginVM = LoginViewModel()
+    @StateObject var loginVM = DependencyInjection.shared.loginViewModel()
     
     var body: some View {
         VStack {
@@ -22,18 +22,9 @@ struct LoginView: View {
             Spacer()
             
             SignInWithAppleButton(onRequest: { (request) in
-                loginVM.nonce = randomNonceString()
-                request.requestedScopes = [.email, .fullName]
-                request.nonce = sha256(loginVM.nonce)
+                loginVM.appleRequest(request: request)
             }, onCompletion: { (result) in
-                switch result {
-                case .success(let user):
-                    print("Success!")
-                    loginVM.getAuthenticate(user: user)
-                    
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
+                loginVM.appleCompletion(result: result)
             })
             .signInWithAppleButtonStyle(.black)
             .frame(height: 50)
@@ -61,15 +52,7 @@ struct LoginView: View {
                 GIDSignIn.sharedInstance.signIn(
                     withPresenting: UIApplication.shared.rootController()
                 ) { signInResult, error in
-                    if let error = error {
-                        print(error.localizedDescription)
-                        return
-                    }
-
-                    if let signInResult = signInResult {
-                        let user = signInResult.user
-                        loginVM.authByGoogle(user: user)
-                    }
+                    loginVM.googleRequestAuth(signInResult: signInResult, error: error)
                 }
             }
             .frame(height: 50)

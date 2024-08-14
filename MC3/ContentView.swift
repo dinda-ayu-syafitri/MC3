@@ -12,11 +12,11 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-//            if logStatus {
+            if logStatus {
                 HomepageView()
-//            } else {
-//                LoginView()
-//            }
+            } else {
+                LoginView()
+            }
         }
         .padding()
     }
