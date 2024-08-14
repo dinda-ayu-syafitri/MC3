@@ -30,6 +30,14 @@ struct LoginView: View {
             .frame(height: 50)
             .clipShape(Capsule())
             .padding(.horizontal, 30)
+            .disabled(loginVM.isLoading)
+            .overlay(
+                Group {
+                    if loginVM.isLoading {
+                        LoadingButton()
+                    }
+                }
+            )
             
             HStack {
                 VStack {
@@ -52,7 +60,9 @@ struct LoginView: View {
                 GIDSignIn.sharedInstance.signIn(
                     withPresenting: UIApplication.shared.rootController()
                 ) { signInResult, error in
-                    loginVM.googleRequestAuth(signInResult: signInResult, error: error)
+                    Task {
+                        await loginVM.googleRequestAuth(signInResult: signInResult, error: error)
+                    }
                 }
             }
             .frame(height: 50)
@@ -62,12 +72,27 @@ struct LoginView: View {
                     .stroke(Color.blue, lineWidth: 2)
             )
             .padding(.horizontal, 30)
+            .disabled(loginVM.isLoading)
+            .overlay(
+                Group {
+                    if loginVM.isLoading {
+                        LoadingButton()
+                    }
+                }
+            )
         }
     }
 }
 
-
-
-#Preview {
-    LoginView()
+struct LoadingButton: View {
+    var body: some View {
+        HStack (alignment: .center, spacing: 8) {
+            ProgressView()
+                .foregroundStyle(.white)
+            Text("Please wait a seconds")
+        }
+        .foregroundStyle(.white)
+        .frame(height: 50)
+        .background(.black)
+    }
 }

@@ -23,46 +23,16 @@ class DependencyInjection: ObservableObject{
     lazy var firebaseRepository = FirebaseServiceRepository(firebaseServiceDataSource: firebaseDataSource)
     lazy var firebaseUseCase = FirebaseServiceUseCase(firebaseServiceRepository: firebaseRepository)
     
+    // MARK: IMPLEMENTATION OF USER DEFAULT SERVICE
+    lazy var userDefaultDataSource = UserDefaultDataSource()
+    lazy var userDefaultRepository = UserDefaultRepository(userDefaultDataSource: userDefaultDataSource)
+    lazy var userDefaultUseCase = UserDefaultUseCase(userDefaultRepository: userDefaultRepository)
     
-    // MARK: FUNCTIONS
+    // MARK: FUNCTIONS VIEW MODEL
     func loginViewModel() -> LoginViewModel {
-        LoginViewModel(firebaseUseCase: firebaseUseCase)
+        LoginViewModel(
+            firebaseUseCase: firebaseUseCase,
+            userDefaultUseCase: userDefaultUseCase
+        )
     }
-    
-//    // Singleton instance
-//    private var createPlanViewModelInstance: CreateEditPlanViewModel?
-//    
-//    // MARK: IMPLEMENTATION
-//    lazy var planLocalDataSource = PlanLocalDataSource(modelContext: modelContext!)
-//    lazy var aqiDataSource = AQIRemoteDataSource()
-//    
-//    lazy var planRepository = PlanRepository(planLocalDataSource: planLocalDataSource)
-//    lazy var aqiRepository = AQIRepository(AQIRemoteDataSource: aqiDataSource)
-//    
-//    // MARK: IMPLEMENTATION USE CASES
-//    lazy var getPlanPreviewUseCase = PlanUseCases(planRepository: planRepository, AQIRepository: aqiRepository)
-//    lazy var refreshPageViewUseCase = RefreshHomeViewUseCase(planRepository: planRepository)
-//    
-//    // MARK: TESTING
-//    lazy var dummyPlanRepository = DummyPlanRepository(dummyPlans: dummyPlans)
-//    lazy var dummyGetAllPlansPreviewUseCase = PlanUseCases(planRepository: dummyPlanRepository, AQIRepository: aqiRepository)
-//    lazy var dummyRefreshHomeViewUseCase = RefreshHomeViewUseCase(planRepository: DummyPlanRepository(dummyPlans: dummyPlans))
-//    
-//    // MARK: FUNCTION
-//    func homeViewModel() -> HomeViewModel {
-//        HomeViewModel(
-//            getAllPlansUseCase: getPlanPreviewUseCase
-//        )
-//    }
-//    
-//    func detailPlanViewModel() -> DetailPlanViewModel {
-//        DetailPlanViewModel(planUseCase: getPlanPreviewUseCase)
-//    }
-//    
-//    func createEditPlanViewModel() -> CreateEditPlanViewModel {
-//        if createPlanViewModelInstance == nil {
-//            createPlanViewModelInstance = CreateEditPlanViewModel(planUseCase: getPlanPreviewUseCase)
-//        }
-//        return createPlanViewModelInstance!
-//    }
 }

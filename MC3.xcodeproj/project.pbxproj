@@ -26,6 +26,18 @@
 		DD6D7FEC2C6CD5AA0023A499 /* FirebaseServiceUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FEB2C6CD5AA0023A499 /* FirebaseServiceUseCaseProtocol.swift */; };
 		DD6D7FEE2C6CD6810023A499 /* FirebaseServiceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FED2C6CD6810023A499 /* FirebaseServiceUseCase.swift */; };
 		DD6D7FF02C6CDCAC0023A499 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FEF2C6CDCAC0023A499 /* DependencyInjection.swift */; };
+		DD6D7FF32C6D114A0023A499 /* ProviderIdEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FF22C6D114A0023A499 /* ProviderIdEnum.swift */; };
+		DD6D7FF52C6D1AE50023A499 /* MKCoordinateRegion+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FF42C6D1AE50023A499 /* MKCoordinateRegion+Extension.swift */; };
+		DD6D7FF72C6D1B360023A499 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FF62C6D1B360023A499 /* CLLocationCoordinate2D.swift */; };
+		DD6D7FFA2C6D1BE30023A499 /* LiveTrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FF92C6D1BE30023A499 /* LiveTrackViewModel.swift */; };
+		DD6D7FFC2C6D1BFA0023A499 /* LiveTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FFB2C6D1BFA0023A499 /* LiveTrack.swift */; };
+		DD6D7FFF2C6D1EF90023A499 /* UserDefaultDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FFE2C6D1EF90023A499 /* UserDefaultDataSourceProtocol.swift */; };
+		DD6D80012C6D1F890023A499 /* UserDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D80002C6D1F890023A499 /* UserDefaultDataSource.swift */; };
+		DD6D80042C6D21690023A499 /* UserDefaultRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D80032C6D21690023A499 /* UserDefaultRepositoryProtocol.swift */; };
+		DD6D80062C6D21890023A499 /* UserDefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D80052C6D21890023A499 /* UserDefaultRepository.swift */; };
+		DD6D80092C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D80082C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift */; };
+		DD6D800B2C6D23010023A499 /* UserDefaultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D800A2C6D23010023A499 /* UserDefaultUseCase.swift */; };
+		DD6D800D2C6D238E0023A499 /* KeyUserDefaultEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D800C2C6D238E0023A499 /* KeyUserDefaultEnum.swift */; };
 		DDEB4B102C68C32F00375460 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB4B0F2C68C32F00375460 /* LoginView.swift */; };
 		DDEB4B132C68C53000375460 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DDEB4B122C68C53000375460 /* FirebaseAuth */; };
 		DDEB4B162C68C55B00375460 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = DDEB4B152C68C55B00375460 /* GoogleSignIn */; };
@@ -58,6 +70,18 @@
 		DD6D7FEB2C6CD5AA0023A499 /* FirebaseServiceUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseServiceUseCaseProtocol.swift; path = UseCases/Firebase/FirebaseServiceUseCaseProtocol.swift; sourceTree = SOURCE_ROOT; };
 		DD6D7FED2C6CD6810023A499 /* FirebaseServiceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseServiceUseCase.swift; path = UseCases/Firebase/FirebaseServiceUseCase.swift; sourceTree = SOURCE_ROOT; };
 		DD6D7FEF2C6CDCAC0023A499 /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DependencyInjection.swift; path = UseCases/Firebase/DependencyInjection.swift; sourceTree = SOURCE_ROOT; };
+		DD6D7FF22C6D114A0023A499 /* ProviderIdEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProviderIdEnum.swift; path = Entities/Enum/ProviderIdEnum.swift; sourceTree = SOURCE_ROOT; };
+		DD6D7FF42C6D1AE50023A499 /* MKCoordinateRegion+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MKCoordinateRegion+Extension.swift"; path = "Entities/Enum/MKCoordinateRegion+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		DD6D7FF62C6D1B360023A499 /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CLLocationCoordinate2D.swift; path = Entities/Enum/CLLocationCoordinate2D.swift; sourceTree = SOURCE_ROOT; };
+		DD6D7FF92C6D1BE30023A499 /* LiveTrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrackViewModel.swift; sourceTree = "<group>"; };
+		DD6D7FFB2C6D1BFA0023A499 /* LiveTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrack.swift; sourceTree = "<group>"; };
+		DD6D7FFE2C6D1EF90023A499 /* UserDefaultDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultDataSourceProtocol.swift; path = DataSources/Local/UserDefaultDataSourceProtocol.swift; sourceTree = SOURCE_ROOT; };
+		DD6D80002C6D1F890023A499 /* UserDefaultDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultDataSource.swift; path = DataSources/Local/UserDefaultDataSource.swift; sourceTree = SOURCE_ROOT; };
+		DD6D80032C6D21690023A499 /* UserDefaultRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultRepositoryProtocol.swift; path = Repositories/Local/UserDefaultRepositoryProtocol.swift; sourceTree = SOURCE_ROOT; };
+		DD6D80052C6D21890023A499 /* UserDefaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultRepository.swift; path = Repositories/Local/UserDefaultRepository.swift; sourceTree = SOURCE_ROOT; };
+		DD6D80082C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultUseCaseProtocol.swift; path = UseCases/UserDefaultUseCases/UserDefaultUseCaseProtocol.swift; sourceTree = SOURCE_ROOT; };
+		DD6D800A2C6D23010023A499 /* UserDefaultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultUseCase.swift; path = UseCases/UserDefaultUseCases/UserDefaultUseCase.swift; sourceTree = SOURCE_ROOT; };
+		DD6D800C2C6D238E0023A499 /* KeyUserDefaultEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyUserDefaultEnum.swift; path = Entities/Enum/KeyUserDefaultEnum.swift; sourceTree = SOURCE_ROOT; };
 		DDEB4B0F2C68C32F00375460 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DDEB4B1B2C68C71700375460 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DDEB4B1D2C68C78B00375460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -142,6 +166,7 @@
 		2058D16B2C65C99400D0557D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DD6D7FF82C6D1BC50023A499 /* LiveTrack */,
 				DDEB4B262C68D97200375460 /* Homepage */,
 				DDEB4B0E2C68C31A00375460 /* Authentication */,
 			);
@@ -169,6 +194,7 @@
 		2058D1702C65C9D800D0557D /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				DD6D7FF12C6D11240023A499 /* Enum */,
 				DD6D7FDD2C6CC42C0023A499 /* User.swift */,
 				DD6D7FDF2C6CC8E80023A499 /* EmergencyContact.swift */,
 			);
@@ -178,6 +204,7 @@
 		2058D1712C65CA0100D0557D /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				DD6D80072C6D21FB0023A499 /* UserDefaultUseCases */,
 				DD6D7FEA2C6CD5870023A499 /* Firebase */,
 			);
 			path = UseCases;
@@ -186,6 +213,7 @@
 		2058D1722C65CA0C00D0557D /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				DD6D80022C6D21500023A499 /* Local */,
 				DD6D7FE62C6CD1A80023A499 /* FirebaseServiceRepositoryProtocol.swift */,
 				DD6D7FE82C6CD1CB0023A499 /* FirebaseServiceRepository.swift */,
 			);
@@ -195,6 +223,7 @@
 		2058D1732C65CA1600D0557D /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				DD6D7FFD2C6D1ED20023A499 /* Local */,
 				DD6D7FE12C6CCE2E0023A499 /* Remote */,
 			);
 			path = DataSources;
@@ -213,6 +242,8 @@
 			isa = PBXGroup;
 			children = (
 				DDEB4B2B2C69146300375460 /* UIApplication+Extension.swift */,
+				DD6D7FF42C6D1AE50023A499 /* MKCoordinateRegion+Extension.swift */,
+				DD6D7FF62C6D1B360023A499 /* CLLocationCoordinate2D.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -249,6 +280,51 @@
 				DD6D7FED2C6CD6810023A499 /* FirebaseServiceUseCase.swift */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		DD6D7FF12C6D11240023A499 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				DD6D7FF22C6D114A0023A499 /* ProviderIdEnum.swift */,
+				DD6D800C2C6D238E0023A499 /* KeyUserDefaultEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		DD6D7FF82C6D1BC50023A499 /* LiveTrack */ = {
+			isa = PBXGroup;
+			children = (
+				DD6D7FF92C6D1BE30023A499 /* LiveTrackViewModel.swift */,
+				DD6D7FFB2C6D1BFA0023A499 /* LiveTrack.swift */,
+			);
+			path = LiveTrack;
+			sourceTree = "<group>";
+		};
+		DD6D7FFD2C6D1ED20023A499 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				DD6D7FFE2C6D1EF90023A499 /* UserDefaultDataSourceProtocol.swift */,
+				DD6D80002C6D1F890023A499 /* UserDefaultDataSource.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		DD6D80022C6D21500023A499 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				DD6D80032C6D21690023A499 /* UserDefaultRepositoryProtocol.swift */,
+				DD6D80052C6D21890023A499 /* UserDefaultRepository.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		DD6D80072C6D21FB0023A499 /* UserDefaultUseCases */ = {
+			isa = PBXGroup;
+			children = (
+				DD6D80082C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift */,
+				DD6D800A2C6D23010023A499 /* UserDefaultUseCase.swift */,
+			);
+			path = UserDefaultUseCases;
 			sourceTree = "<group>";
 		};
 		DDEB4B0E2C68C31A00375460 /* Authentication */ = {
@@ -367,25 +443,37 @@
 				DD4C77532C6A5F3300CEDFB2 /* ListenerView.swift in Sources */,
 				DDEB4B202C68CE9000375460 /* LoginViewModel.swift in Sources */,
 				DDEB4B102C68C32F00375460 /* LoginView.swift in Sources */,
+				DD6D7FFF2C6D1EF90023A499 /* UserDefaultDataSourceProtocol.swift in Sources */,
 				DD4C775C2C6B0C0500CEDFB2 /* LocationManagerViewModel.swift in Sources */,
 				DD6D7FE32C6CCE8D0023A499 /* FirebaseServiceDataSourceProtocol.swift in Sources */,
+				DD6D7FFA2C6D1BE30023A499 /* LiveTrackViewModel.swift in Sources */,
 				DDEB4B252C68D08E00375460 /* SHA256.swift in Sources */,
 				DD6D7FEC2C6CD5AA0023A499 /* FirebaseServiceUseCaseProtocol.swift in Sources */,
+				DD6D800D2C6D238E0023A499 /* KeyUserDefaultEnum.swift in Sources */,
+				DD6D7FFC2C6D1BFA0023A499 /* LiveTrack.swift in Sources */,
 				DD6D7FE02C6CC8E80023A499 /* EmergencyContact.swift in Sources */,
 				DDEB4B232C68D07200375460 /* RandomNonceString.swift in Sources */,
+				DD6D800B2C6D23010023A499 /* UserDefaultUseCase.swift in Sources */,
 				DD6D7FDE2C6CC42C0023A499 /* User.swift in Sources */,
+				DD6D80012C6D1F890023A499 /* UserDefaultDataSource.swift in Sources */,
+				DD6D80042C6D21690023A499 /* UserDefaultRepositoryProtocol.swift in Sources */,
 				DD6D7FF02C6CDCAC0023A499 /* DependencyInjection.swift in Sources */,
 				DD6D7FE52C6CD09B0023A499 /* FirebaseServiceDataSource.swift in Sources */,
 				DD6D7FE92C6CD1CB0023A499 /* FirebaseServiceRepository.swift in Sources */,
 				DD4C775A2C6B017A00CEDFB2 /* SocketHelper.swift in Sources */,
 				DD6D7FEE2C6CD6810023A499 /* FirebaseServiceUseCase.swift in Sources */,
+				DD6D80092C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift in Sources */,
+				DD6D7FF52C6D1AE50023A499 /* MKCoordinateRegion+Extension.swift in Sources */,
 				DDEB4B2C2C69146300375460 /* UIApplication+Extension.swift in Sources */,
 				DDEB4B2A2C68DCD800375460 /* HomepageViewModel.swift in Sources */,
 				DD4C77552C6A631C00CEDFB2 /* PublisherView.swift in Sources */,
 				2058D15F2C65C65200D0557D /* ContentView.swift in Sources */,
 				DDEB4B282C68D98200375460 /* HomepageView.swift in Sources */,
 				DD6D7FE72C6CD1A80023A499 /* FirebaseServiceRepositoryProtocol.swift in Sources */,
+				DD6D7FF32C6D114A0023A499 /* ProviderIdEnum.swift in Sources */,
+				DD6D7FF72C6D1B360023A499 /* CLLocationCoordinate2D.swift in Sources */,
 				2058D15D2C65C65200D0557D /* MC3App.swift in Sources */,
+				DD6D80062C6D21890023A499 /* UserDefaultRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,14 +15,18 @@ import GoogleSignIn
 
 class LoginViewModel: ObservableObject {
     @Published var nonce: String = ""
+    @Published var isLoading: Bool = false
     @Published var userModel: User =  User()
     private var firebaseUseCase: FirebaseServiceUseCaseProtocol
+    private var userDefaultUseCase: UserDefaultUseCaseProtocol
     
-    init(firebaseUseCase: FirebaseServiceUseCaseProtocol) {
+    init(firebaseUseCase: FirebaseServiceUseCaseProtocol, userDefaultUseCase: UserDefaultUseCaseProtocol) {
         self.firebaseUseCase = firebaseUseCase
+        self.userDefaultUseCase = userDefaultUseCase
     }
     
     func appleRequest(request: ASAuthorizationAppleIDRequest) {
+        self.isLoading = true
         self.nonce = randomNonceString()
         request.requestedScopes = [.email, .fullName]
         request.nonce = sha256(self.nonce)
@@ -36,63 +40,49 @@ class LoginViewModel: ObservableObject {
                 return
             }
             self.authenticateByApple(credential: credential)
-            
         case .failure(let error):
             print(error.localizedDescription)
         }
+        self.isLoading = false
     }
     
-    func googleRequestAuth(signInResult: GIDSignInResult?, error: (any Error)?) {
+    func googleRequestAuth(signInResult: GIDSignInResult?, error: (any Error)?) async {
+        self.isLoading = true
         if let error = error {
             print(error.localizedDescription)
+            self.isLoading = false
             return
         }
         
         if let signInResult = signInResult {
             let user = signInResult.user
-            self.authByGoogle(user: user)
+            await self.authByGoogle(user: user)
         }
+        self.isLoading = false
     }
     
-    private func authByGoogle(user: GIDGoogleUser) {
-        Task {
-            do {
-                guard let idToken = user.idToken?.tokenString else {
-                    print("Error: Missing ID token")
-                    return
-                }
-                let accessToken = user.accessToken.tokenString
-                
-                let credential = OAuthProvider.credential(
-                    providerID: AuthProviderID(rawValue: "google.com")!,
-                    idToken: idToken,
-                    accessToken: accessToken
-                )
-                
-                try await Auth.auth().signIn(with: credential)
-                
-                let firebaseID = Auth.auth().currentUser?.uid
-                if firebaseID != nil {
-                    UserDefaults.standard.set(firebaseID, forKey: "firebaseID")
-//                    self.sendFirebaseIdToDB(idFirestore: firebaseID!)
-                    await self.registeringAccount(idFirestore: firebaseID!, fcm: "testing")
-                }
-                
-                if let email = user.profile?.email {
-                    UserDefaults.standard.set(email, forKey: "userEmail")
-                }
-                if let name = user.profile?.name {
-                    UserDefaults.standard.set(name, forKey: "userName")
-                }
-                
-                await MainActor.run(body: {
-                    withAnimation(.easeInOut) {
-                        UserDefaults.standard.set(true, forKey: "logStatus")
-                    }
-                })
-            } catch {
-                print(error.localizedDescription)
+    private func authByGoogle(user: GIDGoogleUser) async {
+        do {
+            guard let idToken = user.idToken?.tokenString else {
+                print("Error: Missing ID token")
+                return
             }
+            let accessToken = user.accessToken.tokenString
+            
+            let credential = OAuthProvider.credential(
+                providerID: AuthProviderID(rawValue: "google.com")!,
+                idToken: idToken,
+                accessToken: accessToken
+            )
+            
+            try await Auth.auth().signIn(with: credential)
+            
+            let firebaseID = Auth.auth().currentUser?.uid
+            
+            await self.registeringAccount(idFirestore: firebaseID!, fcm: "testing")
+            self.userDefaultUseCase.saveLoginData(email: user.profile?.email ?? "", firebaseID: firebaseID ?? "")
+        } catch {
+            print(error.localizedDescription)
         }
     }
     
@@ -102,14 +92,14 @@ class LoginViewModel: ObservableObject {
             return
         }
         
-        guard let tokenSring = String(data: token, encoding: .utf8) else {
+        guard let idToken = String(data: token, encoding: .utf8) else {
             print("Error when get a string token")
             return
         }
         
         let firebaseCredential = OAuthProvider.credential(
             providerID: AuthProviderID(rawValue: "apple.com")!,
-            idToken: tokenSring,
+            idToken: idToken,
             rawNonce: nonce
         )
         
@@ -126,13 +116,7 @@ class LoginViewModel: ObservableObject {
             
             Task {
                 await self.registeringAccount(idFirestore: user.uid, fcm: "testing")
-                
-                withAnimation(.easeInOut) {
-                    UserDefaults.standard.set(user.email, forKey: "userEmail")
-                    print("email : ", UserDefaults.standard.string(forKey: "userEmail") ?? "no data")
-                    UserDefaults.standard.set(user.uid, forKey: "firebaseID")
-                    UserDefaults.standard.set(true, forKey: "logStatus")
-                }
+                self.userDefaultUseCase.saveLoginData(email: user.email ?? "", firebaseID: user.uid)
             }
         }
     }
