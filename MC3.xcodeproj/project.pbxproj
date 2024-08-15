@@ -12,10 +12,18 @@
 		20190CF82C6A336B001A2AB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CF72C6A336B001A2AB6 /* Assets.xcassets */; };
 		20190CFB2C6A336B001A2AB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */; };
 		20190CFE2C6A336B001A2AB6 /* WatchMC3 Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 20190CF12C6A336A001A2AB6 /* WatchMC3 Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		201FB0742C6D9AE400058A95 /* EmergencyContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201FB0732C6D9AE400058A95 /* EmergencyContactViewModel.swift */; };
+		201FB0762C6DC32F00058A95 /* ContactPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201FB0752C6DC32F00058A95 /* ContactPickerView.swift */; };
 		2058D15D2C65C65200D0557D /* MC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15C2C65C65200D0557D /* MC3App.swift */; };
 		2058D15F2C65C65200D0557D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15E2C65C65200D0557D /* ContentView.swift */; };
 		2058D1612C65C65400D0557D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1602C65C65400D0557D /* Assets.xcassets */; };
 		2058D1642C65C65400D0557D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1632C65C65400D0557D /* Preview Assets.xcassets */; };
+		207BA4772C6CF90E00B9B3FC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 207BA4762C6CF90E00B9B3FC /* FirebaseAuth */; };
+		207BA4792C6CF90E00B9B3FC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 207BA4782C6CF90E00B9B3FC /* FirebaseFirestore */; };
+		207BA47B2C6CF90E00B9B3FC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 207BA47A2C6CF90E00B9B3FC /* FirebaseMessaging */; };
+		207BA47F2C6D8D2700B9B3FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 207BA47E2C6D8D2700B9B3FC /* GoogleService-Info.plist */; };
+		207BA4822C6D905D00B9B3FC /* MessageNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */; };
+		207BA4842C6D930200B9B3FC /* AddEmergencyContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */; };
 		81D078F92C6C52FC00ACE61E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078F82C6C52FC00ACE61E /* OnboardingView.swift */; };
 		81D078FD2C6C537E00ACE61E /* AddContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078FC2C6C537E00ACE61E /* AddContactsView.swift */; };
 		81D078FF2C6C53A100ACE61E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078FE2C6C53A100ACE61E /* HomeView.swift */; };
@@ -54,11 +62,18 @@
 		20190CF52C6A336B001A2AB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		20190CF72C6A336B001A2AB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		201FB0732C6D9AE400058A95 /* EmergencyContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewModel.swift; sourceTree = "<group>"; };
+		201FB0752C6DC32F00058A95 /* ContactPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPickerView.swift; sourceTree = "<group>"; };
+		203AB9A42C6C710A00D7AD86 /* MC3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MC3.entitlements; sourceTree = "<group>"; };
+		203AB9A52C6C712B00D7AD86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2058D1592C65C65200D0557D /* MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2058D15C2C65C65200D0557D /* MC3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3App.swift; sourceTree = "<group>"; };
 		2058D15E2C65C65200D0557D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2058D1602C65C65400D0557D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2058D1632C65C65400D0557D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		207BA47E2C6D8D2700B9B3FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotificationViewModel.swift; sourceTree = "<group>"; };
+		207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmergencyContactView.swift; sourceTree = "<group>"; };
 		81D078F82C6C52FC00ACE61E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = MC3/OnboardingView.swift; sourceTree = SOURCE_ROOT; };
 		81D078FC2C6C537E00ACE61E /* AddContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddContactsView.swift; path = MC3/AddContactsView.swift; sourceTree = SOURCE_ROOT; };
 		81D078FE2C6C53A100ACE61E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = MC3/HomeView.swift; sourceTree = SOURCE_ROOT; };
@@ -79,6 +94,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				207BA47B2C6CF90E00B9B3FC /* FirebaseMessaging in Frameworks */,
+				207BA4772C6CF90E00B9B3FC /* FirebaseAuth in Frameworks */,
+				207BA4792C6CF90E00B9B3FC /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +218,16 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		201FB0722C6D9AB900058A95 /* EmergencyContact */ = {
+			isa = PBXGroup;
+			children = (
+				207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */,
+				201FB0732C6D9AE400058A95 /* EmergencyContactViewModel.swift */,
+				201FB0752C6DC32F00058A95 /* ContactPickerView.swift */,
+			);
+			path = EmergencyContact;
+			sourceTree = "<group>";
+		};
 		2058D1502C65C65200D0557D = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +249,9 @@
 		2058D15B2C65C65200D0557D /* MC3 */ = {
 			isa = PBXGroup;
 			children = (
+				207BA47E2C6D8D2700B9B3FC /* GoogleService-Info.plist */,
+				203AB9A52C6C712B00D7AD86 /* Info.plist */,
+				203AB9A42C6C710A00D7AD86 /* MC3.entitlements */,
 				2058D16B2C65C99400D0557D /* Presentation */,
 				2058D16C2C65C99D00D0557D /* Domain */,
 				2058D16D2C65C9A700D0557D /* Data */,
@@ -253,6 +284,8 @@
 		2058D16B2C65C99400D0557D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				201FB0722C6D9AB900058A95 /* EmergencyContact */,
+				207BA4802C6D903500B9B3FC /* MessageNotification */,
 				2058D16F2C65C9CD00D0557D /* ViewModels */,
 				2058D16E2C65C9C400D0557D /* Views */,
 			);
@@ -339,6 +372,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		207BA4802C6D903500B9B3FC /* MessageNotification */ = {
+			isa = PBXGroup;
+			children = (
+				207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */,
+			);
+			path = MessageNotification;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -374,6 +415,11 @@
 				20190CFD2C6A336B001A2AB6 /* PBXTargetDependency */,
 			);
 			name = MC3;
+			packageProductDependencies = (
+				207BA4762C6CF90E00B9B3FC /* FirebaseAuth */,
+				207BA4782C6CF90E00B9B3FC /* FirebaseFirestore */,
+				207BA47A2C6CF90E00B9B3FC /* FirebaseMessaging */,
+			);
 			productName = MC3;
 			productReference = 2058D1592C65C65200D0557D /* MC3.app */;
 			productType = "com.apple.product-type.application";
@@ -405,6 +451,9 @@
 				Base,
 			);
 			mainGroup = 2058D1502C65C65200D0557D;
+			packageReferences = (
+				207BA4752C6CF90E00B9B3FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 2058D15A2C65C65200D0557D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -431,6 +480,7 @@
 			files = (
 				2058D1642C65C65400D0557D /* Preview Assets.xcassets in Resources */,
 				2058D1612C65C65400D0557D /* Assets.xcassets in Resources */,
+				207BA47F2C6D8D2700B9B3FC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +504,11 @@
 				81D079012C6C53AD00ACE61E /* LiveTrackView.swift in Sources */,
 				81D078F92C6C52FC00ACE61E /* OnboardingView.swift in Sources */,
 				2058D15F2C65C65200D0557D /* ContentView.swift in Sources */,
+				207BA4822C6D905D00B9B3FC /* MessageNotificationViewModel.swift in Sources */,
+				201FB0742C6D9AE400058A95 /* EmergencyContactViewModel.swift in Sources */,
 				2058D15D2C65C65200D0557D /* MC3App.swift in Sources */,
+				207BA4842C6D930200B9B3FC /* AddEmergencyContactView.swift in Sources */,
+				201FB0762C6DC32F00058A95 /* ContactPickerView.swift in Sources */,
 				81D078FF2C6C53A100ACE61E /* HomeView.swift in Sources */,
 				81D079032C6C53B700ACE61E /* SOSView.swift in Sources */,
 				81D078FD2C6C537E00ACE61E /* AddContactsView.swift in Sources */,
@@ -480,18 +534,18 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchMC3 Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 2RQ6LB993C;
+				DEVELOPMENT_TEAM = XSHZNN2ULY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = WatchMC3;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = mc3.MC3;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = MC3.Untouchable;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mc3.MC3.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = MC3.Untouchable.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -510,18 +564,18 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchMC3 Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 2RQ6LB993C;
+				DEVELOPMENT_TEAM = XSHZNN2ULY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = WatchMC3;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = mc3.MC3;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = MC3.Untouchable;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mc3.MC3.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = MC3.Untouchable.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -657,12 +711,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MC3/MC3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC3/Preview Content\"";
-				DEVELOPMENT_TEAM = 2RQ6LB993C;
+				DEVELOPMENT_TEAM = XSHZNN2ULY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MC3/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "We need your contacts information for the Emergency Contact Access";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -674,7 +731,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mc3.MC3;
+				PRODUCT_BUNDLE_IDENTIFIER = MC3.Untouchable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -688,12 +745,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MC3/MC3.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC3/Preview Content\"";
-				DEVELOPMENT_TEAM = 2RQ6LB993C;
+				DEVELOPMENT_TEAM = XSHZNN2ULY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MC3/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "We need your contacts information for the Emergency Contact Access";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -705,7 +765,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mc3.MC3;
+				PRODUCT_BUNDLE_IDENTIFIER = MC3.Untouchable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -744,6 +804,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		207BA4752C6CF90E00B9B3FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		207BA4762C6CF90E00B9B3FC /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 207BA4752C6CF90E00B9B3FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		207BA4782C6CF90E00B9B3FC /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 207BA4752C6CF90E00B9B3FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		207BA47A2C6CF90E00B9B3FC /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 207BA4752C6CF90E00B9B3FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2058D1512C65C65200D0557D /* Project object */;
 }
