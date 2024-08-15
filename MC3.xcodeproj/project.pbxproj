@@ -18,16 +18,16 @@
 		2058D15F2C65C65200D0557D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15E2C65C65200D0557D /* ContentView.swift */; };
 		2058D1612C65C65400D0557D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1602C65C65400D0557D /* Assets.xcassets */; };
 		2058D1642C65C65400D0557D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1632C65C65400D0557D /* Preview Assets.xcassets */; };
-		81D079072C6DE1E100ACE61E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079062C6DE1E100ACE61E /* HomeView.swift */; };
-		81D079092C6DE1EB00ACE61E /* LiveTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079082C6DE1EB00ACE61E /* LiveTrackView.swift */; };
-		81D0790B2C6DE1F400ACE61E /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D0790A2C6DE1F400ACE61E /* SOSView.swift */; };
-		81D0790D2C6DE20A00ACE61E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D0790C2C6DE20A00ACE61E /* ProfileView.swift */; };
-		81D079112C6DEB7700ACE61E /* NoAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079102C6DEB7700ACE61E /* NoAlertsView.swift */; };
-		81D079132C6DF04E00ACE61E /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079122C6DF04E00ACE61E /* CountdownView.swift */; };
-		81D079152C6DFD1500ACE61E /* PinInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079142C6DFD1500ACE61E /* PinInputView.swift */; };
 		207BA47B2C6CF90E00B9B3FC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 207BA47A2C6CF90E00B9B3FC /* FirebaseMessaging */; };
 		207BA4822C6D905D00B9B3FC /* MessageNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */; };
 		207BA4842C6D930200B9B3FC /* AddEmergencyContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */; };
+		20D4DA9E2C6E59A4009E73D7 /* NoAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA972C6E59A4009E73D7 /* NoAlertsView.swift */; };
+		20D4DA9F2C6E59A4009E73D7 /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA982C6E59A4009E73D7 /* SOSView.swift */; };
+		20D4DAA02C6E59A4009E73D7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA992C6E59A4009E73D7 /* HomeView.swift */; };
+		20D4DAA12C6E59A4009E73D7 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA9A2C6E59A4009E73D7 /* CountdownView.swift */; };
+		20D4DAA22C6E59A4009E73D7 /* PinInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA9B2C6E59A4009E73D7 /* PinInputView.swift */; };
+		20D4DAA32C6E59A4009E73D7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA9C2C6E59A4009E73D7 /* ProfileView.swift */; };
+		20D4DAA42C6E59A4009E73D7 /* LiveTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA9D2C6E59A4009E73D7 /* LiveTrackView.swift */; };
 		20F585082C6DD28F00114E3D /* AddContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F585022C6DD28F00114E3D /* AddContactsView.swift */; };
 		20F5850C2C6DD28F00114E3D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F585062C6DD28F00114E3D /* OnboardingView.swift */; };
 		20F95A642C6E1073005B3DA1 /* HomepageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F95A632C6E1073005B3DA1 /* HomepageViewModel.swift */; };
@@ -38,13 +38,15 @@
 		20F95A6A2C6E11A5005B3DA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20F95A692C6E11A5005B3DA1 /* GoogleService-Info.plist */; };
 		81D078F92C6C52FC00ACE61E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078F82C6C52FC00ACE61E /* OnboardingView.swift */; };
 		81D078FD2C6C537E00ACE61E /* AddContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078FC2C6C537E00ACE61E /* AddContactsView.swift */; };
-		81D078FF2C6C53A100ACE61E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078FE2C6C53A100ACE61E /* HomeView.swift */; };
-		81D079012C6C53AD00ACE61E /* LiveTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079002C6C53AD00ACE61E /* LiveTrackView.swift */; };
-		81D079032C6C53B700ACE61E /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079022C6C53B700ACE61E /* SOSView.swift */; };
-		81D079052C6C53BF00ACE61E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079042C6C53BF00ACE61E /* ProfileView.swift */; };
+		81D079072C6DE1E100ACE61E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079062C6DE1E100ACE61E /* HomeView.swift */; };
+		81D079092C6DE1EB00ACE61E /* LiveTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079082C6DE1EB00ACE61E /* LiveTrackView.swift */; };
+		81D0790B2C6DE1F400ACE61E /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D0790A2C6DE1F400ACE61E /* SOSView.swift */; };
+		81D0790D2C6DE20A00ACE61E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D0790C2C6DE20A00ACE61E /* ProfileView.swift */; };
+		81D079112C6DEB7700ACE61E /* NoAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079102C6DEB7700ACE61E /* NoAlertsView.swift */; };
+		81D079132C6DF04E00ACE61E /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079122C6DF04E00ACE61E /* CountdownView.swift */; };
+		81D079152C6DFD1500ACE61E /* PinInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079142C6DFD1500ACE61E /* PinInputView.swift */; };
 		DD4C77512C6A59A800CEDFB2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = DD4C77502C6A59A800CEDFB2 /* SocketIO */; };
 		DD4C775A2C6B017A00CEDFB2 /* SocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C77592C6B017A00CEDFB2 /* SocketHelper.swift */; };
-		DD4C775C2C6B0C0500CEDFB2 /* LocationManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C775B2C6B0C0500CEDFB2 /* LocationManagerViewModel.swift */; };
 		DD5574252C6DE175008F9B98 /* InputPinComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5574242C6DE175008F9B98 /* InputPinComponent.swift */; };
 		DD6D7FDC2C6C5DA50023A499 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DD6D7FDB2C6C5DA50023A499 /* FirebaseFirestore */; };
 		DD6D7FDE2C6CC42C0023A499 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FDD2C6CC42C0023A499 /* User.swift */; };
@@ -117,15 +119,15 @@
 		2058D15E2C65C65200D0557D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2058D1602C65C65400D0557D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2058D1632C65C65400D0557D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		81D079062C6DE1E100ACE61E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = MC3/HomeView.swift; sourceTree = SOURCE_ROOT; };
-		81D079082C6DE1EB00ACE61E /* LiveTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LiveTrackView.swift; path = MC3/LiveTrackView.swift; sourceTree = SOURCE_ROOT; };
-		81D0790A2C6DE1F400ACE61E /* SOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SOSView.swift; path = MC3/SOSView.swift; sourceTree = SOURCE_ROOT; };
-		81D0790C2C6DE20A00ACE61E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = MC3/ProfileView.swift; sourceTree = SOURCE_ROOT; };
-		81D079102C6DEB7700ACE61E /* NoAlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoAlertsView.swift; path = MC3/NoAlertsView.swift; sourceTree = SOURCE_ROOT; };
-		81D079122C6DF04E00ACE61E /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountdownView.swift; path = MC3/CountdownView.swift; sourceTree = SOURCE_ROOT; };
-		81D079142C6DFD1500ACE61E /* PinInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PinInputView.swift; path = MC3/PinInputView.swift; sourceTree = SOURCE_ROOT; };
 		207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotificationViewModel.swift; sourceTree = "<group>"; };
 		207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmergencyContactView.swift; sourceTree = "<group>"; };
+		20D4DA972C6E59A4009E73D7 /* NoAlertsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoAlertsView.swift; sourceTree = "<group>"; };
+		20D4DA982C6E59A4009E73D7 /* SOSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSView.swift; sourceTree = "<group>"; };
+		20D4DA992C6E59A4009E73D7 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		20D4DA9A2C6E59A4009E73D7 /* CountdownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
+		20D4DA9B2C6E59A4009E73D7 /* PinInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinInputView.swift; sourceTree = "<group>"; };
+		20D4DA9C2C6E59A4009E73D7 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		20D4DA9D2C6E59A4009E73D7 /* LiveTrackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveTrackView.swift; sourceTree = "<group>"; };
 		20F585022C6DD28F00114E3D /* AddContactsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactsView.swift; sourceTree = "<group>"; };
 		20F585062C6DD28F00114E3D /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		20F95A5F2C6E1073005B3DA1 /* HomepageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomepageView.swift; path = MC3/Presentation/Homepage/HomepageView.swift; sourceTree = SOURCE_ROOT; };
@@ -136,12 +138,14 @@
 		20F95A692C6E11A5005B3DA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81D078F82C6C52FC00ACE61E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = MC3/OnboardingView.swift; sourceTree = SOURCE_ROOT; };
 		81D078FC2C6C537E00ACE61E /* AddContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddContactsView.swift; path = MC3/AddContactsView.swift; sourceTree = SOURCE_ROOT; };
-		81D078FE2C6C53A100ACE61E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = MC3/HomeView.swift; sourceTree = SOURCE_ROOT; };
-		81D079002C6C53AD00ACE61E /* LiveTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LiveTrackView.swift; path = MC3/LiveTrackView.swift; sourceTree = SOURCE_ROOT; };
-		81D079022C6C53B700ACE61E /* SOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SOSView.swift; path = MC3/SOSView.swift; sourceTree = SOURCE_ROOT; };
-		81D079042C6C53BF00ACE61E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = MC3/ProfileView.swift; sourceTree = SOURCE_ROOT; };
+		81D079062C6DE1E100ACE61E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = MC3/HomeView.swift; sourceTree = SOURCE_ROOT; };
+		81D079082C6DE1EB00ACE61E /* LiveTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LiveTrackView.swift; path = MC3/LiveTrackView.swift; sourceTree = SOURCE_ROOT; };
+		81D0790A2C6DE1F400ACE61E /* SOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SOSView.swift; path = MC3/SOSView.swift; sourceTree = SOURCE_ROOT; };
+		81D0790C2C6DE20A00ACE61E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = MC3/ProfileView.swift; sourceTree = SOURCE_ROOT; };
+		81D079102C6DEB7700ACE61E /* NoAlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoAlertsView.swift; path = MC3/NoAlertsView.swift; sourceTree = SOURCE_ROOT; };
+		81D079122C6DF04E00ACE61E /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountdownView.swift; path = MC3/CountdownView.swift; sourceTree = SOURCE_ROOT; };
+		81D079142C6DFD1500ACE61E /* PinInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PinInputView.swift; path = MC3/PinInputView.swift; sourceTree = SOURCE_ROOT; };
 		DD4C77592C6B017A00CEDFB2 /* SocketHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketHelper.swift; sourceTree = "<group>"; };
-		DD4C775B2C6B0C0500CEDFB2 /* LocationManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewModel.swift; sourceTree = "<group>"; };
 		DD5574242C6DE175008F9B98 /* InputPinComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPinComponent.swift; sourceTree = "<group>"; };
 		DD6D7FDD2C6CC42C0023A499 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = MC3/Presentation/Homepage/User.swift; sourceTree = SOURCE_ROOT; };
 		DD6D7FDF2C6CC8E80023A499 /* EmergencyContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmergencyContact.swift; path = MC3/Presentation/Homepage/EmergencyContact.swift; sourceTree = SOURCE_ROOT; };
@@ -343,11 +347,14 @@
 			isa = PBXGroup;
 			children = (
 				20F585022C6DD28F00114E3D /* AddContactsView.swift */,
-				20F585032C6DD28F00114E3D /* HomeView.swift */,
-				20F585042C6DD28F00114E3D /* LiveTrackView.swift */,
 				20F585062C6DD28F00114E3D /* OnboardingView.swift */,
-				20F585072C6DD28F00114E3D /* ProfileView.swift */,
-				20F585052C6DD28F00114E3D /* SOSView.swift */,
+				20D4DA9A2C6E59A4009E73D7 /* CountdownView.swift */,
+				20D4DA992C6E59A4009E73D7 /* HomeView.swift */,
+				20D4DA9D2C6E59A4009E73D7 /* LiveTrackView.swift */,
+				20D4DA972C6E59A4009E73D7 /* NoAlertsView.swift */,
+				20D4DA9B2C6E59A4009E73D7 /* PinInputView.swift */,
+				20D4DA9C2C6E59A4009E73D7 /* ProfileView.swift */,
+				20D4DA982C6E59A4009E73D7 /* SOSView.swift */,
 				203AB9A52C6C712B00D7AD86 /* Info.plist */,
 				20F95A692C6E11A5005B3DA1 /* GoogleService-Info.plist */,
 				203AB9A42C6C710A00D7AD86 /* MC3.entitlements */,
@@ -754,6 +761,7 @@
 				20F95A652C6E1073005B3DA1 /* HomepageView.swift in Sources */,
 				DDEB4B202C68CE9000375460 /* LoginViewModel.swift in Sources */,
 				DDEB4B102C68C32F00375460 /* LoginView.swift in Sources */,
+				20D4DAA12C6E59A4009E73D7 /* CountdownView.swift in Sources */,
 				DD6D7FFF2C6D1EF90023A499 /* UserDefaultDataSourceProtocol.swift in Sources */,
 				DD6D7FE32C6CCE8D0023A499 /* FirebaseServiceDataSourceProtocol.swift in Sources */,
 				DD6D7FFA2C6D1BE30023A499 /* LiveTrackViewModel.swift in Sources */,
@@ -773,26 +781,30 @@
 				DD6D7FE92C6CD1CB0023A499 /* FirebaseServiceRepository.swift in Sources */,
 				DD4C775A2C6B017A00CEDFB2 /* SocketHelper.swift in Sources */,
 				20F95A672C6E1073005B3DA1 /* ListenerView.swift in Sources */,
+				20D4DA9E2C6E59A4009E73D7 /* NoAlertsView.swift in Sources */,
 				DD6D7FEE2C6CD6810023A499 /* FirebaseServiceUseCase.swift in Sources */,
 				DD6D80092C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift in Sources */,
 				20F95A642C6E1073005B3DA1 /* HomepageViewModel.swift in Sources */,
 				DD6D7FF52C6D1AE50023A499 /* MKCoordinateRegion+Extension.swift in Sources */,
 				DDEB4B2C2C69146300375460 /* UIApplication+Extension.swift in Sources */,
 				2058D15F2C65C65200D0557D /* ContentView.swift in Sources */,
+				20D4DA9F2C6E59A4009E73D7 /* SOSView.swift in Sources */,
+				20D4DAA22C6E59A4009E73D7 /* PinInputView.swift in Sources */,
 				DD6D7FE72C6CD1A80023A499 /* FirebaseServiceRepositoryProtocol.swift in Sources */,
+				20D4DAA32C6E59A4009E73D7 /* ProfileView.swift in Sources */,
+				20D4DAA02C6E59A4009E73D7 /* HomeView.swift in Sources */,
 				DD6D7FF32C6D114A0023A499 /* ProviderIdEnum.swift in Sources */,
 				DD6D7FF72C6D1B360023A499 /* CLLocationCoordinate2D.swift in Sources */,
 				2058D15D2C65C65200D0557D /* MC3App.swift in Sources */,
 				DD6D80062C6D21890023A499 /* UserDefaultRepository.swift in Sources */,
+				20D4DAA42C6E59A4009E73D7 /* LiveTrackView.swift in Sources */,
 				20F95A682C6E1073005B3DA1 /* PublisherView.swift in Sources */,
 				20F95A662C6E1073005B3DA1 /* LocationManagerViewModel.swift in Sources */,
 				81D078F92C6C52FC00ACE61E /* OnboardingView.swift in Sources */,
 				20F585082C6DD28F00114E3D /* AddContactsView.swift in Sources */,
 				2058D15F2C65C65200D0557D /* ContentView.swift in Sources */,
 				207BA4822C6D905D00B9B3FC /* MessageNotificationViewModel.swift in Sources */,
-				20F5850B2C6DD28F00114E3D /* SOSView.swift in Sources */,
 				201FB0742C6D9AE400058A95 /* EmergencyContactViewModel.swift in Sources */,
-				20F5850D2C6DD28F00114E3D /* ProfileView.swift in Sources */,
 				2058D15D2C65C65200D0557D /* MC3App.swift in Sources */,
 				207BA4842C6D930200B9B3FC /* AddEmergencyContactView.swift in Sources */,
 				201FB0762C6DC32F00058A95 /* ContactPickerView.swift in Sources */,

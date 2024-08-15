@@ -50,19 +50,19 @@ struct InputPinComponent: View {
     }
 }
 
-struct PinBox: View {
-    let character: String
-    
-    var body: some View {
-        RoundedRectangle(cornerRadius: 5)
-            .stroke(Color.gray, lineWidth: 1)
-            .frame(width: 70, height: 70)
-            .overlay(
-                Text(character)
-                    .font(.title)
-            )
-    }
-}
+//struct PinBox: View {
+//    let character: String
+//    
+//    var body: some View {
+//        RoundedRectangle(cornerRadius: 5)
+//            .stroke(Color.gray, lineWidth: 1)
+//            .frame(width: 70, height: 70)
+//            .overlay(
+//                Text(character)
+//                    .font(.title)
+//            )
+//    }
+//}
 
 #Preview {
 //    InputPinComponent()
