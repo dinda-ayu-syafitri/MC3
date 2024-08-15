@@ -2,137 +2,150 @@
 //  ProfileView.swift
 //  MC3
 //
-//  Created by Giventus Marco Victorio Handojo on 14/08/24.
+//  Created by Giventus Marco Victorio Handojo on 15/08/24.
 //
-
 
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var isAutomaticAlertActivated = true
-    @State private var selectedDelayTime = 5
-    @State private var isShowingDelayPicker = false
-
+    @State private var enableHaptic = true
+    @State private var enableAutomaticAlert = true
+    
     var body: some View {
-        NavigationView {
+        ScrollView{
             VStack {
-                Spacer().frame(height: 40) // To push the content down a bit
-                
-                // Profile Picture and Name
-                VStack {
+                // Profile Header
+                VStack(spacing: 10) {
+                    Text("Profile")
+                        .font(.title)
+                        .fontWeight(.bold)
+                    
                     Circle()
-                        .fill(Color.gray.opacity(0.3))
-                        .frame(width: 100, height: 100)
+                        .fill(Color.gray)
+                        .frame(width: 80, height: 80)
                     
                     Text("Syafiqah A")
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .padding(.top, 8)
+                        .font(.headline)
                     
                     Text("6287821285607")
-                        .font(.body)
+                        .font(.subheadline)
                         .foregroundColor(.gray)
                 }
-                
-                Spacer().frame(height: 40) // Spacer for vertical spacing
+                .padding(.top)
                 
                 // Contacts Section
-                List {
-                    Section(header: Text("Contacts")) {
-                        NavigationLink(destination: Text("Emergency Contacts")) {
-                            HStack {
-                                Text("Emergency Contacts")
-                                Spacer()
-                               
-                            }
-                        }
-                        
-                        NavigationLink(destination: Text("Emergency Contactee")) {
-                            HStack {
-                                Text("Emergency Contactee (?)")
-                                Spacer()
-                                
-                            }
-                        }
-                    }
-                    
-                    // Security Section
-                    Section(header: Text("Security")) {
-                        NavigationLink(destination: Text("Personal Pin")) {
-                            HStack {
-                                Text("Personal Pin")
-                                Spacer()
-                                
-                            }
-                        }
-                    }
-                    
-                    // Settings Section
-                    Section(header: Text("Settings")) {
-                        Button(action: {
-                            isShowingDelayPicker = true
-                        }) {
-                            HStack {
-                                Text("SOS Alert Delay Time")
-                                Spacer()
-                                Text("\(selectedDelayTime) seconds")
-                                    .foregroundColor(.gray)
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(.gray)
-                            }
-                        }
-                        .sheet(isPresented: $isShowingDelayPicker) {
-                            DelayTimePickerView(selectedDelayTime: $selectedDelayTime)
-                        }
-                        
-                        Toggle(isOn: $isAutomaticAlertActivated) {
-                            Text("Activate automatic alert")
-                        }
-                    }
+                SectionHeader(title: "Contacts")
+                
+                NavigationLink(destination: Text("Emergency Contacts Page")) {
+                    ProfileRow(title: "Emergency Contacts")
                 }
-                .listStyle(InsetGroupedListStyle()) // List style to match the design
+                
+                // Security Section
+                SectionHeader(title: "Security")
+                
+                NavigationLink(destination: Text("Personal Pin Page")) {
+                    ProfileRow(title: "Personal Pin")
+                }
+                
+                // Settings Section
+                SectionHeader(title: "Settings")
+                
+                HStack {
+                    Text("SOS Alert Delay Time")
+                        .foregroundColor(.black)
+                    Spacer()
+                    Text("5 seconds")
+                        .foregroundColor(.gray)
+                }
+                .padding()
+                .background(Color.white)
+                .cornerRadius(10)
+                .padding(.horizontal)
+                
+                Toggle(isOn: $enableHaptic) {
+                    Text("Enable haptic")
+                        .foregroundColor(.black)
+                }
+                .padding()
+                .background(Color.white)
+                .cornerRadius(10)
+                .padding(.horizontal)
+                
+                Toggle(isOn: $enableAutomaticAlert) {
+                    Text("Enable automatic alert")
+                        .foregroundColor(.black)
+                }
+                .padding()
+                .background(Color.white)
+                .cornerRadius(10)
+                .padding(.horizontal)
+                
+                // Buttons Section
+                Button(action: {
+                    // Action for setting up Back Tap
+                }) {
+                    Text("Set up Back Tap")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.gray)
+                        .cornerRadius(20)
+                }
+                .padding(.top)
+                .padding(.horizontal)
+                
+                Button(action: {
+                    // Action for setting up Watch Complications
+                }) {
+                    Text("Set up Watch Complications")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.gray)
+                        .cornerRadius(20)
+                }
+                .padding(.horizontal)
                 
                 Spacer()
-                
             }
-          
-            .background(Color(.systemGray6))
-            .navigationBarHidden(true)
+            
         }
+        .background(Color(.systemGray6).ignoresSafeArea())
+        
     }
 }
 
-struct DelayTimePickerView: View {
-    @Binding var selectedDelayTime: Int
-    let delayTimes = Array(1...60) // Array of delay times from 1 to 60 seconds
-
+struct SectionHeader: View {
+    let title: String
+    
     var body: some View {
-        VStack {
-            Picker(selection: $selectedDelayTime, label: Text("Select Delay Time")) {
-                ForEach(delayTimes, id: \.self) { time in
-                    Text("\(time) seconds")
-                        .tag(time)
-                }
-            }
-            .pickerStyle(WheelPickerStyle())
-            .frame(height: 150)
-            .clipped()
-            
+        Text(title)
+            .font(.headline)
+            .foregroundColor(.black)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal)
+            .padding(.top, 20)
+    }
+}
+
+struct ProfileRow: View {
+    let title: String
+    
+    var body: some View {
+        HStack {
+            Text(title)
+                .foregroundColor(.black)
             Spacer()
-            
-            Button(action: {
-                // Action to dismiss the picker, if needed
-            }) {
-                Text("Done")
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .padding()
-            }
+            Image(systemName: "chevron.right")
+                .foregroundColor(.gray)
         }
         .padding()
+        .background(Color.white)
+        .cornerRadius(10)
+        .padding(.horizontal)
+
     }
 }
 

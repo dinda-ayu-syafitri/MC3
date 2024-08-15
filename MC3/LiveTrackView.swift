@@ -2,67 +2,93 @@
 //  LiveTrackView.swift
 //  MC3
 //
-//  Created by Giventus Marco Victorio Handojo on 14/08/24.
+//  Created by Giventus Marco Victorio Handojo on 15/08/24.
 //
 
 import SwiftUI
+import MapKit
 
 struct LiveTrackView: View {
+    @State private var region = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: -6.302062993687138, longitude: 106.65229908106305),
+        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+    )
+    
+    var showLiveTrack = true
+    
     var body: some View {
-        VStack{
-            Text("Live Track")
-                .bold()
-                .font(.title2)
-            
-            Spacer().frame(height: 50)
-            
-            ZStack{
-                Rectangle()
-                    .frame(width:320, height: 500)
-                    .clipShape(.rect(cornerRadii: RectangleCornerRadii(topLeading: 20, bottomLeading: 20, bottomTrailing: 20, topTrailing: 20)))
-                    .foregroundColor(.gray)
+        if showLiveTrack {
+            VStack {
+                Text("Live Track")
+                    .font(.title2)
+                    .bold()
+                    .foregroundColor(.red)
                 
-                Circle()
-                    .frame(width:40, height: 40)
-                    .shadow(radius: 10)
+                Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: .constant(.follow))
+                    .frame(height: 550)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .padding()
+                    .overlay(
+                        VStack(alignment: .leading) {
+                            Text("Current Location")
+                                .font(.headline)
+                                .padding(.bottom, 2)
+                            
+                            Text("Kompleks Ruko Flourite, Jl. Raya Kelapa Gading Utara No.49, Tangerang Selatan")
+                                .font(.subheadline)
+                        }
+                        .frame(width: 300)
+                        .padding()
+                        .background(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .shadow(radius: 5)
+                        .padding(.top,30),
+                        alignment: .top
+                    )
                 
-                    
+                HStack {
+                    HStack {
+                        Circle()
+                            .fill(Color.gray)
+                            .frame(width: 40, height: 40)
+                            .overlay(
+                                Text("S")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                            )
+                        Text("Syafiqah")
+                            .font(.headline)
+                            .padding(.leading, 5)
+                    }
+                    .frame(width: 250, height: 35)
+                    .padding()
+                    .background(Color.gray.opacity(0.2))
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    Button(action: {
+                        // Call action
+                    }) {
+                        Image(systemName: "phone.arrow.up.right")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.gray)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                    }
+                }
+                Spacer()
+                
+                
+                
+            }
 
-            }
-            .overlay(alignment: .top) {
-                ZStack{
-                    Rectangle()
-                        .frame(width: 300, height: 100)
-                        .clipShape(.rect(cornerRadii: RectangleCornerRadii(topLeading: 20, bottomLeading: 20, bottomTrailing: 20, topTrailing: 20)))
-                        .foregroundColor(.white)
-                    Text("Current Location")
-                }
-                .padding()
-            }
-            
-            HStack{
-                Circle()
-                    .foregroundColor(.white)
-                    .frame(width: 50)
-                Text("Syafiqah")
-                    
-                Spacer().frame(width: 100)
-                Button {
-                    
-                } label: {
-                    Text("Call")
-                }
-                .padding()
-            }
-            .frame(width: 320, height: 70)
-            .background(Color.gray)
-            .cornerRadius(20)
-            
+        } else {
+           NoAlertsView()
         }
     }
 }
 
+
+
 #Preview {
     LiveTrackView()
 }
-
