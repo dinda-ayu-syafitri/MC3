@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct InputPinComponent: View {
-    @State private var pin: String = ""
+//    @State private var pin: String = ""
+    @Binding var pin: String
     @FocusState private var isTextFieldFocused: Bool
     
     var body: some View {
@@ -64,5 +65,6 @@ struct PinBox: View {
 }
 
 #Preview {
-    InputPinComponent()
+//    InputPinComponent()
+    InputPinComponent(pin: .constant(""))
 }
