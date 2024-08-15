@@ -50,7 +50,7 @@ class NotificationManager {
         content.sound = .default
         content.categoryIdentifier = category
         
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 0.001, repeats: false))
         
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {

@@ -12,60 +12,47 @@ struct HomeView: View {
     @StateObject private var heartRateViewModel = HeartRateViewModel()
     @StateObject var watchToiOSConnector = WatchToiOSConnector()
     
+    
     var body: some View {
         VStack() {
-            
             Toggle(isOn: $heartRateViewModel.isEnableBackgroundDelivery, label: {
-                Text("Background tracking")
-            })
-            .padding()
+                Text("Automatic alert")
+                    .font(.headline)
+            }).padding()
             
             
-            //BPM text
-            HStack(spacing: heartRateViewModel.heartRateModel.heartRate == 0 ? 0 : 7) {
+            // BPM text
+            HStack(spacing: 7) {
                 
                 Text(heartRateViewModel.heartRateModel.heartRate == 0 ? "--" : "\(Int(heartRateViewModel.heartRateModel.heartRate))")
+                    .font(.largeTitle)
                 
                 HStack(spacing: 1) {
-                    // Display the text "BPM".
                     Text("BPM")
+                        .font(.headline)
                     Image(systemName: "heart.fill")
                         .foregroundColor(.red)
                         .frame(width: 24, height: 22)
                 }
             }
             
-            
-            //SOS button
-            Button {
-                //                heartRateViewModel.sendSOSAlert = true
+            // SOS button
+            Button(action: {
                 watchToiOSConnector.sendTriggerToiOS()
-                
-            } label: {
-                Circle()
+            }) {
+                RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
                     .foregroundColor(.pink)
-                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                    .frame(width: 120, height: 120)
                     .overlay(
-                        Text("SOS")
-                            .fontWeight(.bold)
-                            .foregroundColor(.primary)
+                        Text("Activate SOS Alert")
+                            .fontWeight(.medium)
+                            .foregroundColor(.white)
                     )
             }
             .buttonStyle(PlainButtonStyle())
-            
         }
         .padding()
-        .ignoresSafeArea()
-        .sheet(isPresented: $heartRateViewModel.isSOSCountdownActive ) {
-            Text("setting automatic alert page") //isPresentednya blm diganti jg
-        }
-        .onAppear {
-            // start the heart rate query (salah satu aja bg/foreground)
-            if heartRateViewModel.isEnableBackgroundDelivery == false {
-                heartRateViewModel.fetchHeartRateDataForeground()
-            }
-        }
-        
+        .navigationTitle("Home")
     }
 }
 
