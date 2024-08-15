@@ -21,6 +21,7 @@
 		DD4C77552C6A631C00CEDFB2 /* PublisherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C77542C6A631C00CEDFB2 /* PublisherView.swift */; };
 		DD4C775A2C6B017A00CEDFB2 /* SocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C77592C6B017A00CEDFB2 /* SocketHelper.swift */; };
 		DD4C775C2C6B0C0500CEDFB2 /* LocationManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C775B2C6B0C0500CEDFB2 /* LocationManagerViewModel.swift */; };
+		DD5574252C6DE175008F9B98 /* InputPinComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5574242C6DE175008F9B98 /* InputPinComponent.swift */; };
 		DD6D7FDC2C6C5DA50023A499 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DD6D7FDB2C6C5DA50023A499 /* FirebaseFirestore */; };
 		DD6D7FDE2C6CC42C0023A499 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FDD2C6CC42C0023A499 /* User.swift */; };
 		DD6D7FE02C6CC8E80023A499 /* EmergencyContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FDF2C6CC8E80023A499 /* EmergencyContact.swift */; };
@@ -95,6 +96,7 @@
 		DD4C77542C6A631C00CEDFB2 /* PublisherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherView.swift; sourceTree = "<group>"; };
 		DD4C77592C6B017A00CEDFB2 /* SocketHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketHelper.swift; sourceTree = "<group>"; };
 		DD4C775B2C6B0C0500CEDFB2 /* LocationManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewModel.swift; sourceTree = "<group>"; };
+		DD5574242C6DE175008F9B98 /* InputPinComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPinComponent.swift; sourceTree = "<group>"; };
 		DD6D7FDD2C6CC42C0023A499 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = MC3/Presentation/Homepage/User.swift; sourceTree = SOURCE_ROOT; };
 		DD6D7FDF2C6CC8E80023A499 /* EmergencyContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmergencyContact.swift; path = MC3/Presentation/Homepage/EmergencyContact.swift; sourceTree = SOURCE_ROOT; };
 		DD6D7FE22C6CCE8D0023A499 /* FirebaseServiceDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseServiceDataSourceProtocol.swift; path = MC3/Presentation/Homepage/FirebaseServiceDataSourceProtocol.swift; sourceTree = SOURCE_ROOT; };
@@ -324,6 +326,7 @@
 		2058D16B2C65C99400D0557D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DD5574232C6DE15D008F9B98 /* ReusableComponents */,
 				DD6D7FF82C6D1BC50023A499 /* LiveTrack */,
 				DDEB4B262C68D97200375460 /* Homepage */,
 				DDEB4B0E2C68C31A00375460 /* Authentication */,
@@ -412,6 +415,14 @@
 				DD4C77592C6B017A00CEDFB2 /* SocketHelper.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		DD5574232C6DE15D008F9B98 /* ReusableComponents */ = {
+			isa = PBXGroup;
+			children = (
+				DD5574242C6DE175008F9B98 /* InputPinComponent.swift */,
+			);
+			path = ReusableComponents;
 			sourceTree = "<group>";
 		};
 		DD6D7FDA2C6C5DA50023A499 /* Frameworks */ = {
@@ -653,6 +664,7 @@
 				DD6D7FE02C6CC8E80023A499 /* EmergencyContact.swift in Sources */,
 				DDEB4B232C68D07200375460 /* RandomNonceString.swift in Sources */,
 				DD6D800B2C6D23010023A499 /* UserDefaultUseCase.swift in Sources */,
+				DD5574252C6DE175008F9B98 /* InputPinComponent.swift in Sources */,
 				DD6D7FDE2C6CC42C0023A499 /* User.swift in Sources */,
 				DD6D80012C6D1F890023A499 /* UserDefaultDataSource.swift in Sources */,
 				DD6D80042C6D21690023A499 /* UserDefaultRepositoryProtocol.swift in Sources */,
