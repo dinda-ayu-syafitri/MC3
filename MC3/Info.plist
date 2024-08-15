@@ -17,6 +17,10 @@
 				<string>com.googleusercontent.apps.715783712109-5g24553veqj01j39tl2tdfusscsi3nfi</string>
 			</array>
 		</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
 	</array>
 </dict>
 </plist>
