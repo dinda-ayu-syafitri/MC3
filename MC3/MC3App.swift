@@ -7,9 +7,9 @@
 
 import Firebase
 import FirebaseMessaging
+import GoogleSignIn
 import SwiftData
 import SwiftUI
-import GoogleSignIn
 import UserNotifications
 
 class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate, ObservableObject {
@@ -38,6 +38,8 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
 
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         print("FCM Token: \(fcmToken ?? "")")
+        TokenManager.shared.fcmToken = fcmToken
+
 //        saveUserToFirebase(fcmToken: fcmToken)
     }
 
@@ -103,62 +105,34 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
     }
 
     func application(
-      _ app: UIApplication,
-      open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+        _ app: UIApplication,
+        open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]
     ) -> Bool {
-      var handled: Bool
+        var handled: Bool
 
-      handled = GIDSignIn.sharedInstance.handle(url)
-      if handled {
-        return true
-      }
+        handled = GIDSignIn.sharedInstance.handle(url)
+        if handled {
+            return true
+        }
 
-      // If not handled by this app, return false.
-      return false
+        // If not handled by this app, return false.
+        return false
     }
-
-//    func application(_ application: UIApplication,
-//                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
-//    ) -> Bool {
-//        FirebaseApp.configure()
-//        return true
-//    }
 }
 
 @main
 struct MC3App: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var messageNotifViewModel = MessageNotificationViewModel()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
-          .environmentObject(delegate)
+                .environmentObject(delegate)
                 .onOpenURL { url in
                     GIDSignIn.sharedInstance.handle(url)
                 }
+                .environmentObject(messageNotifViewModel)
         }
     }
 }
-
-//class AppDelegate: NSObject, UIApplicationDelegate {
-//    func application(
-//      _ app: UIApplication,
-//      open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]
-//    ) -> Bool {
-//      var handled: Bool
-//
-//      handled = GIDSignIn.sharedInstance.handle(url)
-//      if handled {
-//        return true
-//      }
-//
-//      // If not handled by this app, return false.
-//      return false
-//    }
-//    
-//    func application(_ application: UIApplication,
-//                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
-//    ) -> Bool {
-//        FirebaseApp.configure()
-//        return true
-//    }
-//}
