@@ -22,6 +22,7 @@
 		81D0790D2C6DE20A00ACE61E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D0790C2C6DE20A00ACE61E /* ProfileView.swift */; };
 		81D079112C6DEB7700ACE61E /* NoAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079102C6DEB7700ACE61E /* NoAlertsView.swift */; };
 		81D079132C6DF04E00ACE61E /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079122C6DF04E00ACE61E /* CountdownView.swift */; };
+		81D079152C6DFD1500ACE61E /* PinInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079142C6DFD1500ACE61E /* PinInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		81D0790C2C6DE20A00ACE61E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = MC3/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 		81D079102C6DEB7700ACE61E /* NoAlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoAlertsView.swift; path = MC3/NoAlertsView.swift; sourceTree = SOURCE_ROOT; };
 		81D079122C6DF04E00ACE61E /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountdownView.swift; path = MC3/CountdownView.swift; sourceTree = SOURCE_ROOT; };
+		81D079142C6DFD1500ACE61E /* PinInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PinInputView.swift; path = MC3/PinInputView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +288,7 @@
 				81D0790C2C6DE20A00ACE61E /* ProfileView.swift */,
 				81D079102C6DEB7700ACE61E /* NoAlertsView.swift */,
 				81D079122C6DF04E00ACE61E /* CountdownView.swift */,
+				81D079142C6DFD1500ACE61E /* PinInputView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				81D0790B2C6DE1F400ACE61E /* SOSView.swift in Sources */,
 				81D0790D2C6DE20A00ACE61E /* ProfileView.swift in Sources */,
 				2058D15D2C65C65200D0557D /* MC3App.swift in Sources */,
+				81D079152C6DFD1500ACE61E /* PinInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +484,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchMC3 Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 2RQ6LB993C;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = WatchMC3;
@@ -510,7 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchMC3 Watch App/Preview Content\"";
-				DEVELOPMENT_TEAM = 2RQ6LB993C;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = WatchMC3;
@@ -660,7 +664,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC3/Preview Content\"";
-				DEVELOPMENT_TEAM = 2RQ6LB993C;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -691,7 +695,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MC3/Preview Content\"";
-				DEVELOPMENT_TEAM = 2RQ6LB993C;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
