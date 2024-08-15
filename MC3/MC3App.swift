@@ -9,6 +9,7 @@ import Firebase
 import FirebaseMessaging
 import SwiftData
 import SwiftUI
+import GoogleSignIn
 import UserNotifications
 
 class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate, ObservableObject {
@@ -105,11 +106,37 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
 @main
 struct MC3App: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(delegate)
+          .environmentObject(delegate)
+                .onOpenURL { url in
+                    GIDSignIn.sharedInstance.handle(url)
+                }
         }
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(
+      _ app: UIApplication,
+      open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+    ) -> Bool {
+      var handled: Bool
+
+      handled = GIDSignIn.sharedInstance.handle(url)
+      if handled {
+        return true
+      }
+
+      // If not handled by this app, return false.
+      return false
+    }
+    
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
+    ) -> Bool {
+        FirebaseApp.configure()
+        return true
     }
 }
