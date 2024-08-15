@@ -101,6 +101,28 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
 
         // Typically, the custom data should be accessed within userNotificationCenter delegate methods
     }
+
+    func application(
+      _ app: UIApplication,
+      open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+    ) -> Bool {
+      var handled: Bool
+
+      handled = GIDSignIn.sharedInstance.handle(url)
+      if handled {
+        return true
+      }
+
+      // If not handled by this app, return false.
+      return false
+    }
+
+//    func application(_ application: UIApplication,
+//                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
+//    ) -> Bool {
+//        FirebaseApp.configure()
+//        return true
+//    }
 }
 
 @main
@@ -117,26 +139,26 @@ struct MC3App: App {
     }
 }
 
-class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(
-      _ app: UIApplication,
-      open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]
-    ) -> Bool {
-      var handled: Bool
-
-      handled = GIDSignIn.sharedInstance.handle(url)
-      if handled {
-        return true
-      }
-
-      // If not handled by this app, return false.
-      return false
-    }
-    
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
-    ) -> Bool {
-        FirebaseApp.configure()
-        return true
-    }
-}
+//class AppDelegate: NSObject, UIApplicationDelegate {
+//    func application(
+//      _ app: UIApplication,
+//      open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+//    ) -> Bool {
+//      var handled: Bool
+//
+//      handled = GIDSignIn.sharedInstance.handle(url)
+//      if handled {
+//        return true
+//      }
+//
+//      // If not handled by this app, return false.
+//      return false
+//    }
+//    
+//    func application(_ application: UIApplication,
+//                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
+//    ) -> Bool {
+//        FirebaseApp.configure()
+//        return true
+//    }
+//}
