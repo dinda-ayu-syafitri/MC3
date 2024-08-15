@@ -145,6 +145,7 @@ struct ProfileRow: View {
         .background(Color.white)
         .cornerRadius(10)
         .padding(.horizontal)
+
     }
 }
 

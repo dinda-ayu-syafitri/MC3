@@ -2,11 +2,10 @@
 //  SOSView.swift
 //  MC3
 //
-//  Created by Giventus Marco Victorio Handojo on 15/08/24.
+//  Created by Giventus Marco Victorio Handojo on 14/08/24.
 //
 
 import SwiftUI
-
 
 struct SOSView: View {
     @State private var pulse = false
