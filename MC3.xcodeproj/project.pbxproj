@@ -24,6 +24,12 @@
 		207BA47F2C6D8D2700B9B3FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 207BA47E2C6D8D2700B9B3FC /* GoogleService-Info.plist */; };
 		207BA4822C6D905D00B9B3FC /* MessageNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */; };
 		207BA4842C6D930200B9B3FC /* AddEmergencyContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */; };
+		20F585082C6DD28F00114E3D /* AddContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F585022C6DD28F00114E3D /* AddContactsView.swift */; };
+		20F585092C6DD28F00114E3D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F585032C6DD28F00114E3D /* HomeView.swift */; };
+		20F5850A2C6DD28F00114E3D /* LiveTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F585042C6DD28F00114E3D /* LiveTrackView.swift */; };
+		20F5850B2C6DD28F00114E3D /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F585052C6DD28F00114E3D /* SOSView.swift */; };
+		20F5850C2C6DD28F00114E3D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F585062C6DD28F00114E3D /* OnboardingView.swift */; };
+		20F5850D2C6DD28F00114E3D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F585072C6DD28F00114E3D /* ProfileView.swift */; };
 		81D078F92C6C52FC00ACE61E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078F82C6C52FC00ACE61E /* OnboardingView.swift */; };
 		81D078FD2C6C537E00ACE61E /* AddContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078FC2C6C537E00ACE61E /* AddContactsView.swift */; };
 		81D078FF2C6C53A100ACE61E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078FE2C6C53A100ACE61E /* HomeView.swift */; };
@@ -74,6 +80,12 @@
 		207BA47E2C6D8D2700B9B3FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotificationViewModel.swift; sourceTree = "<group>"; };
 		207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmergencyContactView.swift; sourceTree = "<group>"; };
+		20F585022C6DD28F00114E3D /* AddContactsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactsView.swift; sourceTree = "<group>"; };
+		20F585032C6DD28F00114E3D /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		20F585042C6DD28F00114E3D /* LiveTrackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveTrackView.swift; sourceTree = "<group>"; };
+		20F585052C6DD28F00114E3D /* SOSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSView.swift; sourceTree = "<group>"; };
+		20F585062C6DD28F00114E3D /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		20F585072C6DD28F00114E3D /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		81D078F82C6C52FC00ACE61E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = MC3/OnboardingView.swift; sourceTree = SOURCE_ROOT; };
 		81D078FC2C6C537E00ACE61E /* AddContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddContactsView.swift; path = MC3/AddContactsView.swift; sourceTree = SOURCE_ROOT; };
 		81D078FE2C6C53A100ACE61E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = MC3/HomeView.swift; sourceTree = SOURCE_ROOT; };
@@ -249,6 +261,12 @@
 		2058D15B2C65C65200D0557D /* MC3 */ = {
 			isa = PBXGroup;
 			children = (
+				20F585022C6DD28F00114E3D /* AddContactsView.swift */,
+				20F585032C6DD28F00114E3D /* HomeView.swift */,
+				20F585042C6DD28F00114E3D /* LiveTrackView.swift */,
+				20F585062C6DD28F00114E3D /* OnboardingView.swift */,
+				20F585072C6DD28F00114E3D /* ProfileView.swift */,
+				20F585052C6DD28F00114E3D /* SOSView.swift */,
 				207BA47E2C6D8D2700B9B3FC /* GoogleService-Info.plist */,
 				203AB9A52C6C712B00D7AD86 /* Info.plist */,
 				203AB9A42C6C710A00D7AD86 /* MC3.entitlements */,
@@ -500,17 +518,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20F5850A2C6DD28F00114E3D /* LiveTrackView.swift in Sources */,
 				81D079052C6C53BF00ACE61E /* ProfileView.swift in Sources */,
+				20F585092C6DD28F00114E3D /* HomeView.swift in Sources */,
 				81D079012C6C53AD00ACE61E /* LiveTrackView.swift in Sources */,
 				81D078F92C6C52FC00ACE61E /* OnboardingView.swift in Sources */,
+				20F585082C6DD28F00114E3D /* AddContactsView.swift in Sources */,
 				2058D15F2C65C65200D0557D /* ContentView.swift in Sources */,
 				207BA4822C6D905D00B9B3FC /* MessageNotificationViewModel.swift in Sources */,
+				20F5850B2C6DD28F00114E3D /* SOSView.swift in Sources */,
 				201FB0742C6D9AE400058A95 /* EmergencyContactViewModel.swift in Sources */,
+				20F5850D2C6DD28F00114E3D /* ProfileView.swift in Sources */,
 				2058D15D2C65C65200D0557D /* MC3App.swift in Sources */,
 				207BA4842C6D930200B9B3FC /* AddEmergencyContactView.swift in Sources */,
 				201FB0762C6DC32F00058A95 /* ContactPickerView.swift in Sources */,
 				81D078FF2C6C53A100ACE61E /* HomeView.swift in Sources */,
 				81D079032C6C53B700ACE61E /* SOSView.swift in Sources */,
+				20F5850C2C6DD28F00114E3D /* OnboardingView.swift in Sources */,
 				81D078FD2C6C537E00ACE61E /* AddContactsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
