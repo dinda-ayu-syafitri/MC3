@@ -21,6 +21,7 @@
 		81D0790B2C6DE1F400ACE61E /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D0790A2C6DE1F400ACE61E /* SOSView.swift */; };
 		81D0790D2C6DE20A00ACE61E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D0790C2C6DE20A00ACE61E /* ProfileView.swift */; };
 		81D079112C6DEB7700ACE61E /* NoAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079102C6DEB7700ACE61E /* NoAlertsView.swift */; };
+		81D079132C6DF04E00ACE61E /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079122C6DF04E00ACE61E /* CountdownView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		81D0790A2C6DE1F400ACE61E /* SOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SOSView.swift; path = MC3/SOSView.swift; sourceTree = SOURCE_ROOT; };
 		81D0790C2C6DE20A00ACE61E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = MC3/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 		81D079102C6DEB7700ACE61E /* NoAlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoAlertsView.swift; path = MC3/NoAlertsView.swift; sourceTree = SOURCE_ROOT; };
+		81D079122C6DF04E00ACE61E /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountdownView.swift; path = MC3/CountdownView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +285,7 @@
 				81D0790A2C6DE1F400ACE61E /* SOSView.swift */,
 				81D0790C2C6DE20A00ACE61E /* ProfileView.swift */,
 				81D079102C6DEB7700ACE61E /* NoAlertsView.swift */,
+				81D079122C6DF04E00ACE61E /* CountdownView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 			files = (
 				81D079072C6DE1E100ACE61E /* HomeView.swift in Sources */,
 				81D079112C6DEB7700ACE61E /* NoAlertsView.swift in Sources */,
+				81D079132C6DF04E00ACE61E /* CountdownView.swift in Sources */,
 				2058D15F2C65C65200D0557D /* ContentView.swift in Sources */,
 				81D079092C6DE1EB00ACE61E /* LiveTrackView.swift in Sources */,
 				81D0790B2C6DE1F400ACE61E /* SOSView.swift in Sources */,

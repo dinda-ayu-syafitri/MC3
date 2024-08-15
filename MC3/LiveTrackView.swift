@@ -10,8 +10,8 @@ import MapKit
 
 struct LiveTrackView: View {
     @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194), // Default to San Francisco
-        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+        center: CLLocationCoordinate2D(latitude: -6.302062993687138, longitude: 106.65229908106305),
+        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
     )
     
     var showLiveTrack = true
@@ -24,7 +24,7 @@ struct LiveTrackView: View {
                     .bold()
                     .foregroundColor(.red)
                 
-                Map(coordinateRegion: $region)
+                Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: .constant(.follow))
                     .frame(height: 550)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .padding()
@@ -92,5 +92,3 @@ struct LiveTrackView: View {
 #Preview {
     LiveTrackView()
 }
-
-
