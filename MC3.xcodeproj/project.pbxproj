@@ -12,6 +12,8 @@
 		20190CF82C6A336B001A2AB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CF72C6A336B001A2AB6 /* Assets.xcassets */; };
 		20190CFB2C6A336B001A2AB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */; };
 		20190CFE2C6A336B001A2AB6 /* WatchMC3 Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 20190CF12C6A336A001A2AB6 /* WatchMC3 Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		201FB0742C6D9AE400058A95 /* EmergencyContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201FB0732C6D9AE400058A95 /* EmergencyContactViewModel.swift */; };
+		201FB0762C6DC32F00058A95 /* ContactPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201FB0752C6DC32F00058A95 /* ContactPickerView.swift */; };
 		2058D15D2C65C65200D0557D /* MC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15C2C65C65200D0557D /* MC3App.swift */; };
 		2058D15F2C65C65200D0557D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15E2C65C65200D0557D /* ContentView.swift */; };
 		2058D1612C65C65400D0557D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1602C65C65400D0557D /* Assets.xcassets */; };
@@ -21,6 +23,7 @@
 		207BA47B2C6CF90E00B9B3FC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 207BA47A2C6CF90E00B9B3FC /* FirebaseMessaging */; };
 		207BA47F2C6D8D2700B9B3FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 207BA47E2C6D8D2700B9B3FC /* GoogleService-Info.plist */; };
 		207BA4822C6D905D00B9B3FC /* MessageNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */; };
+		207BA4842C6D930200B9B3FC /* AddEmergencyContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,8 @@
 		20190CF52C6A336B001A2AB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		20190CF72C6A336B001A2AB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		201FB0732C6D9AE400058A95 /* EmergencyContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewModel.swift; sourceTree = "<group>"; };
+		201FB0752C6DC32F00058A95 /* ContactPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPickerView.swift; sourceTree = "<group>"; };
 		203AB9A42C6C710A00D7AD86 /* MC3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MC3.entitlements; sourceTree = "<group>"; };
 		203AB9A52C6C712B00D7AD86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2058D1592C65C65200D0557D /* MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +67,7 @@
 		2058D1632C65C65400D0557D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		207BA47E2C6D8D2700B9B3FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotificationViewModel.swift; sourceTree = "<group>"; };
+		207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmergencyContactView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +206,16 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		201FB0722C6D9AB900058A95 /* EmergencyContact */ = {
+			isa = PBXGroup;
+			children = (
+				207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */,
+				201FB0732C6D9AE400058A95 /* EmergencyContactViewModel.swift */,
+				201FB0752C6DC32F00058A95 /* ContactPickerView.swift */,
+			);
+			path = EmergencyContact;
+			sourceTree = "<group>";
+		};
 		2058D1502C65C65200D0557D = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +272,7 @@
 		2058D16B2C65C99400D0557D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				201FB0722C6D9AB900058A95 /* EmergencyContact */,
 				207BA4802C6D903500B9B3FC /* MessageNotification */,
 				2058D16F2C65C9CD00D0557D /* ViewModels */,
 				2058D16E2C65C9C400D0557D /* Views */,
@@ -467,7 +484,10 @@
 			files = (
 				2058D15F2C65C65200D0557D /* ContentView.swift in Sources */,
 				207BA4822C6D905D00B9B3FC /* MessageNotificationViewModel.swift in Sources */,
+				201FB0742C6D9AE400058A95 /* EmergencyContactViewModel.swift in Sources */,
 				2058D15D2C65C65200D0557D /* MC3App.swift in Sources */,
+				207BA4842C6D930200B9B3FC /* AddEmergencyContactView.swift in Sources */,
+				201FB0762C6DC32F00058A95 /* ContactPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,6 +695,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MC3/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "We need your contacts information for the Emergency Contact Access";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -707,6 +728,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MC3/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "We need your contacts information for the Emergency Contact Access";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
