@@ -15,6 +15,7 @@ class User: Identifiable, Equatable, Hashable {
     var phoneNumber: Int?
     var fullName: String
     var fcm: String
+    var pin: [String]
     var emegencyContacts: [EmergencyContact]?
     
     init(id: UUID = UUID(), 
@@ -22,6 +23,7 @@ class User: Identifiable, Equatable, Hashable {
          phoneNumber: Int? = nil,
          fullName: String = "",
          fcm: String = "",
+         pin: [String] = ["", "", "", ""],
          emegencyContacts: [EmergencyContact]? = nil
     ) {
         self.id = id
@@ -29,6 +31,7 @@ class User: Identifiable, Equatable, Hashable {
         self.phoneNumber = phoneNumber
         self.fullName = fullName
         self.fcm = fcm
+        self.pin = pin
         self.emegencyContacts = emegencyContacts
     }
     
