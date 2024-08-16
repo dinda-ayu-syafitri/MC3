@@ -8,40 +8,49 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var reachable = "No"
-    @StateObject var watchConnector = iOSToWatchConnector()
+//     @State var reachable = "No"
+//     @StateObject var watchConnector = iOSToWatchConnector()
     
-    var body: some View {
-        VStack {
-            Spacer()
+//     var body: some View {
+//         VStack {
+//             Spacer()
             
-            if watchConnector.messageText == "sosAlert" {
-                Text(watchConnector.messageText)
-            }
+//             if watchConnector.messageText == "sosAlert" {
+//                 Text(watchConnector.messageText)
+//             }
             
             
-            Spacer()
+//             Spacer()
             
-            Text("Reachable \(reachable)")
+//             Text("Reachable \(reachable)")
             
-            Button(action: {
-                if watchConnector.session.isReachable{
-                    self.reachable = "Yes"
-                }
-                else{
-                    self.reachable = "No"
-                }
+//             Button(action: {
+//                 if watchConnector.session.isReachable{
+//                     self.reachable = "Yes"
+//                 }
+//                 else{
+//                     self.reachable = "No"
+//                 }
                 
-            }) {
-                Text("Update")
-            }
+//             }) {
+//                 Text("Update")
+//             }
             
-            Spacer()
+//             Spacer()
             
             //            Image(systemName: "globe")
             //                .imageScale(.large)
             //                .foregroundStyle(.tint)
             //            Text("Hello, world!")
+    @AppStorage(KeyUserDefaultEnum.status.toString) private var logStatus: Bool = false
+
+    var body: some View {
+        ZStack {
+            if logStatus {
+                HomepageView()
+            } else {
+                LoginView()
+            }
         }
         .padding()
     }
