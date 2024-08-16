@@ -17,23 +17,6 @@
 		2058D15F2C65C65200D0557D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15E2C65C65200D0557D /* ContentView.swift */; };
 		2058D1612C65C65400D0557D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1602C65C65400D0557D /* Assets.xcassets */; };
 		2058D1642C65C65400D0557D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1632C65C65400D0557D /* Preview Assets.xcassets */; };
-		DA1908392C6E0EA40087FA23 /* EmergencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1908382C6E0EA40087FA23 /* EmergencyViewModel.swift */; };
-		DA19083F2C6E44C20087FA23 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19083E2C6E44C20087FA23 /* Router.swift */; };
-		DA8B4A2C2C6B4BDF00BC5987 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A2B2C6B4BDF00BC5987 /* HomeView.swift */; };
-		DA8B4A2F2C6B4E3500BC5987 /* HeartRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A2E2C6B4E3500BC5987 /* HeartRateViewModel.swift */; };
-		DA8B4A312C6B503400BC5987 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */; };
-		DA8B4A332C6B50AD00BC5987 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A322C6B50AD00BC5987 /* HeartRateManager.swift */; };
-		DA8B4A352C6B516500BC5987 /* HeartRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A342C6B516500BC5987 /* HeartRateModel.swift */; };
-		DA8B4A3E2C6B923400BC5987 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */; };
-		DA8B4A402C6B935F00BC5987 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */; };
-		DA8B4A422C6BA3FE00BC5987 /* WatchToiOSConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A412C6BA3FE00BC5987 /* WatchToiOSConnector.swift */; };
-		DA8B4A442C6BA48F00BC5987 /* iOSToWatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A432C6BA48F00BC5987 /* iOSToWatchConnector.swift */; };
-		DA8B4A472C6BA53F00BC5987 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */; };
-		DA8B4A4B2C6BAE9D00BC5987 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */; };
-		DA8B4A512C6CC07E00BC5987 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */; };
-		DA8B4A522C6CC08100BC5987 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */; };
-		DA8B4A582C6CCA0D00BC5987 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A572C6CCA0D00BC5987 /* HomeViewModel.swift */; };
-		DA8B4A5A2C6D1B5900BC5987 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A592C6D1B5900BC5987 /* CountdownView.swift */; };
 		206A2CFF2C6EA40500287FD0 /* FCMTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206A2CFE2C6EA40500287FD0 /* FCMTokenManager.swift */; };
 		207BA47B2C6CF90E00B9B3FC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 207BA47A2C6CF90E00B9B3FC /* FirebaseMessaging */; };
 		207BA4822C6D905D00B9B3FC /* MessageNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */; };
@@ -62,6 +45,23 @@
 		81D079112C6DEB7700ACE61E /* NoAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079102C6DEB7700ACE61E /* NoAlertsView.swift */; };
 		81D079132C6DF04E00ACE61E /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079122C6DF04E00ACE61E /* CountdownView.swift */; };
 		81D079152C6DFD1500ACE61E /* PinInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079142C6DFD1500ACE61E /* PinInputView.swift */; };
+		DA1908392C6E0EA40087FA23 /* EmergencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1908382C6E0EA40087FA23 /* EmergencyViewModel.swift */; };
+		DA19083F2C6E44C20087FA23 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19083E2C6E44C20087FA23 /* Router.swift */; };
+		DA8B4A2C2C6B4BDF00BC5987 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A2B2C6B4BDF00BC5987 /* HomeView.swift */; };
+		DA8B4A2F2C6B4E3500BC5987 /* HeartRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A2E2C6B4E3500BC5987 /* HeartRateViewModel.swift */; };
+		DA8B4A312C6B503400BC5987 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */; };
+		DA8B4A332C6B50AD00BC5987 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A322C6B50AD00BC5987 /* HeartRateManager.swift */; };
+		DA8B4A352C6B516500BC5987 /* HeartRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A342C6B516500BC5987 /* HeartRateModel.swift */; };
+		DA8B4A3E2C6B923400BC5987 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */; };
+		DA8B4A402C6B935F00BC5987 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */; };
+		DA8B4A422C6BA3FE00BC5987 /* WatchToiOSConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A412C6BA3FE00BC5987 /* WatchToiOSConnector.swift */; };
+		DA8B4A442C6BA48F00BC5987 /* iOSToWatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A432C6BA48F00BC5987 /* iOSToWatchConnector.swift */; };
+		DA8B4A472C6BA53F00BC5987 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */; };
+		DA8B4A4B2C6BAE9D00BC5987 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */; };
+		DA8B4A512C6CC07E00BC5987 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */; };
+		DA8B4A522C6CC08100BC5987 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */; };
+		DA8B4A582C6CCA0D00BC5987 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A572C6CCA0D00BC5987 /* HomeViewModel.swift */; };
+		DA8B4A5A2C6D1B5900BC5987 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A592C6D1B5900BC5987 /* CountdownView.swift */; };
 		DD4C77512C6A59A800CEDFB2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = DD4C77502C6A59A800CEDFB2 /* SocketIO */; };
 		DD4C775A2C6B017A00CEDFB2 /* SocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C77592C6B017A00CEDFB2 /* SocketHelper.swift */; };
 		DD5574252C6DE175008F9B98 /* InputPinComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5574242C6DE175008F9B98 /* InputPinComponent.swift */; };
@@ -135,22 +135,6 @@
 		2058D15E2C65C65200D0557D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2058D1602C65C65400D0557D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2058D1632C65C65400D0557D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DA1908382C6E0EA40087FA23 /* EmergencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmergencyViewModel.swift; path = Views/Home/EmergencyViewModel.swift; sourceTree = SOURCE_ROOT; };
-		DA19083E2C6E44C20087FA23 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Router.swift; path = Views/Home/Router.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A2B2C6B4BDF00BC5987 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Views/Home/HomeView.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A2E2C6B4E3500BC5987 /* HeartRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateViewModel.swift; path = Views/Home/HeartRateViewModel.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthKitManager.swift; path = Views/Home/HealthKitManager.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A322C6B50AD00BC5987 /* HeartRateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateManager.swift; path = Views/Home/HeartRateManager.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A342C6B516500BC5987 /* HeartRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateModel.swift; path = Views/Home/HeartRateModel.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A362C6B550100BC5987 /* WatchMC3 Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WatchMC3 Watch App.entitlements"; sourceTree = "<group>"; };
-		DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationManager.swift; path = Shared/NotificationManager.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationDelegate.swift; path = Shared/NotificationDelegate.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A412C6BA3FE00BC5987 /* WatchToiOSConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchToiOSConnector.swift; path = MC3/WatchToiOSConnector.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A432C6BA48F00BC5987 /* iOSToWatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = iOSToWatchConnector.swift; path = MC3/Common/iOSToWatchConnector.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS10.2.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
-		DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
-		DA8B4A572C6CCA0D00BC5987 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = Views/Home/HomeViewModel.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A592C6D1B5900BC5987 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountdownView.swift; path = Views/CountdownView.swift; sourceTree = SOURCE_ROOT; };
 		206A2CFE2C6EA40500287FD0 /* FCMTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMTokenManager.swift; sourceTree = "<group>"; };
 		207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotificationViewModel.swift; sourceTree = "<group>"; };
 		207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmergencyContactView.swift; sourceTree = "<group>"; };
@@ -178,6 +162,22 @@
 		81D079102C6DEB7700ACE61E /* NoAlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoAlertsView.swift; path = MC3/NoAlertsView.swift; sourceTree = SOURCE_ROOT; };
 		81D079122C6DF04E00ACE61E /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountdownView.swift; path = MC3/CountdownView.swift; sourceTree = SOURCE_ROOT; };
 		81D079142C6DFD1500ACE61E /* PinInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PinInputView.swift; path = MC3/PinInputView.swift; sourceTree = SOURCE_ROOT; };
+		DA1908382C6E0EA40087FA23 /* EmergencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmergencyViewModel.swift; path = Views/Home/EmergencyViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DA19083E2C6E44C20087FA23 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Router.swift; path = Views/Home/Router.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A2B2C6B4BDF00BC5987 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Views/Home/HomeView.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A2E2C6B4E3500BC5987 /* HeartRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateViewModel.swift; path = Views/Home/HeartRateViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthKitManager.swift; path = Views/Home/HealthKitManager.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A322C6B50AD00BC5987 /* HeartRateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateManager.swift; path = Views/Home/HeartRateManager.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A342C6B516500BC5987 /* HeartRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateModel.swift; path = Views/Home/HeartRateModel.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A362C6B550100BC5987 /* WatchMC3 Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WatchMC3 Watch App.entitlements"; sourceTree = "<group>"; };
+		DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationManager.swift; path = Shared/NotificationManager.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationDelegate.swift; path = Shared/NotificationDelegate.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A412C6BA3FE00BC5987 /* WatchToiOSConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchToiOSConnector.swift; path = MC3/WatchToiOSConnector.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A432C6BA48F00BC5987 /* iOSToWatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = iOSToWatchConnector.swift; path = MC3/Common/iOSToWatchConnector.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS10.2.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
+		DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		DA8B4A572C6CCA0D00BC5987 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = Views/Home/HomeViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A592C6D1B5900BC5987 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountdownView.swift; path = Views/CountdownView.swift; sourceTree = SOURCE_ROOT; };
 		DD4C77592C6B017A00CEDFB2 /* SocketHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketHelper.swift; sourceTree = "<group>"; };
 		DD5574242C6DE175008F9B98 /* InputPinComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPinComponent.swift; sourceTree = "<group>"; };
 		DD6D7FDD2C6CC42C0023A499 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = MC3/Presentation/Homepage/User.swift; sourceTree = SOURCE_ROOT; };
@@ -374,6 +374,7 @@
 				20190CF22C6A336A001A2AB6 /* WatchMC3 Watch App */,
 				2058D15A2C65C65200D0557D /* Products */,
 				DD6D7FDA2C6C5DA50023A499 /* Frameworks */,
+				209E78782C6F42F200510BD4 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -545,6 +546,24 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		207BA4802C6D903500B9B3FC /* MessageNotification */ = {
+			isa = PBXGroup;
+			children = (
+				207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */,
+				206A2CFE2C6EA40500287FD0 /* FCMTokenManager.swift */,
+			);
+			path = MessageNotification;
+			sourceTree = "<group>";
+		};
+		209E78782C6F42F200510BD4 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */,
+				DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		DA8B4A2D2C6B4D2D00BC5987 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,13 +575,13 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		207BA4802C6D903500B9B3FC /* MessageNotification */ = {
+		DA8B4A502C6CBEF500BC5987 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */,
-				206A2CFE2C6EA40500287FD0 /* FCMTokenManager.swift */,
+				DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */,
+				DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */,
 			);
-			path = MessageNotification;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		DD4C77582C6B016D00CEDFB2 /* Helper */ = {
@@ -586,15 +605,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DA8B4A502C6CBEF500BC5987 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */,
-				DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */,
-			);
-			path = Shared;
 			sourceTree = "<group>";
 		};
 		DD6D7FE12C6CCE2E0023A499 /* Remote */ = {
