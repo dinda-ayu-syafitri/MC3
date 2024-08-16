@@ -17,7 +17,8 @@ class HeartRateViewModel: ObservableObject {
     @Published var countdownIsActive: Bool = false
     @Published var timeRemaining: Int = 10
     private var timer: Timer?
-    
+    var messageViewModel = MessageNotificationViewModel()
+
     private var heartRate: Double = 0.0
     private var heartRates: [Double] = []
         
@@ -186,6 +187,8 @@ class HeartRateViewModel: ObservableObject {
 //                body: "Your heart rate is at \(Int(self.heartRateModel.heartRate)) BPM. SOS message will be sent in (coundown)",
                 category: "SOS_Category"
             )
+
+        messageViewModel.sendPushNotification(token: "dOBwwUKgGk2DsuqKBehzRm:APA91bFiskcpmyBJ8KUlZR4gkid1vjFrKCum3WeNZzXJkNccyhktizZXj8hEL45rDssGT121ldhlSduipOLsbxExKG5eDzuEKBmlnzojcDCnpRJU7N76l5-2mjnUOrdGjeAj16MJjudo", title: "Helppp!!! Wooiii", body: "Notif dari watch ke hp ke receiver", locationLink: "Ini nanti locaation link", senderFCM: "sender fcm")
 //        }
         
     }

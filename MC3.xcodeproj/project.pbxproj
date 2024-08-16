@@ -21,6 +21,7 @@
 		207BA47B2C6CF90E00B9B3FC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 207BA47A2C6CF90E00B9B3FC /* FirebaseMessaging */; };
 		207BA4822C6D905D00B9B3FC /* MessageNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */; };
 		207BA4842C6D930200B9B3FC /* AddEmergencyContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */; };
+		209E78792C6F563C00510BD4 /* MessageNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */; };
 		20D4DA9E2C6E59A4009E73D7 /* NoAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA972C6E59A4009E73D7 /* NoAlertsView.swift */; };
 		20D4DA9F2C6E59A4009E73D7 /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA982C6E59A4009E73D7 /* SOSView.swift */; };
 		20D4DAA02C6E59A4009E73D7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA992C6E59A4009E73D7 /* HomeView.swift */; };
@@ -828,6 +829,7 @@
 				20190CF42C6A336B001A2AB6 /* WatchMC3App.swift in Sources */,
 				DA19083F2C6E44C20087FA23 /* Router.swift in Sources */,
 				DA8B4A422C6BA3FE00BC5987 /* WatchToiOSConnector.swift in Sources */,
+				209E78792C6F563C00510BD4 /* MessageNotificationViewModel.swift in Sources */,
 				DA1908392C6E0EA40087FA23 /* EmergencyViewModel.swift in Sources */,
 				DA8B4A332C6B50AD00BC5987 /* HeartRateManager.swift in Sources */,
 			);
