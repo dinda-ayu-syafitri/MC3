@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20190CF42C6A336B001A2AB6 /* WatchMC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20190CF32C6A336B001A2AB6 /* WatchMC3App.swift */; };
+		20190CF62C6A336B001A2AB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20190CF52C6A336B001A2AB6 /* ContentView.swift */; };
 		20190CF82C6A336B001A2AB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CF72C6A336B001A2AB6 /* Assets.xcassets */; };
 		20190CFB2C6A336B001A2AB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */; };
 		20190CFE2C6A336B001A2AB6 /* WatchMC3 Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 20190CF12C6A336A001A2AB6 /* WatchMC3 Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -17,85 +18,18 @@
 		2058D15F2C65C65200D0557D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15E2C65C65200D0557D /* ContentView.swift */; };
 		2058D1612C65C65400D0557D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1602C65C65400D0557D /* Assets.xcassets */; };
 		2058D1642C65C65400D0557D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1632C65C65400D0557D /* Preview Assets.xcassets */; };
-		206A2CFF2C6EA40500287FD0 /* FCMTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206A2CFE2C6EA40500287FD0 /* FCMTokenManager.swift */; };
+		207BA4772C6CF90E00B9B3FC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 207BA4762C6CF90E00B9B3FC /* FirebaseAuth */; };
+		207BA4792C6CF90E00B9B3FC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 207BA4782C6CF90E00B9B3FC /* FirebaseFirestore */; };
 		207BA47B2C6CF90E00B9B3FC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 207BA47A2C6CF90E00B9B3FC /* FirebaseMessaging */; };
+		207BA47F2C6D8D2700B9B3FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 207BA47E2C6D8D2700B9B3FC /* GoogleService-Info.plist */; };
 		207BA4822C6D905D00B9B3FC /* MessageNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */; };
 		207BA4842C6D930200B9B3FC /* AddEmergencyContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */; };
-		209E78792C6F563C00510BD4 /* MessageNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */; };
-		20D4DA9E2C6E59A4009E73D7 /* NoAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA972C6E59A4009E73D7 /* NoAlertsView.swift */; };
-		20D4DA9F2C6E59A4009E73D7 /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA982C6E59A4009E73D7 /* SOSView.swift */; };
-		20D4DAA02C6E59A4009E73D7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA992C6E59A4009E73D7 /* HomeView.swift */; };
-		20D4DAA12C6E59A4009E73D7 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA9A2C6E59A4009E73D7 /* CountdownView.swift */; };
-		20D4DAA22C6E59A4009E73D7 /* PinInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA9B2C6E59A4009E73D7 /* PinInputView.swift */; };
-		20D4DAA32C6E59A4009E73D7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA9C2C6E59A4009E73D7 /* ProfileView.swift */; };
-		20D4DAA42C6E59A4009E73D7 /* LiveTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA9D2C6E59A4009E73D7 /* LiveTrackView.swift */; };
-		20F585082C6DD28F00114E3D /* AddContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F585022C6DD28F00114E3D /* AddContactsView.swift */; };
-		20F5850C2C6DD28F00114E3D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F585062C6DD28F00114E3D /* OnboardingView.swift */; };
-		20F95A642C6E1073005B3DA1 /* HomepageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F95A632C6E1073005B3DA1 /* HomepageViewModel.swift */; };
-		20F95A652C6E1073005B3DA1 /* HomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F95A5F2C6E1073005B3DA1 /* HomepageView.swift */; };
-		20F95A662C6E1073005B3DA1 /* LocationManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F95A612C6E1073005B3DA1 /* LocationManagerViewModel.swift */; };
-		20F95A672C6E1073005B3DA1 /* ListenerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F95A602C6E1073005B3DA1 /* ListenerView.swift */; };
-		20F95A682C6E1073005B3DA1 /* PublisherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F95A622C6E1073005B3DA1 /* PublisherView.swift */; };
-		20F95A6A2C6E11A5005B3DA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20F95A692C6E11A5005B3DA1 /* GoogleService-Info.plist */; };
 		81D078F92C6C52FC00ACE61E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078F82C6C52FC00ACE61E /* OnboardingView.swift */; };
 		81D078FD2C6C537E00ACE61E /* AddContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078FC2C6C537E00ACE61E /* AddContactsView.swift */; };
-		81D079072C6DE1E100ACE61E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079062C6DE1E100ACE61E /* HomeView.swift */; };
-		81D079092C6DE1EB00ACE61E /* LiveTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079082C6DE1EB00ACE61E /* LiveTrackView.swift */; };
-		81D0790B2C6DE1F400ACE61E /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D0790A2C6DE1F400ACE61E /* SOSView.swift */; };
-		81D0790D2C6DE20A00ACE61E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D0790C2C6DE20A00ACE61E /* ProfileView.swift */; };
-		81D079112C6DEB7700ACE61E /* NoAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079102C6DEB7700ACE61E /* NoAlertsView.swift */; };
-		81D079132C6DF04E00ACE61E /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079122C6DF04E00ACE61E /* CountdownView.swift */; };
-		81D079152C6DFD1500ACE61E /* PinInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079142C6DFD1500ACE61E /* PinInputView.swift */; };
-		DA1908392C6E0EA40087FA23 /* EmergencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1908382C6E0EA40087FA23 /* EmergencyViewModel.swift */; };
-		DA19083F2C6E44C20087FA23 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19083E2C6E44C20087FA23 /* Router.swift */; };
-		DA8B4A2C2C6B4BDF00BC5987 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A2B2C6B4BDF00BC5987 /* HomeView.swift */; };
-		DA8B4A2F2C6B4E3500BC5987 /* HeartRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A2E2C6B4E3500BC5987 /* HeartRateViewModel.swift */; };
-		DA8B4A312C6B503400BC5987 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */; };
-		DA8B4A332C6B50AD00BC5987 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A322C6B50AD00BC5987 /* HeartRateManager.swift */; };
-		DA8B4A352C6B516500BC5987 /* HeartRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A342C6B516500BC5987 /* HeartRateModel.swift */; };
-		DA8B4A3E2C6B923400BC5987 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */; };
-		DA8B4A402C6B935F00BC5987 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */; };
-		DA8B4A422C6BA3FE00BC5987 /* WatchToiOSConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A412C6BA3FE00BC5987 /* WatchToiOSConnector.swift */; };
-		DA8B4A442C6BA48F00BC5987 /* iOSToWatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A432C6BA48F00BC5987 /* iOSToWatchConnector.swift */; };
-		DA8B4A472C6BA53F00BC5987 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */; };
-		DA8B4A4B2C6BAE9D00BC5987 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */; };
-		DA8B4A512C6CC07E00BC5987 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */; };
-		DA8B4A522C6CC08100BC5987 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */; };
-		DA8B4A582C6CCA0D00BC5987 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A572C6CCA0D00BC5987 /* HomeViewModel.swift */; };
-		DA8B4A5A2C6D1B5900BC5987 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A592C6D1B5900BC5987 /* CountdownView.swift */; };
-		DD4C77512C6A59A800CEDFB2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = DD4C77502C6A59A800CEDFB2 /* SocketIO */; };
-		DD4C775A2C6B017A00CEDFB2 /* SocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C77592C6B017A00CEDFB2 /* SocketHelper.swift */; };
-		DD5574252C6DE175008F9B98 /* InputPinComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5574242C6DE175008F9B98 /* InputPinComponent.swift */; };
-		DD6D7FDC2C6C5DA50023A499 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DD6D7FDB2C6C5DA50023A499 /* FirebaseFirestore */; };
-		DD6D7FDE2C6CC42C0023A499 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FDD2C6CC42C0023A499 /* User.swift */; };
-		DD6D7FE02C6CC8E80023A499 /* EmergencyContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FDF2C6CC8E80023A499 /* EmergencyContact.swift */; };
-		DD6D7FE32C6CCE8D0023A499 /* FirebaseServiceDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FE22C6CCE8D0023A499 /* FirebaseServiceDataSourceProtocol.swift */; };
-		DD6D7FE52C6CD09B0023A499 /* FirebaseServiceDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FE42C6CD09B0023A499 /* FirebaseServiceDataSource.swift */; };
-		DD6D7FE72C6CD1A80023A499 /* FirebaseServiceRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FE62C6CD1A80023A499 /* FirebaseServiceRepositoryProtocol.swift */; };
-		DD6D7FE92C6CD1CB0023A499 /* FirebaseServiceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FE82C6CD1CB0023A499 /* FirebaseServiceRepository.swift */; };
-		DD6D7FEC2C6CD5AA0023A499 /* FirebaseServiceUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FEB2C6CD5AA0023A499 /* FirebaseServiceUseCaseProtocol.swift */; };
-		DD6D7FEE2C6CD6810023A499 /* FirebaseServiceUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FED2C6CD6810023A499 /* FirebaseServiceUseCase.swift */; };
-		DD6D7FF02C6CDCAC0023A499 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FEF2C6CDCAC0023A499 /* DependencyInjection.swift */; };
-		DD6D7FF32C6D114A0023A499 /* ProviderIdEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FF22C6D114A0023A499 /* ProviderIdEnum.swift */; };
-		DD6D7FF52C6D1AE50023A499 /* MKCoordinateRegion+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FF42C6D1AE50023A499 /* MKCoordinateRegion+Extension.swift */; };
-		DD6D7FF72C6D1B360023A499 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FF62C6D1B360023A499 /* CLLocationCoordinate2D.swift */; };
-		DD6D7FFA2C6D1BE30023A499 /* LiveTrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FF92C6D1BE30023A499 /* LiveTrackViewModel.swift */; };
-		DD6D7FFC2C6D1BFA0023A499 /* LiveTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FFB2C6D1BFA0023A499 /* LiveTrack.swift */; };
-		DD6D7FFF2C6D1EF90023A499 /* UserDefaultDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FFE2C6D1EF90023A499 /* UserDefaultDataSourceProtocol.swift */; };
-		DD6D80012C6D1F890023A499 /* UserDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D80002C6D1F890023A499 /* UserDefaultDataSource.swift */; };
-		DD6D80042C6D21690023A499 /* UserDefaultRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D80032C6D21690023A499 /* UserDefaultRepositoryProtocol.swift */; };
-		DD6D80062C6D21890023A499 /* UserDefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D80052C6D21890023A499 /* UserDefaultRepository.swift */; };
-		DD6D80092C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D80082C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift */; };
-		DD6D800B2C6D23010023A499 /* UserDefaultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D800A2C6D23010023A499 /* UserDefaultUseCase.swift */; };
-		DD6D800D2C6D238E0023A499 /* KeyUserDefaultEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D800C2C6D238E0023A499 /* KeyUserDefaultEnum.swift */; };
-		DDEB4B102C68C32F00375460 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB4B0F2C68C32F00375460 /* LoginView.swift */; };
-		DDEB4B132C68C53000375460 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DDEB4B122C68C53000375460 /* FirebaseAuth */; };
-		DDEB4B162C68C55B00375460 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = DDEB4B152C68C55B00375460 /* GoogleSignIn */; };
-		DDEB4B182C68C55B00375460 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DDEB4B172C68C55B00375460 /* GoogleSignInSwift */; };
-		DDEB4B202C68CE9000375460 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB4B1F2C68CE9000375460 /* LoginViewModel.swift */; };
-		DDEB4B232C68D07200375460 /* RandomNonceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB4B222C68D07200375460 /* RandomNonceString.swift */; };
-		DDEB4B252C68D08E00375460 /* SHA256.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB4B242C68D08E00375460 /* SHA256.swift */; };
-		DDEB4B2C2C69146300375460 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB4B2B2C69146300375460 /* UIApplication+Extension.swift */; };
+		81D078FF2C6C53A100ACE61E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078FE2C6C53A100ACE61E /* HomeView.swift */; };
+		81D079012C6C53AD00ACE61E /* LiveTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079002C6C53AD00ACE61E /* LiveTrackView.swift */; };
+		81D079032C6C53B700ACE61E /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079022C6C53B700ACE61E /* SOSView.swift */; };
+		81D079052C6C53BF00ACE61E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079042C6C53BF00ACE61E /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +59,7 @@
 /* Begin PBXFileReference section */
 		20190CF12C6A336A001A2AB6 /* WatchMC3 Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchMC3 Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20190CF32C6A336B001A2AB6 /* WatchMC3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchMC3App.swift; sourceTree = "<group>"; };
+		20190CF52C6A336B001A2AB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		20190CF72C6A336B001A2AB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		201FB0732C6D9AE400058A95 /* EmergencyContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewModel.swift; sourceTree = "<group>"; };
@@ -136,77 +71,15 @@
 		2058D15E2C65C65200D0557D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2058D1602C65C65400D0557D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2058D1632C65C65400D0557D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		206A2CFE2C6EA40500287FD0 /* FCMTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMTokenManager.swift; sourceTree = "<group>"; };
+		207BA47E2C6D8D2700B9B3FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotificationViewModel.swift; sourceTree = "<group>"; };
 		207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmergencyContactView.swift; sourceTree = "<group>"; };
-		20D4DA972C6E59A4009E73D7 /* NoAlertsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoAlertsView.swift; sourceTree = "<group>"; };
-		20D4DA982C6E59A4009E73D7 /* SOSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSView.swift; sourceTree = "<group>"; };
-		20D4DA992C6E59A4009E73D7 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		20D4DA9A2C6E59A4009E73D7 /* CountdownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
-		20D4DA9B2C6E59A4009E73D7 /* PinInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinInputView.swift; sourceTree = "<group>"; };
-		20D4DA9C2C6E59A4009E73D7 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		20D4DA9D2C6E59A4009E73D7 /* LiveTrackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveTrackView.swift; sourceTree = "<group>"; };
-		20F585022C6DD28F00114E3D /* AddContactsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactsView.swift; sourceTree = "<group>"; };
-		20F585062C6DD28F00114E3D /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		20F95A5F2C6E1073005B3DA1 /* HomepageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomepageView.swift; path = MC3/Presentation/Homepage/HomepageView.swift; sourceTree = SOURCE_ROOT; };
-		20F95A602C6E1073005B3DA1 /* ListenerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListenerView.swift; path = MC3/Presentation/Homepage/ListenerView.swift; sourceTree = SOURCE_ROOT; };
-		20F95A612C6E1073005B3DA1 /* LocationManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationManagerViewModel.swift; path = MC3/Presentation/Homepage/LocationManagerViewModel.swift; sourceTree = SOURCE_ROOT; };
-		20F95A622C6E1073005B3DA1 /* PublisherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PublisherView.swift; path = MC3/Presentation/Homepage/PublisherView.swift; sourceTree = SOURCE_ROOT; };
-		20F95A632C6E1073005B3DA1 /* HomepageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomepageViewModel.swift; path = MC3/Presentation/Homepage/HomepageViewModel.swift; sourceTree = SOURCE_ROOT; };
-		20F95A692C6E11A5005B3DA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81D078F82C6C52FC00ACE61E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = MC3/OnboardingView.swift; sourceTree = SOURCE_ROOT; };
 		81D078FC2C6C537E00ACE61E /* AddContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddContactsView.swift; path = MC3/AddContactsView.swift; sourceTree = SOURCE_ROOT; };
-		81D079062C6DE1E100ACE61E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = MC3/HomeView.swift; sourceTree = SOURCE_ROOT; };
-		81D079082C6DE1EB00ACE61E /* LiveTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LiveTrackView.swift; path = MC3/LiveTrackView.swift; sourceTree = SOURCE_ROOT; };
-		81D0790A2C6DE1F400ACE61E /* SOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SOSView.swift; path = MC3/SOSView.swift; sourceTree = SOURCE_ROOT; };
-		81D0790C2C6DE20A00ACE61E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = MC3/ProfileView.swift; sourceTree = SOURCE_ROOT; };
-		81D079102C6DEB7700ACE61E /* NoAlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoAlertsView.swift; path = MC3/NoAlertsView.swift; sourceTree = SOURCE_ROOT; };
-		81D079122C6DF04E00ACE61E /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountdownView.swift; path = MC3/CountdownView.swift; sourceTree = SOURCE_ROOT; };
-		81D079142C6DFD1500ACE61E /* PinInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PinInputView.swift; path = MC3/PinInputView.swift; sourceTree = SOURCE_ROOT; };
-		DA1908382C6E0EA40087FA23 /* EmergencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmergencyViewModel.swift; path = Views/Home/EmergencyViewModel.swift; sourceTree = SOURCE_ROOT; };
-		DA19083E2C6E44C20087FA23 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Router.swift; path = Views/Home/Router.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A2B2C6B4BDF00BC5987 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Views/Home/HomeView.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A2E2C6B4E3500BC5987 /* HeartRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateViewModel.swift; path = Views/Home/HeartRateViewModel.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthKitManager.swift; path = Views/Home/HealthKitManager.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A322C6B50AD00BC5987 /* HeartRateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateManager.swift; path = Views/Home/HeartRateManager.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A342C6B516500BC5987 /* HeartRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateModel.swift; path = Views/Home/HeartRateModel.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A362C6B550100BC5987 /* WatchMC3 Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WatchMC3 Watch App.entitlements"; sourceTree = "<group>"; };
-		DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationManager.swift; path = Shared/NotificationManager.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationDelegate.swift; path = Shared/NotificationDelegate.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A412C6BA3FE00BC5987 /* WatchToiOSConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchToiOSConnector.swift; path = MC3/WatchToiOSConnector.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A432C6BA48F00BC5987 /* iOSToWatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = iOSToWatchConnector.swift; path = MC3/Common/iOSToWatchConnector.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS10.2.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
-		DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
-		DA8B4A572C6CCA0D00BC5987 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = Views/Home/HomeViewModel.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A592C6D1B5900BC5987 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountdownView.swift; path = Views/CountdownView.swift; sourceTree = SOURCE_ROOT; };
-		DD4C77592C6B017A00CEDFB2 /* SocketHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketHelper.swift; sourceTree = "<group>"; };
-		DD5574242C6DE175008F9B98 /* InputPinComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPinComponent.swift; sourceTree = "<group>"; };
-		DD6D7FDD2C6CC42C0023A499 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = MC3/Presentation/Homepage/User.swift; sourceTree = SOURCE_ROOT; };
-		DD6D7FDF2C6CC8E80023A499 /* EmergencyContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmergencyContact.swift; path = MC3/Presentation/Homepage/EmergencyContact.swift; sourceTree = SOURCE_ROOT; };
-		DD6D7FE22C6CCE8D0023A499 /* FirebaseServiceDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseServiceDataSourceProtocol.swift; path = MC3/Presentation/Homepage/FirebaseServiceDataSourceProtocol.swift; sourceTree = SOURCE_ROOT; };
-		DD6D7FE42C6CD09B0023A499 /* FirebaseServiceDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseServiceDataSource.swift; path = MC3/Presentation/Homepage/FirebaseServiceDataSource.swift; sourceTree = SOURCE_ROOT; };
-		DD6D7FE62C6CD1A80023A499 /* FirebaseServiceRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseServiceRepositoryProtocol.swift; path = MC3/Presentation/Homepage/FirebaseServiceRepositoryProtocol.swift; sourceTree = SOURCE_ROOT; };
-		DD6D7FE82C6CD1CB0023A499 /* FirebaseServiceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseServiceRepository.swift; path = MC3/Presentation/Homepage/FirebaseServiceRepository.swift; sourceTree = SOURCE_ROOT; };
-		DD6D7FEB2C6CD5AA0023A499 /* FirebaseServiceUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseServiceUseCaseProtocol.swift; path = UseCases/Firebase/FirebaseServiceUseCaseProtocol.swift; sourceTree = SOURCE_ROOT; };
-		DD6D7FED2C6CD6810023A499 /* FirebaseServiceUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseServiceUseCase.swift; path = UseCases/Firebase/FirebaseServiceUseCase.swift; sourceTree = SOURCE_ROOT; };
-		DD6D7FEF2C6CDCAC0023A499 /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DependencyInjection.swift; path = UseCases/Firebase/DependencyInjection.swift; sourceTree = SOURCE_ROOT; };
-		DD6D7FF22C6D114A0023A499 /* ProviderIdEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProviderIdEnum.swift; path = Entities/Enum/ProviderIdEnum.swift; sourceTree = SOURCE_ROOT; };
-		DD6D7FF42C6D1AE50023A499 /* MKCoordinateRegion+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MKCoordinateRegion+Extension.swift"; path = "Entities/Enum/MKCoordinateRegion+Extension.swift"; sourceTree = SOURCE_ROOT; };
-		DD6D7FF62C6D1B360023A499 /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CLLocationCoordinate2D.swift; path = Entities/Enum/CLLocationCoordinate2D.swift; sourceTree = SOURCE_ROOT; };
-		DD6D7FF92C6D1BE30023A499 /* LiveTrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrackViewModel.swift; sourceTree = "<group>"; };
-		DD6D7FFB2C6D1BFA0023A499 /* LiveTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrack.swift; sourceTree = "<group>"; };
-		DD6D7FFE2C6D1EF90023A499 /* UserDefaultDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultDataSourceProtocol.swift; path = DataSources/Local/UserDefaultDataSourceProtocol.swift; sourceTree = SOURCE_ROOT; };
-		DD6D80002C6D1F890023A499 /* UserDefaultDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultDataSource.swift; path = DataSources/Local/UserDefaultDataSource.swift; sourceTree = SOURCE_ROOT; };
-		DD6D80032C6D21690023A499 /* UserDefaultRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultRepositoryProtocol.swift; path = Repositories/Local/UserDefaultRepositoryProtocol.swift; sourceTree = SOURCE_ROOT; };
-		DD6D80052C6D21890023A499 /* UserDefaultRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultRepository.swift; path = Repositories/Local/UserDefaultRepository.swift; sourceTree = SOURCE_ROOT; };
-		DD6D80082C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultUseCaseProtocol.swift; path = UseCases/UserDefaultUseCases/UserDefaultUseCaseProtocol.swift; sourceTree = SOURCE_ROOT; };
-		DD6D800A2C6D23010023A499 /* UserDefaultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultUseCase.swift; path = UseCases/UserDefaultUseCases/UserDefaultUseCase.swift; sourceTree = SOURCE_ROOT; };
-		DD6D800C2C6D238E0023A499 /* KeyUserDefaultEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyUserDefaultEnum.swift; path = Entities/Enum/KeyUserDefaultEnum.swift; sourceTree = SOURCE_ROOT; };
-		DDEB4B0F2C68C32F00375460 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		DDEB4B1F2C68CE9000375460 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		DDEB4B222C68D07200375460 /* RandomNonceString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomNonceString.swift; path = Utils/Auth/RandomNonceString.swift; sourceTree = SOURCE_ROOT; };
-		DDEB4B242C68D08E00375460 /* SHA256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SHA256.swift; path = Utils/Auth/SHA256.swift; sourceTree = SOURCE_ROOT; };
-		DDEB4B2B2C69146300375460 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIApplication+Extension.swift"; path = "MC3/Presentation/Homepage/UIApplication+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		81D078FE2C6C53A100ACE61E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = MC3/HomeView.swift; sourceTree = SOURCE_ROOT; };
+		81D079002C6C53AD00ACE61E /* LiveTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LiveTrackView.swift; path = MC3/LiveTrackView.swift; sourceTree = SOURCE_ROOT; };
+		81D079022C6C53B700ACE61E /* SOSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SOSView.swift; path = MC3/SOSView.swift; sourceTree = SOURCE_ROOT; };
+		81D079042C6C53BF00ACE61E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileView.swift; path = MC3/ProfileView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA8B4A472C6BA53F00BC5987 /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,13 +94,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA8B4A4B2C6BAE9D00BC5987 /* WatchConnectivity.framework in Frameworks */,
-				DDEB4B182C68C55B00375460 /* GoogleSignInSwift in Frameworks */,
-				DD4C77512C6A59A800CEDFB2 /* SocketIO in Frameworks */,
-				DDEB4B132C68C53000375460 /* FirebaseAuth in Frameworks */,
-				DD6D7FDC2C6C5DA50023A499 /* FirebaseFirestore in Frameworks */,
-				DDEB4B162C68C55B00375460 /* GoogleSignIn in Frameworks */,
 				207BA47B2C6CF90E00B9B3FC /* FirebaseMessaging in Frameworks */,
+				207BA4772C6CF90E00B9B3FC /* FirebaseAuth in Frameworks */,
+				207BA4792C6CF90E00B9B3FC /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,12 +106,12 @@
 		20190CF22C6A336A001A2AB6 /* WatchMC3 Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				DA8B4A362C6B550100BC5987 /* WatchMC3 Watch App.entitlements */,
 				20190D062C6A339D001A2AB6 /* Common */,
 				20190D052C6A3396001A2AB6 /* Data */,
 				20190D042C6A338C001A2AB6 /* Domain */,
 				20190D032C6A3382001A2AB6 /* Presentation */,
 				20190CF32C6A336B001A2AB6 /* WatchMC3App.swift */,
+				20190CF52C6A336B001A2AB6 /* ContentView.swift */,
 				20190CF72C6A336B001A2AB6 /* Assets.xcassets */,
 				20190CF92C6A336B001A2AB6 /* Preview Content */,
 			);
@@ -288,9 +156,6 @@
 		20190D062C6A339D001A2AB6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */,
-				DA8B4A322C6B50AD00BC5987 /* HeartRateManager.swift */,
-				DA8B4A412C6BA3FE00BC5987 /* WatchToiOSConnector.swift */,
 				20190D0E2C6A33E7001A2AB6 /* Utils */,
 				20190D0D2C6A33DB001A2AB6 /* Extensions */,
 			);
@@ -307,8 +172,6 @@
 		20190D082C6A33AB001A2AB6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DA8B4A592C6D1B5900BC5987 /* CountdownView.swift */,
-				DA8B4A2D2C6B4D2D00BC5987 /* Home */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,7 +179,6 @@
 		20190D092C6A33B5001A2AB6 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				DA19083E2C6E44C20087FA23 /* Router.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -324,7 +186,6 @@
 		20190D0A2C6A33BC001A2AB6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				DA8B4A342C6B516500BC5987 /* HeartRateModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -370,12 +231,9 @@
 		2058D1502C65C65200D0557D = {
 			isa = PBXGroup;
 			children = (
-				DA8B4A502C6CBEF500BC5987 /* Shared */,
 				2058D15B2C65C65200D0557D /* MC3 */,
 				20190CF22C6A336A001A2AB6 /* WatchMC3 Watch App */,
 				2058D15A2C65C65200D0557D /* Products */,
-				DD6D7FDA2C6C5DA50023A499 /* Frameworks */,
-				209E78782C6F42F200510BD4 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -391,22 +249,13 @@
 		2058D15B2C65C65200D0557D /* MC3 */ = {
 			isa = PBXGroup;
 			children = (
-				20F585022C6DD28F00114E3D /* AddContactsView.swift */,
-				20F585062C6DD28F00114E3D /* OnboardingView.swift */,
-				20D4DA9A2C6E59A4009E73D7 /* CountdownView.swift */,
-				20D4DA992C6E59A4009E73D7 /* HomeView.swift */,
-				20D4DA9D2C6E59A4009E73D7 /* LiveTrackView.swift */,
-				20D4DA972C6E59A4009E73D7 /* NoAlertsView.swift */,
-				20D4DA9B2C6E59A4009E73D7 /* PinInputView.swift */,
-				20D4DA9C2C6E59A4009E73D7 /* ProfileView.swift */,
-				20D4DA982C6E59A4009E73D7 /* SOSView.swift */,
+				207BA47E2C6D8D2700B9B3FC /* GoogleService-Info.plist */,
 				203AB9A52C6C712B00D7AD86 /* Info.plist */,
-				20F95A692C6E11A5005B3DA1 /* GoogleService-Info.plist */,
 				203AB9A42C6C710A00D7AD86 /* MC3.entitlements */,
-				2058D16A2C65C98300D0557D /* Common */,
 				2058D16B2C65C99400D0557D /* Presentation */,
 				2058D16C2C65C99D00D0557D /* Domain */,
 				2058D16D2C65C9A700D0557D /* Data */,
+				2058D16A2C65C98300D0557D /* Common */,
 				2058D15C2C65C65200D0557D /* MC3App.swift */,
 				2058D15E2C65C65200D0557D /* ContentView.swift */,
 				2058D1602C65C65400D0557D /* Assets.xcassets */,
@@ -426,8 +275,6 @@
 		2058D16A2C65C98300D0557D /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				DA8B4A432C6BA48F00BC5987 /* iOSToWatchConnector.swift */,
-				DD4C77582C6B016D00CEDFB2 /* Helper */,
 				2058D1752C65CA5E00D0557D /* Extensions */,
 				2058D1742C65CA5800D0557D /* Utils */,
 			);
@@ -437,10 +284,6 @@
 		2058D16B2C65C99400D0557D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				DD5574232C6DE15D008F9B98 /* ReusableComponents */,
-				DD6D7FF82C6D1BC50023A499 /* LiveTrack */,
-				DDEB4B262C68D97200375460 /* Homepage */,
-				DDEB4B0E2C68C31A00375460 /* Authentication */,
 				201FB0722C6D9AB900058A95 /* EmergencyContact */,
 				207BA4802C6D903500B9B3FC /* MessageNotification */,
 				2058D16F2C65C9CD00D0557D /* ViewModels */,
@@ -470,15 +313,6 @@
 		2058D16E2C65C9C400D0557D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				81D079062C6DE1E100ACE61E /* HomeView.swift */,
-				81D079082C6DE1EB00ACE61E /* LiveTrackView.swift */,
-				81D0790A2C6DE1F400ACE61E /* SOSView.swift */,
-				81D0790C2C6DE20A00ACE61E /* ProfileView.swift */,
-				81D079102C6DEB7700ACE61E /* NoAlertsView.swift */,
-				81D079122C6DF04E00ACE61E /* CountdownView.swift */,
-				81D079142C6DFD1500ACE61E /* PinInputView.swift */,
-				81D078F82C6C52FC00ACE61E /* OnboardingView.swift */,
-				81D078FC2C6C537E00ACE61E /* AddContactsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -493,9 +327,6 @@
 		2058D1702C65C9D800D0557D /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				DD6D7FF12C6D11240023A499 /* Enum */,
-				DD6D7FDD2C6CC42C0023A499 /* User.swift */,
-				DD6D7FDF2C6CC8E80023A499 /* EmergencyContact.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -503,8 +334,6 @@
 		2058D1712C65CA0100D0557D /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				DD6D80072C6D21FB0023A499 /* UserDefaultUseCases */,
-				DD6D7FEA2C6CD5870023A499 /* Firebase */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -512,9 +341,6 @@
 		2058D1722C65CA0C00D0557D /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				DD6D80022C6D21500023A499 /* Local */,
-				DD6D7FE62C6CD1A80023A499 /* FirebaseServiceRepositoryProtocol.swift */,
-				DD6D7FE82C6CD1CB0023A499 /* FirebaseServiceRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -522,8 +348,6 @@
 		2058D1732C65CA1600D0557D /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
-				DD6D7FFD2C6D1ED20023A499 /* Local */,
-				DD6D7FE12C6CCE2E0023A499 /* Remote */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -531,8 +355,6 @@
 		2058D1742C65CA5800D0557D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				DDEB4B212C68D03600375460 /* Auth */,
-				DD6D7FEF2C6CDCAC0023A499 /* DependencyInjection.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -540,9 +362,6 @@
 		2058D1752C65CA5E00D0557D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				DDEB4B2B2C69146300375460 /* UIApplication+Extension.swift */,
-				DD6D7FF42C6D1AE50023A499 /* MKCoordinateRegion+Extension.swift */,
-				DD6D7FF62C6D1B360023A499 /* CLLocationCoordinate2D.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -551,156 +370,9 @@
 			isa = PBXGroup;
 			children = (
 				207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */,
-				206A2CFE2C6EA40500287FD0 /* FCMTokenManager.swift */,
 			);
 			path = MessageNotification;
 			sourceTree = "<group>";
-		};
-		209E78782C6F42F200510BD4 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */,
-				DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
-		DA8B4A2D2C6B4D2D00BC5987 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				DA8B4A2B2C6B4BDF00BC5987 /* HomeView.swift */,
-				DA8B4A2E2C6B4E3500BC5987 /* HeartRateViewModel.swift */,
-				DA8B4A572C6CCA0D00BC5987 /* HomeViewModel.swift */,
-				DA1908382C6E0EA40087FA23 /* EmergencyViewModel.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		DA8B4A502C6CBEF500BC5987 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */,
-				DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		DD4C77582C6B016D00CEDFB2 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				DD4C77592C6B017A00CEDFB2 /* SocketHelper.swift */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		DD5574232C6DE15D008F9B98 /* ReusableComponents */ = {
-			isa = PBXGroup;
-			children = (
-				DD5574242C6DE175008F9B98 /* InputPinComponent.swift */,
-			);
-			path = ReusableComponents;
-			sourceTree = "<group>";
-		};
-		DD6D7FDA2C6C5DA50023A499 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DD6D7FE12C6CCE2E0023A499 /* Remote */ = {
-			isa = PBXGroup;
-			children = (
-				DD6D7FE22C6CCE8D0023A499 /* FirebaseServiceDataSourceProtocol.swift */,
-				DD6D7FE42C6CD09B0023A499 /* FirebaseServiceDataSource.swift */,
-			);
-			name = Remote;
-			path = DataSources/Remote;
-			sourceTree = "<group>";
-		};
-		DD6D7FEA2C6CD5870023A499 /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				DD6D7FEB2C6CD5AA0023A499 /* FirebaseServiceUseCaseProtocol.swift */,
-				DD6D7FED2C6CD6810023A499 /* FirebaseServiceUseCase.swift */,
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
-		DD6D7FF12C6D11240023A499 /* Enum */ = {
-			isa = PBXGroup;
-			children = (
-				DD6D7FF22C6D114A0023A499 /* ProviderIdEnum.swift */,
-				DD6D800C2C6D238E0023A499 /* KeyUserDefaultEnum.swift */,
-			);
-			path = Enum;
-			sourceTree = "<group>";
-		};
-		DD6D7FF82C6D1BC50023A499 /* LiveTrack */ = {
-			isa = PBXGroup;
-			children = (
-				DD6D7FF92C6D1BE30023A499 /* LiveTrackViewModel.swift */,
-				DD6D7FFB2C6D1BFA0023A499 /* LiveTrack.swift */,
-			);
-			path = LiveTrack;
-			sourceTree = "<group>";
-		};
-		DD6D7FFD2C6D1ED20023A499 /* Local */ = {
-			isa = PBXGroup;
-			children = (
-				DD6D7FFE2C6D1EF90023A499 /* UserDefaultDataSourceProtocol.swift */,
-				DD6D80002C6D1F890023A499 /* UserDefaultDataSource.swift */,
-			);
-			path = Local;
-			sourceTree = "<group>";
-		};
-		DD6D80022C6D21500023A499 /* Local */ = {
-			isa = PBXGroup;
-			children = (
-				DD6D80032C6D21690023A499 /* UserDefaultRepositoryProtocol.swift */,
-				DD6D80052C6D21890023A499 /* UserDefaultRepository.swift */,
-			);
-			path = Local;
-			sourceTree = "<group>";
-		};
-		DD6D80072C6D21FB0023A499 /* UserDefaultUseCases */ = {
-			isa = PBXGroup;
-			children = (
-				DD6D80082C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift */,
-				DD6D800A2C6D23010023A499 /* UserDefaultUseCase.swift */,
-			);
-			path = UserDefaultUseCases;
-			sourceTree = "<group>";
-		};
-		DDEB4B0E2C68C31A00375460 /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				DDEB4B0F2C68C32F00375460 /* LoginView.swift */,
-				DDEB4B1F2C68CE9000375460 /* LoginViewModel.swift */,
-			);
-			path = Authentication;
-			sourceTree = "<group>";
-		};
-		DDEB4B212C68D03600375460 /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				DDEB4B222C68D07200375460 /* RandomNonceString.swift */,
-				DDEB4B242C68D08E00375460 /* SHA256.swift */,
-			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
-		DDEB4B262C68D97200375460 /* Homepage */ = {
-			isa = PBXGroup;
-			children = (
-				20F95A5F2C6E1073005B3DA1 /* HomepageView.swift */,
-				20F95A632C6E1073005B3DA1 /* HomepageViewModel.swift */,
-				20F95A602C6E1073005B3DA1 /* ListenerView.swift */,
-				20F95A612C6E1073005B3DA1 /* LocationManagerViewModel.swift */,
-				20F95A622C6E1073005B3DA1 /* PublisherView.swift */,
-			);
-			path = Homepage;
-			sourceTree = "<unknown>";
 		};
 /* End PBXGroup section */
 
@@ -738,11 +410,8 @@
 			);
 			name = MC3;
 			packageProductDependencies = (
-				DDEB4B122C68C53000375460 /* FirebaseAuth */,
-				DDEB4B152C68C55B00375460 /* GoogleSignIn */,
-				DDEB4B172C68C55B00375460 /* GoogleSignInSwift */,
-				DD4C77502C6A59A800CEDFB2 /* SocketIO */,
-				DD6D7FDB2C6C5DA50023A499 /* FirebaseFirestore */,
+				207BA4762C6CF90E00B9B3FC /* FirebaseAuth */,
+				207BA4782C6CF90E00B9B3FC /* FirebaseFirestore */,
 				207BA47A2C6CF90E00B9B3FC /* FirebaseMessaging */,
 			);
 			productName = MC3;
@@ -777,9 +446,7 @@
 			);
 			mainGroup = 2058D1502C65C65200D0557D;
 			packageReferences = (
-				DDEB4B112C68C53000375460 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				DDEB4B142C68C55B00375460 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
-				DD4C774F2C6A59A800CEDFB2 /* XCRemoteSwiftPackageReference "socket" */,
+				207BA4752C6CF90E00B9B3FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 2058D15A2C65C65200D0557D /* Products */;
 			projectDirPath = "";
@@ -807,7 +474,7 @@
 			files = (
 				2058D1642C65C65400D0557D /* Preview Assets.xcassets in Resources */,
 				2058D1612C65C65400D0557D /* Assets.xcassets in Resources */,
-				20F95A6A2C6E11A5005B3DA1 /* GoogleService-Info.plist in Resources */,
+				207BA47F2C6D8D2700B9B3FC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,20 +485,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA8B4A5A2C6D1B5900BC5987 /* CountdownView.swift in Sources */,
-				DA8B4A2F2C6B4E3500BC5987 /* HeartRateViewModel.swift in Sources */,
-				DA8B4A582C6CCA0D00BC5987 /* HomeViewModel.swift in Sources */,
-				DA8B4A2C2C6B4BDF00BC5987 /* HomeView.swift in Sources */,
-				DA8B4A3E2C6B923400BC5987 /* NotificationManager.swift in Sources */,
-				DA8B4A352C6B516500BC5987 /* HeartRateModel.swift in Sources */,
-				DA8B4A402C6B935F00BC5987 /* NotificationDelegate.swift in Sources */,
-				DA8B4A312C6B503400BC5987 /* HealthKitManager.swift in Sources */,
+				20190CF62C6A336B001A2AB6 /* ContentView.swift in Sources */,
 				20190CF42C6A336B001A2AB6 /* WatchMC3App.swift in Sources */,
-				DA19083F2C6E44C20087FA23 /* Router.swift in Sources */,
-				DA8B4A422C6BA3FE00BC5987 /* WatchToiOSConnector.swift in Sources */,
-				209E78792C6F563C00510BD4 /* MessageNotificationViewModel.swift in Sources */,
-				DA1908392C6E0EA40087FA23 /* EmergencyViewModel.swift in Sources */,
-				DA8B4A332C6B50AD00BC5987 /* HeartRateManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,68 +494,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA8B4A522C6CC08100BC5987 /* NotificationDelegate.swift in Sources */,
-				DA8B4A442C6BA48F00BC5987 /* iOSToWatchConnector.swift in Sources */,
-				DA8B4A512C6CC07E00BC5987 /* NotificationManager.swift in Sources */,
-				81D079072C6DE1E100ACE61E /* HomeView.swift in Sources */,
-				81D079112C6DEB7700ACE61E /* NoAlertsView.swift in Sources */,
-				81D079132C6DF04E00ACE61E /* CountdownView.swift in Sources */,
-				81D079092C6DE1EB00ACE61E /* LiveTrackView.swift in Sources */,
-				81D0790B2C6DE1F400ACE61E /* SOSView.swift in Sources */,
-				81D0790D2C6DE20A00ACE61E /* ProfileView.swift in Sources */,
-				81D079152C6DFD1500ACE61E /* PinInputView.swift in Sources */,
-				20F95A652C6E1073005B3DA1 /* HomepageView.swift in Sources */,
-				DDEB4B202C68CE9000375460 /* LoginViewModel.swift in Sources */,
-				DDEB4B102C68C32F00375460 /* LoginView.swift in Sources */,
-				20D4DAA12C6E59A4009E73D7 /* CountdownView.swift in Sources */,
-				DD6D7FFF2C6D1EF90023A499 /* UserDefaultDataSourceProtocol.swift in Sources */,
-				DD6D7FE32C6CCE8D0023A499 /* FirebaseServiceDataSourceProtocol.swift in Sources */,
-				DD6D7FFA2C6D1BE30023A499 /* LiveTrackViewModel.swift in Sources */,
-				DDEB4B252C68D08E00375460 /* SHA256.swift in Sources */,
-				DD6D7FEC2C6CD5AA0023A499 /* FirebaseServiceUseCaseProtocol.swift in Sources */,
-				DD6D800D2C6D238E0023A499 /* KeyUserDefaultEnum.swift in Sources */,
-				DD6D7FFC2C6D1BFA0023A499 /* LiveTrack.swift in Sources */,
-				DD6D7FE02C6CC8E80023A499 /* EmergencyContact.swift in Sources */,
-				DDEB4B232C68D07200375460 /* RandomNonceString.swift in Sources */,
-				DD6D800B2C6D23010023A499 /* UserDefaultUseCase.swift in Sources */,
-				DD5574252C6DE175008F9B98 /* InputPinComponent.swift in Sources */,
-				DD6D7FDE2C6CC42C0023A499 /* User.swift in Sources */,
-				DD6D80012C6D1F890023A499 /* UserDefaultDataSource.swift in Sources */,
-				DD6D80042C6D21690023A499 /* UserDefaultRepositoryProtocol.swift in Sources */,
-				DD6D7FF02C6CDCAC0023A499 /* DependencyInjection.swift in Sources */,
-				DD6D7FE52C6CD09B0023A499 /* FirebaseServiceDataSource.swift in Sources */,
-				DD6D7FE92C6CD1CB0023A499 /* FirebaseServiceRepository.swift in Sources */,
-				DD4C775A2C6B017A00CEDFB2 /* SocketHelper.swift in Sources */,
-				20F95A672C6E1073005B3DA1 /* ListenerView.swift in Sources */,
-				20D4DA9E2C6E59A4009E73D7 /* NoAlertsView.swift in Sources */,
-				DD6D7FEE2C6CD6810023A499 /* FirebaseServiceUseCase.swift in Sources */,
-				DD6D80092C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift in Sources */,
-				20F95A642C6E1073005B3DA1 /* HomepageViewModel.swift in Sources */,
-				DD6D7FF52C6D1AE50023A499 /* MKCoordinateRegion+Extension.swift in Sources */,
-				DDEB4B2C2C69146300375460 /* UIApplication+Extension.swift in Sources */,
-				2058D15F2C65C65200D0557D /* ContentView.swift in Sources */,
-				20D4DA9F2C6E59A4009E73D7 /* SOSView.swift in Sources */,
-				20D4DAA22C6E59A4009E73D7 /* PinInputView.swift in Sources */,
-				DD6D7FE72C6CD1A80023A499 /* FirebaseServiceRepositoryProtocol.swift in Sources */,
-				20D4DAA32C6E59A4009E73D7 /* ProfileView.swift in Sources */,
-				20D4DAA02C6E59A4009E73D7 /* HomeView.swift in Sources */,
-				206A2CFF2C6EA40500287FD0 /* FCMTokenManager.swift in Sources */,
-				DD6D7FF32C6D114A0023A499 /* ProviderIdEnum.swift in Sources */,
-				DD6D7FF72C6D1B360023A499 /* CLLocationCoordinate2D.swift in Sources */,
-				2058D15D2C65C65200D0557D /* MC3App.swift in Sources */,
-				DD6D80062C6D21890023A499 /* UserDefaultRepository.swift in Sources */,
-				20D4DAA42C6E59A4009E73D7 /* LiveTrackView.swift in Sources */,
-				20F95A682C6E1073005B3DA1 /* PublisherView.swift in Sources */,
-				20F95A662C6E1073005B3DA1 /* LocationManagerViewModel.swift in Sources */,
-				81D078F92C6C52FC00ACE61E /* OnboardingView.swift in Sources */,
-				20F585082C6DD28F00114E3D /* AddContactsView.swift in Sources */,
 				2058D15F2C65C65200D0557D /* ContentView.swift in Sources */,
 				207BA4822C6D905D00B9B3FC /* MessageNotificationViewModel.swift in Sources */,
 				201FB0742C6D9AE400058A95 /* EmergencyContactViewModel.swift in Sources */,
 				2058D15D2C65C65200D0557D /* MC3App.swift in Sources */,
 				207BA4842C6D930200B9B3FC /* AddEmergencyContactView.swift in Sources */,
 				201FB0762C6DC32F00058A95 /* ContactPickerView.swift in Sources */,
-				20F5850C2C6DD28F00114E3D /* OnboardingView.swift in Sources */,
+				81D078FF2C6C53A100ACE61E /* HomeView.swift in Sources */,
+				81D079032C6C53B700ACE61E /* SOSView.swift in Sources */,
 				81D078FD2C6C537E00ACE61E /* AddContactsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -921,7 +522,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "WatchMC3 Watch App/WatchMC3 Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchMC3 Watch App/Preview Content\"";
@@ -929,9 +529,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = WatchMC3;
-				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "We need to access your health data to provide services";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need to access your health data to provide services";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We need to access your health data to provide services";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = MC3.Untouchable;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -946,7 +543,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.4;
 			};
 			name = Debug;
 		};
@@ -955,7 +552,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "WatchMC3 Watch App/WatchMC3 Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchMC3 Watch App/Preview Content\"";
@@ -963,9 +559,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = WatchMC3;
-				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "We need to access your health data to provide services";
-				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need to access your health data to provide services";
-				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We need to access your health data to provide services";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = MC3.Untouchable;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -980,7 +573,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.4;
 			};
 			name = Release;
 		};
@@ -1130,10 +723,6 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = MC3.Untouchable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1167,10 +756,6 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = MC3.Untouchable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1210,15 +795,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DD4C774F2C6A59A800CEDFB2 /* XCRemoteSwiftPackageReference "socket" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		DDEB4B112C68C53000375460 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		207BA4752C6CF90E00B9B3FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
@@ -1226,45 +803,23 @@
 				minimumVersion = 11.0.0;
 			};
 		};
-		DDEB4B142C68C55B00375460 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/google/GoogleSignIn-iOS/";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.1.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		207BA47A2C6CF90E00B9B3FC /* FirebaseMessaging */ = {
+		207BA4762C6CF90E00B9B3FC /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = FirebaseMessaging;
-		};
-		DD4C77502C6A59A800CEDFB2 /* SocketIO */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DD4C774F2C6A59A800CEDFB2 /* XCRemoteSwiftPackageReference "socket" */;
-			productName = SocketIO;
-		};
-		DD6D7FDB2C6C5DA50023A499 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DDEB4B112C68C53000375460 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		DDEB4B122C68C53000375460 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DDEB4B112C68C53000375460 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 207BA4752C6CF90E00B9B3FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		DDEB4B152C68C55B00375460 /* GoogleSignIn */ = {
+		207BA4782C6CF90E00B9B3FC /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DDEB4B142C68C55B00375460 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
-			productName = GoogleSignIn;
+			package = 207BA4752C6CF90E00B9B3FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
-		DDEB4B172C68C55B00375460 /* GoogleSignInSwift */ = {
+		207BA47A2C6CF90E00B9B3FC /* FirebaseMessaging */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DDEB4B142C68C55B00375460 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
-			productName = GoogleSignInSwift;
+			package = 207BA4752C6CF90E00B9B3FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
