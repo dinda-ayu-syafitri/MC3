@@ -122,6 +122,26 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
 
 @main
 struct MC3App: App {
+    
+    private let notificationDelegate = NotificationDelegate()
+
+    init() {
+        // Set the UNUserNotificationCenter's delegate to our custom delegate
+        UNUserNotificationCenter.current().delegate = notificationDelegate
+        
+        // Register notification categories here if needed
+        NotificationManager.shared.registerActionsWithCategories()
+        
+        // Request notification permissions
+        NotificationManager.shared.requestAuthorization { granted in
+            if granted {
+                print("Notification permission granted.")
+            } else {
+                print("Notification permission denied.")
+            }
+        }
+    }
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var messageNotifViewModel = MessageNotificationViewModel()
 
