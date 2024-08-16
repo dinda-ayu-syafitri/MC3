@@ -17,6 +17,7 @@ class UserDefaultUseCase: UserDefaultUseCaseProtocol {
         userDefaultRepository.saveData(data: email, key: .email)
         userDefaultRepository.saveData(data: firebaseID, key: .idFirebase)
         userDefaultRepository.saveData(data: true, key: .status)
+
     }
     
     func clearDataWhenLogOut(email: String, firebaseID: String) {

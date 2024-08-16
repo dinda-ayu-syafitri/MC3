@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @AppStorage("logStatus") private var logStatus: Bool = false
-    
+    @AppStorage(KeyUserDefaultEnum.status.toString) private var logStatus: Bool = false
+
     var body: some View {
         ZStack {
             if logStatus {

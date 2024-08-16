@@ -5,17 +5,18 @@
 //  Created by Giventus Marco Victorio Handojo on 15/08/24.
 //
 
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct LiveTrackView: View {
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: -6.302062993687138, longitude: 106.65229908106305),
         span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
     )
-    
+    @StateObject private var service = SocketHelper()
+
     var showLiveTrack = true
-    
+
     var body: some View {
         if showLiveTrack {
             VStack {
@@ -23,29 +24,58 @@ struct LiveTrackView: View {
                     .font(.title2)
                     .bold()
                     .foregroundColor(.red)
-                
-                Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: .constant(.follow))
-                    .frame(height: 550)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
+
+                Map(position: $service.mapCamera) {
+                    Annotation("Victim Location", coordinate: CLLocationCoordinate2D(latitude: service.latitude, longitude: service.longitude)) {
+//                        UserAnnotation()
+                        Text("Hai")
+                            .bold()
+                            .font(.title)
+                    }
+                }
+                .frame(height: 550)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .padding()
+                .overlay(
+                    VStack(alignment: .leading) {
+                        Text("Current Location")
+                            .font(.headline)
+                            .padding(.bottom, 2)
+
+                        Text("Kompleks Ruko Flourite, Jl. Raya Kelapa Gading Utara No.49, Tangerang Selatan")
+                            .font(.subheadline)
+                    }
+                    .frame(width: 300)
                     .padding()
-                    .overlay(
-                        VStack(alignment: .leading) {
-                            Text("Current Location")
-                                .font(.headline)
-                                .padding(.bottom, 2)
-                            
-                            Text("Kompleks Ruko Flourite, Jl. Raya Kelapa Gading Utara No.49, Tangerang Selatan")
-                                .font(.subheadline)
-                        }
-                        .frame(width: 300)
-                        .padding()
-                        .background(Color.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                        .shadow(radius: 5)
-                        .padding(.top,30),
-                        alignment: .top
-                    )
-                
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .shadow(radius: 5)
+                    .padding(.top, 30),
+                    alignment: .top
+                )
+
+//                Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: .constant(.follow))
+//                    .frame(height: 550)
+//                    .clipShape(RoundedRectangle(cornerRadius: 20))
+//                    .padding()
+//                    .overlay(
+//                        VStack(alignment: .leading) {
+//                            Text("Current Location")
+//                                .font(.headline)
+//                                .padding(.bottom, 2)
+//
+//                            Text("Kompleks Ruko Flourite, Jl. Raya Kelapa Gading Utara No.49, Tangerang Selatan")
+//                                .font(.subheadline)
+//                        }
+//                        .frame(width: 300)
+//                        .padding()
+//                        .background(Color.white)
+//                        .clipShape(RoundedRectangle(cornerRadius: 10))
+//                        .shadow(radius: 5)
+//                        .padding(.top,30),
+//                        alignment: .top
+//                    )
+
                 HStack {
                     HStack {
                         Circle()
@@ -76,18 +106,13 @@ struct LiveTrackView: View {
                     }
                 }
                 Spacer()
-                
-                
-                
             }
 
         } else {
-           NoAlertsView()
+            NoAlertsView()
         }
     }
 }
-
-
 
 #Preview {
     LiveTrackView()

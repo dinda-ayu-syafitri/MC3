@@ -38,8 +38,8 @@ class HomepageViewModel: ObservableObject {
             GIDSignIn.sharedInstance.signOut()
         }
         
-        UserDefaults.standard.removeObject(forKey: "userId")
-        UserDefaults.standard.removeObject(forKey: "userEmail")
-        UserDefaults.standard.removeObject(forKey: "logStatus")
+        UserDefaults.standard.removeObject(forKey: KeyUserDefaultEnum.idFirebase.toString)
+        UserDefaults.standard.removeObject(forKey: KeyUserDefaultEnum.email.toString)
+        UserDefaults.standard.removeObject(forKey: KeyUserDefaultEnum.status.toString)
     }
 }
