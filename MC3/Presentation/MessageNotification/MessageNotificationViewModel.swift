@@ -8,6 +8,8 @@
 import Foundation
 
 class MessageNotificationViewModel: ObservableObject {
+    @Published var fcmToken: String = ""
+
     func sendPushNotification(token: String, title: String, body: String, locationLink: String, senderFCM: String) {
         let url = URL(string: "https://mc-3-server.vercel.app/send")!
         var request = URLRequest(url: url)
