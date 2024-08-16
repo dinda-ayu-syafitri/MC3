@@ -10,25 +10,25 @@ import SwiftUI
 import SwiftUI
 
 struct CountdownView: View {
-    @ObservedObject var heartRateViewModel: HeartRateViewModel
+//    @ObservedObject var heartRateViewModel: HeartRateViewModel
     
     var body: some View {
         VStack {
             Text("Alerting in")
                 .font(.headline)
 
-            Text("\(heartRateViewModel.timeRemaining)")
-                .font(.largeTitle)
-                .padding()
-            
-            Button("Cancel") {
-                heartRateViewModel.router.navigate(to: .home)
-                heartRateViewModel.stopCountdown()
-            }
+//            Text("\(heartRateViewModel.timeRemaining)")
+//                .font(.largeTitle)
+//                .padding()
+//            
+//            Button("Cancel") {
+//                heartRateViewModel.router.navigate(to: .home)
+////                heartRateViewModel.stopCountdown()
+//            }
         }
     }
 }
   
-#Preview {
-    CountdownView(heartRateViewModel: HeartRateViewModel())
-}
+//#Preview {
+//    CountdownView(heartRateViewModel: HeartRateViewModel())
+//}

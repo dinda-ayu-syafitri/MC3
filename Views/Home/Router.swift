@@ -25,7 +25,7 @@ class Router: ObservableObject {
         case .home:
             HomeView()
         case .countdown:
-            CountdownView(heartRateViewModel: HeartRateViewModel())
+            CountdownView(/*heartRateViewModel: HeartRateViewModel()*/)
         }
     }
 }

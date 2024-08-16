@@ -51,6 +51,19 @@ struct HomeView: View {
             }
             .buttonStyle(PlainButtonStyle())
         }
+        .onAppear{
+//            heartRateViewModel.popUpNotif()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                watchToiOSConnector.sendTriggerToiOS()
+                print("HomeView Appear")
+               }
+//            NotificationManager.shared.scheduleNotification(
+//            title: "High Heart Rate",
+//            body: "test",
+//            category: "SOS_Category"
+//        )
+//            print("HomeView Appear")
+        }
         .padding()
         .navigationTitle("Home")
     }

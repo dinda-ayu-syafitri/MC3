@@ -26,6 +26,8 @@ class WatchToiOSConnector: NSObject, WCSessionDelegate, ObservableObject {
         //DEBUG: print
         print("Attempting to send message to iPhone")
         if session.isReachable {
+            print("reachable")
+            
             let message = ["action": "sosAlert"] // the message dictionary
             session.sendMessage(message, replyHandler: nil) { error in
                 print("Error sending message: \(error.localizedDescription)")
@@ -35,6 +37,7 @@ class WatchToiOSConnector: NSObject, WCSessionDelegate, ObservableObject {
             print("Session is reachable and message sent")
             
         } else {
+            print("not reachable")
             // fallback to using updateApplicationContext
             let context = ["action": "sosAlert"]
             do {

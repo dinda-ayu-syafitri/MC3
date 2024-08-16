@@ -32,17 +32,19 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        print("foreground")
         handleReceivedMessage(message)
     }
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        print("background")
         handleReceivedMessage(applicationContext)
     }
     
     private func handleReceivedMessage(_ message: [String : Any]) {
         //DEBUG: print message
         print(message)
-        
+        print("SOS alert triggered from Apple Watch!")
         if let action = message["action"] as? String, action == "sosAlert" {
             //trigger SOS alert here
             print("SOS alert triggered from Apple Watch!")

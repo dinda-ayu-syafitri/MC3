@@ -20,8 +20,8 @@ class HeartRateViewModel: ObservableObject {
     
     private var heartRate: Double = 0.0
     private var heartRates: [Double] = []
-    
-    private var emergencySessionIsActive = false
+        
+//    private var emergencySessionIsActive = false
     let router: Router
     
     init() {
@@ -76,11 +76,15 @@ class HeartRateViewModel: ObservableObject {
             // Check if current array empty
             if heartRates.isEmpty {
                 heartRates.append(heartRate)
+                print("countdown is active: \(countdownIsActive)")
+//                print("emergency session is active: \(emergencySessionIsActive)")
+
             } // Check if current Heart Rate is equals to previous Heart Rate
             else if !heartRates[heartRates.count - 1].isEqual(to: heartRate) {
                 // TODO: Uncomment when need to debug (print array)
                 print ("Data count: \(self.heartRates.count)")
                 print(heartRates.items)
+                print("check session reachable : \(WatchToiOSConnector.shared.session.isReachable)")
                 // Check if current heart rate is Delta High and current array has only 1 Data
                 if heartRates.count < 2 && isDeltaHigh(currentHeartRate: heartRate, previousHeartRate: heartRates[0]) {
                     heartRates.append(heartRate)
@@ -112,7 +116,7 @@ class HeartRateViewModel: ObservableObject {
     func isStandardDeviationHigh() -> Bool {
         let threshold = 1.0
         // Check if array already contains 10 data
-        if heartRates.count == 10 {
+        if heartRates.count == 3 {
             /**
              Count Standard Deviation
              1. Count Mean of the heart rate data
@@ -140,30 +144,50 @@ class HeartRateViewModel: ObservableObject {
     
     //check emergency
     func checkEmergency() {
-        if isStandardDeviationHigh() {
+        if isStandardDeviationHigh() /*&& !emergencySessionIsActive*/ {
+
             //pop up notif to user
+//            self.isLikelyInEmergency = true
             self.popUpNotif()
-            self.startCountdown()
-        }
-        if timeRemaining == 0 && !emergencySessionIsActive {
-            print("Countdown ends, sending message to iOS")
-            // Send message to iPhone when countdown expires
             WatchToiOSConnector.shared.sendTriggerToiOS()
-            // Stop countdown and mark emergency session as active
-            self.stopCountdown()
-            self.emergencySessionIsActive = true
+
+            
+//            self.startCountdown()
         }
+//        if self.timeRemaining == 0 /*&& !emergencySessionIsActive*/ {
+//            print("Countdown ends, sending message to iOS")
+//            // Send message to iPhone when countdown expires
+//            WatchToiOSConnector.shared.sendTriggerToiOS()
+//            // Stop countdown and mark emergency session as active
+//            self.stopCountdown()
+////            self.emergencySessionIsActive = true
+//        }
     }
     
+//    func popUpConnector() {
+//        print("pop up connector")
+//        
+//        if  !countdownIsActive && !emergencySessionIsActive {
+//            print("Masuk Popup connector ges")
+//            WatchToiOSConnector.shared.sendTriggerToiOS()
+//        }
+//    }
+    
     //pop up notification
-    func popUpNotif(completion: @escaping () -> Void)  {
-        if isEnableBackgroundDelivery && !countdownIsActive && !emergencySessionIsActive {
+    func popUpNotif()  {
+//        print("countdown is active \(countdownIsActive)")
+//        print("Emergency session is active \(emergencySessionIsActive)")
+       
+//        if  !countdownIsActive /*&& !emergencySessionIsActive*/ {
             print("Masuk Popup ges")
-            NotificationManager.shared.scheduleNotification(
+            NotificationManager.shared.scheduleNotificationPopUp(
                 title: "High Heart Rate",
-                body: "Your heart rate is at \(Int(self.heartRateModel.heartRate)) BPM. SOS message will be sent in (coundown)",
-                category: "SOS_Category")
-        }
+                body: "test",
+//                body: "Your heart rate is at \(Int(self.heartRateModel.heartRate)) BPM. SOS message will be sent in (coundown)",
+                category: "SOS_Category"
+            )
+//        }
+        
     }
     
     // Start countdown timer
@@ -172,6 +196,7 @@ class HeartRateViewModel: ObservableObject {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
             if self.timeRemaining > 0 {
                 self.timeRemaining -= 1
+
                 print("Time remaining: \(self.timeRemaining)")
             }
         }
@@ -184,6 +209,4 @@ class HeartRateViewModel: ObservableObject {
         countdownIsActive = false
         timeRemaining = 10 // Reset the countdown timer
     }
-    
-    
 }
