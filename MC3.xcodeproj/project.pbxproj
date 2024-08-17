@@ -22,6 +22,8 @@
 		DD4C775A2C6B017A00CEDFB2 /* SocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C77592C6B017A00CEDFB2 /* SocketHelper.swift */; };
 		DD4C775C2C6B0C0500CEDFB2 /* LocationManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C775B2C6B0C0500CEDFB2 /* LocationManagerViewModel.swift */; };
 		DD5574252C6DE175008F9B98 /* InputPinComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5574242C6DE175008F9B98 /* InputPinComponent.swift */; };
+		DD5574272C6E3790008F9B98 /* SwiftDataDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5574262C6E3790008F9B98 /* SwiftDataDataSourceProtocol.swift */; };
+		DD5574292C6E3EEE008F9B98 /* SwiftDataDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5574282C6E3EEE008F9B98 /* SwiftDataDataSource.swift */; };
 		DD6D7FDC2C6C5DA50023A499 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DD6D7FDB2C6C5DA50023A499 /* FirebaseFirestore */; };
 		DD6D7FDE2C6CC42C0023A499 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FDD2C6CC42C0023A499 /* User.swift */; };
 		DD6D7FE02C6CC8E80023A499 /* EmergencyContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FDF2C6CC8E80023A499 /* EmergencyContact.swift */; };
@@ -97,6 +99,8 @@
 		DD4C77592C6B017A00CEDFB2 /* SocketHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketHelper.swift; sourceTree = "<group>"; };
 		DD4C775B2C6B0C0500CEDFB2 /* LocationManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewModel.swift; sourceTree = "<group>"; };
 		DD5574242C6DE175008F9B98 /* InputPinComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPinComponent.swift; sourceTree = "<group>"; };
+		DD5574262C6E3790008F9B98 /* SwiftDataDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftDataDataSourceProtocol.swift; path = DataSources/Local/SwiftDataDataSourceProtocol.swift; sourceTree = SOURCE_ROOT; };
+		DD5574282C6E3EEE008F9B98 /* SwiftDataDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftDataDataSource.swift; path = DataSources/Local/SwiftDataDataSource.swift; sourceTree = SOURCE_ROOT; };
 		DD6D7FDD2C6CC42C0023A499 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = MC3/Presentation/Homepage/User.swift; sourceTree = SOURCE_ROOT; };
 		DD6D7FDF2C6CC8E80023A499 /* EmergencyContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmergencyContact.swift; path = MC3/Presentation/Homepage/EmergencyContact.swift; sourceTree = SOURCE_ROOT; };
 		DD6D7FE22C6CCE8D0023A499 /* FirebaseServiceDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseServiceDataSourceProtocol.swift; path = MC3/Presentation/Homepage/FirebaseServiceDataSourceProtocol.swift; sourceTree = SOURCE_ROOT; };
@@ -474,6 +478,8 @@
 			children = (
 				DD6D7FFE2C6D1EF90023A499 /* UserDefaultDataSourceProtocol.swift */,
 				DD6D80002C6D1F890023A499 /* UserDefaultDataSource.swift */,
+				DD5574262C6E3790008F9B98 /* SwiftDataDataSourceProtocol.swift */,
+				DD5574282C6E3EEE008F9B98 /* SwiftDataDataSource.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -666,6 +672,7 @@
 				DD6D800B2C6D23010023A499 /* UserDefaultUseCase.swift in Sources */,
 				DD5574252C6DE175008F9B98 /* InputPinComponent.swift in Sources */,
 				DD6D7FDE2C6CC42C0023A499 /* User.swift in Sources */,
+				DD5574272C6E3790008F9B98 /* SwiftDataDataSourceProtocol.swift in Sources */,
 				DD6D80012C6D1F890023A499 /* UserDefaultDataSource.swift in Sources */,
 				DD6D80042C6D21690023A499 /* UserDefaultRepositoryProtocol.swift in Sources */,
 				DD6D7FF02C6CDCAC0023A499 /* DependencyInjection.swift in Sources */,
@@ -673,6 +680,7 @@
 				DD6D7FE92C6CD1CB0023A499 /* FirebaseServiceRepository.swift in Sources */,
 				DD4C775A2C6B017A00CEDFB2 /* SocketHelper.swift in Sources */,
 				DD6D7FEE2C6CD6810023A499 /* FirebaseServiceUseCase.swift in Sources */,
+				DD5574292C6E3EEE008F9B98 /* SwiftDataDataSource.swift in Sources */,
 				DD6D80092C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift in Sources */,
 				DD6D7FF52C6D1AE50023A499 /* MKCoordinateRegion+Extension.swift in Sources */,
 				DDEB4B2C2C69146300375460 /* UIApplication+Extension.swift in Sources */,
