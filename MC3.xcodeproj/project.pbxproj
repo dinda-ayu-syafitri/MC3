@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		20190CF42C6A336B001A2AB6 /* WatchMC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20190CF32C6A336B001A2AB6 /* WatchMC3App.swift */; };
-		20190CF62C6A336B001A2AB6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20190CF52C6A336B001A2AB6 /* ContentView.swift */; };
 		20190CF82C6A336B001A2AB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CF72C6A336B001A2AB6 /* Assets.xcassets */; };
 		20190CFB2C6A336B001A2AB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */; };
 		20190CFE2C6A336B001A2AB6 /* WatchMC3 Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 20190CF12C6A336A001A2AB6 /* WatchMC3 Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -18,9 +17,11 @@
 		2058D15F2C65C65200D0557D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15E2C65C65200D0557D /* ContentView.swift */; };
 		2058D1612C65C65400D0557D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1602C65C65400D0557D /* Assets.xcassets */; };
 		2058D1642C65C65400D0557D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1632C65C65400D0557D /* Preview Assets.xcassets */; };
+		206A2CFF2C6EA40500287FD0 /* FCMTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206A2CFE2C6EA40500287FD0 /* FCMTokenManager.swift */; };
 		207BA47B2C6CF90E00B9B3FC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 207BA47A2C6CF90E00B9B3FC /* FirebaseMessaging */; };
 		207BA4822C6D905D00B9B3FC /* MessageNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */; };
 		207BA4842C6D930200B9B3FC /* AddEmergencyContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */; };
+		209E78792C6F563C00510BD4 /* MessageNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */; };
 		20D4DA9E2C6E59A4009E73D7 /* NoAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA972C6E59A4009E73D7 /* NoAlertsView.swift */; };
 		20D4DA9F2C6E59A4009E73D7 /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA982C6E59A4009E73D7 /* SOSView.swift */; };
 		20D4DAA02C6E59A4009E73D7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA992C6E59A4009E73D7 /* HomeView.swift */; };
@@ -45,6 +46,23 @@
 		81D079112C6DEB7700ACE61E /* NoAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079102C6DEB7700ACE61E /* NoAlertsView.swift */; };
 		81D079132C6DF04E00ACE61E /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079122C6DF04E00ACE61E /* CountdownView.swift */; };
 		81D079152C6DFD1500ACE61E /* PinInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079142C6DFD1500ACE61E /* PinInputView.swift */; };
+		DA1908392C6E0EA40087FA23 /* EmergencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1908382C6E0EA40087FA23 /* EmergencyViewModel.swift */; };
+		DA19083F2C6E44C20087FA23 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19083E2C6E44C20087FA23 /* Router.swift */; };
+		DA8B4A2C2C6B4BDF00BC5987 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A2B2C6B4BDF00BC5987 /* HomeView.swift */; };
+		DA8B4A2F2C6B4E3500BC5987 /* HeartRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A2E2C6B4E3500BC5987 /* HeartRateViewModel.swift */; };
+		DA8B4A312C6B503400BC5987 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */; };
+		DA8B4A332C6B50AD00BC5987 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A322C6B50AD00BC5987 /* HeartRateManager.swift */; };
+		DA8B4A352C6B516500BC5987 /* HeartRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A342C6B516500BC5987 /* HeartRateModel.swift */; };
+		DA8B4A3E2C6B923400BC5987 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */; };
+		DA8B4A402C6B935F00BC5987 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */; };
+		DA8B4A422C6BA3FE00BC5987 /* WatchToiOSConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A412C6BA3FE00BC5987 /* WatchToiOSConnector.swift */; };
+		DA8B4A442C6BA48F00BC5987 /* iOSToWatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A432C6BA48F00BC5987 /* iOSToWatchConnector.swift */; };
+		DA8B4A472C6BA53F00BC5987 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */; };
+		DA8B4A4B2C6BAE9D00BC5987 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */; };
+		DA8B4A512C6CC07E00BC5987 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */; };
+		DA8B4A522C6CC08100BC5987 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */; };
+		DA8B4A582C6CCA0D00BC5987 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A572C6CCA0D00BC5987 /* HomeViewModel.swift */; };
+		DA8B4A5A2C6D1B5900BC5987 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A592C6D1B5900BC5987 /* CountdownView.swift */; };
 		DD4C77512C6A59A800CEDFB2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = DD4C77502C6A59A800CEDFB2 /* SocketIO */; };
 		DD4C775A2C6B017A00CEDFB2 /* SocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C77592C6B017A00CEDFB2 /* SocketHelper.swift */; };
 		DD5574252C6DE175008F9B98 /* InputPinComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5574242C6DE175008F9B98 /* InputPinComponent.swift */; };
@@ -109,7 +127,6 @@
 /* Begin PBXFileReference section */
 		20190CF12C6A336A001A2AB6 /* WatchMC3 Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchMC3 Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20190CF32C6A336B001A2AB6 /* WatchMC3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchMC3App.swift; sourceTree = "<group>"; };
-		20190CF52C6A336B001A2AB6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		20190CF72C6A336B001A2AB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		201FB0732C6D9AE400058A95 /* EmergencyContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewModel.swift; sourceTree = "<group>"; };
@@ -121,6 +138,7 @@
 		2058D15E2C65C65200D0557D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2058D1602C65C65400D0557D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2058D1632C65C65400D0557D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		206A2CFE2C6EA40500287FD0 /* FCMTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMTokenManager.swift; sourceTree = "<group>"; };
 		207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotificationViewModel.swift; sourceTree = "<group>"; };
 		207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmergencyContactView.swift; sourceTree = "<group>"; };
 		20D4DA972C6E59A4009E73D7 /* NoAlertsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoAlertsView.swift; sourceTree = "<group>"; };
@@ -147,6 +165,22 @@
 		81D079102C6DEB7700ACE61E /* NoAlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoAlertsView.swift; path = MC3/NoAlertsView.swift; sourceTree = SOURCE_ROOT; };
 		81D079122C6DF04E00ACE61E /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountdownView.swift; path = MC3/CountdownView.swift; sourceTree = SOURCE_ROOT; };
 		81D079142C6DFD1500ACE61E /* PinInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PinInputView.swift; path = MC3/PinInputView.swift; sourceTree = SOURCE_ROOT; };
+		DA1908382C6E0EA40087FA23 /* EmergencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmergencyViewModel.swift; path = Views/Home/EmergencyViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DA19083E2C6E44C20087FA23 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Router.swift; path = Views/Home/Router.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A2B2C6B4BDF00BC5987 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Views/Home/HomeView.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A2E2C6B4E3500BC5987 /* HeartRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateViewModel.swift; path = Views/Home/HeartRateViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthKitManager.swift; path = Views/Home/HealthKitManager.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A322C6B50AD00BC5987 /* HeartRateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateManager.swift; path = Views/Home/HeartRateManager.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A342C6B516500BC5987 /* HeartRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateModel.swift; path = Views/Home/HeartRateModel.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A362C6B550100BC5987 /* WatchMC3 Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WatchMC3 Watch App.entitlements"; sourceTree = "<group>"; };
+		DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationManager.swift; path = Shared/NotificationManager.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationDelegate.swift; path = Shared/NotificationDelegate.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A412C6BA3FE00BC5987 /* WatchToiOSConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WatchToiOSConnector.swift; path = MC3/WatchToiOSConnector.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A432C6BA48F00BC5987 /* iOSToWatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = iOSToWatchConnector.swift; path = MC3/Common/iOSToWatchConnector.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS10.2.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
+		DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		DA8B4A572C6CCA0D00BC5987 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = Views/Home/HomeViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A592C6D1B5900BC5987 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountdownView.swift; path = Views/CountdownView.swift; sourceTree = SOURCE_ROOT; };
 		DD4C77592C6B017A00CEDFB2 /* SocketHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketHelper.swift; sourceTree = "<group>"; };
 		DD5574242C6DE175008F9B98 /* InputPinComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPinComponent.swift; sourceTree = "<group>"; };
 		DD5574262C6E3790008F9B98 /* SwiftDataDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftDataDataSourceProtocol.swift; path = DataSources/Local/SwiftDataDataSourceProtocol.swift; sourceTree = SOURCE_ROOT; };
@@ -184,6 +218,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA8B4A472C6BA53F00BC5987 /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA8B4A4B2C6BAE9D00BC5987 /* WatchConnectivity.framework in Frameworks */,
 				DDEB4B182C68C55B00375460 /* GoogleSignInSwift in Frameworks */,
 				DD4C77512C6A59A800CEDFB2 /* SocketIO in Frameworks */,
 				DDEB4B132C68C53000375460 /* FirebaseAuth in Frameworks */,
@@ -206,12 +242,12 @@
 		20190CF22C6A336A001A2AB6 /* WatchMC3 Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				DA8B4A362C6B550100BC5987 /* WatchMC3 Watch App.entitlements */,
 				20190D062C6A339D001A2AB6 /* Common */,
 				20190D052C6A3396001A2AB6 /* Data */,
 				20190D042C6A338C001A2AB6 /* Domain */,
 				20190D032C6A3382001A2AB6 /* Presentation */,
 				20190CF32C6A336B001A2AB6 /* WatchMC3App.swift */,
-				20190CF52C6A336B001A2AB6 /* ContentView.swift */,
 				20190CF72C6A336B001A2AB6 /* Assets.xcassets */,
 				20190CF92C6A336B001A2AB6 /* Preview Content */,
 			);
@@ -256,6 +292,9 @@
 		20190D062C6A339D001A2AB6 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */,
+				DA8B4A322C6B50AD00BC5987 /* HeartRateManager.swift */,
+				DA8B4A412C6BA3FE00BC5987 /* WatchToiOSConnector.swift */,
 				20190D0E2C6A33E7001A2AB6 /* Utils */,
 				20190D0D2C6A33DB001A2AB6 /* Extensions */,
 			);
@@ -272,6 +311,8 @@
 		20190D082C6A33AB001A2AB6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DA8B4A592C6D1B5900BC5987 /* CountdownView.swift */,
+				DA8B4A2D2C6B4D2D00BC5987 /* Home */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,6 +320,7 @@
 		20190D092C6A33B5001A2AB6 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				DA19083E2C6E44C20087FA23 /* Router.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -286,6 +328,7 @@
 		20190D0A2C6A33BC001A2AB6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				DA8B4A342C6B516500BC5987 /* HeartRateModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -331,10 +374,12 @@
 		2058D1502C65C65200D0557D = {
 			isa = PBXGroup;
 			children = (
+				DA8B4A502C6CBEF500BC5987 /* Shared */,
 				2058D15B2C65C65200D0557D /* MC3 */,
 				20190CF22C6A336A001A2AB6 /* WatchMC3 Watch App */,
 				2058D15A2C65C65200D0557D /* Products */,
 				DD6D7FDA2C6C5DA50023A499 /* Frameworks */,
+				209E78782C6F42F200510BD4 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -385,6 +430,7 @@
 		2058D16A2C65C98300D0557D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				DA8B4A432C6BA48F00BC5987 /* iOSToWatchConnector.swift */,
 				DD4C77582C6B016D00CEDFB2 /* Helper */,
 				2058D1752C65CA5E00D0557D /* Extensions */,
 				2058D1742C65CA5800D0557D /* Utils */,
@@ -509,8 +555,38 @@
 			isa = PBXGroup;
 			children = (
 				207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */,
+				206A2CFE2C6EA40500287FD0 /* FCMTokenManager.swift */,
 			);
 			path = MessageNotification;
+			sourceTree = "<group>";
+		};
+		209E78782C6F42F200510BD4 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */,
+				DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		DA8B4A2D2C6B4D2D00BC5987 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DA8B4A2B2C6B4BDF00BC5987 /* HomeView.swift */,
+				DA8B4A2E2C6B4E3500BC5987 /* HeartRateViewModel.swift */,
+				DA8B4A572C6CCA0D00BC5987 /* HomeViewModel.swift */,
+				DA1908382C6E0EA40087FA23 /* EmergencyViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DA8B4A502C6CBEF500BC5987 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */,
+				DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		DD4C77582C6B016D00CEDFB2 /* Helper */ = {
@@ -748,8 +824,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20190CF62C6A336B001A2AB6 /* ContentView.swift in Sources */,
+				DA8B4A5A2C6D1B5900BC5987 /* CountdownView.swift in Sources */,
+				DA8B4A2F2C6B4E3500BC5987 /* HeartRateViewModel.swift in Sources */,
+				DA8B4A582C6CCA0D00BC5987 /* HomeViewModel.swift in Sources */,
+				DA8B4A2C2C6B4BDF00BC5987 /* HomeView.swift in Sources */,
+				DA8B4A3E2C6B923400BC5987 /* NotificationManager.swift in Sources */,
+				DA8B4A352C6B516500BC5987 /* HeartRateModel.swift in Sources */,
+				DA8B4A402C6B935F00BC5987 /* NotificationDelegate.swift in Sources */,
+				DA8B4A312C6B503400BC5987 /* HealthKitManager.swift in Sources */,
 				20190CF42C6A336B001A2AB6 /* WatchMC3App.swift in Sources */,
+				DA19083F2C6E44C20087FA23 /* Router.swift in Sources */,
+				DA8B4A422C6BA3FE00BC5987 /* WatchToiOSConnector.swift in Sources */,
+				209E78792C6F563C00510BD4 /* MessageNotificationViewModel.swift in Sources */,
+				DA1908392C6E0EA40087FA23 /* EmergencyViewModel.swift in Sources */,
+				DA8B4A332C6B50AD00BC5987 /* HeartRateManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,6 +845,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA8B4A522C6CC08100BC5987 /* NotificationDelegate.swift in Sources */,
+				DA8B4A442C6BA48F00BC5987 /* iOSToWatchConnector.swift in Sources */,
+				DA8B4A512C6CC07E00BC5987 /* NotificationManager.swift in Sources */,
 				81D079072C6DE1E100ACE61E /* HomeView.swift in Sources */,
 				81D079112C6DEB7700ACE61E /* NoAlertsView.swift in Sources */,
 				81D079132C6DF04E00ACE61E /* CountdownView.swift in Sources */,
@@ -801,6 +892,7 @@
 				DD6D7FE72C6CD1A80023A499 /* FirebaseServiceRepositoryProtocol.swift in Sources */,
 				20D4DAA32C6E59A4009E73D7 /* ProfileView.swift in Sources */,
 				20D4DAA02C6E59A4009E73D7 /* HomeView.swift in Sources */,
+				206A2CFF2C6EA40500287FD0 /* FCMTokenManager.swift in Sources */,
 				DD6D7FF32C6D114A0023A499 /* ProviderIdEnum.swift in Sources */,
 				DD6D7FF72C6D1B360023A499 /* CLLocationCoordinate2D.swift in Sources */,
 				2058D15D2C65C65200D0557D /* MC3App.swift in Sources */,
@@ -837,6 +929,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "WatchMC3 Watch App/WatchMC3 Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchMC3 Watch App/Preview Content\"";
@@ -844,6 +937,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = WatchMC3;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "We need to access your health data to provide services";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need to access your health data to provide services";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We need to access your health data to provide services";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = MC3.Untouchable;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -858,7 +954,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
 		};
@@ -867,6 +963,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "WatchMC3 Watch App/WatchMC3 Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchMC3 Watch App/Preview Content\"";
@@ -874,6 +971,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = WatchMC3;
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "We need to access your health data to provide services";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need to access your health data to provide services";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We need to access your health data to provide services";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = MC3.Untouchable;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -888,7 +988,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
