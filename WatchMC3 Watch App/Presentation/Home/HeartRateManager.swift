@@ -12,7 +12,6 @@ class HeartRateManager {
     static let shared = HeartRateManager()
     private let healthStore = HKHealthStore()
     let heartRateType = HKQuantityType(.heartRate)
-    
     private var observerQuery: HKObserverQuery?
     
     //    let sevenMinutesAgo = Calendar.current.date(byAdding: .minute, value: -7, to: Date())
@@ -79,6 +78,4 @@ class HeartRateManager {
             }
         }
     }
-    
-    
 }

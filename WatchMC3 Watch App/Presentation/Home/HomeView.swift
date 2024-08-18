@@ -20,10 +20,8 @@ struct HomeView: View {
                     .font(.headline)
             }).padding()
             
-            
-            // BPM text
+            /// Heart Rate BPM
             HStack(spacing: 7) {
-                
                 Text(heartRateViewModel.heartRateModel.heartRate == 0 ? "--" : "\(Int(heartRateViewModel.heartRateModel.heartRate))")
                     .font(.largeTitle)
                 
@@ -36,11 +34,9 @@ struct HomeView: View {
                 }
             }
             
-            // SOS button
+            /// SOS button
             Button(action: {
-//                watchToiOSConnector.sendTriggerToiOS()
-                heartRateViewModel.createNotification(notificationType: .ABNORMALHEARTRATE)
-//                heartRateViewModel.popUpNotif()
+                heartRateViewModel.createNotification(notificationType: .SOSALERT)
             }) {
                 RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
                     .foregroundColor(.pink)

@@ -27,12 +27,11 @@ class NotificationManager {
     
     //register actions with categories
     func registerActionsWithCategories() {
-        
         let okayAction = UNNotificationAction(identifier: "Okay_Action",
                                               title: "I'm okay",
                                               options: [])
         
-        let sosCategory = UNNotificationCategory(identifier: NotificationTypeEnum.ABNORMALHEARTRATE.toString,
+        let abnormalHeartRateAction = UNNotificationCategory(identifier: NotificationTypeEnum.ABNORMALHEARTRATE.toString,
                                                  actions: [okayAction],
                                                  intentIdentifiers: [],
                                                  options: [])
@@ -43,7 +42,7 @@ class NotificationManager {
 //                                                 options: [])
         
         //register category with the shared notification center
-        UNUserNotificationCenter.current().setNotificationCategories([sosCategory])
+        UNUserNotificationCenter.current().setNotificationCategories([abnormalHeartRateAction])
     }
     
     
