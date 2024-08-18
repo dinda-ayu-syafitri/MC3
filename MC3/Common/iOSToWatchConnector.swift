@@ -41,21 +41,21 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
         print(message)
         print("SOS alert triggered from Apple Watch!")
 
-        messageViewModel.sendPushNotification(token: "dOBwwUKgGk2DsuqKBehzRm:APA91bFiskcpmyBJ8KUlZR4gkid1vjFrKCum3WeNZzXJkNccyhktizZXj8hEL45rDssGT121ldhlSduipOLsbxExKG5eDzuEKBmlnzojcDCnpRJU7N76l5-2mjnUOrdGjeAj16MJjudo", title: "Helppp!!! Wooiii", body: "Notif dari watch ke hp ke receiver", locationLink: "Ini nanti locaation link", senderFCM: "sender fcm")
-        if let action = message["action"] as? String, action == "sosAlert" {
+//        messageViewModel.sendPushNotification(token: "dOBwwUKgGk2DsuqKBehzRm:APA91bFiskcpmyBJ8KUlZR4gkid1vjFrKCum3WeNZzXJkNccyhktizZXj8hEL45rDssGT121ldhlSduipOLsbxExKG5eDzuEKBmlnzojcDCnpRJU7N76l5-2mjnUOrdGjeAj16MJjudo", title: "Helppp!!! Wooiii", body: "Notif dari watch ke hp ke receiver", locationLink: "Ini nanti locaation link", senderFCM: "sender fcm")
+        if let action = message["action"] as? String , action == NotificationTypeEnum.ABNORMALHEARTRATE.toString {
             // trigger SOS alert here
             print("SOS alert triggered from Apple Watch!")
 
             // notify the user or trigger a local notification
             NotificationManager.shared.scheduleNotification(
-                title: "SOS Alert Triggered",
-                body: "The Apple Watch has sent an SOS alert.",
-                category: "SOS_Category"
+                title: "Abnormal heart rate detected",
+                body: "Are you okay?",
+                category: action
             )
 
             // DEBUG: update content view
             DispatchQueue.main.async {
-                self.messageText = message["action"] as? String ?? "Unknown"
+                self.messageText = message["action"] as? String ?? "no data"
             }
         } else {
             print("Unknown action received: \(message)")

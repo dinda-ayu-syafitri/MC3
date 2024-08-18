@@ -81,8 +81,6 @@
 		DD6D7FF32C6D114A0023A499 /* ProviderIdEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FF22C6D114A0023A499 /* ProviderIdEnum.swift */; };
 		DD6D7FF52C6D1AE50023A499 /* MKCoordinateRegion+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FF42C6D1AE50023A499 /* MKCoordinateRegion+Extension.swift */; };
 		DD6D7FF72C6D1B360023A499 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FF62C6D1B360023A499 /* CLLocationCoordinate2D.swift */; };
-		DD6D7FFA2C6D1BE30023A499 /* LiveTrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FF92C6D1BE30023A499 /* LiveTrackViewModel.swift */; };
-		DD6D7FFC2C6D1BFA0023A499 /* LiveTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FFB2C6D1BFA0023A499 /* LiveTrack.swift */; };
 		DD6D7FFF2C6D1EF90023A499 /* UserDefaultDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D7FFE2C6D1EF90023A499 /* UserDefaultDataSourceProtocol.swift */; };
 		DD6D80012C6D1F890023A499 /* UserDefaultDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D80002C6D1F890023A499 /* UserDefaultDataSource.swift */; };
 		DD6D80042C6D21690023A499 /* UserDefaultRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D80032C6D21690023A499 /* UserDefaultRepositoryProtocol.swift */; };
@@ -90,6 +88,7 @@
 		DD6D80092C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D80082C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift */; };
 		DD6D800B2C6D23010023A499 /* UserDefaultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D800A2C6D23010023A499 /* UserDefaultUseCase.swift */; };
 		DD6D800D2C6D238E0023A499 /* KeyUserDefaultEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D800C2C6D238E0023A499 /* KeyUserDefaultEnum.swift */; };
+		DDBE51D52C71F31B001D6B1D /* NotificationTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBE51D42C71F31B001D6B1D /* NotificationTypeEnum.swift */; };
 		DDEB4B102C68C32F00375460 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB4B0F2C68C32F00375460 /* LoginView.swift */; };
 		DDEB4B132C68C53000375460 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DDEB4B122C68C53000375460 /* FirebaseAuth */; };
 		DDEB4B162C68C55B00375460 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = DDEB4B152C68C55B00375460 /* GoogleSignIn */; };
@@ -197,8 +196,6 @@
 		DD6D7FF22C6D114A0023A499 /* ProviderIdEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProviderIdEnum.swift; path = Entities/Enum/ProviderIdEnum.swift; sourceTree = SOURCE_ROOT; };
 		DD6D7FF42C6D1AE50023A499 /* MKCoordinateRegion+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "MKCoordinateRegion+Extension.swift"; path = "Entities/Enum/MKCoordinateRegion+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		DD6D7FF62C6D1B360023A499 /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CLLocationCoordinate2D.swift; path = Entities/Enum/CLLocationCoordinate2D.swift; sourceTree = SOURCE_ROOT; };
-		DD6D7FF92C6D1BE30023A499 /* LiveTrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrackViewModel.swift; sourceTree = "<group>"; };
-		DD6D7FFB2C6D1BFA0023A499 /* LiveTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTrack.swift; sourceTree = "<group>"; };
 		DD6D7FFE2C6D1EF90023A499 /* UserDefaultDataSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultDataSourceProtocol.swift; path = DataSources/Local/UserDefaultDataSourceProtocol.swift; sourceTree = SOURCE_ROOT; };
 		DD6D80002C6D1F890023A499 /* UserDefaultDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultDataSource.swift; path = DataSources/Local/UserDefaultDataSource.swift; sourceTree = SOURCE_ROOT; };
 		DD6D80032C6D21690023A499 /* UserDefaultRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultRepositoryProtocol.swift; path = Repositories/Local/UserDefaultRepositoryProtocol.swift; sourceTree = SOURCE_ROOT; };
@@ -206,6 +203,7 @@
 		DD6D80082C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultUseCaseProtocol.swift; path = UseCases/UserDefaultUseCases/UserDefaultUseCaseProtocol.swift; sourceTree = SOURCE_ROOT; };
 		DD6D800A2C6D23010023A499 /* UserDefaultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultUseCase.swift; path = UseCases/UserDefaultUseCases/UserDefaultUseCase.swift; sourceTree = SOURCE_ROOT; };
 		DD6D800C2C6D238E0023A499 /* KeyUserDefaultEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyUserDefaultEnum.swift; path = Entities/Enum/KeyUserDefaultEnum.swift; sourceTree = SOURCE_ROOT; };
+		DDBE51D42C71F31B001D6B1D /* NotificationTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationTypeEnum.swift; path = Entities/Enum/NotificationTypeEnum.swift; sourceTree = SOURCE_ROOT; };
 		DDEB4B0F2C68C32F00375460 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DDEB4B1F2C68CE9000375460 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DDEB4B222C68D07200375460 /* RandomNonceString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomNonceString.swift; path = Utils/Auth/RandomNonceString.swift; sourceTree = SOURCE_ROOT; };
@@ -442,12 +440,10 @@
 			isa = PBXGroup;
 			children = (
 				DD5574232C6DE15D008F9B98 /* ReusableComponents */,
-				DD6D7FF82C6D1BC50023A499 /* LiveTrack */,
 				DDEB4B262C68D97200375460 /* Homepage */,
 				DDEB4B0E2C68C31A00375460 /* Authentication */,
 				201FB0722C6D9AB900058A95 /* EmergencyContact */,
 				207BA4802C6D903500B9B3FC /* MessageNotification */,
-				2058D16F2C65C9CD00D0557D /* ViewModels */,
 				2058D16E2C65C9C400D0557D /* Views */,
 			);
 			path = Presentation;
@@ -485,13 +481,6 @@
 				81D078FC2C6C537E00ACE61E /* AddContactsView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		2058D16F2C65C9CD00D0557D /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		2058D1702C65C9D800D0557D /* Entities */ = {
@@ -636,17 +625,9 @@
 			children = (
 				DD6D7FF22C6D114A0023A499 /* ProviderIdEnum.swift */,
 				DD6D800C2C6D238E0023A499 /* KeyUserDefaultEnum.swift */,
+				DDBE51D42C71F31B001D6B1D /* NotificationTypeEnum.swift */,
 			);
 			path = Enum;
-			sourceTree = "<group>";
-		};
-		DD6D7FF82C6D1BC50023A499 /* LiveTrack */ = {
-			isa = PBXGroup;
-			children = (
-				DD6D7FF92C6D1BE30023A499 /* LiveTrackViewModel.swift */,
-				DD6D7FFB2C6D1BFA0023A499 /* LiveTrack.swift */,
-			);
-			path = LiveTrack;
 			sourceTree = "<group>";
 		};
 		DD6D7FFD2C6D1ED20023A499 /* Local */ = {
@@ -861,11 +842,10 @@
 				20D4DAA12C6E59A4009E73D7 /* CountdownView.swift in Sources */,
 				DD6D7FFF2C6D1EF90023A499 /* UserDefaultDataSourceProtocol.swift in Sources */,
 				DD6D7FE32C6CCE8D0023A499 /* FirebaseServiceDataSourceProtocol.swift in Sources */,
-				DD6D7FFA2C6D1BE30023A499 /* LiveTrackViewModel.swift in Sources */,
 				DDEB4B252C68D08E00375460 /* SHA256.swift in Sources */,
 				DD6D7FEC2C6CD5AA0023A499 /* FirebaseServiceUseCaseProtocol.swift in Sources */,
 				DD6D800D2C6D238E0023A499 /* KeyUserDefaultEnum.swift in Sources */,
-				DD6D7FFC2C6D1BFA0023A499 /* LiveTrack.swift in Sources */,
+				DDBE51D52C71F31B001D6B1D /* NotificationTypeEnum.swift in Sources */,
 				DD6D7FE02C6CC8E80023A499 /* EmergencyContact.swift in Sources */,
 				DDEB4B232C68D07200375460 /* RandomNonceString.swift in Sources */,
 				DD6D800B2C6D23010023A499 /* UserDefaultUseCase.swift in Sources */,
@@ -1145,7 +1125,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1183,7 +1163,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

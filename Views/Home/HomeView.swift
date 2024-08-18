@@ -38,7 +38,9 @@ struct HomeView: View {
             
             // SOS button
             Button(action: {
-                watchToiOSConnector.sendTriggerToiOS()
+//                watchToiOSConnector.sendTriggerToiOS()
+                heartRateViewModel.createNotification(notificationType: .ABNORMALHEARTRATE)
+//                heartRateViewModel.popUpNotif()
             }) {
                 RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
                     .foregroundColor(.pink)
@@ -53,8 +55,9 @@ struct HomeView: View {
         }
         .onAppear{
 //            heartRateViewModel.popUpNotif()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                watchToiOSConnector.sendTriggerToiOS()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+//                watchToiOSConnector.sendTriggerToiOS()
+                heartRateViewModel.createNotification(notificationType: .ABNORMALHEARTRATE)
                 print("HomeView Appear")
                }
 //            NotificationManager.shared.scheduleNotification(

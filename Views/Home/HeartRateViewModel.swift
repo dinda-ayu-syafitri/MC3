@@ -31,6 +31,10 @@ class HeartRateViewModel: ObservableObject {
         toggleBackgroundTracking()
     }
     
+    func createNotification(notificationType: NotificationTypeEnum) {
+        WatchToiOSConnector.shared.sendTriggerToiOS(notificationType: .ABNORMALHEARTRATE)
+    }
+    
     //fetch heart rate data (foreground tracking)
     func fetchHeartRateDataForeground() {
         HeartRateManager.shared.fetchHeartRateData { [weak self] samples in
@@ -149,11 +153,8 @@ class HeartRateViewModel: ObservableObject {
 
             //pop up notif to user
 //            self.isLikelyInEmergency = true
-            self.popUpNotif()
-            WatchToiOSConnector.shared.sendTriggerToiOS()
-
-            
-//            self.startCountdown()
+            self.createNotification(notificationType: .ABNORMALHEARTRATE)
+            self.startCountdown()
         }
 //        if self.timeRemaining == 0 /*&& !emergencySessionIsActive*/ {
 //            print("Countdown ends, sending message to iOS")
@@ -188,7 +189,7 @@ class HeartRateViewModel: ObservableObject {
                 category: "SOS_Category"
             )
 
-        messageViewModel.sendPushNotification(token: "dOBwwUKgGk2DsuqKBehzRm:APA91bFiskcpmyBJ8KUlZR4gkid1vjFrKCum3WeNZzXJkNccyhktizZXj8hEL45rDssGT121ldhlSduipOLsbxExKG5eDzuEKBmlnzojcDCnpRJU7N76l5-2mjnUOrdGjeAj16MJjudo", title: "Helppp!!! Wooiii", body: "Notif dari watch ke hp ke receiver", locationLink: "Ini nanti locaation link", senderFCM: "sender fcm")
+//        messageViewModel.sendPushNotification(token: "dOBwwUKgGk2DsuqKBehzRm:APA91bFiskcpmyBJ8KUlZR4gkid1vjFrKCum3WeNZzXJkNccyhktizZXj8hEL45rDssGT121ldhlSduipOLsbxExKG5eDzuEKBmlnzojcDCnpRJU7N76l5-2mjnUOrdGjeAj16MJjudo", title: "Helppp!!! Wooiii", body: "Notif dari watch ke hp ke receiver", locationLink: "Ini nanti locaation link", senderFCM: "sender fcm")
 //        }
         
     }

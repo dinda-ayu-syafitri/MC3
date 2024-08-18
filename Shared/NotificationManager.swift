@@ -32,10 +32,15 @@ class NotificationManager {
                                               title: "I'm okay",
                                               options: [])
         
-        let sosCategory = UNNotificationCategory(identifier: "SOS_Category",
+        let sosCategory = UNNotificationCategory(identifier: NotificationTypeEnum.ABNORMALHEARTRATE.toString,
                                                  actions: [okayAction],
                                                  intentIdentifiers: [],
                                                  options: [])
+        
+//        let sosCategory = UNNotificationCategory(identifier: "sosAlert",
+//                                                 actions: [okayAction],
+//                                                 intentIdentifiers: [],
+//                                                 options: [])
         
         //register category with the shared notification center
         UNUserNotificationCenter.current().setNotificationCategories([sosCategory])
@@ -50,7 +55,7 @@ class NotificationManager {
         content.sound = .default
         content.categoryIdentifier = category
         
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 0.001, repeats: false))
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 0.00001, repeats: false))
         
         UNUserNotificationCenter.current().add(request) { error in
             if let error = error {
