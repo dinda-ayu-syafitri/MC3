@@ -6,6 +6,7 @@
 //
 
 import Contacts
+import FirebaseAuth
 import SwiftData
 import SwiftUI
 
@@ -17,6 +18,8 @@ struct AddEmergencyContactView: View {
     @State private var tempEmergencyContact: EmergencyContact?
 
     @Query public var emergencyContactSaved: [EmergencyContacts]
+
+    @StateObject var emergencyContactVM = DependencyInjection.shared.emergencyContactsViewModel()
 
     var body: some View {
         VStack {
@@ -150,7 +153,12 @@ struct AddEmergencyContactView: View {
             }
             .padding(.top, 32)
             Spacer()
-            Button(action: {}, label: {
+            Button(action: {
+                Task {
+                    let firebaseID = Auth.auth().currentUser?.uid
+                    await emergencyContactVM.insertUserEmergencyContacts(idFirestore: firebaseID ?? "", emergencyContacts: emergencyContacts)
+                }
+            }, label: {
                 Text("Confirm Emergency Contact")
             })
         }
