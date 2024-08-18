@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 //     @State var reachable = "No"
-//     @StateObject var watchConnector = iOSToWatchConnector()
+     @StateObject var watchConnector = iOSToWatchConnector()
     
 //     var body: some View {
 //         VStack {
@@ -49,6 +49,7 @@ struct ContentView: View {
             if logStatus {
 //                HomepageView()
                 AddEmergencyContactView()
+              //LiveTrack()
             } else {
                 LoginView()
             }

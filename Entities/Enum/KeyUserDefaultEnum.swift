@@ -11,6 +11,7 @@ enum KeyUserDefaultEnum {
     case email
     case idFirebase
     case status
+    case roomLiveLocation
 }
 
 extension KeyUserDefaultEnum {
@@ -22,6 +23,8 @@ extension KeyUserDefaultEnum {
             return "idFirebase"
         case .status:
             return "status"
+        case .roomLiveLocation:
+            return "roomLiveLocation"
         }
     }
 }
