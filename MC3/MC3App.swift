@@ -153,7 +153,7 @@ struct MC3App: App {
                     GIDSignIn.sharedInstance.handle(url)
                 }
                 .environmentObject(messageNotifViewModel)
-                .modelContainer(for: [User.self, EmergencyContact.self])
+                .modelContainer(for: [User.self, EmergencyContacts.self])
         }
     }
 }
