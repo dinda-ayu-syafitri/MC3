@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  Home.swift
 //  WatchMC3 Watch App
 //
 //  Created by Michelle Chau on 13/08/24.
@@ -7,12 +7,8 @@
 
 import SwiftUI
 
-struct HomeView: View {
-    @ObservedObject var healthKitManager = HealthKitManager()
-    @StateObject private var heartRateViewModel = HeartRateViewModel()
-    @StateObject var watchToiOSConnector = WatchToiOSConnector()
-    
-    @State var isCountdownViewPresented: Bool = false
+struct Home: View {
+    @StateObject private var homeVM = HomeViewModel()
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -20,7 +16,7 @@ struct HomeView: View {
             HStack {
                 Text("SOS Inactive")
                     .onTapGesture {
-                        isCountdownViewPresented = true
+                        homeVM.isCountdownViewPresented = true
                     }
                     .font(.system(size: 17) .weight(.semibold))
                     .foregroundColor(.pastelPink)
@@ -32,9 +28,8 @@ struct HomeView: View {
             
             // SOS button
             Button(action: {
-                watchToiOSConnector.sendTriggerToiOS(notificationType: .SOSALERT)
+                homeVM.createNotification(notificationType: .SOSALERT)
             }) {
-                
                 VStack(alignment: .center, spacing: 8) {
                     Image(systemName: "bell.and.waves.left.and.right.fill")
                         .font(
@@ -66,22 +61,20 @@ struct HomeView: View {
         .padding(10)
         .frame(maxWidth: .infinity, alignment: .leading)
         .ignoresSafeArea()
-        .fullScreenCover(isPresented: $isCountdownViewPresented, content: {
+        .fullScreenCover(isPresented: $homeVM.isCountdownViewPresented, content: {
 //            CountdownView()
 //            CallView()
             DeactivateView()
         })
         .navigationTitle("Home")
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                heartRateViewModel.createNotificatiown(notificationType: .ABNORMALHEARTRATE)
-            }
-
-        }
-        
+//        .onAppear {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+//                heartRateViewModel.createNotificatiown(notificationType: .ABNORMALHEARTRATE)
+//            }
+//        }
     }
 }
 
 #Preview {
-    HomeView()
+    Home()
 }

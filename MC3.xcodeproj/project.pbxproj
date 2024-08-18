@@ -56,11 +56,10 @@
 		DA221D422C71CC3C00F88958 /* SOSActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D412C71CC3C00F88958 /* SOSActiveView.swift */; };
 		DA221D442C71CC7F00F88958 /* HBJumpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D432C71CC7F00F88958 /* HBJumpView.swift */; };
 		DA221D482C71DB4A00F88958 /* OverlayPlayerForTimeRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D472C71DB4A00F88958 /* OverlayPlayerForTimeRemove.swift */; };
-		DA8B4A2C2C6B4BDF00BC5987 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A2B2C6B4BDF00BC5987 /* HomeView.swift */; };
-		DA8B4A2F2C6B4E3500BC5987 /* HeartRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A2E2C6B4E3500BC5987 /* HeartRateViewModel.swift */; };
+		DA8B4A2C2C6B4BDF00BC5987 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A2B2C6B4BDF00BC5987 /* Home.swift */; };
+		DA8B4A2F2C6B4E3500BC5987 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A2E2C6B4E3500BC5987 /* HomeViewModel.swift */; };
 		DA8B4A312C6B503400BC5987 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */; };
 		DA8B4A332C6B50AD00BC5987 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A322C6B50AD00BC5987 /* HeartRateManager.swift */; };
-		DA8B4A352C6B516500BC5987 /* HeartRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A342C6B516500BC5987 /* HeartRateModel.swift */; };
 		DA8B4A3E2C6B923400BC5987 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */; };
 		DA8B4A402C6B935F00BC5987 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */; };
 		DA8B4A422C6BA3FE00BC5987 /* WatchToiOSConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A412C6BA3FE00BC5987 /* WatchToiOSConnector.swift */; };
@@ -69,7 +68,6 @@
 		DA8B4A4B2C6BAE9D00BC5987 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */; };
 		DA8B4A512C6CC07E00BC5987 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */; };
 		DA8B4A522C6CC08100BC5987 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */; };
-		DA8B4A582C6CCA0D00BC5987 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A572C6CCA0D00BC5987 /* HomeViewModel.swift */; };
 		DD4C77512C6A59A800CEDFB2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = DD4C77502C6A59A800CEDFB2 /* SocketIO */; };
 		DD4C775A2C6B017A00CEDFB2 /* SocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C77592C6B017A00CEDFB2 /* SocketHelper.swift */; };
 		DD5574252C6DE175008F9B98 /* InputPinComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5574242C6DE175008F9B98 /* InputPinComponent.swift */; };
@@ -185,11 +183,10 @@
 		DA221D412C71CC3C00F88958 /* SOSActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSActiveView.swift; sourceTree = "<group>"; };
 		DA221D432C71CC7F00F88958 /* HBJumpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBJumpView.swift; sourceTree = "<group>"; };
 		DA221D472C71DB4A00F88958 /* OverlayPlayerForTimeRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OverlayPlayerForTimeRemove.swift; path = Utils/OverlayPlayerForTimeRemove.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A2B2C6B4BDF00BC5987 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Views/Home/HomeView.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A2E2C6B4E3500BC5987 /* HeartRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateViewModel.swift; path = Views/Home/HeartRateViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A2B2C6B4BDF00BC5987 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Home.swift; path = Views/Home/Home.swift; sourceTree = SOURCE_ROOT; };
+		DA8B4A2E2C6B4E3500BC5987 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = Views/Home/HomeViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthKitManager.swift; path = Views/Home/HealthKitManager.swift; sourceTree = SOURCE_ROOT; };
 		DA8B4A322C6B50AD00BC5987 /* HeartRateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateManager.swift; path = Views/Home/HeartRateManager.swift; sourceTree = SOURCE_ROOT; };
-		DA8B4A342C6B516500BC5987 /* HeartRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateModel.swift; path = Views/Home/HeartRateModel.swift; sourceTree = SOURCE_ROOT; };
 		DA8B4A362C6B550100BC5987 /* WatchMC3 Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WatchMC3 Watch App.entitlements"; sourceTree = "<group>"; };
 		DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationManager.swift; path = Shared/NotificationManager.swift; sourceTree = SOURCE_ROOT; };
 		DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationDelegate.swift; path = Shared/NotificationDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -197,7 +194,6 @@
 		DA8B4A432C6BA48F00BC5987 /* iOSToWatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = iOSToWatchConnector.swift; path = MC3/Common/iOSToWatchConnector.swift; sourceTree = SOURCE_ROOT; };
 		DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS10.2.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 		DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
-		DA8B4A572C6CCA0D00BC5987 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = Views/Home/HomeViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DD4C77592C6B017A00CEDFB2 /* SocketHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketHelper.swift; sourceTree = "<group>"; };
 		DD5574242C6DE175008F9B98 /* InputPinComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPinComponent.swift; sourceTree = "<group>"; };
 		DD6D7FDD2C6CC42C0023A499 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = User.swift; path = MC3/Presentation/Homepage/User.swift; sourceTree = SOURCE_ROOT; };
@@ -286,7 +282,6 @@
 			isa = PBXGroup;
 			children = (
 				20190D082C6A33AB001A2AB6 /* Views */,
-				20190D072C6A33A5001A2AB6 /* ViewModels */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -321,13 +316,6 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		20190D072C6A33A5001A2AB6 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		20190D082C6A33AB001A2AB6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,7 +340,6 @@
 		20190D0A2C6A33BC001A2AB6 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				DA8B4A342C6B516500BC5987 /* HeartRateModel.swift */,
 				DDF91F1B2C7259340072CCB1 /* NotificationTypeEnum.swift */,
 			);
 			path = Entities;
@@ -623,9 +610,8 @@
 		DA8B4A2D2C6B4D2D00BC5987 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				DA8B4A2B2C6B4BDF00BC5987 /* HomeView.swift */,
-				DA8B4A2E2C6B4E3500BC5987 /* HeartRateViewModel.swift */,
-				DA8B4A572C6CCA0D00BC5987 /* HomeViewModel.swift */,
+				DA8B4A2B2C6B4BDF00BC5987 /* Home.swift */,
+				DA8B4A2E2C6B4E3500BC5987 /* HomeViewModel.swift */,
 				DA1908382C6E0EA40087FA23 /* EmergencyViewModel.swift */,
 				DA221D412C71CC3C00F88958 /* SOSActiveView.swift */,
 				DA221D3E2C71C8DB00F88958 /* TrackingView.swift */,
@@ -888,13 +874,11 @@
 			files = (
 				DDA830152C72560C000F4724 /* DeactivateViewModel.swift in Sources */,
 				DA221D442C71CC7F00F88958 /* HBJumpView.swift in Sources */,
-				DA8B4A2F2C6B4E3500BC5987 /* HeartRateViewModel.swift in Sources */,
+				DA8B4A2F2C6B4E3500BC5987 /* HomeViewModel.swift in Sources */,
 				DDF91F1C2C7259340072CCB1 /* NotificationTypeEnum.swift in Sources */,
 				DDA830142C72560C000F4724 /* DeactivateView.swift in Sources */,
-				DA8B4A582C6CCA0D00BC5987 /* HomeViewModel.swift in Sources */,
-				DA8B4A2C2C6B4BDF00BC5987 /* HomeView.swift in Sources */,
+				DA8B4A2C2C6B4BDF00BC5987 /* Home.swift in Sources */,
 				DA8B4A3E2C6B923400BC5987 /* NotificationManager.swift in Sources */,
-				DA8B4A352C6B516500BC5987 /* HeartRateModel.swift in Sources */,
 				DA8B4A402C6B935F00BC5987 /* NotificationDelegate.swift in Sources */,
 				DA221D3F2C71C8DB00F88958 /* TrackingView.swift in Sources */,
 				DA221D312C6FA7B300F88958 /* AllViews.swift in Sources */,

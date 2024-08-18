@@ -55,9 +55,7 @@ struct CountdownView: View {
         .ignoresSafeArea()
         .background(.black)
 //        .navigationTitle("Countdown")
-        
     }
- 
 }
 
 
