@@ -16,7 +16,6 @@ final class SocketHelper: ObservableObject {
     @Published var messages: String = ""
     @Published var roomName: String = ""
     @Published var isListener: Bool = false
-    
     @Published var mapRegion: MKCoordinateRegion = MKCoordinateRegion()
     @Published var mapCamera: MapCameraPosition
     @Published var longitude: CLLocationDegrees = -6.303338
@@ -36,7 +35,7 @@ final class SocketHelper: ObservableObject {
     private func setupSocket() {
         guard socket == nil else { return }
         
-        manager = SocketManager(socketURL: URL(string: "https://small-adaptive-efraasia.glitch.me")!, config: [.log(false), .compress, .forcePolling(true)])
+        manager = SocketManager(socketURL: URL(string: "https://small-adaptive-efraasia.glitch.me")!, config: [.log(true), .compress, .forcePolling(true)])
         socket = manager.defaultSocket
         
         socket.on(clientEvent: .connect) { (data, ack) in
@@ -57,6 +56,7 @@ final class SocketHelper: ObservableObject {
     }
     
     func createOrJoinRoom(roomName: String, isListener: Bool) {
+        print("create or join room : \(roomName), \(isListener)")
         socket.emit("createRoom", roomName)
         
         if isListener {
@@ -69,11 +69,12 @@ final class SocketHelper: ObservableObject {
             guard let message = data.first as? [String: Double],
                   let longitude = message["longitude"],
                   let latitude = message["latitude"] else {
-                print("Failed to parse message")
+                print("Failed to parse message when listening room")
                 return
             }
             
             DispatchQueue.main.async {
+                print("success get data")
                 self?.messages = "Longitude: \(longitude), Latitude: \(latitude)"
                 self?.longitude = longitude
                 self?.latitude = latitude
@@ -84,6 +85,10 @@ final class SocketHelper: ObservableObject {
         }
     }
 
+//    service.sendMessageToRoom(roomName: "Listener", message: [
+//        "longitude": 106.656,
+//        "latitude": -6.264
+//    ])
     func sendMessageToRoom(roomName: String, message: [String:Double]) {
         let data: [String: Any] = ["roomName": roomName, "message": message]
         socket.emit("sendMessageToRoom", data)

@@ -74,7 +74,4 @@ class LocationManagerViewModel: NSObject, ObservableObject, MKMapViewDelegate, C
     func refreshLocation() {
         manager.requestLocation()
     }
-    
-    
 }
-
