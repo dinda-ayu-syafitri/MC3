@@ -33,8 +33,9 @@ class EmergencyContactViewModel: ObservableObject {
         }
     }
 
-    func SaveLocalEmergencyContacts(context: ModelContext, emergencyContacts: EmergencyContacts) {
-        context.insert(emergencyContacts)
+    func SaveLocalEmergencyContacts(context: ModelContext, emergencyContacts: [EmergencyContact]) {
+        let formattedEmergencyContacts = EmergencyContacts(emergencyContacts: emergencyContacts)
+        context.insert(formattedEmergencyContacts)
     }
 
     func fetchLocalEmergencyContacts(context: ModelContext) -> EmergencyContacts? {

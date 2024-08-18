@@ -11,6 +11,8 @@ import SwiftData
 import SwiftUI
 
 struct AddEmergencyContactView: View {
+    @Environment(\.modelContext) public var context
+
     @State private var selectedContact: CNContact?
     @State var isPrimary = false
     @State private var isShowingPicker = false
@@ -158,7 +160,6 @@ struct AddEmergencyContactView: View {
                                 }
                             }
                             .padding(0)
-                            .background(.red)
                             .listStyle(PlainListStyle())
                         }
 
@@ -177,15 +178,42 @@ struct AddEmergencyContactView: View {
                 }
             }
             .padding(.top, 32)
+
+            if !emergencyContactSaved.isEmpty {
+                ForEach(emergencyContactSaved.first!.emergencyContacts, id: \.id) { contact in
+                    Text(contact.fullName)
+                }
+            } else {
+                Text("Emergency Contact Empty")
+            }
+
             Spacer()
             Button(action: {
                 Task {
                     let firebaseID = Auth.auth().currentUser?.uid
                     await emergencyContactVM.insertUserEmergencyContacts(idFirestore: firebaseID ?? "", emergencyContacts: emergencyContacts)
+
+                    emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContacts)
                 }
             }, label: {
                 Text("Confirm Emergency Contact")
             })
+
+//            Button(action: {
+//                Task {
+//                    for contact in emergencyContactSaved {
+//                        context.delete(contact)
+//                    }
+//
+//                    do {
+//                        try context.save()
+//                    } catch {
+//                        print("Failed to delete contacts: \(error.localizedDescription)")
+//                    }
+//                }
+//            }, label: {
+//                Text("Delete All Local Contacts")
+//            })
         }
         .padding(16)
     }
