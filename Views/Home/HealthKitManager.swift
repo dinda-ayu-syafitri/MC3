@@ -9,7 +9,6 @@ import Foundation
 import HealthKit
 
 class HealthKitManager: ObservableObject {
-    
     let healthStore = HKHealthStore()
     @Published var isAuthorized: Bool = false
     
@@ -42,5 +41,3 @@ class HealthKitManager: ObservableObject {
     }
     
 }
-
-//            guard let heartRateType = HKObjectType.quantityType(forIdentifier: .heartRate) else {return}

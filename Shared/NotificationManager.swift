@@ -27,7 +27,6 @@ class NotificationManager {
     
     //register actions with categories
     func registerActionsWithCategories() {
-        
         let okayAction = UNNotificationAction(identifier: "Okay_Action",
                                               title: "I'm okay",
                                               options: [])

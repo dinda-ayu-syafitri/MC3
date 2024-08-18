@@ -11,11 +11,10 @@ struct AllViews: View {
     var body: some View {
         TabView() {
             //Home View
-            HomeView()
+            Home()
             
             //Settings View
-            SettingsView(heartRateViewModel: HeartRateViewModel())
-            
+            SettingsView(heartRateViewModel: HomeViewModel())
         }
         .tabViewStyle(.verticalPage)
     }

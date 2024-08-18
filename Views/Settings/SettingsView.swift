@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @ObservedObject var heartRateViewModel: HeartRateViewModel
+    @ObservedObject var heartRateViewModel: HomeViewModel
     
     @State var hapticIsEnabled = false
     
@@ -83,5 +83,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView(heartRateViewModel: HeartRateViewModel())
+    SettingsView(heartRateViewModel: HomeViewModel())
 }

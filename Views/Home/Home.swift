@@ -1,5 +1,5 @@
 //
-//  HomeView.swift
+//  Home.swift
 //  WatchMC3 Watch App
 //
 //  Created by Michelle Chau on 13/08/24.
@@ -7,12 +7,8 @@
 
 import SwiftUI
 
-struct HomeView: View {
-    @ObservedObject var healthKitManager = HealthKitManager()
-    @StateObject private var heartRateViewModel = HeartRateViewModel()
-    @StateObject var watchToiOSConnector = WatchToiOSConnector()
-    
-    @State var isCountdownViewPresented: Bool = false
+struct Home: View {
+    @StateObject private var homeVM = HomeViewModel()
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -20,7 +16,7 @@ struct HomeView: View {
             HStack {
                 Text("SOS Inactive")
                     .onTapGesture {
-                        isCountdownViewPresented = true
+                        homeVM.isCountdownViewPresented = true
                     }
                     .font(.system(size: 17) .weight(.semibold))
                     .foregroundColor(.pastelPink)
@@ -30,13 +26,11 @@ struct HomeView: View {
             }
             .frame(maxWidth: .infinity)
             
-            
             // SOS button
             Button(action: {
-                watchToiOSConnector.sendTriggerToiOS()
+                homeVM.createNotification(notificationType: .SOSALERT)
             }) {
-                
-                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 8) {
+                VStack(alignment: .center, spacing: 8) {
                     Image(systemName: "bell.and.waves.left.and.right.fill")
                         .font(
                             .system(size: 34)
@@ -55,47 +49,32 @@ struct HomeView: View {
                     
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-//                .padding(.horizontal, 8)
-//                .padding(.vertical, 14)
                 .background(LinearGradient(
                     gradient: Gradient(colors: [Color(.melonPink), Color(.darkPink)]),
                     startPoint: .top,
                     endPoint: .bottom
                 ))
                 .cornerRadius(12)
-                
-                
             }
             .buttonStyle(PlainButtonStyle())
         }
         .padding(10)
         .frame(maxWidth: .infinity, alignment: .leading)
         .ignoresSafeArea()
-        .fullScreenCover(isPresented: $isCountdownViewPresented, content: {
+        .fullScreenCover(isPresented: $homeVM.isCountdownViewPresented, content: {
 //            CountdownView()
 //            CallView()
             DeactivateView()
         })
         .navigationTitle("Home")
-        
+//        .onAppear {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+//                heartRateViewModel.createNotificatiown(notificationType: .ABNORMALHEARTRATE)
+//            }
+//        }
     }
 }
 
 #Preview {
-    HomeView()
+    Home()
 }
-
-// BPM text
-//            HStack(spacing: 7) {
-//
-//                Text(heartRateViewModel.heartRateModel.heartRate == 0 ? "--" : "\(Int(heartRateViewModel.heartRateModel.heartRate))")
-//                    .font(.largeTitle)
-//
-//                HStack(spacing: 1) {
-//                    Text("BPM")
-//                        .font(.headline)
-//                    Image(systemName: "heart.fill")
-//                        .foregroundColor(.red)
-//                        .frame(width: 24, height: 22)
-//                }
-//            }
