@@ -53,7 +53,7 @@ struct AddEmergencyContactView: View {
                     }
 
                     if let primaryContact = emergencyContacts.first(where: { $0.isPrimary }) {
-                        VStack {
+                        List {
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(.clear)
                                 .stroke(.gray, lineWidth: 1)
@@ -74,7 +74,17 @@ struct AddEmergencyContactView: View {
                                     .multilineTextAlignment(.leading)
 
                                 })
+                                .swipeActions(edge: .trailing) {
+                                    Button(role: .destructive) {
+                                        if let index = emergencyContacts.firstIndex(where: { $0.id == primaryContact.id }) {
+                                            emergencyContacts.remove(at: index)
+                                        }
+                                    } label: {
+                                        Label("Delete", systemImage: "trash")
+                                    }
+                                }
                         }
+                        .listStyle(PlainListStyle())
 
                     } else {
                         RoundedRectangle(cornerRadius: 10)
@@ -110,13 +120,14 @@ struct AddEmergencyContactView: View {
 
                     if emergencyContacts.first(where: { $0.isPrimary == false }) != nil {
                         VStack {
-                            ForEach(emergencyContacts) { contact in
-                                if !contact.isPrimary {
-                                    VStack {
+                            List {
+                                ForEach(emergencyContacts) { contact in
+                                    if !contact.isPrimary {
                                         RoundedRectangle(cornerRadius: 10)
                                             .fill(.clear)
                                             .stroke(.gray, lineWidth: 1)
                                             .frame(height: 80)
+                                            .frame(maxWidth: .infinity)
                                             .overlay(content: {
                                                 VStack(alignment: .leading) {
                                                     Text("\(contact.fullName)")
@@ -133,10 +144,24 @@ struct AddEmergencyContactView: View {
                                                 .multilineTextAlignment(.leading)
 
                                             })
+                                            .padding(0)
+                                            .swipeActions(edge: .trailing) {
+                                                Button(role: .destructive) {
+                                                    if let index = emergencyContacts.firstIndex(where: { $0.id == contact.id }) {
+                                                        emergencyContacts.remove(at: index)
+                                                    }
+                                                } label: {
+                                                    Label("Delete", systemImage: "trash")
+                                                }
+                                            }
                                     }
                                 }
                             }
+                            .padding(0)
+                            .background(.red)
+                            .listStyle(PlainListStyle())
                         }
+
                     } else {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.clear)
