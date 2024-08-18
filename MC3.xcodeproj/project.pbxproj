@@ -13,6 +13,7 @@
 		20190CFE2C6A336B001A2AB6 /* WatchMC3 Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 20190CF12C6A336A001A2AB6 /* WatchMC3 Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		201FB0742C6D9AE400058A95 /* EmergencyContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201FB0732C6D9AE400058A95 /* EmergencyContactViewModel.swift */; };
 		201FB0762C6DC32F00058A95 /* ContactPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201FB0752C6DC32F00058A95 /* ContactPickerView.swift */; };
+		202297A92C71EF3B00EFAF37 /* EmergencyContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202297A82C71EF3B00EFAF37 /* EmergencyContacts.swift */; };
 		2058D15D2C65C65200D0557D /* MC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15C2C65C65200D0557D /* MC3App.swift */; };
 		2058D15F2C65C65200D0557D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15E2C65C65200D0557D /* ContentView.swift */; };
 		2058D1612C65C65400D0557D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1602C65C65400D0557D /* Assets.xcassets */; };
@@ -35,7 +36,6 @@
 		20F95A662C6E1073005B3DA1 /* LocationManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F95A612C6E1073005B3DA1 /* LocationManagerViewModel.swift */; };
 		20F95A6A2C6E11A5005B3DA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20F95A692C6E11A5005B3DA1 /* GoogleService-Info.plist */; };
 		81D078F92C6C52FC00ACE61E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078F82C6C52FC00ACE61E /* OnboardingView.swift */; };
-		81D078FD2C6C537E00ACE61E /* AddContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078FC2C6C537E00ACE61E /* AddContactsView.swift */; };
 		81D079072C6DE1E100ACE61E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079062C6DE1E100ACE61E /* HomeView.swift */; };
 		81D079092C6DE1EB00ACE61E /* LiveTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079082C6DE1EB00ACE61E /* LiveTrackView.swift */; };
 		81D0790B2C6DE1F400ACE61E /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D0790A2C6DE1F400ACE61E /* SOSView.swift */; };
@@ -135,6 +135,7 @@
 		20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		201FB0732C6D9AE400058A95 /* EmergencyContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewModel.swift; sourceTree = "<group>"; };
 		201FB0752C6DC32F00058A95 /* ContactPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPickerView.swift; sourceTree = "<group>"; };
+		202297A82C71EF3B00EFAF37 /* EmergencyContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContacts.swift; sourceTree = "<group>"; };
 		203AB9A42C6C710A00D7AD86 /* MC3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MC3.entitlements; sourceTree = "<group>"; };
 		203AB9A52C6C712B00D7AD86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2058D1592C65C65200D0557D /* MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -371,6 +372,7 @@
 		201FB0722C6D9AB900058A95 /* EmergencyContact */ = {
 			isa = PBXGroup;
 			children = (
+				20F585022C6DD28F00114E3D /* AddContactsView.swift */,
 				207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */,
 				201FB0732C6D9AE400058A95 /* EmergencyContactViewModel.swift */,
 				201FB0752C6DC32F00058A95 /* ContactPickerView.swift */,
@@ -402,7 +404,6 @@
 		2058D15B2C65C65200D0557D /* MC3 */ = {
 			isa = PBXGroup;
 			children = (
-				20F585022C6DD28F00114E3D /* AddContactsView.swift */,
 				20F585062C6DD28F00114E3D /* OnboardingView.swift */,
 				20D4DA9A2C6E59A4009E73D7 /* CountdownView.swift */,
 				20D4DA992C6E59A4009E73D7 /* HomeView.swift */,
@@ -506,6 +507,7 @@
 				DD6D7FF12C6D11240023A499 /* Enum */,
 				DD6D7FDD2C6CC42C0023A499 /* User.swift */,
 				DD6D7FDF2C6CC8E80023A499 /* EmergencyContact.swift */,
+				202297A82C71EF3B00EFAF37 /* EmergencyContacts.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -916,6 +918,7 @@
 				DD6D7FFC2C6D1BFA0023A499 /* LiveTrack.swift in Sources */,
 				DD6D7FE02C6CC8E80023A499 /* EmergencyContact.swift in Sources */,
 				DDEB4B232C68D07200375460 /* RandomNonceString.swift in Sources */,
+				202297A92C71EF3B00EFAF37 /* EmergencyContacts.swift in Sources */,
 				DD6D800B2C6D23010023A499 /* UserDefaultUseCase.swift in Sources */,
 				DD5574252C6DE175008F9B98 /* InputPinComponent.swift in Sources */,
 				DD6D7FDE2C6CC42C0023A499 /* User.swift in Sources */,
@@ -952,7 +955,6 @@
 				207BA4842C6D930200B9B3FC /* AddEmergencyContactView.swift in Sources */,
 				201FB0762C6DC32F00058A95 /* ContactPickerView.swift in Sources */,
 				20F5850C2C6DD28F00114E3D /* OnboardingView.swift in Sources */,
-				81D078FD2C6C537E00ACE61E /* AddContactsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

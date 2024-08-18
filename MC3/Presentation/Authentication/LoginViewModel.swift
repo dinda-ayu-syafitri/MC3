@@ -131,4 +131,12 @@ class LoginViewModel: ObservableObject {
             print("error while registering on vm : \(error.localizedDescription)")
         }
     }
+
+    func updateFcm(idFirestore: String, fcm: String) async {
+        do {
+            try await self.firebaseUseCase.updateFcm(idFirestore: idFirestore, fcm: fcm)
+        } catch {
+            print("error while registering on vm : \(error.localizedDescription)")
+        }
+    }
 }
