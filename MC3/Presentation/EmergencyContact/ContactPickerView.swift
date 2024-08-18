@@ -23,9 +23,7 @@ struct ContactPickerView: UIViewControllerRepresentable {
         return navController
     }
 
-    func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
-        print("Updating the contacts controller!")
-    }
+    func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {}
 
     // MARK: ViewController Representable delegate methods
 
@@ -40,12 +38,10 @@ struct ContactPickerView: UIViewControllerRepresentable {
         }
 
         func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
-            print("Contact picked cancelled!")
             parent.presentationMode.wrappedValue.dismiss()
         }
 
         func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
-            print("Selected a contact")
             parent.presentationMode.wrappedValue.dismiss()
 
             // Create a new emergency contact with the correct isPrimary flag
@@ -71,39 +67,7 @@ struct ContactPickerView: UIViewControllerRepresentable {
             parent.selectedContact = contact
             parent.tempEmergencyContact = newEmergencyContact
 
-            print(parent.emergencyContacts)
+//            print(parent.emergencyContacts)
         }
     }
 }
-
-// struct ContactPickerView: UIViewControllerRepresentable {
-//    @Binding var selectedContact: CNContact?
-//
-//    func makeCoordinator() -> Coordinator {
-//        Coordinator(self)
-//    }
-//
-//    func makeUIViewController(context: Context) -> CNContactPickerViewController {
-//        let picker = CNContactPickerViewController()
-//        picker.delegate = context.coordinator
-//        return picker
-//    }
-//
-//    func updateUIViewController(_ uiViewController: CNContactPickerViewController, context: Context) {}
-//
-//    class Coordinator: NSObject, CNContactPickerDelegate {
-//        var parent: ContactPickerView
-//
-//        init(_ parent: ContactPickerView) {
-//            self.parent = parent
-//        }
-//
-//        func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
-//            parent.selectedContact = contact
-//        }
-//
-//        func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
-//            parent.selectedContact = nil
-//        }
-//    }
-// }

@@ -41,18 +41,35 @@ struct AddEmergencyContactView: View {
                             Image(systemName: "plus")
                             Text("Add")
                         })
-                        .sheet(isPresented: $isShowingPicker) {
+                        .disabled(emergencyContacts.first(where: { $0.isPrimary }) != nil).sheet(isPresented: $isShowingPicker) {
                             ContactPickerView(selectedContact: $selectedContact, emergencyContacts: $emergencyContacts, tempEmergencyContact: $tempEmergencyContact, isPrimary: $isPrimary)
                         }
                     }
 
-                    if let primaryContact = emergencyContacts.first(where: { $0.isPrimary == true }) {
+                    if let primaryContact = emergencyContacts.first(where: { $0.isPrimary }) {
                         VStack {
-                            Text("\(primaryContact.fullName)")
-                                .bold()
-                            Text("\(primaryContact.phoneNumber)")
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(.clear)
+                                .stroke(.gray, lineWidth: 1)
+                                .frame(height: 80)
+                                .overlay(content: {
+                                    VStack(alignment: .leading) {
+                                        Text("\(primaryContact.fullName)")
+                                            .bold()
+                                            .multilineTextAlignment(.leading)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+
+                                        Text("\(primaryContact.phoneNumber)")
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                    .padding()
+                                    .frame(maxWidth: .infinity)
+                                    .multilineTextAlignment(.leading)
+
+                                })
                         }
-                        .padding()
+
                     } else {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.clear)
@@ -85,16 +102,32 @@ struct AddEmergencyContactView: View {
                         }
                     }
 
-                    if !emergencyContacts.isEmpty {
+                    if let contact = emergencyContacts.first(where: { $0.isPrimary == false }) {
                         VStack {
                             ForEach(emergencyContacts) { contact in
                                 if !contact.isPrimary {
                                     VStack {
-                                        Text("\(contact.fullName) ")
-                                            .bold()
-                                        Text("\(contact.phoneNumber) ")
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .fill(.clear)
+                                            .stroke(.gray, lineWidth: 1)
+                                            .frame(height: 80)
+                                            .overlay(content: {
+                                                VStack(alignment: .leading) {
+                                                    Text("\(contact.fullName)")
+                                                        .bold()
+                                                        .multilineTextAlignment(.leading)
+                                                        .frame(maxWidth: .infinity, alignment: .leading)
+
+                                                    Text("\(contact.phoneNumber)")
+                                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                                        .multilineTextAlignment(.leading)
+                                                }
+                                                .padding()
+                                                .frame(maxWidth: .infinity)
+                                                .multilineTextAlignment(.leading)
+
+                                            })
                                     }
-                                    .padding()
                                 }
                             }
                         }
@@ -113,7 +146,6 @@ struct AddEmergencyContactView: View {
                 }
             }
             .padding(.top, 32)
-            Text("\(emergencyContacts.count)")
             Spacer()
             Button(action: {}, label: {
                 Text("Confirm Emergency Contact")
