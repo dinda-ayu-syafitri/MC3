@@ -179,13 +179,16 @@ struct AddEmergencyContactView: View {
             }
             .padding(.top, 32)
 
-            if !emergencyContactSaved.isEmpty {
-                ForEach(emergencyContactSaved.first!.emergencyContacts, id: \.id) { contact in
-                    Text(contact.fullName)
-                }
-            } else {
-                Text("Emergency Contact Empty")
-            }
+//            if !emergencyContactSaved.isEmpty {
+//                ForEach(emergencyContactSaved.first!.emergencyContacts, id: \.id) { contact in
+//                    VStack {
+//                        Text(contact.fullName)
+//                        Text("\(emergencyContactSaved.first?.emergencyContacts.count)")
+//                    }
+//                }
+//            } else {
+//                Text("Emergency Contact Empty")
+//            }
 
             Spacer()
             Button(action: {

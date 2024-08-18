@@ -10,5 +10,6 @@ import Foundation
 protocol FirebaseServiceUseCaseProtocol {
     func submitDataWithIDFirebase(idFirestore: String, data: [String: Any]) async throws
     func registerAccount(idFirestore: String, fcm: String) async throws
+    func updateFcm(idFirestore: String, fcm: String) async throws
     func insertUserEmergencyContacts(idFirestore: String, emergencyContacts: [EmergencyContact]) async throws
 }
