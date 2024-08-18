@@ -33,8 +33,6 @@
 		20F95A642C6E1073005B3DA1 /* HomepageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F95A632C6E1073005B3DA1 /* HomepageViewModel.swift */; };
 		20F95A652C6E1073005B3DA1 /* HomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F95A5F2C6E1073005B3DA1 /* HomepageView.swift */; };
 		20F95A662C6E1073005B3DA1 /* LocationManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F95A612C6E1073005B3DA1 /* LocationManagerViewModel.swift */; };
-		20F95A672C6E1073005B3DA1 /* ListenerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F95A602C6E1073005B3DA1 /* ListenerView.swift */; };
-		20F95A682C6E1073005B3DA1 /* PublisherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F95A622C6E1073005B3DA1 /* PublisherView.swift */; };
 		20F95A6A2C6E11A5005B3DA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20F95A692C6E11A5005B3DA1 /* GoogleService-Info.plist */; };
 		81D078F92C6C52FC00ACE61E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078F82C6C52FC00ACE61E /* OnboardingView.swift */; };
 		81D078FD2C6C537E00ACE61E /* AddContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078FC2C6C537E00ACE61E /* AddContactsView.swift */; };
@@ -156,9 +154,7 @@
 		20F585022C6DD28F00114E3D /* AddContactsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactsView.swift; sourceTree = "<group>"; };
 		20F585062C6DD28F00114E3D /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		20F95A5F2C6E1073005B3DA1 /* HomepageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomepageView.swift; path = MC3/Presentation/Homepage/HomepageView.swift; sourceTree = SOURCE_ROOT; };
-		20F95A602C6E1073005B3DA1 /* ListenerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListenerView.swift; path = MC3/Presentation/Homepage/ListenerView.swift; sourceTree = SOURCE_ROOT; };
 		20F95A612C6E1073005B3DA1 /* LocationManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationManagerViewModel.swift; path = MC3/Presentation/Homepage/LocationManagerViewModel.swift; sourceTree = SOURCE_ROOT; };
-		20F95A622C6E1073005B3DA1 /* PublisherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PublisherView.swift; path = MC3/Presentation/Homepage/PublisherView.swift; sourceTree = SOURCE_ROOT; };
 		20F95A632C6E1073005B3DA1 /* HomepageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomepageViewModel.swift; path = MC3/Presentation/Homepage/HomepageViewModel.swift; sourceTree = SOURCE_ROOT; };
 		20F95A692C6E11A5005B3DA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81D078F82C6C52FC00ACE61E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingView.swift; path = MC3/OnboardingView.swift; sourceTree = SOURCE_ROOT; };
@@ -746,9 +742,7 @@
 			children = (
 				20F95A5F2C6E1073005B3DA1 /* HomepageView.swift */,
 				20F95A632C6E1073005B3DA1 /* HomepageViewModel.swift */,
-				20F95A602C6E1073005B3DA1 /* ListenerView.swift */,
 				20F95A612C6E1073005B3DA1 /* LocationManagerViewModel.swift */,
-				20F95A622C6E1073005B3DA1 /* PublisherView.swift */,
 			);
 			path = Homepage;
 			sourceTree = "<unknown>";
@@ -931,7 +925,6 @@
 				DD6D7FE52C6CD09B0023A499 /* FirebaseServiceDataSource.swift in Sources */,
 				DD6D7FE92C6CD1CB0023A499 /* FirebaseServiceRepository.swift in Sources */,
 				DD4C775A2C6B017A00CEDFB2 /* SocketHelper.swift in Sources */,
-				20F95A672C6E1073005B3DA1 /* ListenerView.swift in Sources */,
 				20D4DA9E2C6E59A4009E73D7 /* NoAlertsView.swift in Sources */,
 				DD6D7FEE2C6CD6810023A499 /* FirebaseServiceUseCase.swift in Sources */,
 				DD6D80092C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift in Sources */,
@@ -949,7 +942,6 @@
 				DD6D7FF72C6D1B360023A499 /* CLLocationCoordinate2D.swift in Sources */,
 				2058D15D2C65C65200D0557D /* MC3App.swift in Sources */,
 				DD6D80062C6D21890023A499 /* UserDefaultRepository.swift in Sources */,
-				20F95A682C6E1073005B3DA1 /* PublisherView.swift in Sources */,
 				20F95A662C6E1073005B3DA1 /* LocationManagerViewModel.swift in Sources */,
 				81D078F92C6C52FC00ACE61E /* OnboardingView.swift in Sources */,
 				20F585082C6DD28F00114E3D /* AddContactsView.swift in Sources */,

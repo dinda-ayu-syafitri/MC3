@@ -85,6 +85,10 @@ final class SocketHelper: ObservableObject {
         }
     }
 
+//    service.sendMessageToRoom(roomName: "Listener", message: [
+//        "longitude": 106.656,
+//        "latitude": -6.264
+//    ])
     func sendMessageToRoom(roomName: String, message: [String:Double]) {
         let data: [String: Any] = ["roomName": roomName, "message": message]
         socket.emit("sendMessageToRoom", data)

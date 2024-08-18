@@ -15,7 +15,7 @@ struct HomeView: View {
                     Image(systemName: "sos.circle.fill")
                     Text("SOS")
                 }
-            LiveTrackView()
+            LiveTrack()
                 .tabItem {
                     Image(systemName: "map")
                     Text("Live Track")
@@ -28,7 +28,6 @@ struct HomeView: View {
 
         }
         .accentColor(.red)
-
     }
 }
 
