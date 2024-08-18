@@ -25,7 +25,7 @@ struct ListenerView: View {
             Text("long lat: \(service.longitude), \(service.latitude)")
             
             Map(position: $service.mapCamera) {
-                Annotation("Victim Location", coordinate: CLLocationCoordinate2D(latitude: service.latitude, longitude: service.longitude)) {
+                Annotation("Victim Location", coordinate: CLLocationCoordinate2D(latitude: service.longitude, longitude: service.latitude)) {
                     UserAnnotation()
                 }
             }

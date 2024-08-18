@@ -28,7 +28,6 @@
 		20D4DAA12C6E59A4009E73D7 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA9A2C6E59A4009E73D7 /* CountdownView.swift */; };
 		20D4DAA22C6E59A4009E73D7 /* PinInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA9B2C6E59A4009E73D7 /* PinInputView.swift */; };
 		20D4DAA32C6E59A4009E73D7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA9C2C6E59A4009E73D7 /* ProfileView.swift */; };
-		20D4DAA42C6E59A4009E73D7 /* LiveTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA9D2C6E59A4009E73D7 /* LiveTrackView.swift */; };
 		20F585082C6DD28F00114E3D /* AddContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F585022C6DD28F00114E3D /* AddContactsView.swift */; };
 		20F5850C2C6DD28F00114E3D /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F585062C6DD28F00114E3D /* OnboardingView.swift */; };
 		20F95A642C6E1073005B3DA1 /* HomepageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F95A632C6E1073005B3DA1 /* HomepageViewModel.swift */; };
@@ -154,7 +153,6 @@
 		20D4DA9A2C6E59A4009E73D7 /* CountdownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		20D4DA9B2C6E59A4009E73D7 /* PinInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinInputView.swift; sourceTree = "<group>"; };
 		20D4DA9C2C6E59A4009E73D7 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		20D4DA9D2C6E59A4009E73D7 /* LiveTrackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveTrackView.swift; sourceTree = "<group>"; };
 		20F585022C6DD28F00114E3D /* AddContactsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactsView.swift; sourceTree = "<group>"; };
 		20F585062C6DD28F00114E3D /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		20F95A5F2C6E1073005B3DA1 /* HomepageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomepageView.swift; path = MC3/Presentation/Homepage/HomepageView.swift; sourceTree = SOURCE_ROOT; };
@@ -412,7 +410,6 @@
 				20F585062C6DD28F00114E3D /* OnboardingView.swift */,
 				20D4DA9A2C6E59A4009E73D7 /* CountdownView.swift */,
 				20D4DA992C6E59A4009E73D7 /* HomeView.swift */,
-				20D4DA9D2C6E59A4009E73D7 /* LiveTrackView.swift */,
 				20D4DA972C6E59A4009E73D7 /* NoAlertsView.swift */,
 				20D4DA9B2C6E59A4009E73D7 /* PinInputView.swift */,
 				20D4DA9C2C6E59A4009E73D7 /* ProfileView.swift */,
@@ -952,7 +949,6 @@
 				DD6D7FF72C6D1B360023A499 /* CLLocationCoordinate2D.swift in Sources */,
 				2058D15D2C65C65200D0557D /* MC3App.swift in Sources */,
 				DD6D80062C6D21890023A499 /* UserDefaultRepository.swift in Sources */,
-				20D4DAA42C6E59A4009E73D7 /* LiveTrackView.swift in Sources */,
 				20F95A682C6E1073005B3DA1 /* PublisherView.swift in Sources */,
 				20F95A662C6E1073005B3DA1 /* LocationManagerViewModel.swift in Sources */,
 				81D078F92C6C52FC00ACE61E /* OnboardingView.swift in Sources */,

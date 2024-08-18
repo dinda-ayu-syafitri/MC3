@@ -7,3 +7,6 @@
 
 import Foundation
 
+class LiveTrackViewModel: ObservableObject {
+    @Published var showLiveTrack = true
+}
