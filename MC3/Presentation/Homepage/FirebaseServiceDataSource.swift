@@ -23,6 +23,11 @@ class FirebaseServiceDataSource: FirebaseServiceDataSourceProtocol {
         }
     }
 
+    func updateDataWithIDFirebase(idFirestore: String, data: [String: Any]) async throws {
+        let documentRef = db.collection("User").document(idFirestore)
+        try await documentRef.updateData(data)
+    }
+
     func fetchUsers() async throws -> [QueryDocumentSnapshot] {
         try await withCheckedThrowingContinuation { (continuation: CheckedContinuation<[QueryDocumentSnapshot], Error>) in
             db.collection("User").getDocuments { snapshot, error in

@@ -32,7 +32,7 @@ class FirebaseServiceUseCase: FirebaseServiceUseCaseProtocol {
             "emergencyContacts": emergencyContactsData,
         ]
 
-        try await firebaseServiceRepository.submitDataWithIDFirebase(idFirestore: idFirestore, data: data)
+        try await firebaseServiceRepository.updateDataWithIDFirebase(idFirestore: idFirestore, data: data)
     }
 
     func submitDataWithIDFirebase(idFirestore: String, data: [String: Any]) async throws {
