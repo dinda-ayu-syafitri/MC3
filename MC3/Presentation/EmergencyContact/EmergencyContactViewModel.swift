@@ -7,6 +7,7 @@
 
 import Contacts
 import Foundation
+import SwiftData
 
 class EmergencyContactViewModel: ObservableObject {
     @Published var contacts: [CNContact] = []
@@ -25,5 +26,26 @@ class EmergencyContactViewModel: ObservableObject {
         } catch {
             print("Error fetcch all contact")
         }
+    }
+
+    func SaveLocalEmergencyContacts(context: ModelContext, emergencyContacts: EmergencyContacts) {
+        context.insert(emergencyContacts)
+    }
+
+    func fetchLocalEmergencyContacts(context: ModelContext) -> EmergencyContacts? {
+        let fetchDescriptor = FetchDescriptor<EmergencyContacts>()
+
+        do {
+            let results = try context.fetch(fetchDescriptor)
+            if !results.isEmpty {
+                return results[0]
+            } else {
+                print("Exercise not found")
+            }
+        } catch {
+            print("Fetch error: \(error.localizedDescription)")
+        }
+
+        return nil
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Contacts
+import SwiftData
 import SwiftUI
 
 struct AddEmergencyContactView: View {
@@ -14,6 +15,8 @@ struct AddEmergencyContactView: View {
     @State private var isShowingPicker = false
     @State private var emergencyContacts: [EmergencyContact] = []
     @State private var tempEmergencyContact: EmergencyContact?
+
+    @Query public var emergencyContactSaved: [EmergencyContacts]
 
     var body: some View {
         VStack {
@@ -102,7 +105,7 @@ struct AddEmergencyContactView: View {
                         }
                     }
 
-                    if let contact = emergencyContacts.first(where: { $0.isPrimary == false }) {
+                    if emergencyContacts.first(where: { $0.isPrimary == false }) != nil {
                         VStack {
                             ForEach(emergencyContacts) { contact in
                                 if !contact.isPrimary {

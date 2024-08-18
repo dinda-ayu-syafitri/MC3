@@ -15,6 +15,8 @@ struct ContactPickerView: UIViewControllerRepresentable {
     @Binding var tempEmergencyContact: EmergencyContact?
     @Binding var isPrimary: Bool
 
+    private let firebaseService = FirebaseServiceDataSource()
+
     func makeUIViewController(context: Context) -> UINavigationController {
         let navController = UINavigationController()
         let controller = CNContactPickerViewController()
@@ -44,30 +46,41 @@ struct ContactPickerView: UIViewControllerRepresentable {
         func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
             parent.presentationMode.wrappedValue.dismiss()
 
-            // Create a new emergency contact with the correct isPrimary flag
-            let newEmergencyContact = EmergencyContact(
-                fullName: "\(contact.givenName)",
-                phoneNumber: contact.phoneNumbers.first?.value.stringValue ?? "",
-                isPrimary: parent.isPrimary
-            )
+            let phoneNumber = contact.phoneNumbers.first?.value.stringValue ?? ""
+            let fullName = "\(contact.givenName)"
 
-            // Check if the selected contact is to be the primary contact
-            if parent.isPrimary {
-                // Replace any existing primary contact
-                if let index = parent.emergencyContacts.firstIndex(where: { $0.isPrimary }) {
-                    parent.emergencyContacts[index] = newEmergencyContact
-                } else {
-                    parent.emergencyContacts.append(newEmergencyContact)
+            Task {
+                do {
+                    let fcm = try await parent.firebaseService.fetchFCMKey(for: phoneNumber)
+
+                    // Create a new emergency contact with the correct isPrimary flag and FCM key
+                    let newEmergencyContact = EmergencyContact(
+                        fullName: fullName,
+                        phoneNumber: phoneNumber,
+                        fcm: fcm,
+                        isPrimary: parent.isPrimary
+                    )
+
+                    if parent.isPrimary {
+                        // Replace any existing primary contact
+                        if let index = parent.emergencyContacts.firstIndex(where: { $0.isPrimary }) {
+                            parent.emergencyContacts[index] = newEmergencyContact
+                        } else {
+                            parent.emergencyContacts.append(newEmergencyContact)
+                        }
+                    } else {
+                        // Add new non-primary contact
+                        parent.emergencyContacts.append(newEmergencyContact)
+                    }
+
+                    parent.selectedContact = contact
+                    parent.tempEmergencyContact = newEmergencyContact
+                    print(parent.emergencyContacts)
+
+                } catch {
+                    print("Error fetching FCM key: \(error.localizedDescription)")
                 }
-            } else {
-                // Add new non-primary contact
-                parent.emergencyContacts.append(newEmergencyContact)
             }
-
-            parent.selectedContact = contact
-            parent.tempEmergencyContact = newEmergencyContact
-
-//            print(parent.emergencyContacts)
         }
     }
 }
