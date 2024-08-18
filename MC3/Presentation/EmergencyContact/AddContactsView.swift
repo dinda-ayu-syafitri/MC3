@@ -5,8 +5,8 @@
 //  Created by Giventus Marco Victorio Handojo on 14/08/24.
 //
 
-import SwiftUI
 import Contacts
+import SwiftUI
 
 struct AddContactsView: View {
     @State private var contacts: [Contact] = [] // Array to hold contact forms
@@ -18,18 +18,18 @@ struct AddContactsView: View {
                     .font(.title)
                     .fontWeight(.bold)
                     .padding(.top, 20)
-                
-                Text("Emergency contacts are notified when the SOS Alert is activated. Your primary contact can be called directly from the alert screen.")
+
+                Text("Emergency contacts are notified when the SOS Alert is activated. ")
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
-                
+
                 ScrollView {
                     ForEach(contacts) { contact in
                         ContactFormView(contact: contact)
                             .padding(.horizontal)
                     }
                 }
-                
+
                 Button(action: {
                     // Action to add new contact form
                     contacts.append(Contact(name: "", phoneNumber: ""))
@@ -41,9 +41,10 @@ struct AddContactsView: View {
                         .cornerRadius(10)
                         .padding(.horizontal)
                 }
-                
+
                 NavigationLink(destination: HomeView()
-                    .navigationBarBackButtonHidden(true)) {
+                    .navigationBarBackButtonHidden(true))
+                {
                     Text("Finish adding contacts")
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -52,7 +53,6 @@ struct AddContactsView: View {
                         .padding(.horizontal)
                 }
                 .padding(.bottom, 8)
-                
             }
             .padding()
             .background(Color(.systemGray6))
@@ -77,7 +77,7 @@ struct ContactFormView: View {
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color.gray, lineWidth: 1)
                     )
-                
+
                 Button(action: {
                     isShowingContactPicker.toggle() // Show the contact picker sheet
                 }) {
@@ -92,7 +92,7 @@ struct ContactFormView: View {
 //                }
             }
             .cornerRadius(8)
-            
+
             TextField("ex. 6287821285666", text: $contact.phoneNumber)
                 .padding()
                 .background(Color.white)
@@ -108,7 +108,7 @@ struct ContactFormView: View {
     }
 }
 
-//struct ContactPickerView: View {
+// struct ContactPickerView: View {
 //    @Environment(\.presentationMode) var presentationMode
 //    @Binding var selectedContact: Contact
 //
@@ -123,7 +123,7 @@ struct ContactFormView: View {
 //                }) {
 //                    Text("John Doe")
 //                }
-//                
+//
 //                Button(action: {
 //                    selectedContact.name = "Jane Smith"
 //                    selectedContact.phoneNumber = "987654321"
@@ -142,7 +142,7 @@ struct ContactFormView: View {
 //            })
 //        }
 //    }
-//}
+// }
 
 struct Contact: Identifiable {
     var id = UUID()

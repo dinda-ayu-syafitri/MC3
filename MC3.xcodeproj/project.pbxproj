@@ -38,7 +38,6 @@
 		20F95A682C6E1073005B3DA1 /* PublisherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F95A622C6E1073005B3DA1 /* PublisherView.swift */; };
 		20F95A6A2C6E11A5005B3DA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20F95A692C6E11A5005B3DA1 /* GoogleService-Info.plist */; };
 		81D078F92C6C52FC00ACE61E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078F82C6C52FC00ACE61E /* OnboardingView.swift */; };
-		81D078FD2C6C537E00ACE61E /* AddContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078FC2C6C537E00ACE61E /* AddContactsView.swift */; };
 		81D079072C6DE1E100ACE61E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079062C6DE1E100ACE61E /* HomeView.swift */; };
 		81D079092C6DE1EB00ACE61E /* LiveTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079082C6DE1EB00ACE61E /* LiveTrackView.swift */; };
 		81D0790B2C6DE1F400ACE61E /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D0790A2C6DE1F400ACE61E /* SOSView.swift */; };
@@ -360,6 +359,7 @@
 		201FB0722C6D9AB900058A95 /* EmergencyContact */ = {
 			isa = PBXGroup;
 			children = (
+				20F585022C6DD28F00114E3D /* AddContactsView.swift */,
 				207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */,
 				201FB0732C6D9AE400058A95 /* EmergencyContactViewModel.swift */,
 				201FB0752C6DC32F00058A95 /* ContactPickerView.swift */,
@@ -391,7 +391,6 @@
 		2058D15B2C65C65200D0557D /* MC3 */ = {
 			isa = PBXGroup;
 			children = (
-				20F585022C6DD28F00114E3D /* AddContactsView.swift */,
 				20F585062C6DD28F00114E3D /* OnboardingView.swift */,
 				20D4DA9A2C6E59A4009E73D7 /* CountdownView.swift */,
 				20D4DA992C6E59A4009E73D7 /* HomeView.swift */,
@@ -901,7 +900,6 @@
 				207BA4842C6D930200B9B3FC /* AddEmergencyContactView.swift in Sources */,
 				201FB0762C6DC32F00058A95 /* ContactPickerView.swift in Sources */,
 				20F5850C2C6DD28F00114E3D /* OnboardingView.swift in Sources */,
-				81D078FD2C6C537E00ACE61E /* AddContactsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
