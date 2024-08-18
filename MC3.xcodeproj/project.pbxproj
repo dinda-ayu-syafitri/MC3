@@ -48,6 +48,16 @@
 		81D079152C6DFD1500ACE61E /* PinInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079142C6DFD1500ACE61E /* PinInputView.swift */; };
 		DA1908392C6E0EA40087FA23 /* EmergencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1908382C6E0EA40087FA23 /* EmergencyViewModel.swift */; };
 		DA19083F2C6E44C20087FA23 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA19083E2C6E44C20087FA23 /* Router.swift */; };
+		DA221D312C6FA7B300F88958 /* AllViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D302C6FA7B300F88958 /* AllViews.swift */; };
+		DA221D362C6FA93700F88958 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D352C6FA93700F88958 /* SettingsView.swift */; };
+		DA221D392C6FB55100F88958 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D382C6FB55100F88958 /* CountdownView.swift */; };
+		DA221D3C2C71C1E400F88958 /* CallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D3B2C71C1E400F88958 /* CallView.swift */; };
+		DA221D3F2C71C8DB00F88958 /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D3E2C71C8DB00F88958 /* TrackingView.swift */; };
+		DA221D422C71CC3C00F88958 /* SOSActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D412C71CC3C00F88958 /* SOSActiveView.swift */; };
+		DA221D442C71CC7F00F88958 /* HBJumpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D432C71CC7F00F88958 /* HBJumpView.swift */; };
+		DA221D462C71CFAC00F88958 /* DeactivateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D452C71CFAC00F88958 /* DeactivateView.swift */; };
+		DA221D482C71DB4A00F88958 /* OverlayPlayerForTimeRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D472C71DB4A00F88958 /* OverlayPlayerForTimeRemove.swift */; };
+		DA221D4A2C71ED0D00F88958 /* DeactivateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D492C71ED0D00F88958 /* DeactivateViewModel.swift */; };
 		DA8B4A2C2C6B4BDF00BC5987 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A2B2C6B4BDF00BC5987 /* HomeView.swift */; };
 		DA8B4A2F2C6B4E3500BC5987 /* HeartRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A2E2C6B4E3500BC5987 /* HeartRateViewModel.swift */; };
 		DA8B4A312C6B503400BC5987 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */; };
@@ -165,6 +175,17 @@
 		81D079142C6DFD1500ACE61E /* PinInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PinInputView.swift; path = MC3/PinInputView.swift; sourceTree = SOURCE_ROOT; };
 		DA1908382C6E0EA40087FA23 /* EmergencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmergencyViewModel.swift; path = Views/Home/EmergencyViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DA19083E2C6E44C20087FA23 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Router.swift; path = Views/Home/Router.swift; sourceTree = SOURCE_ROOT; };
+		DA221D2D2C6F9BB700F88958 /* WatchMC3-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "WatchMC3-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		DA221D302C6FA7B300F88958 /* AllViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllViews.swift; path = Views/AllViews.swift; sourceTree = SOURCE_ROOT; };
+		DA221D352C6FA93700F88958 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = Views/Settings/SettingsView.swift; sourceTree = SOURCE_ROOT; };
+		DA221D382C6FB55100F88958 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountdownView.swift; path = "WatchMC3 Watch App/Presentation/Views/Countdown/CountdownView.swift"; sourceTree = SOURCE_ROOT; };
+		DA221D3B2C71C1E400F88958 /* CallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallView.swift; sourceTree = "<group>"; };
+		DA221D3E2C71C8DB00F88958 /* TrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrackingView.swift; path = "WatchMC3 Watch App/Presentation/Views/TrackingView.swift"; sourceTree = SOURCE_ROOT; };
+		DA221D412C71CC3C00F88958 /* SOSActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSActiveView.swift; sourceTree = "<group>"; };
+		DA221D432C71CC7F00F88958 /* HBJumpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBJumpView.swift; sourceTree = "<group>"; };
+		DA221D452C71CFAC00F88958 /* DeactivateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeactivateView.swift; sourceTree = "<group>"; };
+		DA221D472C71DB4A00F88958 /* OverlayPlayerForTimeRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OverlayPlayerForTimeRemove.swift; path = Utils/OverlayPlayerForTimeRemove.swift; sourceTree = SOURCE_ROOT; };
+		DA221D492C71ED0D00F88958 /* DeactivateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeactivateViewModel.swift; sourceTree = "<group>"; };
 		DA8B4A2B2C6B4BDF00BC5987 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = Views/Home/HomeView.swift; sourceTree = SOURCE_ROOT; };
 		DA8B4A2E2C6B4E3500BC5987 /* HeartRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeartRateViewModel.swift; path = Views/Home/HeartRateViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthKitManager.swift; path = Views/Home/HealthKitManager.swift; sourceTree = SOURCE_ROOT; };
@@ -238,6 +259,7 @@
 		20190CF22C6A336A001A2AB6 /* WatchMC3 Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				DA221D2D2C6F9BB700F88958 /* WatchMC3-Watch-App-Info.plist */,
 				DA8B4A362C6B550100BC5987 /* WatchMC3 Watch App.entitlements */,
 				20190D062C6A339D001A2AB6 /* Common */,
 				20190D052C6A3396001A2AB6 /* Data */,
@@ -307,8 +329,12 @@
 		20190D082C6A33AB001A2AB6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DA8B4A592C6D1B5900BC5987 /* CountdownView.swift */,
+				DA221D302C6FA7B300F88958 /* AllViews.swift */,
 				DA8B4A2D2C6B4D2D00BC5987 /* Home */,
+				DA221D3D2C71C82500F88958 /* DeactivateSession */,
+				DA221D3A2C71C1B400F88958 /* Call */,
+				DA221D322C6FA8F100F88958 /* Settings */,
+				DA221D372C6FB51000F88958 /* Countdown */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -353,6 +379,7 @@
 		20190D0E2C6A33E7001A2AB6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DA221D472C71DB4A00F88958 /* OverlayPlayerForTimeRemove.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -547,6 +574,38 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DA221D322C6FA8F100F88958 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DA221D352C6FA93700F88958 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DA221D372C6FB51000F88958 /* Countdown */ = {
+			isa = PBXGroup;
+			children = (
+				DA221D382C6FB55100F88958 /* CountdownView.swift */,
+			);
+			name = Countdown;
+			path = "../WatchMC3 Watch App/Presentation/Views/Countdown";
+			sourceTree = "<group>";
+		};
+		DA221D3A2C71C1B400F88958 /* Call */ = {
+			isa = PBXGroup;
+			children = (
+				DA221D3B2C71C1E400F88958 /* CallView.swift */,
+			);
+			path = Call;
+			sourceTree = "<group>";
+		};
+		DA221D3D2C71C82500F88958 /* DeactivateSession */ = {
+			isa = PBXGroup;
+			children = (
+				DA221D452C71CFAC00F88958 /* DeactivateView.swift */,
+				DA221D492C71ED0D00F88958 /* DeactivateViewModel.swift */,
+			);
+			path = DeactivateSession;
 		207BA4802C6D903500B9B3FC /* MessageNotification */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +631,9 @@
 				DA8B4A2E2C6B4E3500BC5987 /* HeartRateViewModel.swift */,
 				DA8B4A572C6CCA0D00BC5987 /* HomeViewModel.swift */,
 				DA1908382C6E0EA40087FA23 /* EmergencyViewModel.swift */,
+				DA221D412C71CC3C00F88958 /* SOSActiveView.swift */,
+				DA221D3E2C71C8DB00F88958 /* TrackingView.swift */,
+				DA221D432C71CC7F00F88958 /* HBJumpView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -818,20 +880,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA8B4A5A2C6D1B5900BC5987 /* CountdownView.swift in Sources */,
+				DA221D442C71CC7F00F88958 /* HBJumpView.swift in Sources */,
 				DA8B4A2F2C6B4E3500BC5987 /* HeartRateViewModel.swift in Sources */,
 				DA8B4A582C6CCA0D00BC5987 /* HomeViewModel.swift in Sources */,
 				DA8B4A2C2C6B4BDF00BC5987 /* HomeView.swift in Sources */,
 				DA8B4A3E2C6B923400BC5987 /* NotificationManager.swift in Sources */,
 				DA8B4A352C6B516500BC5987 /* HeartRateModel.swift in Sources */,
+				DA221D4A2C71ED0D00F88958 /* DeactivateViewModel.swift in Sources */,
 				DA8B4A402C6B935F00BC5987 /* NotificationDelegate.swift in Sources */,
+				DA221D3F2C71C8DB00F88958 /* TrackingView.swift in Sources */,
+				DA221D312C6FA7B300F88958 /* AllViews.swift in Sources */,
 				DA8B4A312C6B503400BC5987 /* HealthKitManager.swift in Sources */,
+				DA221D362C6FA93700F88958 /* SettingsView.swift in Sources */,
 				20190CF42C6A336B001A2AB6 /* WatchMC3App.swift in Sources */,
+				DA221D392C6FB55100F88958 /* CountdownView.swift in Sources */,
+				DA221D462C71CFAC00F88958 /* DeactivateView.swift in Sources */,
+				DA221D482C71DB4A00F88958 /* OverlayPlayerForTimeRemove.swift in Sources */,
 				DA19083F2C6E44C20087FA23 /* Router.swift in Sources */,
 				DA8B4A422C6BA3FE00BC5987 /* WatchToiOSConnector.swift in Sources */,
+				DA221D3C2C71C1E400F88958 /* CallView.swift in Sources */,
 				209E78792C6F563C00510BD4 /* MessageNotificationViewModel.swift in Sources */,
 				DA1908392C6E0EA40087FA23 /* EmergencyViewModel.swift in Sources */,
 				DA8B4A332C6B50AD00BC5987 /* HeartRateManager.swift in Sources */,
+				DA221D422C71CC3C00F88958 /* SOSActiveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,6 +999,7 @@
 				DEVELOPMENT_TEAM = XSHZNN2ULY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WatchMC3-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = WatchMC3;
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "We need to access your health data to provide services";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need to access your health data to provide services";
@@ -962,6 +1034,7 @@
 				DEVELOPMENT_TEAM = XSHZNN2ULY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WatchMC3-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = WatchMC3;
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "We need to access your health data to provide services";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need to access your health data to provide services";

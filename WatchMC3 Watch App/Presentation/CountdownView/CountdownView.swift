@@ -26,9 +26,12 @@ struct CountdownView: View {
 ////                heartRateViewModel.stopCountdown()
 //            }
         }
+        .ignoresSafeArea()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black)
     }
 }
   
-//#Preview {
-//    CountdownView(heartRateViewModel: HeartRateViewModel())
-//}
+#Preview {
+    CountdownView()
+}
