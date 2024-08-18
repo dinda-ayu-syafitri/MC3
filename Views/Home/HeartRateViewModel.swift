@@ -31,6 +31,10 @@ class HeartRateViewModel: ObservableObject {
         toggleBackgroundTracking()
     }
     
+    func createNotificatiown(notificationType: NotificationTypeEnum) {
+        WatchToiOSConnector.shared.sendTriggerToiOS(notificationType: .ABNORMALHEARTRATE)
+    }
+    
     //fetch heart rate data (foreground tracking)
     func fetchHeartRateDataForeground() {
         HeartRateManager.shared.fetchHeartRateData { [weak self] samples in
@@ -116,14 +120,7 @@ class HeartRateViewModel: ObservableObject {
     //check sd
     func isStandardDeviationHigh() -> Bool {
         let threshold = 1.0
-        // Check if array already contains 10 data
         if heartRates.count == 3 {
-            /**
-             Count Standard Deviation
-             1. Count Mean of the heart rate data
-             2. Store all variance of 10 data (heartRate-mean)^2
-             3. Count total variance and divide by total data - 1
-             */
             let mean = heartRates.reduce(0, +) /  Double(heartRates.count)
             var varianceList: [Double] = []
             for heartRate in heartRates {
@@ -131,11 +128,8 @@ class HeartRateViewModel: ObservableObject {
                 varianceList.append(variance)
             }
             let sd = varianceList.reduce(0, +) / Double(heartRates.count - 1)
-            // Remove current data in array since it already been used
             heartRates.removeAll()
-            print("removed data") //DEBUG
             if sd > threshold {
-                print("sd > threshold")
                 return true
             }
             return false
@@ -146,14 +140,9 @@ class HeartRateViewModel: ObservableObject {
     //check emergency
     func checkEmergency() {
         if isStandardDeviationHigh() /*&& !emergencySessionIsActive*/ {
-
-            //pop up notif to user
 //            self.isLikelyInEmergency = true
-            self.popUpNotif()
-            WatchToiOSConnector.shared.sendTriggerToiOS()
-
-            
-//            self.startCountdown()
+            self.createNotificatiown(notificationType: .ABNORMALHEARTRATE)
+            self.startCountdown()
         }
 //        if self.timeRemaining == 0 /*&& !emergencySessionIsActive*/ {
 //            print("Countdown ends, sending message to iOS")
@@ -163,34 +152,6 @@ class HeartRateViewModel: ObservableObject {
 //            self.stopCountdown()
 ////            self.emergencySessionIsActive = true
 //        }
-    }
-    
-//    func popUpConnector() {
-//        print("pop up connector")
-//        
-//        if  !countdownIsActive && !emergencySessionIsActive {
-//            print("Masuk Popup connector ges")
-//            WatchToiOSConnector.shared.sendTriggerToiOS()
-//        }
-//    }
-    
-    //pop up notification
-    func popUpNotif()  {
-//        print("countdown is active \(countdownIsActive)")
-//        print("Emergency session is active \(emergencySessionIsActive)")
-       
-//        if  !countdownIsActive /*&& !emergencySessionIsActive*/ {
-            print("Masuk Popup ges")
-            NotificationManager.shared.scheduleNotificationPopUp(
-                title: "High Heart Rate",
-                body: "test",
-//                body: "Your heart rate is at \(Int(self.heartRateModel.heartRate)) BPM. SOS message will be sent in (coundown)",
-                category: "SOS_Category"
-            )
-
-        messageViewModel.sendPushNotification(token: "dOBwwUKgGk2DsuqKBehzRm:APA91bFiskcpmyBJ8KUlZR4gkid1vjFrKCum3WeNZzXJkNccyhktizZXj8hEL45rDssGT121ldhlSduipOLsbxExKG5eDzuEKBmlnzojcDCnpRJU7N76l5-2mjnUOrdGjeAj16MJjudo", title: "Helppp!!! Wooiii", body: "Notif dari watch ke hp ke receiver", locationLink: "Ini nanti locaation link", senderFCM: "sender fcm")
-//        }
-        
     }
     
     // Start countdown timer
