@@ -41,17 +41,24 @@ struct AddEmergencyContactView: View {
                         Text("Primary Contact")
                             .bold()
                         Spacer()
-
-                        Button(action: {
-                            isShowingPicker = true
-                            isPrimary = true
-                        }, label: {
-                            Image(systemName: "plus")
-                            Text("Add")
-                        })
-                        .disabled(emergencyContacts.first(where: { $0.isPrimary }) != nil).sheet(isPresented: $isShowingPicker) {
-                            ContactPickerView(selectedContact: $selectedContact, emergencyContacts: $emergencyContacts, tempEmergencyContact: $tempEmergencyContact, isPrimary: $isPrimary)
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 25.0)
+                                .fill(Color.appPink)
+                                .frame(width: 80, height: 35)
+                                
+                            Button(action: {
+                                isShowingPicker = true
+                                isPrimary = true
+                            }, label: {
+                                Image(systemName: "plus")
+                                Text("Add")
+                            })
+                            .foregroundColor(Color.white)
+                            .disabled(emergencyContacts.first(where: { $0.isPrimary }) != nil).sheet(isPresented: $isShowingPicker) {
+                                ContactPickerView(selectedContact: $selectedContact, emergencyContacts: $emergencyContacts, tempEmergencyContact: $tempEmergencyContact, isPrimary: $isPrimary)
+                            }
                         }
+                        
                     }
 
                     if let primaryContact = emergencyContacts.first(where: { $0.isPrimary }) {
@@ -86,7 +93,9 @@ struct AddEmergencyContactView: View {
                                     }
                                 }
                         }
+                        .frame(height: 100)
                         .listStyle(PlainListStyle())
+                        .padding(.horizontal, -20)
 
                     } else {
                         RoundedRectangle(cornerRadius: 10)
@@ -108,16 +117,24 @@ struct AddEmergencyContactView: View {
                         Text("Other Contacts")
                             .bold()
                         Spacer()
-                        Button(action: {
-                            isShowingPicker = true
-                            isPrimary = false
-                        }, label: {
-                            Image(systemName: "plus")
-                            Text("Add")
-                        })
-                        .sheet(isPresented: $isShowingPicker, onDismiss: nil) {
-                            ContactPickerView(selectedContact: $selectedContact, emergencyContacts: $emergencyContacts, tempEmergencyContact: $tempEmergencyContact, isPrimary: $isPrimary)
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 20)
+                                .fill(Color.appPink)
+                                .frame(width: 80, height: 35)
+                            Button(action: {
+                                isShowingPicker = true
+                                isPrimary = false
+                            }, label: {
+                                Image(systemName: "plus")
+                                Text("Add")
+                                    
+                            })
+                            .foregroundStyle(Color.white)
+                            .sheet(isPresented: $isShowingPicker, onDismiss: nil) {
+                                ContactPickerView(selectedContact: $selectedContact, emergencyContacts: $emergencyContacts, tempEmergencyContact: $tempEmergencyContact, isPrimary: $isPrimary)
+                            }
                         }
+                        
                     }
 
                     if emergencyContacts.first(where: { $0.isPrimary == false }) != nil {
@@ -159,8 +176,8 @@ struct AddEmergencyContactView: View {
                                     }
                                 }
                             }
-                            .padding(0)
                             .listStyle(PlainListStyle())
+                            .padding(.horizontal,-20)
                         }
 
                     } else {
@@ -199,7 +216,14 @@ struct AddEmergencyContactView: View {
                     emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContacts)
                 }
             }, label: {
-                Text("Confirm Emergency Contact")
+                ZStack{
+                    RoundedRectangle(cornerRadius: 15.0)
+                        .fill(Color.appPink)
+                        .frame(width: 360, height: 60)
+                    Text("Confirm Emergency Contact")
+                        .foregroundStyle(Color.white)
+                }
+                
             })
 
 //            Button(action: {
