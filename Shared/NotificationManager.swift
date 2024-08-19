@@ -31,7 +31,7 @@ class NotificationManager {
                                               title: "I'm okay",
                                               options: [])
         
-        let sosCategory = UNNotificationCategory(identifier: "SOS_Category",
+        let sosCategory = UNNotificationCategory(identifier: NotificationTypeEnum.ABNORMALHEARTRATE.toString,
                                                  actions: [okayAction],
                                                  intentIdentifiers: [],
                                                  options: [])
@@ -40,25 +40,6 @@ class NotificationManager {
         UNUserNotificationCenter.current().setNotificationCategories([sosCategory])
     }
     
-    
-    //schedule a notification
-    func scheduleNotificationPopUp(title: String, body: String, category: String) {
-        let content = UNMutableNotificationContent()
-        content.title = title
-        content.body = body
-        content.sound = .default
-        content.categoryIdentifier = category
-        
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 0.001, repeats: false))
-        
-        UNUserNotificationCenter.current().add(request) { error in
-            if let error = error {
-                print("Failed to add notification: \(error.localizedDescription)")
-            } else {
-                print("Notification scheduled successfully.")
-            }
-        }
-    }
     
     //schedule a notification
     func scheduleNotification(title: String, body: String, category: String) {

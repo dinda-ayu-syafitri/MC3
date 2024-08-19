@@ -8,6 +8,7 @@
 import Foundation
 import UserNotifications
 
+
 class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
     
     //handle notification actions
@@ -15,7 +16,8 @@ class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
         
         if response.actionIdentifier == "Okay_Action" {
             print("glad you're okay, we will do another check-in regularly")
-
+//            HomeViewModel.shared.stopCountdown()
+            NotificationHandler.shared.handleOkayAction()
             //call the completion handler whendone
             completionHandler()
         }

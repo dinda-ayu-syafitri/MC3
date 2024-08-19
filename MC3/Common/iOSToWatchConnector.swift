@@ -43,12 +43,14 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
     private func handleReceivedMessage(_ message: [String: Any]) {
         if let action = message["action"] as? String {
             if action == NotificationTypeEnum.ABNORMALHEARTRATE.toString {
+                print("abnormal : \(action)")
                 NotificationManager.shared.scheduleNotification(
                     title: "Abnormal heart rate detected",
                     body: "Are you okay?",
                     category: action
                 )
             } else if action == NotificationTypeEnum.SOSALERT.toString {
+                print("sos : \(action)")
                 NotificationManager.shared.scheduleNotification(
                     title: "SOS has been sent",
                     body: "We already sent you live location",

@@ -51,7 +51,8 @@
 		DA221D3F2C71C8DB00F88958 /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D3E2C71C8DB00F88958 /* TrackingView.swift */; };
 		DA221D422C71CC3C00F88958 /* SOSActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D412C71CC3C00F88958 /* SOSActiveView.swift */; };
 		DA221D442C71CC7F00F88958 /* HBJumpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D432C71CC7F00F88958 /* HBJumpView.swift */; };
-		DA221D482C71DB4A00F88958 /* OverlayPlayerForTimeRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D472C71DB4A00F88958 /* OverlayPlayerForTimeRemove.swift */; };
+		DA5994D52C732BFD00C4F2C0 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5994D42C732BFD00C4F2C0 /* NotificationHandler.swift */; };
+		DA5994D62C732BFD00C4F2C0 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5994D42C732BFD00C4F2C0 /* NotificationHandler.swift */; };
 		DA8B4A2C2C6B4BDF00BC5987 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A2B2C6B4BDF00BC5987 /* Home.swift */; };
 		DA8B4A2F2C6B4E3500BC5987 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A2E2C6B4E3500BC5987 /* HomeViewModel.swift */; };
 		DA8B4A312C6B503400BC5987 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */; };
@@ -176,7 +177,7 @@
 		DA221D3E2C71C8DB00F88958 /* TrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrackingView.swift; path = "WatchMC3 Watch App/Presentation/Views/TrackingView.swift"; sourceTree = SOURCE_ROOT; };
 		DA221D412C71CC3C00F88958 /* SOSActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSActiveView.swift; sourceTree = "<group>"; };
 		DA221D432C71CC7F00F88958 /* HBJumpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBJumpView.swift; sourceTree = "<group>"; };
-		DA221D472C71DB4A00F88958 /* OverlayPlayerForTimeRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OverlayPlayerForTimeRemove.swift; path = Utils/OverlayPlayerForTimeRemove.swift; sourceTree = SOURCE_ROOT; };
+		DA5994D42C732BFD00C4F2C0 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		DA8B4A2B2C6B4BDF00BC5987 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Home.swift; path = Views/Home/Home.swift; sourceTree = SOURCE_ROOT; };
 		DA8B4A2E2C6B4E3500BC5987 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = Views/Home/HomeViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DA8B4A302C6B503400BC5987 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthKitManager.swift; path = Views/Home/HealthKitManager.swift; sourceTree = SOURCE_ROOT; };
@@ -363,7 +364,6 @@
 		20190D0E2C6A33E7001A2AB6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				DA221D472C71DB4A00F88958 /* OverlayPlayerForTimeRemove.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -619,6 +619,7 @@
 			children = (
 				DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */,
 				DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */,
+				DA5994D42C732BFD00C4F2C0 /* NotificationHandler.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -867,6 +868,7 @@
 				DDA830152C72560C000F4724 /* DeactivateViewModel.swift in Sources */,
 				DA221D442C71CC7F00F88958 /* HBJumpView.swift in Sources */,
 				DA8B4A2F2C6B4E3500BC5987 /* HomeViewModel.swift in Sources */,
+				DA5994D62C732BFD00C4F2C0 /* NotificationHandler.swift in Sources */,
 				DDF91F1C2C7259340072CCB1 /* NotificationTypeEnum.swift in Sources */,
 				DDA830142C72560C000F4724 /* DeactivateView.swift in Sources */,
 				DA8B4A2C2C6B4BDF00BC5987 /* Home.swift in Sources */,
@@ -878,7 +880,6 @@
 				DA221D362C6FA93700F88958 /* SettingsView.swift in Sources */,
 				20190CF42C6A336B001A2AB6 /* WatchMC3App.swift in Sources */,
 				DA221D392C6FB55100F88958 /* CountdownView.swift in Sources */,
-				DA221D482C71DB4A00F88958 /* OverlayPlayerForTimeRemove.swift in Sources */,
 				DA19083F2C6E44C20087FA23 /* Router.swift in Sources */,
 				DA8B4A422C6BA3FE00BC5987 /* WatchToiOSConnector.swift in Sources */,
 				DA221D3C2C71C1E400F88958 /* CallView.swift in Sources */,
@@ -911,6 +912,7 @@
 				DD6D7FFA2C6D1BE30023A499 /* LiveTrackViewModel.swift in Sources */,
 				DDEB4B252C68D08E00375460 /* SHA256.swift in Sources */,
 				DD6D7FEC2C6CD5AA0023A499 /* FirebaseServiceUseCaseProtocol.swift in Sources */,
+				DA5994D52C732BFD00C4F2C0 /* NotificationHandler.swift in Sources */,
 				DDF91F192C7256E10072CCB1 /* NotificationTypeEnum.swift in Sources */,
 				DD6D800D2C6D238E0023A499 /* KeyUserDefaultEnum.swift in Sources */,
 				DD6D7FFC2C6D1BFA0023A499 /* LiveTrack.swift in Sources */,
