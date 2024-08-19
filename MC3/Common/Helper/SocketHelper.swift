@@ -24,7 +24,6 @@ final class SocketHelper: ObservableObject {
     init() {
         self.mapRegion = .userRegion
         self.mapCamera = .region(.userRegion)
-        self.setupSocket()
     }
     
     func setUpCreateOrJoinRoom(roomeName: String, isListener: Bool) {
@@ -32,16 +31,18 @@ final class SocketHelper: ObservableObject {
         self.isListener = isListener
     }
     
-    private func setupSocket() {
-        guard socket == nil else { return }
+    func setupSocket(completion: @escaping () -> Void) {
+        guard self.socket == nil else {
+            return
+        }
         
-        manager = SocketManager(socketURL: URL(string: "https://small-adaptive-efraasia.glitch.me")!, config: [.log(true), .compress, .forcePolling(true)])
+        manager = SocketManager(socketURL: URL(string: "https://small-adaptive-efraasia.glitch.me")!, config: [.log(false), .compress, .forcePolling(true)])
         socket = manager.defaultSocket
         
         socket.on(clientEvent: .connect) { (data, ack) in
             print("Connected to server")
             self.socket.emit("Handshake", "Hi Node.JS Server!")
-            self.createOrJoinRoom(roomName: self.roomName, isListener: self.isListener)
+            completion()
         }
         
         socket.on(clientEvent: .error) { (data, ack) in
@@ -74,7 +75,6 @@ final class SocketHelper: ObservableObject {
             }
             
             DispatchQueue.main.async {
-                print("success get data")
                 self?.messages = "Longitude: \(longitude), Latitude: \(latitude)"
                 self?.longitude = longitude
                 self?.latitude = latitude
@@ -100,9 +100,11 @@ final class SocketHelper: ObservableObject {
     
     func disconnectSocket() {
         socket.disconnect()
+        self.socket = nil
     }
     
     deinit {
         disconnectSocket()
+        self.socket = nil
     }
 }
