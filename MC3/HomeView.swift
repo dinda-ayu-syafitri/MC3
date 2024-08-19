@@ -27,7 +27,7 @@ struct HomeView: View {
                 }
 
         }
-        .accentColor(.red)
+        .accentColor(.appPink)
     }
 }
 
