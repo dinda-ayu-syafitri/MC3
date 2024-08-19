@@ -48,9 +48,16 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
+//            if logStatus {
+//                HomepageView()
+//            } else {
+//                LoginView()
+//            }
             if logStatus {
 //                HomepageView()
                 AddEmergencyContactView()
+                //             LiveTrackView(showLiveTrack: false)
+
 //                ProfileSetUpView()
                 // LiveTrack()
             } else {
