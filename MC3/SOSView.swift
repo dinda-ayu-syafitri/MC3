@@ -20,17 +20,17 @@ struct SOSView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 20.0)
                         .fill(Color.appPink.opacity(0.3))
-                        .frame(width: 350, height: 630)
-                        .scaleEffect(pulse ? 1.2 : 1.0)
+                        .frame(width: 320, height: 620)
+                        .scaleEffect(pulse ? 1.08 : 0.8)
                     RoundedRectangle(cornerRadius: 20.0)
                         .fill(Color.appPink.opacity(0.5))
-                        .frame(width: 350, height: 630)
-                        .scaleEffect(pulse ? 1.1 : 1.0)
+                        .frame(width: 310, height: 610)
+                        .scaleEffect(pulse ? 1.04 : 0.8)
                     RoundedRectangle(cornerRadius: 20.0)
                         .fill(Color.appPink)
-                        .frame(width: 350, height: 630)
+                        .frame(width: 300, height: 600)
                 }
-                .scaleEffect(bounce ? 1.05 : 1.0)
+                .scaleEffect(bounce ? 1.05 : 1.05)
                 .onAppear {
                     withAnimation(Animation.easeInOut(duration: 0.6).repeatForever(autoreverses: true)) {
                         pulse.toggle()
