@@ -25,7 +25,6 @@ struct HomeView: View {
                     Image(systemName: "person")
                     Text("Profile")
                 }
-
         }
         .accentColor(.red)
     }

@@ -24,15 +24,23 @@ struct CountdownView: View {
                 .multilineTextAlignment(.center)
             Spacer()
             ZStack {
-                Circle()
-                    .fill(Color.white.opacity(0.3))
-                    .scaleEffect(pulse ? 1.2 : 1.0)
-                    .animation(Animation.easeInOut(duration: 1.2).repeatForever(autoreverses: true))
+                withAnimation(
+                    Animation.easeInOut(duration: 1.2)
+                        .repeatForever(autoreverses: true)
+                ) {
+                    Circle()
+                        .fill(Color.white.opacity(0.3))
+                        .scaleEffect(pulse ? 1.2 : 1.0)
+                }
                 
-                Circle()
-                    .fill(Color.white.opacity(0.1))
-                    .scaleEffect(pulse ? 1.5 : 1.2)
-                    .animation(Animation.easeInOut(duration: 1.2).repeatForever(autoreverses: true))
+                withAnimation(
+                    Animation.easeInOut(duration: 1.2)
+                        .repeatForever(autoreverses: true)
+                ) {
+                    Circle()
+                        .fill(Color.white.opacity(0.1))
+                        .scaleEffect(pulse ? 1.5 : 1.2)
+                }
                 
                 // White circle behind the countdown number
                 Circle()
@@ -45,17 +53,21 @@ struct CountdownView: View {
             }
             .frame(width: 200, height: 200)
             .scaleEffect(bounce ? 1.05 : 1.0)
-            .animation(Animation.easeInOut(duration: 0.6).repeatForever(autoreverses: true))
             .onAppear {
-                pulse.toggle()
-                bounce.toggle()
+                withAnimation (
+                    Animation.easeInOut(duration: 0.6)
+                        .repeatForever(autoreverses: true)
+                ) {
+                    pulse.toggle()
+                    bounce.toggle()
+                }
             }
             Spacer()
             VStack{
                 Text("Tap the screen once to skip countdown and activate SOS alert immediately")
-                .font(.subheadline)
-                .foregroundColor(.white)
-                .multilineTextAlignment(.center)
+                    .font(.subheadline)
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
             }
             .padding()
             SlideToCancelButton()
