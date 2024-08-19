@@ -6,12 +6,16 @@
 //
 
 import Foundation
+import SwiftData
+import SwiftUI
 import WatchConnectivity
 
 class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
     var session: WCSession
     var messageViewModel = MessageNotificationViewModel()
     @Published var messageText = ""
+
+    var emergencyContactSaved: [EmergencyContacts]? = []
 
     init(session: WCSession = .default) {
         self.session = session
@@ -28,6 +32,9 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
 
     func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
         print("foreground")
+        print("foreground emergency contact: \(emergencyContactSaved)")
+        print("foreground emergency contact: \(emergencyContactSaved?.first)")
+        print("foreground emergency contact: \(emergencyContactSaved?.first?.emergencyContacts.first?.fullName)")
         handleReceivedMessage(message)
     }
 
@@ -50,11 +57,44 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
                     body: "We already sent you live location",
                     category: action
                 )
+
+                // Unwrapping emergencyContactSaved to ensure it is not nil and not empty
+                if let emergencyContacts = emergencyContactSaved, !emergencyContacts.isEmpty {
+                    for contact in emergencyContacts.first?.emergencyContacts ?? [] {
+                        let fcmToken = TokenManager.shared.fcmToken ?? ""
+
+                        messageViewModel.sendPushNotification(
+                            token: contact.fcm ?? "",
+                            title: "\(contact.fullName) needs your help!",
+                            body: "\(contact.fullName) sent you an SOS message. Reach out to her immediately!",
+                            locationLink: "testing",
+                            senderFCM: fcmToken
+                        )
+                    }
+
+                    print("Emergency contact is not empty")
+                } else {
+                    print("Test")
+                }
+//                if let firstContact = emergencyContactSaved.first {
+//                    print(emergencyContactSaved.first)
+//                    for contact in firstContact.emergencyContacts {
+//                        let fcmToken = TokenManager.shared.fcmToken ?? ""
+//
+//                        messageViewModel.sendPushNotification(
+//                            token: contact.fcm ?? "",
+//                            title: "\(contact.fullName) needs your help!",
+//                            body: "\(contact.fullName) sent you an SOS message. Reach out to her immediately!",
+//                            locationLink: "testing",
+//                            senderFCM: fcmToken
+//                        )
+//                    }
+//                }
             }
         } else {
             print("Unknown action received: \(message)")
         }
-        
+
         DispatchQueue.main.async {
             self.messageText = message["action"] as? String ?? "no data"
         }

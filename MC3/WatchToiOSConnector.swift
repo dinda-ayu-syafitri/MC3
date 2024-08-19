@@ -8,6 +8,22 @@
 import Foundation
 import WatchConnectivity
 
+enum NotificationTypeEnum {
+    case ABNORMALHEARTRATE
+    case SOSALERT
+}
+
+extension NotificationTypeEnum {
+    var toString: String {
+        switch self {
+        case .ABNORMALHEARTRATE:
+            return "abnormalHeartRate"
+        case .SOSALERT:
+            return "sosAlert"
+        }
+    }
+}
+
 class WatchToiOSConnector: NSObject, WCSessionDelegate, ObservableObject {
     var session: WCSession
     static let shared = WatchToiOSConnector()

@@ -10,7 +10,6 @@ import UserNotifications
 
 @main
 struct WatchMC3_Watch_AppApp: App {
-    
     @StateObject var healthKitManager = HealthKitManager()
     private let notificationDelegate = NotificationDelegate()
     @StateObject var watchConnector = WatchToiOSConnector()

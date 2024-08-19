@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct EmergencyContact: Codable, Equatable, Hashable {
-    var id: UUID
+struct EmergencyContact: Identifiable, Codable, Equatable, Hashable {
+    var id = UUID()
     var fullName: String
-    var phoneNumber: Int
+    var phoneNumber: String
     var fcm: String?
+    var isPrimary: Bool
 }
