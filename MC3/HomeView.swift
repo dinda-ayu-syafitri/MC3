@@ -22,8 +22,8 @@ struct HomeView: View {
                 }
             ProfileView()
                 .tabItem {
-                    Image(systemName: "person")
-                    Text("Profile")
+                    Image(systemName: "gear")
+                    Text("Settings")
                 }
 
         }

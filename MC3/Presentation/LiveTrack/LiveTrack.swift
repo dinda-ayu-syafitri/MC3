@@ -18,7 +18,7 @@ struct LiveTrack: View {
                 Text("Live Track")
                     .font(.title2)
                     .bold()
-                    .foregroundColor(.red)
+                    .foregroundColor(.appPink)
 
                 Text("longlat: \(socketVM.longitude), \(socketVM.latitude)")
 
@@ -49,32 +49,39 @@ struct LiveTrack: View {
                 )
 
                 HStack {
-                    HStack {
-                        Image(systemName: "person.fill")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .clipShape(Circle())
-                            .overlay(Circle().stroke(Color.black))
+                    Button {
+                        
+                    } label: {
+                        HStack {
+                            Image(systemName: "person.fill")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                                .foregroundStyle(Color.white)
+                                .padding()
 
-                        Text("Syafiqah")
-                            .font(.headline)
-                            .padding(.leading, 5)
+                            Text("Syafiqah")
+                                .font(.headline)
+                                .padding(.leading, 5)
+                                .foregroundStyle(Color.white)
+                                .bold()
+                                .padding(.horizontal,-10)
+                            
+                            Spacer()
+                            Image(systemName: "phone.arrow.up.right.fill")
+                                .font(.title)
+                                .foregroundColor(.white)
+                                .padding()
+                             
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                        }
+                        .frame(width: 320, height: 35)
+                        .padding()
+                        .background(Color.appPink)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
-                    .frame(width: 250, height: 35)
-                    .padding()
-                    .background(Color.gray.opacity(0.2))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    Button(action: {
-                        // Call action
-                    }) {
-                        Image(systemName: "phone.arrow.up.right")
-                            .font(.title)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.gray)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
-                }
+
+                    
                 Spacer()
             }
             .onAppear {

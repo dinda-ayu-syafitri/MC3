@@ -13,24 +13,36 @@ struct NoAlertsView: View {
             Text("Live Track")
                        .font(.title2)
                        .fontWeight(.bold)
-                       .foregroundColor(.red)
+                       .foregroundColor(.appPink)
                        .padding(.top, 16)
                    VStack {
-                       Color.gray
-                           .frame(width: 250, height: 250)
-                           .cornerRadius(10)
-                           .padding()
+                       ZStack{
+                           Color.white
+                               .frame(width: 350, height: 400)
+                               .cornerRadius(10)
+                               .padding()
+                           
+                           VStack{
+                               Image(systemName: "bell.slash.fill")
+                                   .resizable()
+                                   .frame(width: 100, height: 100)
+                                   .foregroundStyle(Color.appPinkSecondary)
+                               Text("No active alerts")
+                                   .font(.headline)
+                                   .fontWeight(.bold)
+                                   .padding(.top, 8)
+                               
+                               Text("You will be notified if somebody activated the SOS alert")
+                                   .font(.subheadline)
+                                   .foregroundColor(.gray)
+                                   .multilineTextAlignment(.center)
+                                   .padding(.horizontal, 32)
+                           }
+                           
+                       }
+                      
 
-                       Text("No active alerts")
-                           .font(.headline)
-                           .fontWeight(.bold)
-                           .padding(.top, 8)
                        
-                       Text("You will be notified if somebody activated the SOS alert")
-                           .font(.subheadline)
-                           .foregroundColor(.gray)
-                           .multilineTextAlignment(.center)
-                           .padding(.horizontal, 32)
                    }
                    .padding(.top, 50)
                    

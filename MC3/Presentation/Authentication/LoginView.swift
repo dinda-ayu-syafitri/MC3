@@ -17,7 +17,7 @@ struct LoginView: View {
     var body: some View {
         VStack {
             Spacer()
-            Text("Login Page")
+            Text("Sign In")
                 .padding(.bottom, 16)
             Spacer()
             
@@ -96,3 +96,7 @@ struct LoadingButton: View {
         .background(.black)
     }
 }
+
+//#Preview{
+//    LoginView()
+//}
