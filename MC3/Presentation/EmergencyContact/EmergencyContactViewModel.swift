@@ -38,23 +38,6 @@ class EmergencyContactViewModel: ObservableObject {
         context.insert(formattedEmergencyContacts)
     }
 
-    func fetchLocalEmergencyContacts(context: ModelContext) -> EmergencyContacts? {
-        let fetchDescriptor = FetchDescriptor<EmergencyContacts>()
-
-        do {
-            let results = try context.fetch(fetchDescriptor)
-            if !results.isEmpty {
-                return results[0]
-            } else {
-                print("Exercise not found")
-            }
-        } catch {
-            print("Fetch error: \(error.localizedDescription)")
-        }
-
-        return nil
-    }
-
     func insertUserEmergencyContacts(idFirestore: String, emergencyContacts: [EmergencyContact]) async {
         do {
             try await self.firebaseUseCase.insertUserEmergencyContacts(idFirestore: idFirestore, emergencyContacts: emergencyContacts)

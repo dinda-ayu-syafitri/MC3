@@ -37,7 +37,6 @@
 		20F95A6A2C6E11A5005B3DA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20F95A692C6E11A5005B3DA1 /* GoogleService-Info.plist */; };
 		81D078F92C6C52FC00ACE61E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D078F82C6C52FC00ACE61E /* OnboardingView.swift */; };
 		81D079072C6DE1E100ACE61E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079062C6DE1E100ACE61E /* HomeView.swift */; };
-		81D079092C6DE1EB00ACE61E /* LiveTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079082C6DE1EB00ACE61E /* LiveTrackView.swift */; };
 		81D0790B2C6DE1F400ACE61E /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D0790A2C6DE1F400ACE61E /* SOSView.swift */; };
 		81D0790D2C6DE20A00ACE61E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D0790C2C6DE20A00ACE61E /* ProfileView.swift */; };
 		81D079112C6DEB7700ACE61E /* NoAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D079102C6DEB7700ACE61E /* NoAlertsView.swift */; };
@@ -900,7 +899,6 @@
 				81D079072C6DE1E100ACE61E /* HomeView.swift in Sources */,
 				81D079112C6DEB7700ACE61E /* NoAlertsView.swift in Sources */,
 				81D079132C6DF04E00ACE61E /* CountdownView.swift in Sources */,
-				81D079092C6DE1EB00ACE61E /* LiveTrackView.swift in Sources */,
 				81D0790B2C6DE1F400ACE61E /* SOSView.swift in Sources */,
 				81D0790D2C6DE20A00ACE61E /* ProfileView.swift in Sources */,
 				81D079152C6DFD1500ACE61E /* PinInputView.swift in Sources */,

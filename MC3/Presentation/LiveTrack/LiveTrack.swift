@@ -5,13 +5,13 @@
 //  Created by Luthfi Misbachul Munir on 15/08/24.
 //
 
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct LiveTrack: View {
     @StateObject private var socketVM = SocketHelper()
     @StateObject private var liveTrackVM = LiveTrackViewModel()
-    
+
     var body: some View {
         if liveTrackVM.showLiveTrack {
             VStack {
@@ -19,12 +19,12 @@ struct LiveTrack: View {
                     .font(.title2)
                     .bold()
                     .foregroundColor(.red)
-                
+
                 Text("longlat: \(socketVM.longitude), \(socketVM.latitude)")
 
                 Map(position: $socketVM.mapCamera) {
                     Annotation("Victim Location", coordinate: CLLocationCoordinate2D(latitude: socketVM.latitude, longitude: socketVM.longitude)) {
-                        UserAnnotation()
+//                        UserAnnotation()
                     }
                 }
                 .frame(height: 550)
@@ -55,7 +55,7 @@ struct LiveTrack: View {
                             .frame(width: 40, height: 40)
                             .clipShape(Circle())
                             .overlay(Circle().stroke(Color.black))
-                        
+
                         Text("Syafiqah")
                             .font(.headline)
                             .padding(.leading, 5)
@@ -92,3 +92,5 @@ struct LiveTrack: View {
 #Preview {
     LiveTrack()
 }
+
+//

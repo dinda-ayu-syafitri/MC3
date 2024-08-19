@@ -45,7 +45,9 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
 
         DispatchQueue.global().async {
             Task {
-                await self.loginVM.updateFcm(idFirestore: firebaseID!, fcm: fcmToken ?? "")
+                if firebaseID != nil {
+                    await self.loginVM.updateFcm(idFirestore: firebaseID!, fcm: fcmToken ?? "")
+                }
             }
         }
 //        saveUserToFirebase(fcmToken: fcmToken)
