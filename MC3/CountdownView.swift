@@ -65,7 +65,7 @@ struct CountdownView: View {
         }
         
         .ignoresSafeArea()
-        .background(Color.red)
+        .background(Color.appPink)
     }
 }
 

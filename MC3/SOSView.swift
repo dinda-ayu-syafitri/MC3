@@ -17,27 +17,27 @@ struct SOSView: View {
             
         }, label: {
             ZStack {
-                Rectangle()
-                     .frame(width: 350, height: 700)
-                     .clipShape(RoundedRectangle(cornerRadius: 20))
-                     .foregroundColor(.red)
-                     .overlay(
-                         Rectangle()
-                             .frame(width: 350, height: 700)
-                             .clipShape(RoundedRectangle(cornerRadius: 20))
-                             .foregroundColor(.red)
-                             .scaleEffect(pulse ? 1.05 : 1.0)
-                             .opacity(pulse ? 0.0 : 1.0)
-                     )
-                     .offset(y: bounce ? -10 : 0) // Bounce effect
-                     .animation(
-                         Animation.easeInOut(duration: 0.7)
-                             .repeatForever(autoreverses: true)
-                     )
-                     .onAppear {
-                         self.pulse.toggle()
-                         self.bounce.toggle()
-                     }
+                ZStack{
+                    RoundedRectangle(cornerRadius: 20.0)
+                        .fill(Color.appPink.opacity(0.3))
+                        .frame(width: 320, height: 460)
+                        .scaleEffect(pulse ? 1.1 : 1.0)
+                        .animation(Animation.easeInOut(duration: 0.6).repeatForever(autoreverses: true))
+                    RoundedRectangle(cornerRadius: 20.0)
+                        .fill(Color.appPink.opacity(0.5))
+                        .frame(width: 310, height: 455)
+                        .scaleEffect(pulse ? 1.05 : 1.0)
+                        .animation(Animation.easeInOut(duration: 0.6).repeatForever(autoreverses: true))
+                    RoundedRectangle(cornerRadius: 20.0)
+                        .fill(Color.appPink)
+                        .frame(width: 300, height: 450)
+                }
+                .scaleEffect(bounce ? 1.05 : 1.0)
+                .animation(Animation.easeInOut(duration: 0.6).repeatForever(autoreverses: true))
+                .onAppear {
+                    pulse.toggle()
+                    bounce.toggle()
+                }
                 
                 VStack {
                     Image(systemName: "bell.and.waves.left.and.right.fill")
@@ -46,7 +46,7 @@ struct SOSView: View {
                                 .foregroundColor(.white)
                                 .scaleEffect(scale)
                                 .onAppear {
-                                    withAnimation(Animation.easeInOut(duration: 0.5).repeatForever(autoreverses: true)) {
+                                    withAnimation(Animation.easeInOut(duration: 0.6).repeatForever(autoreverses: true)) {
                                         scale = 1.2
                                     }
                                 }
@@ -62,6 +62,7 @@ struct SOSView: View {
                         .padding(.horizontal, 40)
                 }
             }
+            
         })
         
     }
