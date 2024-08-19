@@ -39,5 +39,3 @@ class HealthKitManager: ObservableObject {
     }
     
 }
-
-//            guard let heartRateType = HKObjectType.quantityType(forIdentifier: .heartRate) else {return}

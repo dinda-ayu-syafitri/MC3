@@ -9,13 +9,13 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        TabView(){
+        TabView {
             SOSView()
                 .tabItem {
                     Image(systemName: "sos.circle.fill")
                     Text("SOS")
                 }
-            LiveTrackView()
+            LiveTrack()
                 .tabItem {
                     Image(systemName: "map")
                     Text("Live Track")
@@ -25,10 +25,8 @@ struct HomeView: View {
                     Image(systemName: "person")
                     Text("Profile")
                 }
-
         }
         .accentColor(.red)
-
     }
 }
 

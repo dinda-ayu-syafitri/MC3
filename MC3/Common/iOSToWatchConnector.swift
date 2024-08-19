@@ -6,12 +6,16 @@
 //
 
 import Foundation
+import SwiftData
+import SwiftUI
 import WatchConnectivity
 
 class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
     var session: WCSession
     var messageViewModel = MessageNotificationViewModel()
     @Published var messageText = ""
+
+    var emergencyContactSaved: [EmergencyContacts]? = []
 
     init(session: WCSession = .default) {
         self.session = session
@@ -28,6 +32,9 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
 
     func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
         print("foreground")
+        print("foreground emergency contact: \(emergencyContactSaved)")
+        print("foreground emergency contact: \(emergencyContactSaved?.first)")
+        print("foreground emergency contact: \(emergencyContactSaved?.first?.emergencyContacts.first?.fullName)")
         handleReceivedMessage(message)
     }
 
@@ -37,28 +44,59 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
     }
 
     private func handleReceivedMessage(_ message: [String: Any]) {
-        // DEBUG: print message
-        print(message)
-        print("SOS alert triggered from Apple Watch!")
+        if let action = message["action"] as? String {
+            if action == NotificationTypeEnum.ABNORMALHEARTRATE.toString {
+                NotificationManager.shared.scheduleNotification(
+                    title: "Abnormal heart rate detected",
+                    body: "Are you okay?",
+                    category: action
+                )
+            } else if action == NotificationTypeEnum.SOSALERT.toString {
+                NotificationManager.shared.scheduleNotification(
+                    title: "SOS has been sent",
+                    body: "We already sent you live location",
+                    category: action
+                )
 
-//        messageViewModel.sendPushNotification(token: "dOBwwUKgGk2DsuqKBehzRm:APA91bFiskcpmyBJ8KUlZR4gkid1vjFrKCum3WeNZzXJkNccyhktizZXj8hEL45rDssGT121ldhlSduipOLsbxExKG5eDzuEKBmlnzojcDCnpRJU7N76l5-2mjnUOrdGjeAj16MJjudo", title: "Helppp!!! Wooiii", body: "Notif dari watch ke hp ke receiver", locationLink: "Ini nanti locaation link", senderFCM: "sender fcm")
-        if let action = message["action"] as? String , action == NotificationTypeEnum.ABNORMALHEARTRATE.toString {
-            // trigger SOS alert here
-            print("SOS alert triggered from Apple Watch!")
+                // Unwrapping emergencyContactSaved to ensure it is not nil and not empty
+                if let emergencyContacts = emergencyContactSaved, !emergencyContacts.isEmpty {
+                    for contact in emergencyContacts.first?.emergencyContacts ?? [] {
+                        let fcmToken = TokenManager.shared.fcmToken ?? ""
 
-            // notify the user or trigger a local notification
-            NotificationManager.shared.scheduleNotification(
-                title: "Abnormal heart rate detected",
-                body: "Are you okay?",
-                category: action
-            )
+                        messageViewModel.sendPushNotification(
+                            token: contact.fcm ?? "",
+                            title: "\(contact.fullName) needs your help!",
+                            body: "\(contact.fullName) sent you an SOS message. Reach out to her immediately!",
+                            locationLink: "testing",
+                            senderFCM: fcmToken
+                        )
+                    }
 
-            // DEBUG: update content view
-            DispatchQueue.main.async {
-                self.messageText = message["action"] as? String ?? "no data"
+                    print("Emergency contact is not empty")
+                } else {
+                    print("Test")
+                }
+//                if let firstContact = emergencyContactSaved.first {
+//                    print(emergencyContactSaved.first)
+//                    for contact in firstContact.emergencyContacts {
+//                        let fcmToken = TokenManager.shared.fcmToken ?? ""
+//
+//                        messageViewModel.sendPushNotification(
+//                            token: contact.fcm ?? "",
+//                            title: "\(contact.fullName) needs your help!",
+//                            body: "\(contact.fullName) sent you an SOS message. Reach out to her immediately!",
+//                            locationLink: "testing",
+//                            senderFCM: fcmToken
+//                        )
+//                    }
+//                }
             }
         } else {
             print("Unknown action received: \(message)")
+        }
+
+        DispatchQueue.main.async {
+            self.messageText = message["action"] as? String ?? "no data"
         }
     }
 }

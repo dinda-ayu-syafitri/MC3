@@ -6,7 +6,7 @@
 //
 
 import AuthenticationServices
-import Firebase
+//import Firebase
 import FirebaseAuth
 import FirebaseFirestore
 import Foundation
@@ -127,6 +127,14 @@ class LoginViewModel: ObservableObject {
     func registeringAccount(idFirestore: String, fcm: String) async {
         do {
             try await self.firebaseUseCase.registerAccount(idFirestore: idFirestore, fcm: fcm)
+        } catch {
+            print("error while registering on vm : \(error.localizedDescription)")
+        }
+    }
+
+    func updateFcm(idFirestore: String, fcm: String) async {
+        do {
+            try await self.firebaseUseCase.updateFcm(idFirestore: idFirestore, fcm: fcm)
         } catch {
             print("error while registering on vm : \(error.localizedDescription)")
         }

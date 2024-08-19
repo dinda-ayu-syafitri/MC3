@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-//@Model
+@Model
 class User: Identifiable, Equatable, Hashable {
     var id: UUID
     var idFirebase: String
@@ -17,8 +17,8 @@ class User: Identifiable, Equatable, Hashable {
     var fcm: String
     var pin: [String]?
     var emegencyContacts: [EmergencyContact]?
-    
-    init(id: UUID = UUID(), 
+
+    init(id: UUID = UUID(),
          idFirebase: String = "",
          phoneNumber: Int? = nil,
          fullName: String = "",
@@ -34,11 +34,11 @@ class User: Identifiable, Equatable, Hashable {
         self.pin = pin
         self.emegencyContacts = emegencyContacts
     }
-    
+
     static func == (lhs: User, rhs: User) -> Bool {
         return lhs.id == rhs.id
     }
-    
+
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }

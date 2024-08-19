@@ -34,7 +34,7 @@ struct WatchMC3_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
             if healthKitManager.isAuthorized {
-                HomeView()
+                AllViews()
             } else {
                 Text("Requesting health data access...")
                     .onAppear {

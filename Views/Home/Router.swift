@@ -20,10 +20,11 @@ class Router: ObservableObject {
     func navigate(to route: Route) {
         currentRoute = route
     }
+    
     @ViewBuilder func view(for route: Route) -> some View {
         switch route {
         case .home:
-            HomeView()
+            Home()
         case .countdown:
             CountdownView(/*heartRateViewModel: HeartRateViewModel()*/)
         }
