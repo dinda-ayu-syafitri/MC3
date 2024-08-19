@@ -40,6 +40,13 @@ class DependencyInjection: ObservableObject {
         )
     }
 
+    func profileViewModel() -> ProfileViewModel {
+        ProfileViewModel(
+            firebaseUseCase: firebaseUseCase,
+            userDefaultUseCase: userDefaultUseCase
+        )
+    }
+
     func emergencyContactsViewModel() -> EmergencyContactViewModel {
         EmergencyContactViewModel(
             firebaseUseCase: firebaseUseCase

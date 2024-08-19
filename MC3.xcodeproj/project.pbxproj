@@ -14,6 +14,9 @@
 		201FB0742C6D9AE400058A95 /* EmergencyContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201FB0732C6D9AE400058A95 /* EmergencyContactViewModel.swift */; };
 		201FB0762C6DC32F00058A95 /* ContactPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201FB0752C6DC32F00058A95 /* ContactPickerView.swift */; };
 		202297A92C71EF3B00EFAF37 /* EmergencyContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202297A82C71EF3B00EFAF37 /* EmergencyContacts.swift */; };
+		202A8E182C72E3BC00738F02 /* ProfileSetUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202A8E172C72E3BC00738F02 /* ProfileSetUpView.swift */; };
+		202A8E1C2C72FB8500738F02 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202A8E1B2C72FB8500738F02 /* HomeView.swift */; };
+		202A8E202C72FC7800738F02 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202A8E1F2C72FC7800738F02 /* ProfileViewModel.swift */; };
 		2058D15D2C65C65200D0557D /* MC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15C2C65C65200D0557D /* MC3App.swift */; };
 		2058D15F2C65C65200D0557D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15E2C65C65200D0557D /* ContentView.swift */; };
 		2058D1612C65C65400D0557D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1602C65C65400D0557D /* Assets.xcassets */; };
@@ -25,7 +28,6 @@
 		209E78792C6F563C00510BD4 /* MessageNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207BA4812C6D905D00B9B3FC /* MessageNotificationViewModel.swift */; };
 		20D4DA9E2C6E59A4009E73D7 /* NoAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA972C6E59A4009E73D7 /* NoAlertsView.swift */; };
 		20D4DA9F2C6E59A4009E73D7 /* SOSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA982C6E59A4009E73D7 /* SOSView.swift */; };
-		20D4DAA02C6E59A4009E73D7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA992C6E59A4009E73D7 /* HomeView.swift */; };
 		20D4DAA12C6E59A4009E73D7 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA9A2C6E59A4009E73D7 /* CountdownView.swift */; };
 		20D4DAA22C6E59A4009E73D7 /* PinInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA9B2C6E59A4009E73D7 /* PinInputView.swift */; };
 		20D4DAA32C6E59A4009E73D7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D4DA9C2C6E59A4009E73D7 /* ProfileView.swift */; };
@@ -135,6 +137,9 @@
 		201FB0732C6D9AE400058A95 /* EmergencyContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewModel.swift; sourceTree = "<group>"; };
 		201FB0752C6DC32F00058A95 /* ContactPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPickerView.swift; sourceTree = "<group>"; };
 		202297A82C71EF3B00EFAF37 /* EmergencyContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContacts.swift; sourceTree = "<group>"; };
+		202A8E172C72E3BC00738F02 /* ProfileSetUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetUpView.swift; sourceTree = "<group>"; };
+		202A8E1B2C72FB8500738F02 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		202A8E1F2C72FC7800738F02 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		203AB9A42C6C710A00D7AD86 /* MC3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MC3.entitlements; sourceTree = "<group>"; };
 		203AB9A52C6C712B00D7AD86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2058D1592C65C65200D0557D /* MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,7 +152,6 @@
 		207BA4832C6D930200B9B3FC /* AddEmergencyContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmergencyContactView.swift; sourceTree = "<group>"; };
 		20D4DA972C6E59A4009E73D7 /* NoAlertsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoAlertsView.swift; sourceTree = "<group>"; };
 		20D4DA982C6E59A4009E73D7 /* SOSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOSView.swift; sourceTree = "<group>"; };
-		20D4DA992C6E59A4009E73D7 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		20D4DA9A2C6E59A4009E73D7 /* CountdownView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		20D4DA9B2C6E59A4009E73D7 /* PinInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinInputView.swift; sourceTree = "<group>"; };
 		20D4DA9C2C6E59A4009E73D7 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -405,7 +409,7 @@
 			children = (
 				20F585062C6DD28F00114E3D /* OnboardingView.swift */,
 				20D4DA9A2C6E59A4009E73D7 /* CountdownView.swift */,
-				20D4DA992C6E59A4009E73D7 /* HomeView.swift */,
+				202A8E1B2C72FB8500738F02 /* HomeView.swift */,
 				20D4DA972C6E59A4009E73D7 /* NoAlertsView.swift */,
 				20D4DA9B2C6E59A4009E73D7 /* PinInputView.swift */,
 				20D4DA9C2C6E59A4009E73D7 /* ProfileView.swift */,
@@ -447,6 +451,7 @@
 		2058D16B2C65C99400D0557D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				2077BFCD2C72DFA7004FBBF8 /* Profile */,
 				DD5574232C6DE15D008F9B98 /* ReusableComponents */,
 				DD6D7FF82C6D1BC50023A499 /* LiveTrack */,
 				DDEB4B262C68D97200375460 /* Homepage */,
@@ -556,6 +561,15 @@
 				DD6D7FF62C6D1B360023A499 /* CLLocationCoordinate2D.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2077BFCD2C72DFA7004FBBF8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				202A8E172C72E3BC00738F02 /* ProfileSetUpView.swift */,
+				202A8E1F2C72FC7800738F02 /* ProfileViewModel.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		207BA4802C6D903500B9B3FC /* MessageNotification */ = {
@@ -896,13 +910,16 @@
 				DA8B4A522C6CC08100BC5987 /* NotificationDelegate.swift in Sources */,
 				DA8B4A442C6BA48F00BC5987 /* iOSToWatchConnector.swift in Sources */,
 				DA8B4A512C6CC07E00BC5987 /* NotificationManager.swift in Sources */,
+				202A8E182C72E3BC00738F02 /* ProfileSetUpView.swift in Sources */,
 				81D079072C6DE1E100ACE61E /* HomeView.swift in Sources */,
 				81D079112C6DEB7700ACE61E /* NoAlertsView.swift in Sources */,
 				81D079132C6DF04E00ACE61E /* CountdownView.swift in Sources */,
 				81D0790B2C6DE1F400ACE61E /* SOSView.swift in Sources */,
 				81D0790D2C6DE20A00ACE61E /* ProfileView.swift in Sources */,
 				81D079152C6DFD1500ACE61E /* PinInputView.swift in Sources */,
+				202A8E1C2C72FB8500738F02 /* HomeView.swift in Sources */,
 				20F95A652C6E1073005B3DA1 /* HomepageView.swift in Sources */,
+				202A8E202C72FC7800738F02 /* ProfileViewModel.swift in Sources */,
 				DDEB4B202C68CE9000375460 /* LoginViewModel.swift in Sources */,
 				DDEB4B102C68C32F00375460 /* LoginView.swift in Sources */,
 				20D4DAA12C6E59A4009E73D7 /* CountdownView.swift in Sources */,
@@ -937,7 +954,6 @@
 				20D4DAA22C6E59A4009E73D7 /* PinInputView.swift in Sources */,
 				DD6D7FE72C6CD1A80023A499 /* FirebaseServiceRepositoryProtocol.swift in Sources */,
 				20D4DAA32C6E59A4009E73D7 /* ProfileView.swift in Sources */,
-				20D4DAA02C6E59A4009E73D7 /* HomeView.swift in Sources */,
 				206A2CFF2C6EA40500287FD0 /* FCMTokenManager.swift in Sources */,
 				DD6D7FF32C6D114A0023A499 /* ProviderIdEnum.swift in Sources */,
 				DD6D7FF72C6D1B360023A499 /* CLLocationCoordinate2D.swift in Sources */,
