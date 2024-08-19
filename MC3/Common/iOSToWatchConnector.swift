@@ -6,12 +6,16 @@
 //
 
 import Foundation
+import SwiftData
+import SwiftUI
 import WatchConnectivity
 
 class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
     var session: WCSession
     var messageViewModel = MessageNotificationViewModel()
     @Published var messageText = ""
+
+    @Query public var emergencyContactSaved: [EmergencyContacts]
 
     init(session: WCSession = .default) {
         self.session = session
@@ -50,11 +54,25 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
                     body: "We already sent you live location",
                     category: action
                 )
+
+                if let firstContact = emergencyContactSaved.first {
+                    for contact in firstContact.emergencyContacts {
+                        let fcmToken = TokenManager.shared.fcmToken ?? ""
+
+                        messageViewModel.sendPushNotification(
+                            token: contact.fcm ?? "",
+                            title: "\(contact.fullName) needs your help!",
+                            body: "\(contact.fullName) sent you an SOS message. Reach out to her immediately!",
+                            locationLink: "testing",
+                            senderFCM: fcmToken
+                        )
+                    }
+                }
             }
         } else {
             print("Unknown action received: \(message)")
         }
-        
+
         DispatchQueue.main.async {
             self.messageText = message["action"] as? String ?? "no data"
         }
