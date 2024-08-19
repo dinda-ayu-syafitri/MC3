@@ -18,14 +18,15 @@ class HomeViewModel: ObservableObject {
         didSet {
             UserDefaults.standard.set(isEnableBackgroundDelivery, forKey: "isEnableBackgroundDelivery") }
     }
-    @Published var countdownIsActive: Bool = false
-    @Published var timeRemaining: Int = 10
+//    @Published var countdownIsActive: Bool = false
+//    @Published var timeRemaining: Int = 10
     @Published var isCountdownViewPresented: Bool = false
     
     private var heartRates: [Double] = []
     
-    private var timer: Timer?
+//    private var timer: Timer?
     var messageViewModel = MessageNotificationViewModel()
+    var countdownManager: CountdownManager
 
     private var emergencySessionIsActive = false
     
@@ -34,7 +35,9 @@ class HomeViewModel: ObservableObject {
     init() {
         isEnableBackgroundDelivery = UserDefaults.standard.bool(forKey: "isEnableBackgroundDelivery")
         self.router = Router()
+        self.countdownManager = CountdownManager(notifDelegate: self.delegate)
         toggleBackgroundTracking()
+
 //        delegate.userNotificationCenter(center: UNUserNotificationCenter, didReceive: UNNotificationResponse, withCompletionHandler: <#T##() -> Void#>)
     }
     
@@ -76,11 +79,11 @@ class HomeViewModel: ObservableObject {
     
     
     func storeHeartRateHandling() {
-        if heartRate != 0.0 {
+        if heartRate != 0.0 && !countdownManager.countdownIsActive && !emergencySessionIsActive {
             // Check if current array empty
             if heartRates.isEmpty {
                 heartRates.append(heartRate)
-                print("countdown is active: \(countdownIsActive)")
+                print("countdown is active: \(countdownManager.countdownIsActive)")
 //                print("emergency session is active: \(emergencySessionIsActive)")
 
             } // Check if current Heart Rate is equals to previous Heart Rate
@@ -138,42 +141,42 @@ class HomeViewModel: ObservableObject {
     
     //check emergency
     func checkEmergency() {
-        if isStandardDeviationHigh() && !countdownIsActive && !emergencySessionIsActive {
-//            self.isLikelyInEmergency = true
+        if isStandardDeviationHigh() && !countdownManager.countdownIsActive && !emergencySessionIsActive {
+            heartRates.removeAll()
             self.createNotification(notificationType: .ABNORMALHEARTRATE)
-            self.startCountdown()
+            countdownManager.startCountdown()
+
         }
-        if self.timeRemaining == 0  && !emergencySessionIsActive {
+        if countdownManager.timeRemaining == 0 && !emergencySessionIsActive {
             print("Countdown ends, sending message to iOS")
             // Send message to iPhone when countdown expires
             self.createNotification(notificationType: .SOSALERT)
-//            WatchToiOSConnector.shared.sendTriggerToiOS()
             // Stop countdown and mark emergency session as active
-            self.stopCountdown()
-//            self.emergencySessionIsActive = true
+            countdownManager.stopCountdown()
+            self.emergencySessionIsActive = true
         }
     }
     
     // Start countdown timer
-    func startCountdown() {
-        self.countdownIsActive = true
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-            if self.timeRemaining > 0 {
-                self.timeRemaining -= 1
-
-                print("Time remaining: \(self.timeRemaining)")
-            }
-        }
-    }
+//    func startCountdown() {
+//        countdownIsActive = true
+//        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+//            if self.timeRemaining > 0 {
+//                self.timeRemaining -= 1
+//
+//                print("Time remaining: \(self.timeRemaining)")
+//            }
+//        }
+//    }
     
     // Stop countdown timer
-    func stopCountdown() {
-        timer?.invalidate()
-        timer = nil
-        countdownIsActive = false
-        timeRemaining = 10
-        print("countdown set to false")
-    }
+//    func stopCountdown() {
+//        timer?.invalidate()
+//        timer = nil
+//        countdownIsActive = false
+//        timeRemaining = 10
+//        print("countdown set to false")
+//    }
     
     //fetch heart rate data (foreground tracking)
     func fetchHeartRateDataForeground() {

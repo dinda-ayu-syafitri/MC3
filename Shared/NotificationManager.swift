@@ -31,13 +31,13 @@ class NotificationManager {
                                               title: "I'm okay",
                                               options: [])
         
-        let sosCategory = UNNotificationCategory(identifier: NotificationTypeEnum.ABNORMALHEARTRATE.toString,
+        let highHeartRateCategory = UNNotificationCategory(identifier: NotificationTypeEnum.ABNORMALHEARTRATE.toString,
                                                  actions: [okayAction],
                                                  intentIdentifiers: [],
                                                  options: [])
         
         //register category with the shared notification center
-        UNUserNotificationCenter.current().setNotificationCategories([sosCategory])
+        UNUserNotificationCenter.current().setNotificationCategories([highHeartRateCategory])
     }
     
     

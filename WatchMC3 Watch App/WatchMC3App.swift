@@ -12,7 +12,6 @@ import UserNotifications
 struct WatchMC3_Watch_AppApp: App {
     
     @StateObject var healthKitManager = HealthKitManager()
-    @StateObject var homeViewModel = HomeViewModel()
     private let notificationDelegate = NotificationDelegate()
     @StateObject var watchConnector = WatchToiOSConnector()
     
@@ -31,16 +30,12 @@ struct WatchMC3_Watch_AppApp: App {
                 print("Notification permission denied.")
             }
         }
-        
-        // Set HomeViewModel in the NotificationHandler
-               NotificationHandler.shared.setHomeViewModel(HomeViewModel.shared)
     }
     
     var body: some Scene {
         WindowGroup {
             if healthKitManager.isAuthorized {
                 AllViews()
-                    .environmentObject(homeViewModel)
             } else {
                 Text("Requesting health data access...")
                     .onAppear {

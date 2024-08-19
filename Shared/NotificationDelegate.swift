@@ -10,14 +10,15 @@ import UserNotifications
 
 
 class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
-    
+    @Published var triggerStopCD = false
     //handle notification actions
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
         if response.actionIdentifier == "Okay_Action" {
             print("glad you're okay, we will do another check-in regularly")
-//            HomeViewModel.shared.stopCountdown()
-            NotificationHandler.shared.handleOkayAction()
+            
+            triggerStopCD = true
+            
             //call the completion handler whendone
             completionHandler()
         }
