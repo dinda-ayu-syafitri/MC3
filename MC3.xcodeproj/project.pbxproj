@@ -17,6 +17,8 @@
 		202A8E182C72E3BC00738F02 /* ProfileSetUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202A8E172C72E3BC00738F02 /* ProfileSetUpView.swift */; };
 		202A8E1C2C72FB8500738F02 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202A8E1B2C72FB8500738F02 /* HomeView.swift */; };
 		202A8E202C72FC7800738F02 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202A8E1F2C72FC7800738F02 /* ProfileViewModel.swift */; };
+		2052BEDA2C737489007FEC15 /* LiveTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2052BED72C737489007FEC15 /* LiveTrack.swift */; };
+		2052BEDB2C737489007FEC15 /* UserAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2052BED82C737489007FEC15 /* UserAnnotation.swift */; };
 		2058D15D2C65C65200D0557D /* MC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15C2C65C65200D0557D /* MC3App.swift */; };
 		2058D15F2C65C65200D0557D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15E2C65C65200D0557D /* ContentView.swift */; };
 		2058D1612C65C65400D0557D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1602C65C65400D0557D /* Assets.xcassets */; };
@@ -91,9 +93,9 @@
 		DD6D80092C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D80082C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift */; };
 		DD6D800B2C6D23010023A499 /* UserDefaultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D800A2C6D23010023A499 /* UserDefaultUseCase.swift */; };
 		DD6D800D2C6D238E0023A499 /* KeyUserDefaultEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6D800C2C6D238E0023A499 /* KeyUserDefaultEnum.swift */; };
-		DDBE51D52C71F31B001D6B1D /* NotificationTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBE51D42C71F31B001D6B1D /* NotificationTypeEnum.swift */; };
 		DDA830142C72560C000F4724 /* DeactivateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA830112C72560C000F4724 /* DeactivateView.swift */; };
 		DDA830152C72560C000F4724 /* DeactivateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA830122C72560C000F4724 /* DeactivateViewModel.swift */; };
+		DDBE51D52C71F31B001D6B1D /* NotificationTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBE51D42C71F31B001D6B1D /* NotificationTypeEnum.swift */; };
 		DDEB4B102C68C32F00375460 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB4B0F2C68C32F00375460 /* LoginView.swift */; };
 		DDEB4B132C68C53000375460 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DDEB4B122C68C53000375460 /* FirebaseAuth */; };
 		DDEB4B162C68C55B00375460 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = DDEB4B152C68C55B00375460 /* GoogleSignIn */; };
@@ -144,6 +146,8 @@
 		202A8E1F2C72FC7800738F02 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		203AB9A42C6C710A00D7AD86 /* MC3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MC3.entitlements; sourceTree = "<group>"; };
 		203AB9A52C6C712B00D7AD86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2052BED72C737489007FEC15 /* LiveTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveTrack.swift; sourceTree = "<group>"; };
+		2052BED82C737489007FEC15 /* UserAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAnnotation.swift; sourceTree = "<group>"; };
 		2058D1592C65C65200D0557D /* MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2058D15C2C65C65200D0557D /* MC3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3App.swift; sourceTree = "<group>"; };
 		2058D15E2C65C65200D0557D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -216,9 +220,9 @@
 		DD6D80082C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultUseCaseProtocol.swift; path = UseCases/UserDefaultUseCases/UserDefaultUseCaseProtocol.swift; sourceTree = SOURCE_ROOT; };
 		DD6D800A2C6D23010023A499 /* UserDefaultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDefaultUseCase.swift; path = UseCases/UserDefaultUseCases/UserDefaultUseCase.swift; sourceTree = SOURCE_ROOT; };
 		DD6D800C2C6D238E0023A499 /* KeyUserDefaultEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyUserDefaultEnum.swift; path = Entities/Enum/KeyUserDefaultEnum.swift; sourceTree = SOURCE_ROOT; };
-		DDBE51D42C71F31B001D6B1D /* NotificationTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationTypeEnum.swift; path = Entities/Enum/NotificationTypeEnum.swift; sourceTree = SOURCE_ROOT; };
 		DDA830112C72560C000F4724 /* DeactivateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeactivateView.swift; sourceTree = "<group>"; };
 		DDA830122C72560C000F4724 /* DeactivateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeactivateViewModel.swift; sourceTree = "<group>"; };
+		DDBE51D42C71F31B001D6B1D /* NotificationTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationTypeEnum.swift; path = Entities/Enum/NotificationTypeEnum.swift; sourceTree = SOURCE_ROOT; };
 		DDEB4B0F2C68C32F00375460 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DDEB4B1F2C68CE9000375460 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		DDEB4B222C68D07200375460 /* RandomNonceString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RandomNonceString.swift; path = Utils/Auth/RandomNonceString.swift; sourceTree = SOURCE_ROOT; };
@@ -386,6 +390,15 @@
 			path = EmergencyContact;
 			sourceTree = "<group>";
 		};
+		2052BED92C737489007FEC15 /* LiveTrack */ = {
+			isa = PBXGroup;
+			children = (
+				2052BED72C737489007FEC15 /* LiveTrack.swift */,
+				2052BED82C737489007FEC15 /* UserAnnotation.swift */,
+			);
+			path = LiveTrack;
+			sourceTree = "<group>";
+		};
 		2058D1502C65C65200D0557D = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +467,7 @@
 		2058D16B2C65C99400D0557D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				2052BED92C737489007FEC15 /* LiveTrack */,
 				2077BFCD2C72DFA7004FBBF8 /* Profile */,
 				DD5574232C6DE15D008F9B98 /* ReusableComponents */,
 				DDEB4B262C68D97200375460 /* Homepage */,
@@ -579,6 +593,8 @@
 			children = (
 				DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */,
 				DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */,
+				DDF91F182C7256E10072CCB1 /* NotificationTypeEnum.swift */,
+				DDF91F1D2C72F03C0072CCB1 /* UserAnnotation.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -680,16 +696,6 @@
 				DDBE51D42C71F31B001D6B1D /* NotificationTypeEnum.swift */,
 			);
 			path = Enum;
-			sourceTree = "<group>";
-		};
-		DD6D7FF82C6D1BC50023A499 /* LiveTrack */ = {
-			isa = PBXGroup;
-			children = (
-				DD6D7FF92C6D1BE30023A499 /* LiveTrackViewModel.swift */,
-				DD6D7FFB2C6D1BFA0023A499 /* LiveTrack.swift */,
-				DDF91F1D2C72F03C0072CCB1 /* UserAnnotation.swift */,
-			);
-			path = LiveTrack;
 			sourceTree = "<group>";
 		};
 		DD6D7FFD2C6D1ED20023A499 /* Local */ = {
@@ -942,11 +948,13 @@
 				20D4DA9E2C6E59A4009E73D7 /* NoAlertsView.swift in Sources */,
 				DD6D7FEE2C6CD6810023A499 /* FirebaseServiceUseCase.swift in Sources */,
 				DD5574292C6E3EEE008F9B98 /* SwiftDataDataSource.swift in Sources */,
+				2052BEDB2C737489007FEC15 /* UserAnnotation.swift in Sources */,
 				DD6D80092C6D222E0023A499 /* UserDefaultUseCaseProtocol.swift in Sources */,
 				20F95A642C6E1073005B3DA1 /* HomepageViewModel.swift in Sources */,
 				DD6D7FF52C6D1AE50023A499 /* MKCoordinateRegion+Extension.swift in Sources */,
 				DDEB4B2C2C69146300375460 /* UIApplication+Extension.swift in Sources */,
 				2058D15F2C65C65200D0557D /* ContentView.swift in Sources */,
+				2052BEDA2C737489007FEC15 /* LiveTrack.swift in Sources */,
 				20D4DA9F2C6E59A4009E73D7 /* SOSView.swift in Sources */,
 				20D4DAA22C6E59A4009E73D7 /* PinInputView.swift in Sources */,
 				DD6D7FE72C6CD1A80023A499 /* FirebaseServiceRepositoryProtocol.swift in Sources */,
