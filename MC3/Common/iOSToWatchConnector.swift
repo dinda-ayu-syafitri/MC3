@@ -28,7 +28,9 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
 
     func sessionDidBecomeInactive(_ session: WCSession) {}
 
-    func sessionDidDeactivate(_ session: WCSession) {}
+    func sessionDidDeactivate(_ session: WCSession) {
+        WCSession.default.activate()
+    }
 
     func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
         print("foreground")

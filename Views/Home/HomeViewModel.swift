@@ -16,6 +16,7 @@ class HomeViewModel: ObservableObject {
     @Published var heartRate: Double = 0.0
     @Published var isEnableBackgroundDelivery: Bool = false {
         didSet {
+            toggleBackgroundTracking()
             UserDefaults.standard.set(isEnableBackgroundDelivery, forKey: "isEnableBackgroundDelivery") }
     }
 //    @Published var countdownIsActive: Bool = false
@@ -38,7 +39,6 @@ class HomeViewModel: ObservableObject {
         self.countdownManager = CountdownManager(notifDelegate: self.delegate)
         toggleBackgroundTracking()
 
-//        delegate.userNotificationCenter(center: UNUserNotificationCenter, didReceive: UNNotificationResponse, withCompletionHandler: <#T##() -> Void#>)
     }
     
     func createNotification(notificationType: NotificationTypeEnum) {
@@ -52,7 +52,8 @@ class HomeViewModel: ObservableObject {
         DispatchQueue.main.async {
             self.heartRate = samples.last?.quantity.doubleValue(for: .count().unitDivided(by: .minute())) ?? 0.0            
             //handling store heart rate
-            self.storeHeartRateHandling()
+//            self.storeHeartRateHandling()
+            self.storeHeartRateHandling2()
             //check emergency state
             self.checkEmergency()
         }
@@ -68,11 +69,15 @@ class HomeViewModel: ObservableObject {
     //TODO: bisa dipindahin ke file tesendiri?
     //heart rate handling
     func storeHeartRateHandling2() {
-        if heartRate != 0.0 && heartRates.count < 5{
+        if heartRate != 0.0 && heartRates.count < 5 && !countdownManager.countdownIsActive && !emergencySessionIsActive {
             if heartRates.isEmpty {
                 heartRates.append(heartRate)
+                print ("Data count: \(self.heartRates.count)")
+                print(heartRates.items)
             } else if !heartRates[heartRates.count - 1].isEqual(to: heartRate) {
                 heartRates.append(heartRate)
+                print ("Data count: \(self.heartRates.count)")
+                print(heartRates.items)
             }
         }
     }
@@ -144,6 +149,7 @@ class HomeViewModel: ObservableObject {
         if isStandardDeviationHigh() && !countdownManager.countdownIsActive && !emergencySessionIsActive {
             heartRates.removeAll()
             self.createNotification(notificationType: .ABNORMALHEARTRATE)
+            
             countdownManager.startCountdown()
 
         }
@@ -156,27 +162,6 @@ class HomeViewModel: ObservableObject {
             self.emergencySessionIsActive = true
         }
     }
-    
-    // Start countdown timer
-//    func startCountdown() {
-//        countdownIsActive = true
-//        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-//            if self.timeRemaining > 0 {
-//                self.timeRemaining -= 1
-//
-//                print("Time remaining: \(self.timeRemaining)")
-//            }
-//        }
-//    }
-    
-    // Stop countdown timer
-//    func stopCountdown() {
-//        timer?.invalidate()
-//        timer = nil
-//        countdownIsActive = false
-//        timeRemaining = 10
-//        print("countdown set to false")
-//    }
     
     //fetch heart rate data (foreground tracking)
     func fetchHeartRateDataForeground() {
