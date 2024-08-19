@@ -12,6 +12,9 @@ enum KeyUserDefaultEnum {
     case idFirebase
     case status
     case roomLiveLocation
+    case fullName
+    case phoneNumber
+    case fcm
 }
 
 extension KeyUserDefaultEnum {
@@ -25,6 +28,12 @@ extension KeyUserDefaultEnum {
             return "status"
         case .roomLiveLocation:
             return "roomLiveLocation"
+        case .fullName:
+            return "fullName"
+        case .phoneNumber:
+            return "phoneNumber"
+        case .fcm:
+            return "fcm"
         }
     }
 }
