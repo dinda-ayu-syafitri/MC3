@@ -17,26 +17,25 @@ struct SOSView: View {
             
         }, label: {
             ZStack {
-                ZStack{
+                ZStack {
                     RoundedRectangle(cornerRadius: 20.0)
                         .fill(Color.appPink.opacity(0.3))
-                        .frame(width: 340, height: 650)
-                        .scaleEffect(pulse ? 1.1 : 1.0)
-                        .animation(Animation.easeInOut(duration: 0.6).repeatForever(autoreverses: true))
+                        .frame(width: 350, height: 630)
+                        .scaleEffect(pulse ? 1.2 : 1.0)
                     RoundedRectangle(cornerRadius: 20.0)
                         .fill(Color.appPink.opacity(0.5))
-                        .frame(width: 330, height: 640)
-                        .scaleEffect(pulse ? 1.05 : 1.0)
-                        .animation(Animation.easeInOut(duration: 0.6).repeatForever(autoreverses: true))
+                        .frame(width: 350, height: 630)
+                        .scaleEffect(pulse ? 1.1 : 1.0)
                     RoundedRectangle(cornerRadius: 20.0)
                         .fill(Color.appPink)
-                        .frame(width: 320, height: 630)
+                        .frame(width: 350, height: 630)
                 }
                 .scaleEffect(bounce ? 1.05 : 1.0)
-                .animation(Animation.easeInOut(duration: 0.6).repeatForever(autoreverses: true))
                 .onAppear {
-                    pulse.toggle()
-                    bounce.toggle()
+                    withAnimation(Animation.easeInOut(duration: 0.6).repeatForever(autoreverses: true)) {
+                        pulse.toggle()
+                        bounce.toggle()
+                    }
                 }
                 
                 VStack {
