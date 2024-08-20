@@ -12,8 +12,17 @@ class ProfileSetUpViewModel: ObservableObject {
     @Published var nonce: String = ""
     @Published var isLoading: Bool = false
     @Published var userModel: User = .init()
-    @Published var fullName: String = ""
-    @Published var phoneNumber: String = ""
+    @Published var fullName: String = "" {
+        didSet {
+            self.isFilled()
+        }
+    }
+    @Published var phoneNumber: String = ""{
+        didSet {
+            self.isFilled()
+        }
+    }
+    @Published var activateSubmit: Bool = false
     private var firebaseUseCase: FirebaseServiceUseCaseProtocol
     private var userDefaultUseCase: UserDefaultUseCaseProtocol
     
@@ -30,6 +39,14 @@ class ProfileSetUpViewModel: ObservableObject {
         
         print("name: \(String(describing: userDefaultUseCase.getData(key: .fullname)))")
         print("phone: \(String(describing: userDefaultUseCase.getData(key: .phoneNumber)))")
+    }
+    
+    private func isFilled() {
+        if !self.fullName.isEmpty && !self.phoneNumber.isEmpty {
+            self.activateSubmit = true
+        } else {
+            self.activateSubmit = false
+        }
     }
     
     private func saveProfileToLocal() async {
