@@ -15,6 +15,8 @@ enum KeyUserDefaultEnum {
     case pin
     case fullname
     case phoneNumber
+    case fullName
+    case fcm
 }
 
 extension KeyUserDefaultEnum {
@@ -34,6 +36,10 @@ extension KeyUserDefaultEnum {
             return "fullname"
         case .phoneNumber:
             return "phoneNumber"
+        case .fullName:
+            return "fullName"
+        case .fcm:
+            return "fcm"
         }
     }
 }

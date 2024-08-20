@@ -9,16 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var watchConnector = iOSToWatchConnector()
+
+
     @AppStorage(KeyUserDefaultEnum.status.toString) private var logStatus: Bool = false
     
     var body: some View {
-        ZStack {
-            ProfileSetUpView()
-//            if logStatus {
-//                HomeView()
-//            } else {
-//                LoginView()
-//            }
+        RouterView {
+            ZStack {
+                if logStatus {
+                    OnboardingView()
+//                               ProfileSetUpView()
+
+//                    PersonalPinView()
+//                    HomeView()
+//                CountdownView()
+                } else {
+                    LoginView()
+                }
+            }
+            .padding()
         }
     }
 }
