@@ -18,6 +18,9 @@
 		2058D1612C65C65400D0557D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1602C65C65400D0557D /* Assets.xcassets */; };
 		2058D1642C65C65400D0557D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1632C65C65400D0557D /* Preview Assets.xcassets */; };
 		207BA47B2C6CF90E00B9B3FC /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 207BA47A2C6CF90E00B9B3FC /* FirebaseMessaging */; };
+		2084E36C2C7433A300ECA12E /* ProfileSetUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E36B2C7433A300ECA12E /* ProfileSetUpView.swift */; };
+		2084E36E2C74344800ECA12E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E36D2C74344800ECA12E /* ProfileViewModel.swift */; };
+		20B8BDAD2C743EAE004561AE /* EmergencyContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8BDAC2C743EAE004561AE /* EmergencyContacts.swift */; };
 		2084E3622C73AFE600ECA12E /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E3612C73AFE600ECA12E /* RouterView.swift */; };
 		2084E3652C73B03B00ECA12E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E3642C73B03B00ECA12E /* Router.swift */; };
 		2084E3682C73B62900ECA12E /* RouterWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E3672C73B62900ECA12E /* RouterWatchView.swift */; };
@@ -139,6 +142,9 @@
 		2058D15E2C65C65200D0557D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2058D1602C65C65400D0557D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2058D1632C65C65400D0557D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2084E36B2C7433A300ECA12E /* ProfileSetUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetUpView.swift; sourceTree = "<group>"; };
+		2084E36D2C74344800ECA12E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		20B8BDAC2C743EAE004561AE /* EmergencyContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContacts.swift; sourceTree = "<group>"; };
 		2084E3612C73AFE600ECA12E /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
 		2084E3642C73B03B00ECA12E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		2084E3672C73B62900ECA12E /* RouterWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterWatchView.swift; sourceTree = "<group>"; };
@@ -626,6 +632,7 @@
 				DD65434A2C738E0200BFB0FD /* Enum */,
 				DD6543512C738E4500BFB0FD /* User.swift */,
 				DD6543532C738E5500BFB0FD /* EmergencyContact.swift */,
+				20B8BDAC2C743EAE004561AE /* EmergencyContacts.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -714,6 +721,8 @@
 			isa = PBXGroup;
 			children = (
 				DD65436B2C738F7100BFB0FD /* ProfileView.swift */,
+				2084E36B2C7433A300ECA12E /* ProfileSetUpView.swift */,
+				2084E36D2C74344800ECA12E /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -963,6 +972,7 @@
 				DD65437A2C73901800BFB0FD /* LiveTrackViewModel.swift in Sources */,
 				DD6543452C738DC300BFB0FD /* FirebaseServiceRepositoryProtocol.swift in Sources */,
 				DD65437C2C73902C00BFB0FD /* LiveTrackView.swift in Sources */,
+				20B8BDAD2C743EAE004561AE /* EmergencyContacts.swift in Sources */,
 				DA8B4A512C6CC07E00BC5987 /* NotificationManager.swift in Sources */,
 				DD6543252C738C5000BFB0FD /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				2058D15F2C65C65200D0557D /* ContentView.swift in Sources */,
@@ -981,6 +991,7 @@
 				DD6543232C738C3600BFB0FD /* MKCoordinateRegion+Extension.swift in Sources */,
 				DD65438A2C7390BA00BFB0FD /* AddEmergencyContactView.swift in Sources */,
 				DD6543402C738D9200BFB0FD /* UserDefaultRepositoryProtocol.swift in Sources */,
+				2084E36E2C74344800ECA12E /* ProfileViewModel.swift in Sources */,
 				DD65435A2C738E9200BFB0FD /* FirebaseServiceUseCase.swift in Sources */,
 				DD6543632C738F1200BFB0FD /* AddContactsView.swift in Sources */,
 				DD6543272C738C6700BFB0FD /* UIApplication+Extension.swift in Sources */,
@@ -1000,6 +1011,7 @@
 				DD65436F2C738F8800BFB0FD /* SOSView.swift in Sources */,
 				DD65434C2C738E0900BFB0FD /* ProviderIdEnum.swift in Sources */,
 				DD65432E2C738CBA00BFB0FD /* SHA256.swift in Sources */,
+				2084E36C2C7433A300ECA12E /* ProfileSetUpView.swift in Sources */,
 				DD6543742C738FCA00BFB0FD /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
