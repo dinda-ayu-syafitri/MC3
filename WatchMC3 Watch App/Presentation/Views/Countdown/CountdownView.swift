@@ -54,6 +54,7 @@ struct CountdownView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .ignoresSafeArea()
         .background(.black)
+        .navigationBarBackButtonHidden()
 //        .navigationTitle("Countdown")
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @ObservedObject var heartRateViewModel: HomeViewModel
+    @ObservedObject var homeVM: HomeViewModel
     
     @State var hapticIsEnabled = false
     
@@ -63,7 +63,7 @@ struct SettingsView: View {
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity, alignment: .topLeading)
 
-                    Toggle("", isOn: $heartRateViewModel.isEnableBackgroundDelivery)
+                    Toggle("", isOn: $homeVM.isEnableBackgroundDelivery)
                         .labelsHidden()
                         .padding()
                 }
@@ -83,5 +83,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView(heartRateViewModel: HomeViewModel())
+    SettingsView(homeVM: HomeViewModel())
 }

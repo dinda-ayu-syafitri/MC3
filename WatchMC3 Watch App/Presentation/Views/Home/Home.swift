@@ -9,9 +9,15 @@ import SwiftUI
 
 struct Home: View {
     @StateObject private var homeVM = HomeViewModel()
-    
+    @EnvironmentObject var router: RouterWatch
+
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
+     
+//            Text("home")
+//                .hidden()
+                
+            
             // SOS State
             HStack {
                 Text("SOS Inactive")
@@ -28,7 +34,8 @@ struct Home: View {
             
             // SOS button
             Button(action: {
-                homeVM.createNotification(notificationType: .SOSALERT)
+                router.navigateTo(.countdownView)
+//                homeVM.createNotification(notificationType: .SOSALERT)
             }) {
                 VStack(alignment: .center, spacing: 8) {
                     Image(systemName: "bell.and.waves.left.and.right.fill")
@@ -66,12 +73,20 @@ struct Home: View {
 //            CallView()
             DeactivateView()
         })
-        .navigationTitle("Home")
-//        .onAppear {
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//                heartRateViewModel.createNotificatiown(notificationType: .ABNORMALHEARTRATE)
+//        .navigationTitle("Home")
+//        .onChange(of: homeVM.triggerCountDownView) {
+//            if homeVM.triggerCountDownView {
+//                router.navigateTo(.countdownView)
 //            }
+//
 //        }
+        .onAppear {
+            
+            if homeVM.triggerCountDownView {
+                router.navigateTo(.countdownView)
+            }
+            
+        }
     }
 }
 

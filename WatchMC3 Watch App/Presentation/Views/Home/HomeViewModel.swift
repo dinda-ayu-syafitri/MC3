@@ -10,8 +10,9 @@ import HealthKit
 
 class HomeViewModel: ObservableObject {
     static let shared = HomeViewModel()
-    
     var delegate = NotificationDelegate()
+//    @Published var router: RouterWatch = RouterWatch()
+    @Published var triggerCountDownView = false
     
     @Published var heartRate: Double = 0.0
     @Published var isEnableBackgroundDelivery: Bool = false {
@@ -19,26 +20,17 @@ class HomeViewModel: ObservableObject {
             toggleBackgroundTracking()
             UserDefaults.standard.set(isEnableBackgroundDelivery, forKey: "isEnableBackgroundDelivery") }
     }
-//    @Published var countdownIsActive: Bool = false
-//    @Published var timeRemaining: Int = 10
     @Published var isCountdownViewPresented: Bool = false
-    
     private var heartRates: [Double] = []
-    
-//    private var timer: Timer?
     var messageViewModel = MessageNotificationViewModel()
     var countdownManager: CountdownManager
-
     private var emergencySessionIsActive = false
     
-    let router: Router
     
     init() {
         isEnableBackgroundDelivery = UserDefaults.standard.bool(forKey: "isEnableBackgroundDelivery")
-        self.router = Router()
         self.countdownManager = CountdownManager(notifDelegate: self.delegate)
         toggleBackgroundTracking()
-
     }
     
     func createNotification(notificationType: NotificationTypeEnum) {
@@ -50,9 +42,9 @@ class HomeViewModel: ObservableObject {
         guard let samples = samples as? [HKQuantitySample] else {return}
         
         DispatchQueue.main.async {
-            self.heartRate = samples.last?.quantity.doubleValue(for: .count().unitDivided(by: .minute())) ?? 0.0            
+            self.heartRate = samples.last?.quantity.doubleValue(for: .count().unitDivided(by: .minute())) ?? 0.0
             //handling store heart rate
-//            self.storeHeartRateHandling()
+            //            self.storeHeartRateHandling()
             self.storeHeartRateHandling2()
             //check emergency state
             self.checkEmergency()
@@ -63,6 +55,10 @@ class HomeViewModel: ObservableObject {
     private func toggleBackgroundTracking() {
         isEnableBackgroundDelivery ?
         fetchHeartRateDataBackground() : fetchHeartRateDataForeground()
+    }
+    
+    func goToCD(router: RouterWatch) {
+        router.navigateTo(.countdownView)
     }
     
     
@@ -89,8 +85,8 @@ class HomeViewModel: ObservableObject {
             if heartRates.isEmpty {
                 heartRates.append(heartRate)
                 print("countdown is active: \(countdownManager.countdownIsActive)")
-//                print("emergency session is active: \(emergencySessionIsActive)")
-
+                //                print("emergency session is active: \(emergencySessionIsActive)")
+                
             } // Check if current Heart Rate is equals to previous Heart Rate
             else if !heartRates[heartRates.count - 1].isEqual(to: heartRate) {
                 // TODO: Uncomment when need to debug (print array)
@@ -150,8 +146,10 @@ class HomeViewModel: ObservableObject {
             heartRates.removeAll()
             self.createNotification(notificationType: .ABNORMALHEARTRATE)
             
+//            router.navigateTo(.countdownView)
+            triggerCountDownView = true
             countdownManager.startCountdown()
-
+            
         }
         if countdownManager.timeRemaining == 0 && !emergencySessionIsActive {
             print("Countdown ends, sending message to iOS")

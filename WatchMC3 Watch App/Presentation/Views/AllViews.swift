@@ -15,7 +15,7 @@ struct AllViews: View {
                 Home()
 
                 // Settings View
-                SettingsView(heartRateViewModel: HomeViewModel())
+                SettingsView(homeVM: HomeViewModel())
             }
             .tabViewStyle(.verticalPage)
         }
