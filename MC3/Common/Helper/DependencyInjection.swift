@@ -49,6 +49,11 @@ class DependencyInjection: ObservableObject {
     func profileSetUpViewModel() -> ProfileSetUpViewModel {
         ProfileSetUpViewModel(firebaseUseCase: firebaseUseCase, userDefaultUseCase: userDefaultUseCase)
     }
+    
+    // MARK: FUNCTIONS DEACTIVATE VIEW MODEL
+    func deactivateViewModel() -> DeactivateViewModel {
+        DeactivateViewModel(userDefaultUseCase: userDefaultUseCase)
+    }
 
     func profileViewModel() -> ProfileViewModel {
         ProfileViewModel(
