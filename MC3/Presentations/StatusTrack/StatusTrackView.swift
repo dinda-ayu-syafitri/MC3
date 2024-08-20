@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct StatusTrackView: View {
-    @State private var status: Int = 2
     @EnvironmentObject var router: Router
-    @State private var isOpened: Bool = false
+    @StateObject private var trackedVM = StatusTrackViewModel()
     @StateObject private var locationVM = LocationManager()
     @StateObject private var socketVM = SocketHelper()
     
@@ -18,7 +17,7 @@ struct StatusTrackView: View {
         VStack {
             Spacer()
             VStack {
-                if status == 1 {
+                if trackedVM.status == 1 {
                     sentComponent()
                 } else {
                     trackComponent()
@@ -27,8 +26,12 @@ struct StatusTrackView: View {
             
             if let coordinate = locationVM.lastKnownLocation {
                 Text("Latitude: \(coordinate.latitude)")
+                    .foregroundStyle(.blackBrand)
+                    .font(.headline)
                 
                 Text("Longitude: \(coordinate.longitude)")
+                    .foregroundStyle(.blackBrand)
+                    .font(.headline)
             } else {
                 Text("Unknown Location")
             }
@@ -66,7 +69,7 @@ struct StatusTrackView: View {
                 
                 Button {
                     print("open sheet")
-                    self.isOpened = true
+                    trackedVM.isSheetOpened = true
                 } label: {
                     Text("Deactivate Alert")
                         .foregroundStyle(Color.maroonBrand)
@@ -77,8 +80,8 @@ struct StatusTrackView: View {
             }
             Spacer()
         }
-        .sheet(isPresented: $isOpened, content: {
-            DeactivateView(isActive: $isOpened)
+        .sheet(isPresented: $trackedVM.isSheetOpened, content: {
+            DeactivateView(isActive: $trackedVM.isSheetOpened)
         })
         .padding(.horizontal, 16)
         .padding(.top, 98)
@@ -88,8 +91,12 @@ struct StatusTrackView: View {
         .ignoresSafeArea()
         .onAppear {
             locationVM.checkLocationAuthorization()
-            socketVM.setupSocket {
-                socketVM.createOrJoinRoom(roomName: "realTest", isListener: true)
+        }
+        .onChange(of: locationVM.userAcceptLocation) { oldValue, newValue in
+            if (newValue) {
+                socketVM.setupSocket {
+                    socketVM.createOrJoinRoom(roomName: "realTest", isListener: true)
+                }
             }
         }
         .onChange(of: locationVM.lastKnownLocation) { oldValue, newValue in
@@ -103,6 +110,17 @@ struct StatusTrackView: View {
         }
         .onDisappear {
             socketVM.disconnectSocket()
+        }
+        .alert("Location Access Needed", isPresented: $locationVM.alertingAlwaysUseLocation) {
+            Button("Go to Settings") {
+                if let appSettings = URL(string: UIApplication.openSettingsURLString) {
+                    locationVM.userAcceptLocation = false
+                    UIApplication.shared.open(appSettings)
+                }
+            }
+            Button("Cancel", role: .cancel) { }
+        } message: {
+            Text("This app requires access to your location at all times to provide certain features. Please go to Settings and enable 'Always' location access.")
         }
     }
 }

@@ -44,6 +44,7 @@
 		DD0B05D62C74D3FC0010F718 /* sentComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05D52C74D3FC0010F718 /* sentComponent.swift */; };
 		DD0B05D82C74D4230010F718 /* trackComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05D72C74D4230010F718 /* trackComponent.swift */; };
 		DD0B05DA2C74D9AE0010F718 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05D92C74D9AE0010F718 /* LocationManager.swift */; };
+		DD0B05DC2C74FB9E0010F718 /* StatusTrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05DB2C74FB9E0010F718 /* StatusTrackViewModel.swift */; };
 		DD4C77512C6A59A800CEDFB2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = DD4C77502C6A59A800CEDFB2 /* SocketIO */; };
 		DD6542F32C7387B100BFB0FD /* AllViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542F22C7387B100BFB0FD /* AllViews.swift */; };
 		DD6542F52C7387C400BFB0FD /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542F42C7387C400BFB0FD /* Home.swift */; };
@@ -193,6 +194,7 @@
 		DD0B05D52C74D3FC0010F718 /* sentComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sentComponent.swift; sourceTree = "<group>"; };
 		DD0B05D72C74D4230010F718 /* trackComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trackComponent.swift; sourceTree = "<group>"; };
 		DD0B05D92C74D9AE0010F718 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		DD0B05DB2C74FB9E0010F718 /* StatusTrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTrackViewModel.swift; sourceTree = "<group>"; };
 		DD6542F22C7387B100BFB0FD /* AllViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViews.swift; sourceTree = "<group>"; };
 		DD6542F42C7387C400BFB0FD /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		DD6542F62C7387D900BFB0FD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 				DD0B05C42C749E3C0010F718 /* StatusTrackView.swift */,
 				DD0B05D52C74D3FC0010F718 /* sentComponent.swift */,
 				DD0B05D72C74D4230010F718 /* trackComponent.swift */,
+				DD0B05DB2C74FB9E0010F718 /* StatusTrackViewModel.swift */,
 			);
 			path = StatusTrack;
 			sourceTree = "<group>";
@@ -773,11 +776,10 @@
 		DD6543602C738EDB00BFB0FD /* Presentations */ = {
 			isa = PBXGroup;
 			children = (
-				DD0B05D22C74D3AD0010F718 /* StatusTrack */,
-				DD0B05CB2C74C3C70010F718 /* Deactivate SOS */,
 				DD6543612C738F0400BFB0FD /* AddContacts */,
 				DD6543832C73908300BFB0FD /* Authentication */,
 				DD6543642C738F2600BFB0FD /* Countdown */,
+				DD0B05CB2C74C3C70010F718 /* Deactivate SOS */,
 				DD6543882C7390AE00BFB0FD /* EmergencyContact */,
 				DD6543702C738FA500BFB0FD /* Home */,
 				DD6543782C73900900BFB0FD /* LiveTrack */,
@@ -787,6 +789,7 @@
 				DD65436A2C738F6A00BFB0FD /* Profile */,
 				DD0B05A22C747C5D0010F718 /* Profile Setup */,
 				DD0B05C62C749EED0010F718 /* Router */,
+				DD0B05D22C74D3AD0010F718 /* StatusTrack */,
 				DD65436D2C738F7B00BFB0FD /* SOS */,
 				DD6543752C738FDD00BFB0FD /* ReusableComponents */,
 			);
@@ -1171,6 +1174,7 @@
 				DD65434E2C738E1900BFB0FD /* KeyUserDefaultEnum.swift in Sources */,
 				DD0B05D82C74D4230010F718 /* trackComponent.swift in Sources */,
 				DD0B059F2C7435FB0010F718 /* NumberFormatHelper.swift in Sources */,
+				DD0B05DC2C74FB9E0010F718 /* StatusTrackViewModel.swift in Sources */,
 				DD6543502C738E2800BFB0FD /* NotificationTypeEnum.swift in Sources */,
 				DD65436F2C738F8800BFB0FD /* SOSView.swift in Sources */,
 				DD65434C2C738E0900BFB0FD /* ProviderIdEnum.swift in Sources */,
@@ -1230,7 +1234,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WatchMC3-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Pulse Watch";
+				INFOPLIST_KEY_CFBundleDisplayName = WatchMC3;
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "We need to access your health data to provide services";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need to access your health data to provide services";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We need to access your health data to provide services";
@@ -1265,7 +1269,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WatchMC3-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Pulse Watch";
+				INFOPLIST_KEY_CFBundleDisplayName = WatchMC3;
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "We need to access your health data to provide services";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need to access your health data to provide services";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We need to access your health data to provide services";
@@ -1422,12 +1426,11 @@
 				INFOPLIST_FILE = MC3/Info.plist;
 				INFOPLIST_KEY_NSContactsUsageDescription = "We need your contacts information for the Emergency Contact Access";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We would to like access your location to share it to your emergency contacts";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We would to like access your location to share it to your emergency contacts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1462,12 +1465,11 @@
 				INFOPLIST_FILE = MC3/Info.plist;
 				INFOPLIST_KEY_NSContactsUsageDescription = "We need your contacts information for the Emergency Contact Access";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We would to like access your location to share it to your emergency contacts";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We would to like access your location to share it to your emergency contacts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
