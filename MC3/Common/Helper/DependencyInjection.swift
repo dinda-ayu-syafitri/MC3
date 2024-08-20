@@ -43,7 +43,8 @@ class DependencyInjection: ObservableObject {
     // MARK: FUNCTIONS PIN INPUT VIEW MODEL
     func personalPinViewModel() -> PersonalPinViewModel {
         PersonalPinViewModel(userDefaultUseCase: userDefaultUseCase)
-
+    }
+    
     func profileViewModel() -> ProfileViewModel {
         ProfileViewModel(
             firebaseUseCase: firebaseUseCase,
