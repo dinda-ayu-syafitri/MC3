@@ -29,9 +29,14 @@ struct ProfileSetUpView: View {
                     
                     TextField("ex. Jane Doe", text: $profileVM.fullName)
                         .font(.body)
-                        .textFieldStyle(.roundedBorder)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
                         .foregroundStyle(.black)
                         .focused($isNameFocused)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                 }
                 
                 VStack(alignment: .leading, spacing: 8) {
@@ -42,10 +47,15 @@ struct ProfileSetUpView: View {
                     
                     TextField("ex. 6287821285666", text: $profileVM.phoneNumber)
                         .font(.body)
-                        .textFieldStyle(.roundedBorder)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
                         .keyboardType(.phonePad)
                         .foregroundStyle(.black)
                         .focused($isPhoneNumberFocused)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.gray, lineWidth: 1)
+                        )
                 }
             }
             
