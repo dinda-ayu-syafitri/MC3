@@ -9,11 +9,7 @@ import SwiftUI
 
 struct PersonalPinView: View {
     @StateObject private var pinVM = DependencyInjection.shared.personalPinViewModel()
-    @FocusState private var focusedField: FocusedField?
-
-    enum FocusedField {
-        case personalPin, confirmPersonalPin
-    }
+    @FocusState private var focusedField: FocusedFieldEnum?
 
     var body: some View {
         VStack {

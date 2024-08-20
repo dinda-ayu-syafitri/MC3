@@ -13,7 +13,8 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            ProfileSetUpView()
+            StatusTrackView()
+//            PersonalPinView()
 //            if logStatus {
 //                HomeView()
 //            } else {

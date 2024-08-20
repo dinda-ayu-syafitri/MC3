@@ -35,6 +35,12 @@
 		DD0B05AE2C74842B0010F718 /* PulseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05AD2C74842B0010F718 /* PulseUITests.swift */; };
 		DD0B05B02C74842B0010F718 /* PulseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05AF2C74842B0010F718 /* PulseUITestsLaunchTests.swift */; };
 		DD0B05BD2C7484510010F718 /* PulseUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05BC2C7484510010F718 /* PulseUnitTests.swift */; };
+		DD0B05C52C749E3C0010F718 /* StatusTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05C42C749E3C0010F718 /* StatusTrackView.swift */; };
+		DD0B05C82C749EFA0010F718 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05C72C749EFA0010F718 /* Router.swift */; };
+		DD0B05CA2C749F3B0010F718 /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05C92C749F3B0010F718 /* RouterView.swift */; };
+		DD0B05CD2C74C3E90010F718 /* DeactivateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05CC2C74C3E90010F718 /* DeactivateView.swift */; };
+		DD0B05CF2C74C7030010F718 /* FocusedFieldEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05CE2C74C7030010F718 /* FocusedFieldEnum.swift */; };
+		DD0B05D12C74C8810010F718 /* DeactivateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05D02C74C8810010F718 /* DeactivateViewModel.swift */; };
 		DD4C77512C6A59A800CEDFB2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = DD4C77502C6A59A800CEDFB2 /* SocketIO */; };
 		DD6542F32C7387B100BFB0FD /* AllViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542F22C7387B100BFB0FD /* AllViews.swift */; };
 		DD6542F52C7387C400BFB0FD /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542F42C7387C400BFB0FD /* Home.swift */; };
@@ -175,6 +181,12 @@
 		DD0B05AF2C74842B0010F718 /* PulseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DD0B05BA2C7484510010F718 /* PulseUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PulseUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD0B05BC2C7484510010F718 /* PulseUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseUnitTests.swift; sourceTree = "<group>"; };
+		DD0B05C42C749E3C0010F718 /* StatusTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTrackView.swift; sourceTree = "<group>"; };
+		DD0B05C72C749EFA0010F718 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		DD0B05C92C749F3B0010F718 /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
+		DD0B05CC2C74C3E90010F718 /* DeactivateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeactivateView.swift; sourceTree = "<group>"; };
+		DD0B05CE2C74C7030010F718 /* FocusedFieldEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedFieldEnum.swift; sourceTree = "<group>"; };
+		DD0B05D02C74C8810010F718 /* DeactivateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeactivateViewModel.swift; sourceTree = "<group>"; };
 		DD6542F22C7387B100BFB0FD /* AllViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViews.swift; sourceTree = "<group>"; };
 		DD6542F42C7387C400BFB0FD /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		DD6542F62C7387D900BFB0FD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -453,6 +465,24 @@
 			path = PulseUnitTests;
 			sourceTree = "<group>";
 		};
+		DD0B05C62C749EED0010F718 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				DD0B05C72C749EFA0010F718 /* Router.swift */,
+				DD0B05C92C749F3B0010F718 /* RouterView.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		DD0B05CB2C74C3C70010F718 /* Deactivate SOS */ = {
+			isa = PBXGroup;
+			children = (
+				DD0B05CC2C74C3E90010F718 /* DeactivateView.swift */,
+				DD0B05D02C74C8810010F718 /* DeactivateViewModel.swift */,
+			);
+			path = "Deactivate SOS";
+			sourceTree = "<group>";
+		};
 		DD6542F82C73880E00BFB0FD /* Message Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -691,6 +721,7 @@
 				DD65434B2C738E0900BFB0FD /* ProviderIdEnum.swift */,
 				DD65434D2C738E1900BFB0FD /* KeyUserDefaultEnum.swift */,
 				DD65434F2C738E2800BFB0FD /* NotificationTypeEnum.swift */,
+				DD0B05CE2C74C7030010F718 /* FocusedFieldEnum.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -725,18 +756,20 @@
 		DD6543602C738EDB00BFB0FD /* Presentations */ = {
 			isa = PBXGroup;
 			children = (
-				DD0B05A22C747C5D0010F718 /* Profile Setup */,
-				DD0B05952C73ADEC0010F718 /* PersonalPin */,
-				DD65438F2C7390F700BFB0FD /* MessageNotification */,
-				DD6543882C7390AE00BFB0FD /* EmergencyContact */,
-				DD6543832C73908300BFB0FD /* Authentication */,
-				DD6543782C73900900BFB0FD /* LiveTrack */,
-				DD6543702C738FA500BFB0FD /* Home */,
-				DD65436D2C738F7B00BFB0FD /* SOS */,
-				DD65436A2C738F6A00BFB0FD /* Profile */,
-				DD6543672C738F4B00BFB0FD /* Onboarding */,
-				DD6543642C738F2600BFB0FD /* Countdown */,
+				DD0B05CB2C74C3C70010F718 /* Deactivate SOS */,
 				DD6543612C738F0400BFB0FD /* AddContacts */,
+				DD6543832C73908300BFB0FD /* Authentication */,
+				DD6543642C738F2600BFB0FD /* Countdown */,
+				DD6543882C7390AE00BFB0FD /* EmergencyContact */,
+				DD6543702C738FA500BFB0FD /* Home */,
+				DD6543782C73900900BFB0FD /* LiveTrack */,
+				DD65438F2C7390F700BFB0FD /* MessageNotification */,
+				DD6543672C738F4B00BFB0FD /* Onboarding */,
+				DD0B05952C73ADEC0010F718 /* PersonalPin */,
+				DD65436A2C738F6A00BFB0FD /* Profile */,
+				DD0B05A22C747C5D0010F718 /* Profile Setup */,
+				DD0B05C62C749EED0010F718 /* Router */,
+				DD65436D2C738F7B00BFB0FD /* SOS */,
 				DD6543752C738FDD00BFB0FD /* ReusableComponents */,
 			);
 			path = Presentations;
@@ -754,6 +787,7 @@
 			isa = PBXGroup;
 			children = (
 				DD6543652C738F3900BFB0FD /* CountdownView.swift */,
+				DD0B05C42C749E3C0010F718 /* StatusTrackView.swift */,
 			);
 			path = Countdown;
 			sourceTree = "<group>";
@@ -1065,6 +1099,7 @@
 				DD6543872C73909B00BFB0FD /* LoginViewModel.swift in Sources */,
 				DD65438C2C7390D400BFB0FD /* EmergencyContactViewModel.swift in Sources */,
 				DD6543662C738F3900BFB0FD /* CountdownView.swift in Sources */,
+				DD0B05CA2C749F3B0010F718 /* RouterView.swift in Sources */,
 				DD65437E2C73904D00BFB0FD /* LocationManagerViewModel.swift in Sources */,
 				DD0B05A62C747C940010F718 /* ProfileSetUpViewModel.swift in Sources */,
 				DD6543522C738E4500BFB0FD /* User.swift in Sources */,
@@ -1073,10 +1108,12 @@
 				DA8B4A522C6CC08100BC5987 /* NotificationDelegate.swift in Sources */,
 				DD65435D2C738EBD00BFB0FD /* UserDefaultUseCaseProtocol.swift in Sources */,
 				DD65437A2C73901800BFB0FD /* LiveTrackViewModel.swift in Sources */,
+				DD0B05CF2C74C7030010F718 /* FocusedFieldEnum.swift in Sources */,
 				DD6543452C738DC300BFB0FD /* FirebaseServiceRepositoryProtocol.swift in Sources */,
 				DD65437C2C73902C00BFB0FD /* LiveTrackView.swift in Sources */,
 				DA8B4A512C6CC07E00BC5987 /* NotificationManager.swift in Sources */,
 				DD6543252C738C5000BFB0FD /* CLLocationCoordinate2D+Extension.swift in Sources */,
+				DD0B05C52C749E3C0010F718 /* StatusTrackView.swift in Sources */,
 				2058D15F2C65C65200D0557D /* ContentView.swift in Sources */,
 				DD65433A2C738D5000BFB0FD /* FirebaseServiceDataSourceProtocol.swift in Sources */,
 				DD6543352C738D0600BFB0FD /* UserDefaultDataSourceProtocol.swift in Sources */,
@@ -1084,7 +1121,9 @@
 				DD6543582C738E8400BFB0FD /* FirebaseServiceUseCaseProtocol.swift in Sources */,
 				DD6543372C738D1D00BFB0FD /* UserDefaultDataSource.swift in Sources */,
 				DD65436C2C738F7100BFB0FD /* ProfileView.swift in Sources */,
+				DD0B05CD2C74C3E90010F718 /* DeactivateView.swift in Sources */,
 				2058D15D2C65C65200D0557D /* MC3App.swift in Sources */,
+				DD0B05C82C749EFA0010F718 /* Router.swift in Sources */,
 				DD6543912C73910200BFB0FD /* MessageNotificationViewModel.swift in Sources */,
 				DD65435F2C738EC700BFB0FD /* UserDefaultUseCase.swift in Sources */,
 				DD65432C2C738CAB00BFB0FD /* RandomNonceString.swift in Sources */,
@@ -1099,6 +1138,7 @@
 				DD0B05A42C747C6C0010F718 /* ProfileSetUpView.swift in Sources */,
 				DD0B05992C73B3200010F718 /* PersonalPinViewModel.swift in Sources */,
 				DD6543272C738C6700BFB0FD /* UIApplication+Extension.swift in Sources */,
+				DD0B05D12C74C8810010F718 /* DeactivateViewModel.swift in Sources */,
 				DD6543292C738C7F00BFB0FD /* iOSToWatchConnector.swift in Sources */,
 				DD6543202C738C1400BFB0FD /* SocketHelper.swift in Sources */,
 				DD65433C2C738D5F00BFB0FD /* FirebaseServiceDataSource.swift in Sources */,
