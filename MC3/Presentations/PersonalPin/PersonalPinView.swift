@@ -62,6 +62,19 @@ struct PersonalPinView: View {
                                 .stroke(Color.black.opacity(0.2), lineWidth: 1)
                         )
                 }
+                
+                withAnimation(
+                    Animation.bouncy(duration: 1)
+                        .repeatCount(1, autoreverses: true)
+                ) {
+                    VStack {
+                        if (!pinVM.confirmPersonalPin.isEmpty) {
+                            Text(pinVM.stringCheck)
+                                .font(.caption)
+                                .foregroundStyle(pinVM.isCorrect ? .green : .red)
+                        }
+                    }
+                }
             }
             
             Spacer()

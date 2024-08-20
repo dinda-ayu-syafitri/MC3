@@ -16,7 +16,7 @@ struct InputPinComponent: View {
         VStack(spacing: 20) {
             HStack(spacing: 10) {
                 ForEach(0..<4) { index in
-                    PinBox(character: index < pin.count ? String(pin[pin.index(pin.startIndex, offsetBy: index)]) : "", isFocused: index == focusedIndex)
+                    PinBox(character: index < pin.count ? "•" : "", isFocused: index == focusedIndex)
                 }
             }
             .contentShape(Rectangle())
@@ -50,8 +50,9 @@ struct PinBox: View {
             .stroke(isFocused ? Color.redBrand : Color.gray, lineWidth: 1)
             .frame(width: 70, height: 70)
             .overlay(
-                Text(character)
-                    .font(.title)
+                Text(character.isEmpty ? "" : "•")
+                    .font(.largeTitle)
+                    .foregroundColor(.black)
             )
     }
 }

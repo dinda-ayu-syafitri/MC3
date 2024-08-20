@@ -8,9 +8,18 @@
 import Foundation
 
 class PersonalPinViewModel: ObservableObject {
-    @Published var isCorrect: Bool = false
+    @Published var isCorrect: Bool = false {
+        didSet {
+            if self.isCorrect {
+                self.stringCheck = "Already matched"
+            } else {
+                self.stringCheck = "Make sure the password match"
+            }
+        }
+    }
     @Published var isTyping: Bool = false
     @Published var personalPin: String = ""
+    @Published var stringCheck: String = "Make sure the password match"
     @Published var confirmPersonalPin: String = "" {
         didSet {
             self.isCorrect = self.checkSamePin()
