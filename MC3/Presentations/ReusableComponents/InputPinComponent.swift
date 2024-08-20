@@ -10,12 +10,13 @@ import SwiftUI
 struct InputPinComponent: View {
     @Binding var pin: String
     @FocusState private var isFocused: Bool
-
+    let focusedIndex: Int
+    
     var body: some View {
         VStack(spacing: 20) {
             HStack(spacing: 10) {
                 ForEach(0..<4) { index in
-                    PinBox(character: index < pin.count ? String(pin[pin.index(pin.startIndex, offsetBy: index)]) : "")
+                    PinBox(character: index < pin.count ? String(pin[pin.index(pin.startIndex, offsetBy: index)]) : "", isFocused: index == focusedIndex)
                 }
             }
             .contentShape(Rectangle())
@@ -39,20 +40,18 @@ struct InputPinComponent: View {
     }
 }
 
+
 struct PinBox: View {
     let character: String
+    let isFocused: Bool
     
     var body: some View {
         RoundedRectangle(cornerRadius: 5)
-            .stroke(Color.gray, lineWidth: 1)
+            .stroke(isFocused ? Color.redBrand : Color.gray, lineWidth: 1)
             .frame(width: 70, height: 70)
             .overlay(
                 Text(character)
                     .font(.title)
             )
     }
-}
-
-#Preview {
-    InputPinComponent(pin: .constant(""))
 }

@@ -37,7 +37,7 @@ struct PersonalPinView: View {
                         .foregroundStyle(.blackBrand)
                         .bold()
                     
-                    InputPinComponent(pin: $pinVM.personalPin)
+                    InputPinComponent(pin: $pinVM.personalPin, focusedIndex: focusedField == .personalPin ? pinVM.personalPin.count : -1)
                         .focused($focusedField, equals: .personalPin)
                         .background(.whiteBrand)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -53,7 +53,7 @@ struct PersonalPinView: View {
                         .foregroundStyle(.blackBrand)
                         .bold()
                     
-                    InputPinComponent(pin: $pinVM.confirmPersonalPin)
+                    InputPinComponent(pin: $pinVM.confirmPersonalPin, focusedIndex: focusedField == .confirmPersonalPin ? pinVM.confirmPersonalPin.count : -1)
                         .focused($focusedField, equals: .confirmPersonalPin)
                         .background(.whiteBrand)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
@@ -97,6 +97,7 @@ struct PersonalPinView: View {
         }
     }
 }
+
 
 #Preview {
     PersonalPinView()

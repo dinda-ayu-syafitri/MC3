@@ -29,9 +29,7 @@
 		DA8B4A522C6CC08100BC5987 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */; };
 		DD0B05972C73ADFD0010F718 /* PersonalPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05962C73ADFD0010F718 /* PersonalPinView.swift */; };
 		DD0B05992C73B3200010F718 /* PersonalPinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05982C73B3200010F718 /* PersonalPinViewModel.swift */; };
-		DD0B059D2C7435500010F718 /* InputNumberWithDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B059C2C7435500010F718 /* InputNumberWithDoneButton.swift */; };
 		DD0B059F2C7435FB0010F718 /* NumberFormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B059E2C7435FB0010F718 /* NumberFormatHelper.swift */; };
-		DD0B05A12C743C610010F718 /* PinTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05A02C743C610010F718 /* PinTextField.swift */; };
 		DD4C77512C6A59A800CEDFB2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = DD4C77502C6A59A800CEDFB2 /* SocketIO */; };
 		DD6542F32C7387B100BFB0FD /* AllViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542F22C7387B100BFB0FD /* AllViews.swift */; };
 		DD6542F52C7387C400BFB0FD /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542F42C7387C400BFB0FD /* Home.swift */; };
@@ -150,9 +148,7 @@
 		DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		DD0B05962C73ADFD0010F718 /* PersonalPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPinView.swift; sourceTree = "<group>"; };
 		DD0B05982C73B3200010F718 /* PersonalPinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPinViewModel.swift; sourceTree = "<group>"; };
-		DD0B059C2C7435500010F718 /* InputNumberWithDoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputNumberWithDoneButton.swift; sourceTree = "<group>"; };
 		DD0B059E2C7435FB0010F718 /* NumberFormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatHelper.swift; sourceTree = "<group>"; };
-		DD0B05A02C743C610010F718 /* PinTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinTextField.swift; sourceTree = "<group>"; };
 		DD6542F22C7387B100BFB0FD /* AllViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViews.swift; sourceTree = "<group>"; };
 		DD6542F42C7387C400BFB0FD /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		DD6542F62C7387D900BFB0FD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -728,8 +724,6 @@
 			isa = PBXGroup;
 			children = (
 				DD6543762C738FEF00BFB0FD /* InputPinComponent.swift */,
-				DD0B059C2C7435500010F718 /* InputNumberWithDoneButton.swift */,
-				DD0B05A02C743C610010F718 /* PinTextField.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -946,7 +940,6 @@
 				DD6543932C73911000BFB0FD /* FCMTokenManager.swift in Sources */,
 				DA8B4A522C6CC08100BC5987 /* NotificationDelegate.swift in Sources */,
 				DD65435D2C738EBD00BFB0FD /* UserDefaultUseCaseProtocol.swift in Sources */,
-				DD0B059D2C7435500010F718 /* InputNumberWithDoneButton.swift in Sources */,
 				DD65437A2C73901800BFB0FD /* LiveTrackViewModel.swift in Sources */,
 				DD6543452C738DC300BFB0FD /* FirebaseServiceRepositoryProtocol.swift in Sources */,
 				DD65437C2C73902C00BFB0FD /* LiveTrackView.swift in Sources */,
@@ -985,7 +978,6 @@
 				DD6543802C73905F00BFB0FD /* UserAnnotation.swift in Sources */,
 				DD65434E2C738E1900BFB0FD /* KeyUserDefaultEnum.swift in Sources */,
 				DD0B059F2C7435FB0010F718 /* NumberFormatHelper.swift in Sources */,
-				DD0B05A12C743C610010F718 /* PinTextField.swift in Sources */,
 				DD6543502C738E2800BFB0FD /* NotificationTypeEnum.swift in Sources */,
 				DD65436F2C738F8800BFB0FD /* SOSView.swift in Sources */,
 				DD65434C2C738E0900BFB0FD /* ProviderIdEnum.swift in Sources */,
