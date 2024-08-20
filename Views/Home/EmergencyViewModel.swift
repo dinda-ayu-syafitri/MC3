@@ -1,3 +1,4 @@
+
 //
 //  EmergencyViewModel.swift
 //  WatchMC3 Watch App

@@ -6,7 +6,6 @@
 //
 
 import Firebase
-import FirebaseAuth
 import FirebaseMessaging
 import GoogleSignIn
 import SwiftData
@@ -15,7 +14,6 @@ import UserNotifications
 
 class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate, ObservableObject {
     @Environment(\.managedObjectContext) private var context
-    @StateObject var loginVM = DependencyInjection.shared.loginViewModel()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
@@ -41,15 +39,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
         print("FCM Token: \(fcmToken ?? "")")
         TokenManager.shared.fcmToken = fcmToken
-        let firebaseID = Auth.auth().currentUser?.uid
 
-        DispatchQueue.global().async {
-            Task {
-                if firebaseID != nil {
-                    await self.loginVM.updateFcm(idFirestore: firebaseID!, fcm: fcmToken ?? "")
-                }
-            }
-        }
 //        saveUserToFirebase(fcmToken: fcmToken)
     }
 
@@ -132,15 +122,16 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
 
 @main
 struct MC3App: App {
+    
     private let notificationDelegate = NotificationDelegate()
 
     init() {
         // Set the UNUserNotificationCenter's delegate to our custom delegate
         UNUserNotificationCenter.current().delegate = notificationDelegate
-
+        
         // Register notification categories here if needed
         NotificationManager.shared.registerActionsWithCategories()
-
+        
         // Request notification permissions
         NotificationManager.shared.requestAuthorization { granted in
             if granted {
@@ -150,7 +141,7 @@ struct MC3App: App {
             }
         }
     }
-
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var messageNotifViewModel = MessageNotificationViewModel()
 
@@ -162,7 +153,6 @@ struct MC3App: App {
                     GIDSignIn.sharedInstance.handle(url)
                 }
                 .environmentObject(messageNotifViewModel)
-                .modelContainer(for: [User.self, EmergencyContacts.self])
         }
     }
 }

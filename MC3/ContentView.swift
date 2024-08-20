@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 //     @State var reachable = "No"
-     @StateObject var watchConnector = iOSToWatchConnector()
+    @StateObject var watchConnector = iOSToWatchConnector()
     
 //     var body: some View {
 //         VStack {
@@ -18,7 +18,6 @@ struct ContentView: View {
 //             if watchConnector.messageText == "sosAlert" {
 //                 Text(watchConnector.messageText)
 //             }
-            
             
 //             Spacer()
             
@@ -38,23 +37,25 @@ struct ContentView: View {
             
 //             Spacer()
             
-            //            Image(systemName: "globe")
-            //                .imageScale(.large)
-            //                .foregroundStyle(.tint)
-            //            Text("Hello, world!")
+    //            Image(systemName: "globe")
+    //                .imageScale(.large)
+    //                .foregroundStyle(.tint)
+    //            Text("Hello, world!")
     @AppStorage(KeyUserDefaultEnum.status.toString) private var logStatus: Bool = false
 
     var body: some View {
-        ZStack {
-            if logStatus {
-//                HomepageView()
-                AddEmergencyContactView()
-              //LiveTrack()
-            } else {
-                LoginView()
+        RouterView {
+            ZStack {
+                if logStatus {
+                    OnboardingView()
+//                    HomeView()
+//                CountdownView()
+                } else {
+                    LoginView()
+                }
             }
+            .padding()
         }
-        .padding()
     }
 }
 

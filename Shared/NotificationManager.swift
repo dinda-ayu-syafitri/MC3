@@ -36,6 +36,11 @@ class NotificationManager {
                                                  intentIdentifiers: [],
                                                  options: [])
         
+//        let sosCategory = UNNotificationCategory(identifier: "sosAlert",
+//                                                 actions: [okayAction],
+//                                                 intentIdentifiers: [],
+//                                                 options: [])
+        
         //register category with the shared notification center
         UNUserNotificationCenter.current().setNotificationCategories([highHeartRateCategory])
     }
@@ -61,3 +66,18 @@ class NotificationManager {
     }
 }
 
+enum NotificationTypeEnum {
+    case ABNORMALHEARTRATE
+    case SOSALERT
+}
+
+extension NotificationTypeEnum {
+    var toString: String {
+        switch self {
+        case .ABNORMALHEARTRATE:
+            return "abnormalHeartRate"
+        case .SOSALERT:
+            return "sosAlert"
+        }
+    }
+}
