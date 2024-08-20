@@ -78,7 +78,7 @@ struct SettingsView: View {
         .padding(10)
         .frame(maxWidth: .infinity, alignment: .leading)
         .ignoresSafeArea()
-        .navigationTitle("Setting")
+//        .navigationTitle("Setting")
     }
 }
 

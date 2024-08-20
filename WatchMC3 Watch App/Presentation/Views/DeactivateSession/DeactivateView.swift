@@ -75,11 +75,12 @@ struct DeactivateView: View {
             
             // Display Cancel Button
             Button(action: {
-                // Add your cancel action here
+                // Add cancel action
+                RouterWatch.shared.navigateTo(.trackingView)
             }) {
                 Text("Cancel")
                     .font(.system(size: 13).weight(.semibold))
-                    .frame(maxWidth: .infinity, maxHeight: 20)
+                    .frame(maxWidth: .infinity, maxHeight: 24)
                     .padding(5)
                     .background(Color.red.opacity(0.5))
                     .foregroundColor(.white)
@@ -90,6 +91,8 @@ struct DeactivateView: View {
         .padding()
         .ignoresSafeArea()
         .background(Color.black)
+        .navigationBarBackButtonHidden()
+
     }
 }
 

@@ -9,16 +9,16 @@ import SwiftUI
 import UIKit
 
 struct CountdownView: View {
+//    @StateObject var countdownManager = CountdownManager.shared
+    @StateObject var countdownVM = CountdownViewModel.shared
+    
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             // SOS State
             HStack {
                 Text("SOS Inactive")
                     .font(.system(size: 17) .weight(.semibold))
-//                    Font.custom("SF Compact", size: 17)
-//                    .weight(.medium)
-//                    )
-//                    .font(.headline)
                     .foregroundColor(.pastelPink)
                     .frame(alignment: .leading)
                 
@@ -35,7 +35,7 @@ struct CountdownView: View {
                   .foregroundColor(.white)
                   .frame(maxWidth: .infinity, alignment: .top)
                 
-                Text("5")
+                Text("\(countdownVM.timeRemaining)")
                   .font(
                     Font.custom("SF Pro", size: 72)
                         .weight(.bold)
@@ -55,6 +55,9 @@ struct CountdownView: View {
         .ignoresSafeArea()
         .background(.black)
         .navigationBarBackButtonHidden()
+        .onAppear {
+            countdownVM.startCountdown()
+        }
 //        .navigationTitle("Countdown")
     }
 }
@@ -111,6 +114,11 @@ struct SlideToCancelButton: View {
                                             offset = buttonWidth - 35
                                         }
                                         // Perform your cancel action here
+                                        
+                                        CountdownViewModel.shared.stopCountdown()
+                                        
+                                        RouterWatch.shared.navigateTo(.homeView)
+                                        
                                         print("Action Canceled")
                                     } else {
                                         // Otherwise, reset the button

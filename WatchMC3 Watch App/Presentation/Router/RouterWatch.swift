@@ -8,9 +8,10 @@
 import SwiftUI
 
 class RouterWatch: ObservableObject {
+    static let shared = RouterWatch()
     // Contains the possible destinations in our Router
     enum Route: Hashable {
-        case homeView, settingView, countdownView, jumpView, deactivateView
+        case homeView, settingView, countdownView, jumpView, deactivateView, callView, trackingView
     }
     
     // Used to programatically control our navigation stack
@@ -20,7 +21,7 @@ class RouterWatch: ObservableObject {
     @ViewBuilder func view(for route: Route) -> some View {
         switch route {
         case .homeView:
-            Home()
+            AllViews()
         case .countdownView:
             CountdownView()
         case .jumpView:
@@ -29,6 +30,10 @@ class RouterWatch: ObservableObject {
             DeactivateView()
         case .settingView:
             SettingsView(homeVM: HomeViewModel())
+        case .callView:
+            CallView()
+        case .trackingView:
+            TrackingView()
             
         }
         

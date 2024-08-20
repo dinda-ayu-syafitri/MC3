@@ -8,22 +8,16 @@
 import SwiftUI
 
 struct Home: View {
-    @StateObject private var homeVM = HomeViewModel()
-    @EnvironmentObject var router: RouterWatch
+//    @EnvironmentObject var router: RouterWatch
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-     
-//            Text("home")
-//                .hidden()
-                
-            
             // SOS State
             HStack {
                 Text("SOS Inactive")
-                    .onTapGesture {
-                        homeVM.isCountdownViewPresented = true
-                    }
+//                    .onTapGesture {
+//                        homeVM.isCountdownViewPresented = true
+//                    }
                     .font(.system(size: 17) .weight(.semibold))
                     .foregroundColor(.pastelPink)
                     .frame(alignment: .leading)
@@ -34,8 +28,8 @@ struct Home: View {
             
             // SOS button
             Button(action: {
-                router.navigateTo(.countdownView)
-//                homeVM.createNotification(notificationType: .SOSALERT)
+                RouterWatch.shared.navigateTo(.countdownView)
+                // To keep array empty after cancelling countdown that appears from tapping SOS button, we need to remove heart rates array in home view model here (but im still figuring out how to call the same instance)
             }) {
                 VStack(alignment: .center, spacing: 8) {
                     Image(systemName: "bell.and.waves.left.and.right.fill")
@@ -68,25 +62,10 @@ struct Home: View {
         .padding(10)
         .frame(maxWidth: .infinity, alignment: .leading)
         .ignoresSafeArea()
-        .fullScreenCover(isPresented: $homeVM.isCountdownViewPresented, content: {
-//            CountdownView()
-//            CallView()
-            DeactivateView()
-        })
-//        .navigationTitle("Home")
-//        .onChange(of: homeVM.triggerCountDownView) {
-//            if homeVM.triggerCountDownView {
-//                router.navigateTo(.countdownView)
-//            }
-//
-//        }
-        .onAppear {
-            
-            if homeVM.triggerCountDownView {
-                router.navigateTo(.countdownView)
-            }
-            
-        }
+        .navigationBarBackButtonHidden()
+//        .fullScreenCover(isPresented: $homeVM.isCountdownViewPresented, content: {
+//            DeactivateView()
+//        })
     }
 }
 
