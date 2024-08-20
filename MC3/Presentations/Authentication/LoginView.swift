@@ -16,73 +16,80 @@ struct LoginView: View {
     
     var body: some View {
         VStack {
-            Spacer()
-            Text("Login Page")
-                .padding(.bottom, 16)
-            Spacer()
+            Text("Sign in")
+                .font(.title2)
+                .bold()
+                .padding(.top, 16)
+                .padding(.bottom, 32)
             
-            SignInWithAppleButton(onRequest: { (request) in
-                loginVM.appleRequest(request: request)
-            }, onCompletion: { (result) in
-                loginVM.appleCompletion(result: result)
-            })
-            .signInWithAppleButtonStyle(.black)
-            .frame(height: 50)
-            .clipShape(Capsule())
-            .padding(.horizontal, 30)
-            .disabled(loginVM.isLoading)
-            .overlay(
-                Group {
-                    if loginVM.isLoading {
-                        LoadingButton()
-                    }
-                }
-            )
-            
-            HStack {
-                VStack {
-                    Divider().background(.gray)
-                }
-                .padding(16)
-                
-                Text("OR")
+            HStack(alignment: .center, spacing: 12) {
+                Image(systemName: "apple.logo")
                     .font(.headline)
-                    .foregroundColor(.gray)
+                    .foregroundStyle(.whiteBrand)
                 
-                VStack {
-                    Divider().background(.gray)
-                }
-                .padding(16)
+                Text("Sign in with Apple ID")
+                    .font(.headline)
+                    .foregroundStyle(.whiteBrand)
             }
-            .padding(.horizontal)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 16)
+            .background(.redBrand)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+            .overlay {
+                SignInWithAppleButton(onRequest: { (request) in
+                    loginVM.appleRequest(request: request)
+                }, onCompletion: { (result) in
+                    loginVM.appleCompletion(result: result)
+                })
+                .opacity(0.0101)
+                .blendMode(.overlay)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .contentShape(Rectangle())
+            }
             
-            GoogleSignInButton {
-                GIDSignIn.sharedInstance.signIn(
-                    withPresenting: UIApplication.shared.rootController()
-                ) { signInResult, error in
-                    Task {
-                        await loginVM.googleRequestAuth(signInResult: signInResult, error: error)
-                    }
-                }
+            HStack(alignment: .center, spacing: 12) {
+                Image(.googleLogo)
+                    .font(.headline)
+                    .foregroundStyle(.maroonBrand)
+                
+                Text("Sign in with Google")
+                    .font(.headline)
+                    .foregroundStyle(.maroonBrand)
             }
-            .frame(height: 50)
-            .clipShape(Capsule())
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 16)
+            .background(.grayBrand)
             .overlay(
-                Capsule()
-                    .stroke(Color.blue, lineWidth: 2)
+                RoundedRectangle(cornerRadius: 16)
+                    .stroke(Color.maroonBrand, lineWidth: 1)
             )
-            .padding(.horizontal, 30)
-            .disabled(loginVM.isLoading)
-            .overlay(
-                Group {
-                    if loginVM.isLoading {
-                        LoadingButton()
+            .overlay {
+                GoogleSignInButton{
+                    GIDSignIn.sharedInstance.signIn(
+                        withPresenting: UIApplication.shared.rootController()
+                    ) { signInResult, error in
+                        Task {
+                            await loginVM.googleRequestAuth(signInResult: signInResult, error: error)
+                        }
                     }
                 }
-            )
+                .opacity(0.0101)
+                .blendMode(.overlay)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .contentShape(Rectangle())
+            }
+            
+            Spacer()
         }
+        .padding(.horizontal, 16)
+        .padding(.top, 98)
+        .padding(.bottom, 40)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.grayBrand)
+        .ignoresSafeArea()
     }
 }
+
 
 struct LoadingButton: View {
     var body: some View {
@@ -96,3 +103,7 @@ struct LoadingButton: View {
         .background(.black)
     }
 }
+//
+//#Preview {
+//    LoginView()
+//}

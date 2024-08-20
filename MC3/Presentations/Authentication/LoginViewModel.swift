@@ -46,6 +46,7 @@ class LoginViewModel: ObservableObject {
         self.isLoading = false
     }
 
+    @MainActor
     func googleRequestAuth(signInResult: GIDSignInResult?, error: (any Error)?) async {
         self.isLoading = true
         if let error = error {
