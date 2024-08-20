@@ -24,7 +24,9 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
 
     func sessionDidBecomeInactive(_ session: WCSession) {}
 
-    func sessionDidDeactivate(_ session: WCSession) {}
+    func sessionDidDeactivate(_ session: WCSession) {
+        WCSession.default.activate()
+    }
 
     func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
         print("foreground")
@@ -39,12 +41,14 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
     private func handleReceivedMessage(_ message: [String: Any]) {
         if let action = message["action"] as? String {
             if action == NotificationTypeEnum.ABNORMALHEARTRATE.toString {
+                print("abnormal : \(action)")
                 NotificationManager.shared.scheduleNotification(
                     title: "Abnormal heart rate detected",
                     body: "Are you okay?",
                     category: action
                 )
             } else if action == NotificationTypeEnum.SOSALERT.toString {
+                print("sos : \(action)")
                 NotificationManager.shared.scheduleNotification(
                     title: "SOS has been sent",
                     body: "We already sent you live location",
