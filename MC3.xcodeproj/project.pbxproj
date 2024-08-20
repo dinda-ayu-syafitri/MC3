@@ -11,6 +11,8 @@
 		20190CF82C6A336B001A2AB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CF72C6A336B001A2AB6 /* Assets.xcassets */; };
 		20190CFB2C6A336B001A2AB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */; };
 		20190CFE2C6A336B001A2AB6 /* WatchMC3 Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 20190CF12C6A336A001A2AB6 /* WatchMC3 Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		203E3E922C743A76000A04E0 /* CountdownManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E3E912C743A76000A04E0 /* CountdownManager.swift */; };
+		203E3E932C743A76000A04E0 /* CountdownManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E3E912C743A76000A04E0 /* CountdownManager.swift */; };
 		2058D15D2C65C65200D0557D /* MC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15C2C65C65200D0557D /* MC3App.swift */; };
 		2058D15F2C65C65200D0557D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15E2C65C65200D0557D /* ContentView.swift */; };
 		2058D1612C65C65400D0557D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2058D1602C65C65400D0557D /* Assets.xcassets */; };
@@ -131,6 +133,7 @@
 		20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		203AB9A42C6C710A00D7AD86 /* MC3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MC3.entitlements; sourceTree = "<group>"; };
 		203AB9A52C6C712B00D7AD86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		203E3E912C743A76000A04E0 /* CountdownManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownManager.swift; sourceTree = "<group>"; };
 		2058D1592C65C65200D0557D /* MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2058D15C2C65C65200D0557D /* MC3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3App.swift; sourceTree = "<group>"; };
 		2058D15E2C65C65200D0557D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -391,6 +394,7 @@
 			children = (
 				DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */,
 				DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */,
+				203E3E912C743A76000A04E0 /* CountdownManager.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -594,7 +598,6 @@
 			children = (
 				DD65433F2C738D9200BFB0FD /* UserDefaultRepositoryProtocol.swift */,
 				DD6543412C738DA900BFB0FD /* UserDefaultRepository.swift */,
-				DA5994D72C7336D800C4F2C0 /* CountdownManager.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -913,8 +916,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDA830152C72560C000F4724 /* DeactivateViewModel.swift in Sources */,
+				203E3E932C743A76000A04E0 /* CountdownManager.swift in Sources */,
 				DD65430C2C73899400BFB0FD /* RepoFile.swift in Sources */,
-				DA5994D92C7336D800C4F2C0 /* CountdownManager.swift in Sources */,
 				DA221D442C71CC7F00F88958 /* HBJumpView.swift in Sources */,
 				DD6542F32C7387B100BFB0FD /* AllViews.swift in Sources */,
 				DD65431C2C738A8B00BFB0FD /* WatchToiOSConnector.swift in Sources */,
@@ -983,6 +986,7 @@
 				DD6543272C738C6700BFB0FD /* UIApplication+Extension.swift in Sources */,
 				DD6543292C738C7F00BFB0FD /* iOSToWatchConnector.swift in Sources */,
 				DD6543202C738C1400BFB0FD /* SocketHelper.swift in Sources */,
+				203E3E922C743A76000A04E0 /* CountdownManager.swift in Sources */,
 				DD65433C2C738D5F00BFB0FD /* FirebaseServiceDataSource.swift in Sources */,
 				DD6543822C73907000BFB0FD /* NoAlertsView.swift in Sources */,
 				DD65438E2C7390E300BFB0FD /* ContactPickerView.swift in Sources */,
