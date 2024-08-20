@@ -18,7 +18,6 @@ struct ContentView: View {
 //             if watchConnector.messageText == "sosAlert" {
 //                 Text(watchConnector.messageText)
 //             }
-
 //             Spacer()
 
 //             Text("Reachable \(reachable)")
@@ -44,16 +43,18 @@ struct ContentView: View {
     @AppStorage(KeyUserDefaultEnum.status.toString) private var logStatus: Bool = false
 
     var body: some View {
-        ZStack {
-//            if logStatus {
-//                HomeView()
-//            CountdownView()
-            ProfileSetUpView()
-//            } else {
-//                LoginView()
-//            }
+        RouterView {
+            ZStack {
+                if logStatus {
+                    OnboardingView()
+//                    HomeView()
+//                CountdownView()
+                } else {
+                    LoginView()
+                }
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
