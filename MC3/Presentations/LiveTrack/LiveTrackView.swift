@@ -79,7 +79,7 @@ struct LiveTrackView: View {
             }
             .onAppear {
                 socketVM.setupSocket {
-                    socketVM.createOrJoinRoom(roomName: "testing", isListener: true)
+                    socketVM.createOrJoinRoom(roomName: "realTest", isListener: true)
                 }
             }
             .onDisappear {

@@ -41,6 +41,9 @@
 		DD0B05CD2C74C3E90010F718 /* DeactivateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05CC2C74C3E90010F718 /* DeactivateView.swift */; };
 		DD0B05CF2C74C7030010F718 /* FocusedFieldEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05CE2C74C7030010F718 /* FocusedFieldEnum.swift */; };
 		DD0B05D12C74C8810010F718 /* DeactivateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05D02C74C8810010F718 /* DeactivateViewModel.swift */; };
+		DD0B05D62C74D3FC0010F718 /* sentComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05D52C74D3FC0010F718 /* sentComponent.swift */; };
+		DD0B05D82C74D4230010F718 /* trackComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05D72C74D4230010F718 /* trackComponent.swift */; };
+		DD0B05DA2C74D9AE0010F718 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05D92C74D9AE0010F718 /* LocationManager.swift */; };
 		DD4C77512C6A59A800CEDFB2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = DD4C77502C6A59A800CEDFB2 /* SocketIO */; };
 		DD6542F32C7387B100BFB0FD /* AllViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542F22C7387B100BFB0FD /* AllViews.swift */; };
 		DD6542F52C7387C400BFB0FD /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542F42C7387C400BFB0FD /* Home.swift */; };
@@ -187,6 +190,9 @@
 		DD0B05CC2C74C3E90010F718 /* DeactivateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeactivateView.swift; sourceTree = "<group>"; };
 		DD0B05CE2C74C7030010F718 /* FocusedFieldEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedFieldEnum.swift; sourceTree = "<group>"; };
 		DD0B05D02C74C8810010F718 /* DeactivateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeactivateViewModel.swift; sourceTree = "<group>"; };
+		DD0B05D52C74D3FC0010F718 /* sentComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sentComponent.swift; sourceTree = "<group>"; };
+		DD0B05D72C74D4230010F718 /* trackComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = trackComponent.swift; sourceTree = "<group>"; };
+		DD0B05D92C74D9AE0010F718 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		DD6542F22C7387B100BFB0FD /* AllViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViews.swift; sourceTree = "<group>"; };
 		DD6542F42C7387C400BFB0FD /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		DD6542F62C7387D900BFB0FD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -483,6 +489,16 @@
 			path = "Deactivate SOS";
 			sourceTree = "<group>";
 		};
+		DD0B05D22C74D3AD0010F718 /* StatusTrack */ = {
+			isa = PBXGroup;
+			children = (
+				DD0B05C42C749E3C0010F718 /* StatusTrackView.swift */,
+				DD0B05D52C74D3FC0010F718 /* sentComponent.swift */,
+				DD0B05D72C74D4230010F718 /* trackComponent.swift */,
+			);
+			path = StatusTrack;
+			sourceTree = "<group>";
+		};
 		DD6542F82C73880E00BFB0FD /* Message Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -610,6 +626,7 @@
 				DD6543282C738C7F00BFB0FD /* iOSToWatchConnector.swift */,
 				DD65432F2C738CD300BFB0FD /* DependencyInjection.swift */,
 				DD0B059E2C7435FB0010F718 /* NumberFormatHelper.swift */,
+				DD0B05D92C74D9AE0010F718 /* LocationManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -756,6 +773,7 @@
 		DD6543602C738EDB00BFB0FD /* Presentations */ = {
 			isa = PBXGroup;
 			children = (
+				DD0B05D22C74D3AD0010F718 /* StatusTrack */,
 				DD0B05CB2C74C3C70010F718 /* Deactivate SOS */,
 				DD6543612C738F0400BFB0FD /* AddContacts */,
 				DD6543832C73908300BFB0FD /* Authentication */,
@@ -787,7 +805,6 @@
 			isa = PBXGroup;
 			children = (
 				DD6543652C738F3900BFB0FD /* CountdownView.swift */,
-				DD0B05C42C749E3C0010F718 /* StatusTrackView.swift */,
 			);
 			path = Countdown;
 			sourceTree = "<group>";
@@ -1099,6 +1116,7 @@
 				DD6543872C73909B00BFB0FD /* LoginViewModel.swift in Sources */,
 				DD65438C2C7390D400BFB0FD /* EmergencyContactViewModel.swift in Sources */,
 				DD6543662C738F3900BFB0FD /* CountdownView.swift in Sources */,
+				DD0B05D62C74D3FC0010F718 /* sentComponent.swift in Sources */,
 				DD0B05CA2C749F3B0010F718 /* RouterView.swift in Sources */,
 				DD65437E2C73904D00BFB0FD /* LocationManagerViewModel.swift in Sources */,
 				DD0B05A62C747C940010F718 /* ProfileSetUpViewModel.swift in Sources */,
@@ -1112,6 +1130,7 @@
 				DD6543452C738DC300BFB0FD /* FirebaseServiceRepositoryProtocol.swift in Sources */,
 				DD65437C2C73902C00BFB0FD /* LiveTrackView.swift in Sources */,
 				DA8B4A512C6CC07E00BC5987 /* NotificationManager.swift in Sources */,
+				DD0B05DA2C74D9AE0010F718 /* LocationManager.swift in Sources */,
 				DD6543252C738C5000BFB0FD /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				DD0B05C52C749E3C0010F718 /* StatusTrackView.swift in Sources */,
 				2058D15F2C65C65200D0557D /* ContentView.swift in Sources */,
@@ -1150,6 +1169,7 @@
 				DD6543472C738DD500BFB0FD /* FirebaseServiceRepository.swift in Sources */,
 				DD6543802C73905F00BFB0FD /* UserAnnotation.swift in Sources */,
 				DD65434E2C738E1900BFB0FD /* KeyUserDefaultEnum.swift in Sources */,
+				DD0B05D82C74D4230010F718 /* trackComponent.swift in Sources */,
 				DD0B059F2C7435FB0010F718 /* NumberFormatHelper.swift in Sources */,
 				DD6543502C738E2800BFB0FD /* NotificationTypeEnum.swift in Sources */,
 				DD65436F2C738F8800BFB0FD /* SOSView.swift in Sources */,
@@ -1401,6 +1421,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MC3/Info.plist;
 				INFOPLIST_KEY_NSContactsUsageDescription = "We need your contacts information for the Emergency Contact Access";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We would to like access your location to share it to your emergency contacts";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We would to like access your location to share it to your emergency contacts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1439,6 +1461,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MC3/Info.plist;
 				INFOPLIST_KEY_NSContactsUsageDescription = "We need your contacts information for the Emergency Contact Access";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We would to like access your location to share it to your emergency contacts";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We would to like access your location to share it to your emergency contacts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
