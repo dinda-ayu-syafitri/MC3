@@ -45,6 +45,10 @@ class DependencyInjection: ObservableObject {
         PersonalPinViewModel(userDefaultUseCase: userDefaultUseCase)
     }
     
+    // MARK: FUNCTIONS PROFILE SETUP VIEW MODEL
+    func profileSetUpViewModel() -> ProfileSetUpViewModel {
+        ProfileSetUpViewModel(firebaseUseCase: firebaseUseCase, userDefaultUseCase: userDefaultUseCase)
+
     func profileViewModel() -> ProfileViewModel {
         ProfileViewModel(
             firebaseUseCase: firebaseUseCase,

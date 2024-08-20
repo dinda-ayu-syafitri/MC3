@@ -13,5 +13,6 @@ protocol UserDefaultUseCaseProtocol {
     func clearDataWhenLogOut(email: String, firebaseID: String)
     func saveData(data: Any, key: KeyUserDefaultEnum)
     func getData(key: KeyUserDefaultEnum) -> Any?
+    func saveProfileData(fullName: String, phoneNumber: String)
 }
 

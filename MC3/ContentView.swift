@@ -14,11 +14,12 @@ struct ContentView: View {
     @AppStorage(KeyUserDefaultEnum.status.toString) private var logStatus: Bool = false
     
     var body: some View {
-
         RouterView {
             ZStack {
                 if logStatus {
                     OnboardingView()
+//                               ProfileSetUpView()
+
 //                    PersonalPinView()
 //                    HomeView()
 //                CountdownView()

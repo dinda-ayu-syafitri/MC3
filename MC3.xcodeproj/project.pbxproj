@@ -10,6 +10,7 @@
 		20190CF42C6A336B001A2AB6 /* WatchMC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20190CF32C6A336B001A2AB6 /* WatchMC3App.swift */; };
 		20190CF82C6A336B001A2AB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CF72C6A336B001A2AB6 /* Assets.xcassets */; };
 		20190CFB2C6A336B001A2AB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */; };
+		20190CFE2C6A336B001A2AB6 /* Pulse Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 20190CF12C6A336A001A2AB6 /* Pulse Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		20190CFE2C6A336B001A2AB6 /* WatchMC3 Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 20190CF12C6A336A001A2AB6 /* WatchMC3 Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		203E3E922C743A76000A04E0 /* CountdownManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E3E912C743A76000A04E0 /* CountdownManager.swift */; };
 		203E3E932C743A76000A04E0 /* CountdownManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E3E912C743A76000A04E0 /* CountdownManager.swift */; };
@@ -39,6 +40,11 @@
 		DD0B05972C73ADFD0010F718 /* PersonalPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05962C73ADFD0010F718 /* PersonalPinView.swift */; };
 		DD0B05992C73B3200010F718 /* PersonalPinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05982C73B3200010F718 /* PersonalPinViewModel.swift */; };
 		DD0B059F2C7435FB0010F718 /* NumberFormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B059E2C7435FB0010F718 /* NumberFormatHelper.swift */; };
+		DD0B05A42C747C6C0010F718 /* ProfileSetUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05A32C747C6C0010F718 /* ProfileSetUpView.swift */; };
+		DD0B05A62C747C940010F718 /* ProfileSetUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05A52C747C940010F718 /* ProfileSetUpViewModel.swift */; };
+		DD0B05AE2C74842B0010F718 /* PulseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05AD2C74842B0010F718 /* PulseUITests.swift */; };
+		DD0B05B02C74842B0010F718 /* PulseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05AF2C74842B0010F718 /* PulseUITestsLaunchTests.swift */; };
+		DD0B05BD2C7484510010F718 /* PulseUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05BC2C7484510010F718 /* PulseUnitTests.swift */; };
 		DD4C77512C6A59A800CEDFB2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = DD4C77502C6A59A800CEDFB2 /* SocketIO */; };
 		DD6542F32C7387B100BFB0FD /* AllViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542F22C7387B100BFB0FD /* AllViews.swift */; };
 		DD6542F52C7387C400BFB0FD /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542F42C7387C400BFB0FD /* Home.swift */; };
@@ -116,6 +122,20 @@
 			remoteGlobalIDString = 20190CF02C6A336A001A2AB6;
 			remoteInfo = "WatchMC3 Watch App";
 		};
+		DD0B05B12C74842B0010F718 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2058D1512C65C65200D0557D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2058D1582C65C65200D0557D;
+			remoteInfo = Pulse;
+		};
+		DD0B05BE2C7484510010F718 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2058D1512C65C65200D0557D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2058D1582C65C65200D0557D;
+			remoteInfo = Pulse;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -125,7 +145,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				20190CFE2C6A336B001A2AB6 /* WatchMC3 Watch App.app in Embed Watch Content */,
+				20190CFE2C6A336B001A2AB6 /* Pulse Watch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,12 +153,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		20190CF12C6A336A001A2AB6 /* WatchMC3 Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchMC3 Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20190CF12C6A336A001A2AB6 /* Pulse Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pulse Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20190CF32C6A336B001A2AB6 /* WatchMC3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchMC3App.swift; sourceTree = "<group>"; };
 		20190CF72C6A336B001A2AB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		203AB9A42C6C710A00D7AD86 /* MC3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MC3.entitlements; sourceTree = "<group>"; };
 		203AB9A52C6C712B00D7AD86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2058D1592C65C65200D0557D /* Pulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		203E3E912C743A76000A04E0 /* CountdownManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownManager.swift; sourceTree = "<group>"; };
 		2058D1592C65C65200D0557D /* MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2058D15C2C65C65200D0557D /* MC3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3App.swift; sourceTree = "<group>"; };
@@ -166,6 +187,13 @@
 		DD0B05962C73ADFD0010F718 /* PersonalPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPinView.swift; sourceTree = "<group>"; };
 		DD0B05982C73B3200010F718 /* PersonalPinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPinViewModel.swift; sourceTree = "<group>"; };
 		DD0B059E2C7435FB0010F718 /* NumberFormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatHelper.swift; sourceTree = "<group>"; };
+		DD0B05A32C747C6C0010F718 /* ProfileSetUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetUpView.swift; sourceTree = "<group>"; };
+		DD0B05A52C747C940010F718 /* ProfileSetUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetUpViewModel.swift; sourceTree = "<group>"; };
+		DD0B05AB2C74842A0010F718 /* PulseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PulseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD0B05AD2C74842B0010F718 /* PulseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseUITests.swift; sourceTree = "<group>"; };
+		DD0B05AF2C74842B0010F718 /* PulseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DD0B05BA2C7484510010F718 /* PulseUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PulseUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD0B05BC2C7484510010F718 /* PulseUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseUnitTests.swift; sourceTree = "<group>"; };
 		DD6542F22C7387B100BFB0FD /* AllViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViews.swift; sourceTree = "<group>"; };
 		DD6542F42C7387C400BFB0FD /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		DD6542F62C7387D900BFB0FD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -255,6 +283,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DD0B05A82C74842A0010F718 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0B05B72C7484510010F718 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -311,6 +353,8 @@
 				DA8B4A502C6CBEF500BC5987 /* Shared */,
 				2058D15B2C65C65200D0557D /* MC3 */,
 				20190CF22C6A336A001A2AB6 /* WatchMC3 Watch App */,
+				DD0B05AC2C74842B0010F718 /* PulseUITests */,
+				DD0B05BB2C7484510010F718 /* PulseUnitTests */,
 				2058D15A2C65C65200D0557D /* Products */,
 				DD6D7FDA2C6C5DA50023A499 /* Frameworks */,
 				209E78782C6F42F200510BD4 /* Recovered References */,
@@ -320,8 +364,10 @@
 		2058D15A2C65C65200D0557D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2058D1592C65C65200D0557D /* MC3.app */,
-				20190CF12C6A336A001A2AB6 /* WatchMC3 Watch App.app */,
+				2058D1592C65C65200D0557D /* Pulse.app */,
+				20190CF12C6A336A001A2AB6 /* Pulse Watch.app */,
+				DD0B05AB2C74842A0010F718 /* PulseUITests.xctest */,
+				DD0B05BA2C7484510010F718 /* PulseUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -418,6 +464,32 @@
 				DD0B05982C73B3200010F718 /* PersonalPinViewModel.swift */,
 			);
 			path = PersonalPin;
+			sourceTree = "<group>";
+		};
+		DD0B05A22C747C5D0010F718 /* Profile Setup */ = {
+			isa = PBXGroup;
+			children = (
+				DD0B05A32C747C6C0010F718 /* ProfileSetUpView.swift */,
+				DD0B05A52C747C940010F718 /* ProfileSetUpViewModel.swift */,
+			);
+			path = "Profile Setup";
+			sourceTree = "<group>";
+		};
+		DD0B05AC2C74842B0010F718 /* PulseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DD0B05AD2C74842B0010F718 /* PulseUITests.swift */,
+				DD0B05AF2C74842B0010F718 /* PulseUITestsLaunchTests.swift */,
+			);
+			path = PulseUITests;
+			sourceTree = "<group>";
+		};
+		DD0B05BB2C7484510010F718 /* PulseUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				DD0B05BC2C7484510010F718 /* PulseUnitTests.swift */,
+			);
+			path = PulseUnitTests;
 			sourceTree = "<group>";
 		};
 		DD6542F82C73880E00BFB0FD /* Message Notification */ = {
@@ -693,6 +765,7 @@
 		DD6543602C738EDB00BFB0FD /* Presentations */ = {
 			isa = PBXGroup;
 			children = (
+				DD0B05A22C747C5D0010F718 /* Profile Setup */,
 				DD0B05952C73ADEC0010F718 /* PersonalPin */,
 				2084E3602C73AFC900ECA12E /* Router */,
 				DD65438F2C7390F700BFB0FD /* MessageNotification */,
@@ -828,9 +901,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		20190CF02C6A336A001A2AB6 /* WatchMC3 Watch App */ = {
+		20190CF02C6A336A001A2AB6 /* Pulse Watch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 20190D022C6A336B001A2AB6 /* Build configuration list for PBXNativeTarget "WatchMC3 Watch App" */;
+			buildConfigurationList = 20190D022C6A336B001A2AB6 /* Build configuration list for PBXNativeTarget "Pulse Watch" */;
 			buildPhases = (
 				20190CED2C6A336A001A2AB6 /* Sources */,
 				20190CEE2C6A336A001A2AB6 /* Frameworks */,
@@ -840,14 +913,14 @@
 			);
 			dependencies = (
 			);
-			name = "WatchMC3 Watch App";
+			name = "Pulse Watch";
 			productName = "WatchMC3 Watch App";
-			productReference = 20190CF12C6A336A001A2AB6 /* WatchMC3 Watch App.app */;
+			productReference = 20190CF12C6A336A001A2AB6 /* Pulse Watch.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2058D1582C65C65200D0557D /* MC3 */ = {
+		2058D1582C65C65200D0557D /* Pulse */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2058D1672C65C65400D0557D /* Build configuration list for PBXNativeTarget "MC3" */;
+			buildConfigurationList = 2058D1672C65C65400D0557D /* Build configuration list for PBXNativeTarget "Pulse" */;
 			buildPhases = (
 				2058D1552C65C65200D0557D /* Sources */,
 				2058D1562C65C65200D0557D /* Frameworks */,
@@ -859,7 +932,7 @@
 			dependencies = (
 				20190CFD2C6A336B001A2AB6 /* PBXTargetDependency */,
 			);
-			name = MC3;
+			name = Pulse;
 			packageProductDependencies = (
 				DDEB4B122C68C53000375460 /* FirebaseAuth */,
 				DDEB4B152C68C55B00375460 /* GoogleSignIn */,
@@ -869,8 +942,44 @@
 				207BA47A2C6CF90E00B9B3FC /* FirebaseMessaging */,
 			);
 			productName = MC3;
-			productReference = 2058D1592C65C65200D0557D /* MC3.app */;
+			productReference = 2058D1592C65C65200D0557D /* Pulse.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DD0B05AA2C74842A0010F718 /* PulseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD0B05B32C74842B0010F718 /* Build configuration list for PBXNativeTarget "PulseUITests" */;
+			buildPhases = (
+				DD0B05A72C74842A0010F718 /* Sources */,
+				DD0B05A82C74842A0010F718 /* Frameworks */,
+				DD0B05A92C74842A0010F718 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD0B05B22C74842B0010F718 /* PBXTargetDependency */,
+			);
+			name = PulseUITests;
+			productName = PulseUITests;
+			productReference = DD0B05AB2C74842A0010F718 /* PulseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		DD0B05B92C7484510010F718 /* PulseUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD0B05C02C7484510010F718 /* Build configuration list for PBXNativeTarget "PulseUnitTests" */;
+			buildPhases = (
+				DD0B05B62C7484510010F718 /* Sources */,
+				DD0B05B72C7484510010F718 /* Frameworks */,
+				DD0B05B82C7484510010F718 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD0B05BF2C7484510010F718 /* PBXTargetDependency */,
+			);
+			name = PulseUnitTests;
+			productName = PulseUnitTests;
+			productReference = DD0B05BA2C7484510010F718 /* PulseUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -879,7 +988,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					20190CF02C6A336A001A2AB6 = {
@@ -887,6 +996,14 @@
 					};
 					2058D1582C65C65200D0557D = {
 						CreatedOnToolsVersion = 15.3;
+					};
+					DD0B05AA2C74842A0010F718 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 2058D1582C65C65200D0557D;
+					};
+					DD0B05B92C7484510010F718 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 2058D1582C65C65200D0557D;
 					};
 				};
 			};
@@ -908,8 +1025,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2058D1582C65C65200D0557D /* MC3 */,
-				20190CF02C6A336A001A2AB6 /* WatchMC3 Watch App */,
+				2058D1582C65C65200D0557D /* Pulse */,
+				20190CF02C6A336A001A2AB6 /* Pulse Watch */,
+				DD0B05AA2C74842A0010F718 /* PulseUITests */,
+				DD0B05B92C7484510010F718 /* PulseUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -931,6 +1050,20 @@
 				2058D1642C65C65400D0557D /* Preview Assets.xcassets in Resources */,
 				2058D1612C65C65400D0557D /* Assets.xcassets in Resources */,
 				20F95A6A2C6E11A5005B3DA1 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0B05A92C74842A0010F718 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0B05B82C7484510010F718 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -979,6 +1112,7 @@
 				DD65438C2C7390D400BFB0FD /* EmergencyContactViewModel.swift in Sources */,
 				DD6543662C738F3900BFB0FD /* CountdownView.swift in Sources */,
 				DD65437E2C73904D00BFB0FD /* LocationManagerViewModel.swift in Sources */,
+				DD0B05A62C747C940010F718 /* ProfileSetUpViewModel.swift in Sources */,
 				DD6543522C738E4500BFB0FD /* User.swift in Sources */,
 				DD6543852C73908C00BFB0FD /* LoginView.swift in Sources */,
 				DD6543932C73911000BFB0FD /* FCMTokenManager.swift in Sources */,
@@ -1012,6 +1146,7 @@
 				DD65435A2C738E9200BFB0FD /* FirebaseServiceUseCase.swift in Sources */,
 				DD6543632C738F1200BFB0FD /* AddContactsView.swift in Sources */,
 				DD0B05972C73ADFD0010F718 /* PersonalPinView.swift in Sources */,
+				DD0B05A42C747C6C0010F718 /* ProfileSetUpView.swift in Sources */,
 				DD0B05992C73B3200010F718 /* PersonalPinViewModel.swift in Sources */,
 				DD6543272C738C6700BFB0FD /* UIApplication+Extension.swift in Sources */,
 				DD6543292C738C7F00BFB0FD /* iOSToWatchConnector.swift in Sources */,
@@ -1036,13 +1171,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DD0B05A72C74842A0010F718 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD0B05B02C74842B0010F718 /* PulseUITestsLaunchTests.swift in Sources */,
+				DD0B05AE2C74842B0010F718 /* PulseUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0B05B62C7484510010F718 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD0B05BD2C7484510010F718 /* PulseUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		20190CFD2C6A336B001A2AB6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 20190CF02C6A336A001A2AB6 /* WatchMC3 Watch App */;
+			target = 20190CF02C6A336A001A2AB6 /* Pulse Watch */;
 			targetProxy = 20190CFC2C6A336B001A2AB6 /* PBXContainerItemProxy */;
+		};
+		DD0B05B22C74842B0010F718 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2058D1582C65C65200D0557D /* Pulse */;
+			targetProxy = DD0B05B12C74842B0010F718 /* PBXContainerItemProxy */;
+		};
+		DD0B05BF2C7484510010F718 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2058D1582C65C65200D0557D /* Pulse */;
+			targetProxy = DD0B05BE2C7484510010F718 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1060,7 +1222,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WatchMC3-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = WatchMC3;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pulse Watch";
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "We need to access your health data to provide services";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need to access your health data to provide services";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We need to access your health data to provide services";
@@ -1095,7 +1257,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WatchMC3-Watch-App-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = WatchMC3;
+				INFOPLIST_KEY_CFBundleDisplayName = "Pulse Watch";
 				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "We need to access your health data to provide services";
 				INFOPLIST_KEY_NSHealthShareUsageDescription = "We need to access your health data to provide services";
 				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "We need to access your health data to provide services";
@@ -1312,10 +1474,84 @@
 			};
 			name = Release;
 		};
+		DD0B05B42C74842B0010F718 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XSHZNN2ULY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = NC2.PulseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Pulse;
+			};
+			name = Debug;
+		};
+		DD0B05B52C74842B0010F718 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XSHZNN2ULY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = NC2.PulseUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Pulse;
+			};
+			name = Release;
+		};
+		DD0B05C12C7484510010F718 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XSHZNN2ULY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = NC2.PulseUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pulse.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pulse";
+			};
+			name = Debug;
+		};
+		DD0B05C22C7484510010F718 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XSHZNN2ULY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = NC2.PulseUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pulse.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pulse";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		20190D022C6A336B001A2AB6 /* Build configuration list for PBXNativeTarget "WatchMC3 Watch App" */ = {
+		20190D022C6A336B001A2AB6 /* Build configuration list for PBXNativeTarget "Pulse Watch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				20190D002C6A336B001A2AB6 /* Debug */,
@@ -1333,11 +1569,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2058D1672C65C65400D0557D /* Build configuration list for PBXNativeTarget "MC3" */ = {
+		2058D1672C65C65400D0557D /* Build configuration list for PBXNativeTarget "Pulse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2058D1682C65C65400D0557D /* Debug */,
 				2058D1692C65C65400D0557D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD0B05B32C74842B0010F718 /* Build configuration list for PBXNativeTarget "PulseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD0B05B42C74842B0010F718 /* Debug */,
+				DD0B05B52C74842B0010F718 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD0B05C02C7484510010F718 /* Build configuration list for PBXNativeTarget "PulseUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD0B05C12C7484510010F718 /* Debug */,
+				DD0B05C22C7484510010F718 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
