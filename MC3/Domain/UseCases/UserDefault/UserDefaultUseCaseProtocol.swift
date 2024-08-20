@@ -10,4 +10,6 @@ import Foundation
 protocol UserDefaultUseCaseProtocol {
     func saveLoginData(email: String, firebaseID: String)
     func clearDataWhenLogOut(email: String, firebaseID: String)
+    func saveData(data: Any, key: KeyUserDefaultEnum)
+    func getData(key: KeyUserDefaultEnum) -> Any?
 }

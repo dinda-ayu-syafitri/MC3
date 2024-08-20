@@ -17,7 +17,18 @@ class PersonalPinViewModel: ObservableObject {
         }
     }
     
+    private var userDefaultUseCase: UserDefaultUseCaseProtocol
+    
+    init(userDefaultUseCase: UserDefaultUseCaseProtocol) {
+        self.userDefaultUseCase = userDefaultUseCase
+    }
+    
     func checkSamePin() -> Bool {
         return self.personalPin == self.confirmPersonalPin
+    }
+    
+    func saveToUserDefault() {
+        userDefaultUseCase.saveData(data: self.personalPin, key: .pin)
+        print("data: \(String(describing: userDefaultUseCase.getData(key: .pin)))")
     }
 }

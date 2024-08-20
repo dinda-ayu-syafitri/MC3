@@ -35,4 +35,9 @@ class DependencyInjection: ObservableObject{
             userDefaultUseCase: userDefaultUseCase
         )
     }
+    
+    // MARK: FUNCTIONS PIN INPUT VIEW MODEL
+    func personalPinViewModel() -> PersonalPinViewModel {
+        PersonalPinViewModel(userDefaultUseCase: userDefaultUseCase)
+    }
 }

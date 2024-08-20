@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PersonalPinView: View {
-    @StateObject private var pinVM = PersonalPinViewModel()
+    @StateObject private var pinVM = DependencyInjection.shared.personalPinViewModel()
     @FocusState private var focusedField: FocusedField?
 
     enum FocusedField {
@@ -67,7 +67,7 @@ struct PersonalPinView: View {
             Spacer()
             
             Button(action: {
-                print("submit")
+                pinVM.saveToUserDefault()
             }, label: {
                 Text("Confirm pin")
                     .font(.headline)
@@ -76,8 +76,8 @@ struct PersonalPinView: View {
                     .frame(maxWidth: .infinity)
                     .background(pinVM.isCorrect ? .redBrand : .gray)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
-                    .disabled(pinVM.isCorrect)
             })
+            .disabled(!pinVM.isCorrect)
         }
         .padding(.horizontal, 16)
         .padding(.top, 98)
@@ -88,9 +88,9 @@ struct PersonalPinView: View {
         .toolbar {
             ToolbarItem(placement: .keyboard) {
                 HStack {
-                    Spacer() // Push the button to the right
+                    Spacer()
                     Button("Done") {
-                        focusedField = nil // Dismiss the keyboard
+                        focusedField = nil 
                     }
                 }
             }
