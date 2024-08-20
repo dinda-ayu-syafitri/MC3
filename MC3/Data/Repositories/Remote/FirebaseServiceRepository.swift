@@ -17,4 +17,8 @@ class FirebaseServiceRepository: FirebaseServiceRepositoryProtocol {
     func submitDataWithIDFirebase(idFirestore: String, data: [String : Any]) async throws {
         try await firebaseServiceDataSource.submitDataWithIDFirebase(idFirestore: idFirestore, data: data)
     }
+    
+    func updateDataWithIDFirebase(idFirestore: String, data: [String: Any]) async throws {
+        try await firebaseServiceDataSource.updateDataWithIDFirebase(idFirestore: idFirestore, data: data)
+    }
 }

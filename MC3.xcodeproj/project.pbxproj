@@ -30,6 +30,8 @@
 		DD0B05972C73ADFD0010F718 /* PersonalPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05962C73ADFD0010F718 /* PersonalPinView.swift */; };
 		DD0B05992C73B3200010F718 /* PersonalPinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05982C73B3200010F718 /* PersonalPinViewModel.swift */; };
 		DD0B059F2C7435FB0010F718 /* NumberFormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B059E2C7435FB0010F718 /* NumberFormatHelper.swift */; };
+		DD0B05A42C747C6C0010F718 /* ProfileSetUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05A32C747C6C0010F718 /* ProfileSetUpView.swift */; };
+		DD0B05A62C747C940010F718 /* ProfileSetUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05A52C747C940010F718 /* ProfileSetUpViewModel.swift */; };
 		DD4C77512C6A59A800CEDFB2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = DD4C77502C6A59A800CEDFB2 /* SocketIO */; };
 		DD6542F32C7387B100BFB0FD /* AllViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542F22C7387B100BFB0FD /* AllViews.swift */; };
 		DD6542F52C7387C400BFB0FD /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542F42C7387C400BFB0FD /* Home.swift */; };
@@ -149,6 +151,8 @@
 		DD0B05962C73ADFD0010F718 /* PersonalPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPinView.swift; sourceTree = "<group>"; };
 		DD0B05982C73B3200010F718 /* PersonalPinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPinViewModel.swift; sourceTree = "<group>"; };
 		DD0B059E2C7435FB0010F718 /* NumberFormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatHelper.swift; sourceTree = "<group>"; };
+		DD0B05A32C747C6C0010F718 /* ProfileSetUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetUpView.swift; sourceTree = "<group>"; };
+		DD0B05A52C747C940010F718 /* ProfileSetUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetUpViewModel.swift; sourceTree = "<group>"; };
 		DD6542F22C7387B100BFB0FD /* AllViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViews.swift; sourceTree = "<group>"; };
 		DD6542F42C7387C400BFB0FD /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		DD6542F62C7387D900BFB0FD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -381,6 +385,15 @@
 				DD0B05982C73B3200010F718 /* PersonalPinViewModel.swift */,
 			);
 			path = PersonalPin;
+			sourceTree = "<group>";
+		};
+		DD0B05A22C747C5D0010F718 /* Profile Setup */ = {
+			isa = PBXGroup;
+			children = (
+				DD0B05A32C747C6C0010F718 /* ProfileSetUpView.swift */,
+				DD0B05A52C747C940010F718 /* ProfileSetUpViewModel.swift */,
+			);
+			path = "Profile Setup";
 			sourceTree = "<group>";
 		};
 		DD6542F82C73880E00BFB0FD /* Message Notification */ = {
@@ -655,6 +668,7 @@
 		DD6543602C738EDB00BFB0FD /* Presentations */ = {
 			isa = PBXGroup;
 			children = (
+				DD0B05A22C747C5D0010F718 /* Profile Setup */,
 				DD0B05952C73ADEC0010F718 /* PersonalPin */,
 				DD65438F2C7390F700BFB0FD /* MessageNotification */,
 				DD6543882C7390AE00BFB0FD /* EmergencyContact */,
@@ -935,6 +949,7 @@
 				DD65438C2C7390D400BFB0FD /* EmergencyContactViewModel.swift in Sources */,
 				DD6543662C738F3900BFB0FD /* CountdownView.swift in Sources */,
 				DD65437E2C73904D00BFB0FD /* LocationManagerViewModel.swift in Sources */,
+				DD0B05A62C747C940010F718 /* ProfileSetUpViewModel.swift in Sources */,
 				DD6543522C738E4500BFB0FD /* User.swift in Sources */,
 				DD6543852C73908C00BFB0FD /* LoginView.swift in Sources */,
 				DD6543932C73911000BFB0FD /* FCMTokenManager.swift in Sources */,
@@ -964,6 +979,7 @@
 				DD65435A2C738E9200BFB0FD /* FirebaseServiceUseCase.swift in Sources */,
 				DD6543632C738F1200BFB0FD /* AddContactsView.swift in Sources */,
 				DD0B05972C73ADFD0010F718 /* PersonalPinView.swift in Sources */,
+				DD0B05A42C747C6C0010F718 /* ProfileSetUpView.swift in Sources */,
 				DD0B05992C73B3200010F718 /* PersonalPinViewModel.swift in Sources */,
 				DD6543272C738C6700BFB0FD /* UIApplication+Extension.swift in Sources */,
 				DD6543292C738C7F00BFB0FD /* iOSToWatchConnector.swift in Sources */,

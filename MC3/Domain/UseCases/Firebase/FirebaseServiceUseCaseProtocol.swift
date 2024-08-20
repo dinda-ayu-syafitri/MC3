@@ -10,4 +10,5 @@ import Foundation
 protocol FirebaseServiceUseCaseProtocol {
     func submitDataWithIDFirebase(idFirestore: String, data: [String: Any]) async throws
     func registerAccount(idFirestore: String, fcm: String) async throws
+    func updateProfileData(idFirestore: String, fullName: String, phoneNumber: String) async throws
 }

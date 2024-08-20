@@ -33,4 +33,9 @@ class UserDefaultUseCase: UserDefaultUseCaseProtocol {
     func getData(key: KeyUserDefaultEnum) -> Any? {
         userDefaultRepository.getData(key: key)
     }
+    
+    func saveProfileData(fullName: String, phoneNumber: String) {
+        userDefaultRepository.saveData(data: fullName, key: .fullname)
+        userDefaultRepository.saveData(data: phoneNumber, key: .phoneNumber)
+    }
 }

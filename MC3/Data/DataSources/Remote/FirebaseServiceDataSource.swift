@@ -22,4 +22,9 @@ class FirebaseServiceDataSource: FirebaseServiceDataSourceProtocol {
             }
         }
     }
+    
+    func updateDataWithIDFirebase(idFirestore: String, data: [String: Any]) async throws {
+        let documentRef = db.collection("User").document(idFirestore)
+        try await documentRef.updateData(data)
+    }
 }

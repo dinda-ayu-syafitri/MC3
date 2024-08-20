@@ -25,4 +25,14 @@ class FirebaseServiceUseCase: FirebaseServiceUseCaseProtocol {
     func submitDataWithIDFirebase(idFirestore: String, data: [String : Any]) async throws {
         try await firebaseServiceRepository.submitDataWithIDFirebase(idFirestore: idFirestore, data: data)
     }
+    
+    func updateProfileData(idFirestore: String, fullName: String, phoneNumber: String) async throws {
+        let data = [
+            "idFirestore": idFirestore,
+            "fullName": fullName,
+            "phoneNumber": phoneNumber,
+        ] as [String: Any]
+        
+        try await firebaseServiceRepository.updateDataWithIDFirebase(idFirestore: idFirestore, data: data)
+    }
 }
