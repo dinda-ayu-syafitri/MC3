@@ -9,14 +9,16 @@ import SwiftUI
 
 struct AllViews: View {
     var body: some View {
-        TabView() {
-            //Home View
-            Home()
-            
-            //Settings View
-            SettingsView(heartRateViewModel: HomeViewModel())
+        RouterWatchView {
+            TabView {
+                // Home View
+                Home()
+
+                // Settings View
+                SettingsView(heartRateViewModel: HomeViewModel())
+            }
+            .tabViewStyle(.verticalPage)
         }
-        .tabViewStyle(.verticalPage)
     }
 }
 

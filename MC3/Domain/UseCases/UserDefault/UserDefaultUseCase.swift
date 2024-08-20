@@ -12,14 +12,18 @@ class UserDefaultUseCase: UserDefaultUseCaseProtocol {
     init(userDefaultRepository: UserDefaultRepositoryProtocol) {
         self.userDefaultRepository = userDefaultRepository
     }
-    
+
     func saveLoginData(email: String, firebaseID: String) {
         userDefaultRepository.saveData(data: email, key: .email)
         userDefaultRepository.saveData(data: firebaseID, key: .idFirebase)
         userDefaultRepository.saveData(data: true, key: .status)
-
     }
-    
+
+    func saveProfileData(fullName: String, phoneNumber: String) {
+        userDefaultRepository.saveData(data: fullName, key: .fullName)
+        userDefaultRepository.saveData(data: phoneNumber, key: .phoneNumber)
+    }
+
     func clearDataWhenLogOut(email: String, firebaseID: String) {
         userDefaultRepository.deleteData(key: .email)
         userDefaultRepository.deleteData(key: .idFirebase)
