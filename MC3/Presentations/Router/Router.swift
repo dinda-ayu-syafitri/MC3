@@ -13,6 +13,8 @@ class Router: ObservableObject {
         case LoginView
         case HomeView
         case AddEmergencyContact
+        case CountdownView
+        case StatusTrackView
     }
 
     // Used to programatically control our navigation stack
@@ -27,7 +29,12 @@ class Router: ObservableObject {
             HomeView()
         case .AddEmergencyContact:
             AddEmergencyContactView()
+        case .CountdownView:
+            CountdownView()
+        case .StatusTrackView:
+            StatusTrackView()
         }
+    
     }
 
     // Used by views to navigate to another view

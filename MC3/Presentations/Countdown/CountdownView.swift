@@ -11,7 +11,7 @@ struct CountdownView: View {
     @State private var countdown = 5
     @State private var pulse = false
     @State private var bounce = false
-    @State var viewState = CGSize(width: 0, height: 50)
+    @EnvironmentObject var router: Router
     var body: some View {
         VStack {
             Spacer()
@@ -20,27 +20,17 @@ struct CountdownView: View {
                 .font(.title)
                 .bold()
                 .foregroundColor(.white)
-                .padding(.bottom, 10)
+                .padding(20)
                 .multilineTextAlignment(.center)
             Spacer()
             ZStack {
-                withAnimation(
-                    Animation.easeInOut(duration: 1.2)
-                        .repeatForever(autoreverses: true)
-                ) {
-                    Circle()
-                        .fill(Color.white.opacity(0.3))
-                        .scaleEffect(pulse ? 1.2 : 1.0)
-                }
+                Circle()
+                    .fill(Color.white.opacity(0.3))
+                    .scaleEffect(pulse ? 1.2 : 1.0)
                 
-                withAnimation(
-                    Animation.easeInOut(duration: 1.2)
-                        .repeatForever(autoreverses: true)
-                ) {
-                    Circle()
-                        .fill(Color.white.opacity(0.1))
-                        .scaleEffect(pulse ? 1.5 : 1.2)
-                }
+                Circle()
+                    .fill(Color.white.opacity(0.1))
+                    .scaleEffect(pulse ? 1.5 : 1.2)
                 
                 // White circle behind the countdown number
                 Circle()
@@ -51,19 +41,22 @@ struct CountdownView: View {
                     .font(.system(size: 100, weight: .bold))
                     .foregroundColor(.black)
             }
+            .onTapGesture {
+                router.navigateTo(.StatusTrackView)
+            }
             .frame(width: 200, height: 200)
             .scaleEffect(bounce ? 1.05 : 1.0)
             .onAppear {
-                withAnimation (
-                    Animation.easeInOut(duration: 0.6)
-                        .repeatForever(autoreverses: true)
-                ) {
+                withAnimation(Animation.easeInOut(duration: 1.2).repeatForever(autoreverses: true)) {
                     pulse.toggle()
+                }
+                withAnimation(Animation.easeInOut(duration: 0.6).repeatForever(autoreverses: true)) {
                     bounce.toggle()
                 }
+                startCountdown()
             }
             Spacer()
-            VStack{
+            VStack {
                 Text("Tap the screen once to skip countdown and activate SOS alert immediately")
                     .font(.subheadline)
                     .foregroundColor(.white)
@@ -72,19 +65,28 @@ struct CountdownView: View {
             .padding()
             SlideToCancelButton()
             Spacer()
-            
-            
         }
-        
         .ignoresSafeArea()
-        .background(Color.red)
+        .background(Color.appPink)
+    }
+    
+    // Countdown function
+    func startCountdown() {
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            if countdown > 0 {
+                countdown -= 1
+            } else {
+                timer.invalidate()
+                router.navigateTo(.StatusTrackView)
+            }
+        }
     }
 }
 
 struct SlideToCancelButton: View {
     @State private var offset: CGFloat = 20
     @State private var buttonWidth: CGFloat = UIScreen.main.bounds.width - 60 // Adjust the width based on your design
-    
+    @EnvironmentObject var router: Router
     var body: some View {
         ZStack {
             // Background track
@@ -104,7 +106,7 @@ struct SlideToCancelButton: View {
                     .frame(width: 70, height: 70)
                     .overlay(
                         Image(systemName: "arrow.right")
-                            .foregroundColor(.red)
+                            .foregroundColor(.appPink)
                             .font(.system(size: 24, weight: .bold))
                     )
                     .offset(x: offset)
@@ -123,7 +125,7 @@ struct SlideToCancelButton: View {
                                         offset = buttonWidth - 70
                                     }
                                     // Perform your cancel action here
-                                    print("Action Canceled")
+                                    router.navigateTo(.HomeView)
                                 } else {
                                     // Otherwise, reset the button
                                     withAnimation {
@@ -139,6 +141,7 @@ struct SlideToCancelButton: View {
         .padding(.horizontal)
     }
 }
+
 #Preview {
     CountdownView()
 }
