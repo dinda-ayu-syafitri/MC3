@@ -36,6 +36,9 @@
 		DA8B4A4B2C6BAE9D00BC5987 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */; };
 		DA8B4A512C6CC07E00BC5987 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */; };
 		DA8B4A522C6CC08100BC5987 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */; };
+		DD0B05972C73ADFD0010F718 /* PersonalPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05962C73ADFD0010F718 /* PersonalPinView.swift */; };
+		DD0B05992C73B3200010F718 /* PersonalPinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05982C73B3200010F718 /* PersonalPinViewModel.swift */; };
+		DD0B059F2C7435FB0010F718 /* NumberFormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B059E2C7435FB0010F718 /* NumberFormatHelper.swift */; };
 		DD4C77512C6A59A800CEDFB2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = DD4C77502C6A59A800CEDFB2 /* SocketIO */; };
 		DD6542F32C7387B100BFB0FD /* AllViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542F22C7387B100BFB0FD /* AllViews.swift */; };
 		DD6542F52C7387C400BFB0FD /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542F42C7387C400BFB0FD /* Home.swift */; };
@@ -160,6 +163,9 @@
 		DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationDelegate.swift; path = Shared/NotificationDelegate.swift; sourceTree = SOURCE_ROOT; };
 		DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS10.2.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 		DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		DD0B05962C73ADFD0010F718 /* PersonalPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPinView.swift; sourceTree = "<group>"; };
+		DD0B05982C73B3200010F718 /* PersonalPinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPinViewModel.swift; sourceTree = "<group>"; };
+		DD0B059E2C7435FB0010F718 /* NumberFormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatHelper.swift; sourceTree = "<group>"; };
 		DD6542F22C7387B100BFB0FD /* AllViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViews.swift; sourceTree = "<group>"; };
 		DD6542F42C7387C400BFB0FD /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		DD6542F62C7387D900BFB0FD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -405,6 +411,15 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		DD0B05952C73ADEC0010F718 /* PersonalPin */ = {
+			isa = PBXGroup;
+			children = (
+				DD0B05962C73ADFD0010F718 /* PersonalPinView.swift */,
+				DD0B05982C73B3200010F718 /* PersonalPinViewModel.swift */,
+			);
+			path = PersonalPin;
+			sourceTree = "<group>";
+		};
 		DD6542F82C73880E00BFB0FD /* Message Notification */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +546,7 @@
 				DD65431F2C738C1400BFB0FD /* SocketHelper.swift */,
 				DD6543282C738C7F00BFB0FD /* iOSToWatchConnector.swift */,
 				DD65432F2C738CD300BFB0FD /* DependencyInjection.swift */,
+				DD0B059E2C7435FB0010F718 /* NumberFormatHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -677,6 +693,7 @@
 		DD6543602C738EDB00BFB0FD /* Presentations */ = {
 			isa = PBXGroup;
 			children = (
+				DD0B05952C73ADEC0010F718 /* PersonalPin */,
 				2084E3602C73AFC900ECA12E /* Router */,
 				DD65438F2C7390F700BFB0FD /* MessageNotification */,
 				DD6543882C7390AE00BFB0FD /* EmergencyContact */,
@@ -994,6 +1011,8 @@
 				2084E36E2C74344800ECA12E /* ProfileViewModel.swift in Sources */,
 				DD65435A2C738E9200BFB0FD /* FirebaseServiceUseCase.swift in Sources */,
 				DD6543632C738F1200BFB0FD /* AddContactsView.swift in Sources */,
+				DD0B05972C73ADFD0010F718 /* PersonalPinView.swift in Sources */,
+				DD0B05992C73B3200010F718 /* PersonalPinViewModel.swift in Sources */,
 				DD6543272C738C6700BFB0FD /* UIApplication+Extension.swift in Sources */,
 				DD6543292C738C7F00BFB0FD /* iOSToWatchConnector.swift in Sources */,
 				DD6543202C738C1400BFB0FD /* SocketHelper.swift in Sources */,
@@ -1007,6 +1026,7 @@
 				DD6543472C738DD500BFB0FD /* FirebaseServiceRepository.swift in Sources */,
 				DD6543802C73905F00BFB0FD /* UserAnnotation.swift in Sources */,
 				DD65434E2C738E1900BFB0FD /* KeyUserDefaultEnum.swift in Sources */,
+				DD0B059F2C7435FB0010F718 /* NumberFormatHelper.swift in Sources */,
 				DD6543502C738E2800BFB0FD /* NotificationTypeEnum.swift in Sources */,
 				DD65436F2C738F8800BFB0FD /* SOSView.swift in Sources */,
 				DD65434C2C738E0900BFB0FD /* ProviderIdEnum.swift in Sources */,
