@@ -9,27 +9,36 @@ import Foundation
 import HealthKit
 
 class HomeViewModel: ObservableObject {
+    static let shared = HomeViewModel()
+    
+    var delegate = NotificationDelegate()
+    
     @Published var heartRate: Double = 0.0
     @Published var isEnableBackgroundDelivery: Bool = false {
         didSet {
+            toggleBackgroundTracking()
             UserDefaults.standard.set(isEnableBackgroundDelivery, forKey: "isEnableBackgroundDelivery") }
     }
-    @Published var countdownIsActive: Bool = false
-    @Published var timeRemaining: Int = 10
+//    @Published var countdownIsActive: Bool = false
+//    @Published var timeRemaining: Int = 10
     @Published var isCountdownViewPresented: Bool = false
     
-    private var timer: Timer?
-    var messageViewModel = MessageNotificationViewModel()
-
     private var heartRates: [Double] = []
-        
-//    private var emergencySessionIsActive = false
+    
+//    private var timer: Timer?
+    var messageViewModel = MessageNotificationViewModel()
+    var countdownManager: CountdownManager
+
+    private var emergencySessionIsActive = false
+    
     let router: Router
     
     init() {
         isEnableBackgroundDelivery = UserDefaults.standard.bool(forKey: "isEnableBackgroundDelivery")
         self.router = Router()
+        self.countdownManager = CountdownManager(notifDelegate: self.delegate)
         toggleBackgroundTracking()
+
     }
     
     func createNotification(notificationType: NotificationTypeEnum) {
@@ -41,11 +50,10 @@ class HomeViewModel: ObservableObject {
         guard let samples = samples as? [HKQuantitySample] else {return}
         
         DispatchQueue.main.async {
-            self.heartRate = samples.last?.quantity.doubleValue(for: .count().unitDivided(by: .minute())) ?? 0.0
-            print("heartRate: \(self.heartRate)")
-            
+            self.heartRate = samples.last?.quantity.doubleValue(for: .count().unitDivided(by: .minute())) ?? 0.0            
             //handling store heart rate
-            self.storeHeartRateHandling()
+//            self.storeHeartRateHandling()
+            self.storeHeartRateHandling2()
             //check emergency state
             self.checkEmergency()
         }
@@ -60,12 +68,27 @@ class HomeViewModel: ObservableObject {
     
     //TODO: bisa dipindahin ke file tesendiri?
     //heart rate handling
+    func storeHeartRateHandling2() {
+        if heartRate != 0.0 && heartRates.count < 5 && !countdownManager.countdownIsActive && !emergencySessionIsActive {
+            if heartRates.isEmpty {
+                heartRates.append(heartRate)
+                print ("Data count: \(self.heartRates.count)")
+                print(heartRates.items)
+            } else if !heartRates[heartRates.count - 1].isEqual(to: heartRate) {
+                heartRates.append(heartRate)
+                print ("Data count: \(self.heartRates.count)")
+                print(heartRates.items)
+            }
+        }
+    }
+    
+    
     func storeHeartRateHandling() {
-        if heartRate != 0.0 {
+        if heartRate != 0.0 && !countdownManager.countdownIsActive && !emergencySessionIsActive {
             // Check if current array empty
             if heartRates.isEmpty {
                 heartRates.append(heartRate)
-                print("countdown is active: \(countdownIsActive)")
+                print("countdown is active: \(countdownManager.countdownIsActive)")
 //                print("emergency session is active: \(emergencySessionIsActive)")
 
             } // Check if current Heart Rate is equals to previous Heart Rate
@@ -104,7 +127,7 @@ class HomeViewModel: ObservableObject {
     //check sd
     func isStandardDeviationHigh() -> Bool {
         let threshold = 1.0
-        if heartRates.count == 3 {
+        if heartRates.count == 5 {
             let mean = heartRates.reduce(0, +) /  Double(heartRates.count)
             var varianceList: [Double] = []
             for heartRate in heartRates {
@@ -112,10 +135,10 @@ class HomeViewModel: ObservableObject {
                 varianceList.append(variance)
             }
             let sd = varianceList.reduce(0, +) / Double(heartRates.count - 1)
-            heartRates.removeAll()
             if sd > threshold {
                 return true
             }
+            heartRates.remove(at: 0)
             return false
         }
         return false
@@ -123,39 +146,21 @@ class HomeViewModel: ObservableObject {
     
     //check emergency
     func checkEmergency() {
-        if isStandardDeviationHigh() /*&& !emergencySessionIsActive*/ {
-//            self.isLikelyInEmergency = true
+        if isStandardDeviationHigh() && !countdownManager.countdownIsActive && !emergencySessionIsActive {
+            heartRates.removeAll()
             self.createNotification(notificationType: .ABNORMALHEARTRATE)
-            self.startCountdown()
-        }
-//        if self.timeRemaining == 0 /*&& !emergencySessionIsActive*/ {
-//            print("Countdown ends, sending message to iOS")
-//            // Send message to iPhone when countdown expires
-//            WatchToiOSConnector.shared.sendTriggerToiOS()
-//            // Stop countdown and mark emergency session as active
-//            self.stopCountdown()
-////            self.emergencySessionIsActive = true
-//        }
-    }
-    
-    // Start countdown timer
-    func startCountdown() {
-        self.countdownIsActive = true
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-            if self.timeRemaining > 0 {
-                self.timeRemaining -= 1
+            
+            countdownManager.startCountdown()
 
-                print("Time remaining: \(self.timeRemaining)")
-            }
         }
-    }
-    
-    // Stop countdown timer
-    func stopCountdown() {
-        timer?.invalidate()
-        timer = nil
-        countdownIsActive = false
-        timeRemaining = 10
+        if countdownManager.timeRemaining == 0 && !emergencySessionIsActive {
+            print("Countdown ends, sending message to iOS")
+            // Send message to iPhone when countdown expires
+            self.createNotification(notificationType: .SOSALERT)
+            // Stop countdown and mark emergency session as active
+            countdownManager.stopCountdown()
+            self.emergencySessionIsActive = true
+        }
     }
     
     //fetch heart rate data (foreground tracking)
