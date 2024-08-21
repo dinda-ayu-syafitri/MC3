@@ -20,6 +20,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
         UNUserNotificationCenter.current().delegate = self
         requestNotificationAuthorization()
         Messaging.messaging().delegate = self
+        BackgroundTaskManager.shared.scheduleBackgroundTask()
         return true
     }
 

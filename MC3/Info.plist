@@ -24,6 +24,10 @@
 		<string>remote-notification</string>
 		<string>location</string>
 	</array>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>MC3.Untouchable</string>
+	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need your location to provide personalized content while using the app.</string> 
 	<key>NSLocationAlwaysUsageDescription</key>
