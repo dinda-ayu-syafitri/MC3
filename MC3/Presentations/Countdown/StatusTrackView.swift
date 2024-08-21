@@ -9,7 +9,7 @@ import SwiftUI
 import MessageUI
 
 struct StatusTrackView: View {
-    @State private var status: Int = 2
+    @State private var status: Int = 1
     @EnvironmentObject var router: Router
     @State private var showingMessageCompose = false
     @State private var messageSent = false
@@ -21,13 +21,6 @@ struct StatusTrackView: View {
                    VStack {
                        if status == 1{
                            sent()
-                               .onAppear {
-                                   makeCall()
-                                   sendMessage()
-                               }
-                               .sheet(isPresented: $showingMessageCompose) {
-                                   MessageComposeViewControllerWrapper(isPresented: $showingMessageCompose, messageSent: $messageSent)
-                               }
                        }else{
                            track()
                        }
@@ -36,7 +29,9 @@ struct StatusTrackView: View {
                    
             VStack{
                 Button {
-                    
+                    makeCall()
+                    sendMessage()
+                        
                 } label: {
                     ZStack{
                         RoundedRectangle(cornerRadius: 15.0)
@@ -46,6 +41,9 @@ struct StatusTrackView: View {
                             .foregroundStyle(Color.white)
                             .bold()
                     }
+                }
+                .sheet(isPresented: $showingMessageCompose) {
+                    MessageComposeViewControllerWrapper(isPresented: $showingMessageCompose, messageSent: $messageSent)
                 }
                 .padding()
                 
