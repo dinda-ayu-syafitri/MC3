@@ -31,6 +31,16 @@ class FirebaseServiceUseCase: FirebaseServiceUseCaseProtocol {
         try await firebaseServiceRepository.updateDataWithIDFirebase(idFirestore: idFirestore, data: data)
     }
 
+    func updateProfileData(idFirestore: String, fullName: String, phoneNumber: String) async throws {
+        let data = [
+            "idFirestore": idFirestore,
+            "fullName": fullName,
+            "phoneNumber": phoneNumber,
+        ] as [String: Any]
+
+        try await firebaseServiceRepository.updateDataWithIDFirebase(idFirestore: idFirestore, data: data)
+    }
+
     func insertUserEmergencyContacts(idFirestore: String, emergencyContacts: [EmergencyContact]) async throws {
         let emergencyContactsData = try emergencyContacts.map { contact in
             let data = try JSONEncoder().encode(contact)

@@ -30,7 +30,6 @@ struct AddEmergencyContactView: View {
                 .font(.title2)
                 .multilineTextAlignment(.center)
                 .fontWeight(.bold)
-                .padding()
 
             Text("Emergency contacts are notified when the SOS Alert is activated. ")
                 .multilineTextAlignment(.center)
@@ -97,8 +96,6 @@ struct AddEmergencyContactView: View {
                         .frame(height: 100)
                         .listStyle(PlainListStyle())
                         .clipShape(RoundedRectangle(cornerRadius: 15.0))
-                        
-
                     } else {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.clear)
@@ -137,7 +134,6 @@ struct AddEmergencyContactView: View {
                                 ContactPickerView(selectedContact: $selectedContact, emergencyContacts: $emergencyContacts, tempEmergencyContact: $tempEmergencyContact, isPrimary: $isPrimary)
                             }
                         }
-                        
                     }
 
                     if emergencyContacts.first(where: { $0.isPrimary == false }) != nil {
@@ -162,6 +158,7 @@ struct AddEmergencyContactView: View {
                                                         .multilineTextAlignment(.leading)
                                                 }
                                                 //.padding()
+
                                                 .frame(maxWidth: .infinity)
                                                 .multilineTextAlignment(.leading)
 
@@ -214,6 +211,7 @@ struct AddEmergencyContactView: View {
 //                Text("Emergency Contact Empty")
 //            }
 
+
             Spacer()
             Button(action: {
                 Task {
@@ -252,6 +250,7 @@ struct AddEmergencyContactView: View {
 //            }, label: {
 //                Text("Delete All Local Contacts")
 //            })
+
         }
         .background(Color.bg)
     }

@@ -10,6 +10,9 @@ import SwiftUI
 struct StatusTrackView: View {
     @State private var status: Int = 2
     @EnvironmentObject var router: Router
+
+   // @State private var isOpened: Bool = false
+    
     var body: some View {
         VStack {
             Spacer()
@@ -53,7 +56,8 @@ struct StatusTrackView: View {
                 .padding()
                 
                 Button {
-                    
+//                     print("open sheet")
+//                     self.isOpened = true
                 } label: {
                     ZStack{
                         Text("Deactivate Alert")
@@ -63,6 +67,7 @@ struct StatusTrackView: View {
                     .onTapGesture {
                         router.navigateTo(.HomeView)
                     }
+
                 }
                 .padding(.top,20)
 
@@ -70,9 +75,15 @@ struct StatusTrackView: View {
             Spacer()
         }
         .background(Color(.bg).ignoresSafeArea())
-        
-        
-        
+//         .sheet(isPresented: $isOpened, content: {
+//             DeactivateView(isActive: $isOpened)
+//         })
+//         .padding(.horizontal, 16)
+//         .padding(.top, 98)
+//         .padding(.bottom, 40)
+//         .frame(maxWidth: .infinity, maxHeight: .infinity)
+//         .background(Color.grayBrand)
+//         .ignoresSafeArea()
     }
 }
 
