@@ -20,11 +20,20 @@ struct LiveTrackView: View {
                     .bold()
                     .foregroundColor(.appPink)
                 
-                Text("longlat: \(socketVM.longitude), \(socketVM.latitude)")
+//                Text("longlat: \(socketVM.longitude), \(socketVM.latitude)")
                 
+//                Map(position: $socketVM.mapCamera) {
+//                    Annotation("Victim Location", coordinate: CLLocationCoordinate2D(latitude: socketVM.latitude, longitude: socketVM.longitude)) {
+//                        UserAnnotation()
+//                    }
+//                }
                 Map(position: $socketVM.mapCamera) {
-                    Annotation("Victim Location", coordinate: CLLocationCoordinate2D(latitude: socketVM.latitude, longitude: socketVM.longitude)) {
-                        UserAnnotation()
+                    ForEach(Array(socketVM.userLocations.keys), id: \.self) { userId in
+                        if let coordinate = socketVM.userLocations[userId] {
+                            Annotation("User \(userId)", coordinate: coordinate) {
+                                UserAnnotation() 
+                            }
+                        }
                     }
                 }
                 .frame(height: 480)

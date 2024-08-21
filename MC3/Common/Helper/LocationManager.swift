@@ -11,15 +11,13 @@ import UIKit
 
 final class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
     @Published var lastKnownLocation: CLLocationCoordinate2D?
-    @Published var userAcceptLocation: Bool = false {
-        didSet {
-            self.alertingAlwaysUseLocation = self.userAcceptLocation
-        }
-    }
-    @Published var alertingAlwaysUseLocation: Bool = false
+    @Published var userAcceptLocation: Bool = false
+    @Published var alertingAlwaysUseLocation: Bool
+    let userNumber = Double.random(in: 1...100)
     var manager = CLLocationManager()
     
     override init() {
+        self.alertingAlwaysUseLocation = !UserDefaults.standard.bool(forKey: KeyUserDefaultEnum.locationPrivacy.toString)
         super.init()
         manager.delegate = self
         manager.allowsBackgroundLocationUpdates = true

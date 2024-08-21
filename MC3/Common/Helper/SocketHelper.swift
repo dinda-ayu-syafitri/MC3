@@ -18,8 +18,10 @@ final class SocketHelper: ObservableObject {
     @Published var isListener: Bool = false
     @Published var mapRegion: MKCoordinateRegion = MKCoordinateRegion()
     @Published var mapCamera: MapCameraPosition
-    @Published var longitude: CLLocationDegrees = -6.303338
-    @Published var latitude: CLLocationDegrees = 106.638168
+//    @Published var longitude: CLLocationDegrees = -6.303338
+//    @Published var latitude: CLLocationDegrees = 106.638168
+//    @Published var userId: Double = 0
+    @Published var userLocations: [Double: CLLocationCoordinate2D] = [:]
     
     init() {
         self.mapRegion = .userRegion
@@ -69,17 +71,26 @@ final class SocketHelper: ObservableObject {
         socket.on("message") { [weak self] (data, ack) in
             guard let message = data.first as? [String: Double],
                   let longitude = message["longitude"],
-                  let latitude = message["latitude"] else {
+                  let latitude = message["latitude"],
+                  let userId = message["user"] else {
                 print("Failed to parse message when listening room")
                 return
             }
             
+//            DispatchQueue.main.async {
+//                self?.messages = "Longitude: \(longitude), Latitude: \(latitude), user: \(userId)"
+//                self?.longitude = longitude
+//                self?.latitude = latitude
+//                self?.userId = userId
+//                
+//                let newRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), latitudinalMeters: 1000, longitudinalMeters: 1000)
+//                self?.mapCamera = MapCameraPosition.region(newRegion)
+//            }
             DispatchQueue.main.async {
-                self?.messages = "Longitude: \(longitude), Latitude: \(latitude)"
-                self?.longitude = longitude
-                self?.latitude = latitude
+                let userCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                self?.userLocations[userId] = userCoordinate
                 
-                let newRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), latitudinalMeters: 1000, longitudinalMeters: 1000)
+                let newRegion = MKCoordinateRegion(center: userCoordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
                 self?.mapCamera = MapCameraPosition.region(newRegion)
             }
         }

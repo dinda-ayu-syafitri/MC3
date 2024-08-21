@@ -6,35 +6,51 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct trackComponent: View {
+    @EnvironmentObject var statusTrackVM: StatusTrackViewModel
+    @EnvironmentObject var socketVM: SocketHelper
+    @EnvironmentObject var trackedVM: StatusTrackViewModel
+    
     var body: some View {
-        ZStack{
-            Color.white
-                .frame(width: 350, height: 400)
-                .cornerRadius(10)
-                .padding()
-            
-            VStack{
-                
-                Text("Emergency Contact is Tracking")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .padding(.top, 8)
-                
-                Text("Your emergency contact is currently tracking you")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 32)
-                Spacer().frame(height: 50)
-                Image(systemName: "location.fill")
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    .foregroundStyle(Color.maroonBrand)
+        VStack {
+            //            Map(position: $socketVM.mapCamera) {
+            //                Annotation("Your Location", coordinate: CLLocationCoordinate2D(latitude: socketVM.latitude, longitude: socketVM.longitude)) {
+            //                    UserAnnotation()
+            //                }
+            //            }
+            Map(position: $socketVM.mapCamera) {
+                ForEach(Array(socketVM.userLocations.keys), id: \.self) { userId in
+                    if let coordinate = socketVM.userLocations[userId] {
+                        Annotation("User \(userId)", coordinate: coordinate) {
+                            UserAnnotation() // Customize your annotation view
+                        }
+                    }
+                }
             }
-            
+            .frame(height: 550)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.gray, lineWidth: 1)
+            )
+            .overlay(
+                Text(statusTrackVM.status == 1 ?
+                     "SOS Alert has been sent!" : "Ayah is tracking you!"
+                    )
+                .font(.title2)
+                .bold()
+                .foregroundColor(.maroonBrand)
+                .padding(.vertical, 16)
+                .frame(maxWidth: .infinity)
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .padding(12),
+                alignment: .top
+            )
         }
+        .padding(4)
     }
 }
 
