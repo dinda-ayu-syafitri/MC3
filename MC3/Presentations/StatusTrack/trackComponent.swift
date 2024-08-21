@@ -15,19 +15,19 @@ struct trackComponent: View {
     
     var body: some View {
         VStack {
-            //            Map(position: $socketVM.mapCamera) {
-            //                Annotation("Your Location", coordinate: CLLocationCoordinate2D(latitude: socketVM.latitude, longitude: socketVM.longitude)) {
-            //                    UserAnnotation()
-            //                }
-            //            }
             Map(position: $socketVM.mapCamera) {
                 ForEach(Array(socketVM.userLocations.keys), id: \.self) { userId in
                     if let coordinate = socketVM.userLocations[userId] {
                         Annotation("User \(userId)", coordinate: coordinate) {
-                            UserAnnotation() // Customize your annotation view
+                            UserAnnotation() 
                         }
                     }
                 }
+            }
+            .mapControls {
+                MapPitchToggle()
+                MapCompass()
+                MapUserLocationButton()
             }
             .frame(height: 550)
             .clipShape(RoundedRectangle(cornerRadius: 20))

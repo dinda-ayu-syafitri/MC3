@@ -10,7 +10,7 @@ import CoreLocation
 import UIKit
 
 final class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
-    @Published var lastKnownLocation: CLLocationCoordinate2D?
+    @Published var lastKnownLocation: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     @Published var userAcceptLocation: Bool = false
     @Published var alertingAlwaysUseLocation: Bool
     let userNumber = Double.random(in: 1...100)
@@ -50,7 +50,7 @@ final class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObje
         case .authorizedAlways://This authorization allows you to use all location services and receive location events whether or not your app is in use.
             print("Location authorizedAlways")
             self.userAcceptLocation = true
-            lastKnownLocation = manager.location?.coordinate
+            lastKnownLocation = manager.location?.coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)
             
         case .authorizedWhenInUse://This authorization allows you to use all location services and receive location events only when your app is in use
             print("Location authorized when in use")
@@ -63,12 +63,12 @@ final class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObje
         }
     }
     
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {//Trigged every time authorization status changes
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         checkLocationAuthorization()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        lastKnownLocation = locations.first?.coordinate
+        lastKnownLocation = locations.first?.coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)
     }
     
     private func alertUserToGoToSettings() {

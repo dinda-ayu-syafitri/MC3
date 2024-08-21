@@ -22,19 +22,19 @@ struct StatusTrackView: View {
                         .environmentObject(socketVM)
                         .environmentObject(trackedVM)
                     
-                    if let coordinate = locationVM.lastKnownLocation {
-                        Text("Latitude: \(coordinate.latitude)")
+//                    if let coordinate = locationVM.lastKnownLocation {
+                        Text("Latitude: \(locationVM.lastKnownLocation.latitude)")
                             .foregroundStyle(.blackBrand)
                             .font(.caption)
                         
-                        Text("Longitude: \(coordinate.longitude)")
+                        Text("Longitude: \(locationVM.lastKnownLocation.longitude)")
                             .foregroundStyle(.blackBrand)
                             .font(.caption)
-                    } else {
-                        Text("Unknown Location")
-                            .foregroundStyle(.blackBrand)
-                            .font(.caption)
-                    }
+//                    } else {
+//                        Text("Unknown Location")
+//                            .foregroundStyle(.blackBrand)
+//                            .font(.caption)
+//                    }
                 }
                 
                 VStack(alignment: .center, spacing: 12) {
@@ -72,6 +72,7 @@ struct StatusTrackView: View {
         .ignoresSafeArea()
         .onAppear {
             locationVM.checkLocationAuthorization()
+            socketVM.getInitializeMapCamera(center: locationVM.lastKnownLocation)
         }
         .onChange(of: locationVM.userAcceptLocation) { oldValue, newValue in
             if (newValue) {
@@ -82,8 +83,8 @@ struct StatusTrackView: View {
         }
         .onChange(of: locationVM.lastKnownLocation) { oldValue, newValue in
             socketVM.sendMessageToRoom(roomName: "realTest", message: [
-                "longitude" : (locationVM.lastKnownLocation?.longitude)! as Double,
-                "latitude" : (locationVM.lastKnownLocation?.latitude)! as Double,
+                "longitude" : (locationVM.lastKnownLocation.longitude) as Double,
+                "latitude" : (locationVM.lastKnownLocation.latitude) as Double,
                 "user" : locationVM.userNumber
             ])
         }
