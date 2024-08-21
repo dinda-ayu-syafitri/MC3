@@ -11,7 +11,9 @@ struct CountdownView: View {
     @State private var countdown = 5
     @State private var pulse = false
     @State private var bounce = false
+    @State private var isCountingDown = true // New state to control the countdown
     @EnvironmentObject var router: Router
+    
     var body: some View {
         VStack {
             Spacer()
@@ -42,6 +44,8 @@ struct CountdownView: View {
                     .foregroundColor(.black)
             }
             .onTapGesture {
+                // Stop the countdown and navigate to StatusTrackView
+                isCountingDown = false
                 router.navigateTo(.StatusTrackView)
             }
             .frame(width: 200, height: 200)
@@ -73,11 +77,13 @@ struct CountdownView: View {
     // Countdown function
     func startCountdown() {
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            if countdown > 0 {
+            if countdown > 0 && isCountingDown {
                 countdown -= 1
             } else {
                 timer.invalidate()
-                router.navigateTo(.StatusTrackView)
+                if isCountingDown { // Only navigate if the countdown finished normally
+                    router.navigateTo(.StatusTrackView)
+                }
             }
         }
     }
