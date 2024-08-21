@@ -10,8 +10,9 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var watchConnector = iOSToWatchConnector()
+    @EnvironmentObject var router: Router
+    @AppStorage(KeyUserDefaultEnum.status.toString) private var logStatus: Bool = false
     @Query private var emergencyContactSaved: [EmergencyContacts]
-
 
     @AppStorage(KeyUserDefaultEnum.status.toString) private var logStatus: Bool = false
     
@@ -19,12 +20,12 @@ struct ContentView: View {
         RouterView {
             ZStack {
                 if logStatus {
-                    OnboardingView()
+                   OnboardingViewWrapper()
+                    //OnboardingView()
                 } else {
                     LoginView()
                 }
             }
-            .padding()
         }
         .onAppear {
             watchConnector.emergencyContactSaved = emergencyContactSaved

@@ -34,6 +34,7 @@ class Router: ObservableObject {
         case .StatusTrackView:
             StatusTrackView()
         }
+    
     }
 
     // Used by views to navigate to another view

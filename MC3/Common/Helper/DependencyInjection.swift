@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 // Grouping UseCase ke dalam satu fungsi
 class DependencyInjection: ObservableObject {
     static let shared = DependencyInjection()

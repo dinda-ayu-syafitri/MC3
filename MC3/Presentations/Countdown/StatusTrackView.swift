@@ -10,7 +10,8 @@ import SwiftUI
 struct StatusTrackView: View {
     @State private var status: Int = 2
     @EnvironmentObject var router: Router
-    @State private var isOpened: Bool = false
+
+   // @State private var isOpened: Bool = false
     
     var body: some View {
         VStack {
@@ -31,7 +32,7 @@ struct StatusTrackView: View {
                     ZStack{
                         RoundedRectangle(cornerRadius: 15.0)
                             .frame(width: 340, height: 100)
-                            .foregroundStyle(Color.darkPinkBrand)
+                            .foregroundStyle(Color.appPink)
                         Text("Call Primary Emergency Contact")
                             .foregroundStyle(Color.white)
                             .bold()
@@ -44,38 +45,45 @@ struct StatusTrackView: View {
                 } label: {
                     Text("Call emergency service - 112")
                          .font(.headline)
-                         .foregroundColor(Color.maroonBrand)
+                         .foregroundColor(Color.appPinkSecondary)
                          .padding()
                          .overlay(
                              RoundedRectangle(cornerRadius: 10)
-                                 .stroke(Color.maroonBrand, lineWidth: 1)
+                                 .stroke(Color.appPinkSecondary, lineWidth: 1)
                                  .frame(width: 340, height: 100)
                          )
                 }
                 .padding()
                 
                 Button {
-                    print("open sheet")
-                    self.isOpened = true
+//                     print("open sheet")
+//                     self.isOpened = true
                 } label: {
-                    Text("Deactivate Alert")
-                        .foregroundStyle(Color.maroonBrand)
-                        .bold()
+                    ZStack{
+                        Text("Deactivate Alert")
+                            .foregroundStyle(Color.appPinkSecondary)
+                            .bold()
+                    }
+                    .onTapGesture {
+                        router.navigateTo(.HomeView)
+                    }
+
                 }
                 .padding(.top,20)
 
             }
             Spacer()
         }
-        .sheet(isPresented: $isOpened, content: {
-            DeactivateView(isActive: $isOpened)
-        })
-        .padding(.horizontal, 16)
-        .padding(.top, 98)
-        .padding(.bottom, 40)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.grayBrand)
-        .ignoresSafeArea()
+        .background(Color(.bg).ignoresSafeArea())
+//         .sheet(isPresented: $isOpened, content: {
+//             DeactivateView(isActive: $isOpened)
+//         })
+//         .padding(.horizontal, 16)
+//         .padding(.top, 98)
+//         .padding(.bottom, 40)
+//         .frame(maxWidth: .infinity, maxHeight: .infinity)
+//         .background(Color.grayBrand)
+//         .ignoresSafeArea()
     }
 }
 
@@ -103,7 +111,7 @@ struct sent:View {
                 Image(systemName: "checkmark.bubble.fill")
                     .resizable()
                     .frame(width: 100, height: 100)
-                    .foregroundStyle(Color.maroonBrand)
+                    .foregroundStyle(Color.appPinkSecondary)
             }
             
         }
@@ -134,7 +142,7 @@ struct track:View {
                 Image(systemName: "location.fill")
                     .resizable()
                     .frame(width: 100, height: 100)
-                    .foregroundStyle(Color.maroonBrand)
+                    .foregroundStyle(Color.appPinkSecondary)
             }
             
         }
