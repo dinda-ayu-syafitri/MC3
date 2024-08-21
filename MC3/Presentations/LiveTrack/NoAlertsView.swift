@@ -13,30 +13,32 @@ struct NoAlertsView: View {
             Text("Live Track")
                        .font(.title2)
                        .fontWeight(.bold)
-                       .foregroundColor(.appPink)
+                       .foregroundColor(.appPinkSecondary)
                        .padding(.top, 16)
                    VStack {
                        ZStack{
-                           Color.white
-                               .frame(width: 350, height: 400)
-                               .cornerRadius(10)
+                           RoundedRectangle(cornerRadius: 10.0)
+                               .stroke(.gray, lineWidth: 1)
+                               .fill(Color.white)
+                               .frame(width: 350, height: 626)
                                .padding()
                            
                            VStack{
                                Image(systemName: "bell.slash.fill")
                                    .resizable()
-                                   .frame(width: 100, height: 100)
+                                   .frame(width: 160, height: 160)
                                    .foregroundStyle(Color.appPinkSecondary)
                                Text("No active alerts")
-                                   .font(.headline)
+                                   .font(.title2)
                                    .fontWeight(.bold)
                                    .padding(.top, 8)
                                
-                               Text("You will be notified if somebody activated the SOS alert")
-                                   .font(.subheadline)
-                                   .foregroundColor(.gray)
+                               Text("You will be notified if there is an active SOS Alert")
+                                   .font(.callout)
+                                   .foregroundColor(.black)
                                    .multilineTextAlignment(.center)
-                                   .padding(.horizontal, 32)
+                                   .padding(.top, -3)
+                                   .padding(.horizontal, 60)
                            }
                            
                        }
@@ -44,7 +46,7 @@ struct NoAlertsView: View {
 
                        
                    }
-                   .padding(.top, 50)
+                   
                    
                    Spacer()
                }

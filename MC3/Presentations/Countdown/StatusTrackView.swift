@@ -9,7 +9,7 @@ import SwiftUI
 import MessageUI
 
 struct StatusTrackView: View {
-    @State private var status: Int = 1
+    @State private var status: Int = 2
     @EnvironmentObject var router: Router
     @State private var showingMessageCompose = false
     @State private var messageSent = false
@@ -35,10 +35,11 @@ struct StatusTrackView: View {
                 } label: {
                     ZStack{
                         RoundedRectangle(cornerRadius: 15.0)
-                            .frame(width: 340, height: 100)
+                            .frame(width: 340, height: 120)
                             .foregroundStyle(Color.appPink)
-                        Text("Call Primary Emergency Contact")
+                        Text("Call Ayah")
                             .foregroundStyle(Color.white)
+                            .font(.title2)
                             .bold()
                     }
                 }
@@ -47,20 +48,7 @@ struct StatusTrackView: View {
                 }
                 .padding()
                 
-                Button {
-                    
-                } label: {
-                    Text("Call emergency service - 112")
-                         .font(.headline)
-                         .foregroundColor(Color.appPinkSecondary)
-                         .padding()
-                         .overlay(
-                             RoundedRectangle(cornerRadius: 10)
-                                 .stroke(Color.appPinkSecondary, lineWidth: 1)
-                                 .frame(width: 340, height: 100)
-                         )
-                }
-                .padding()
+                
                 
                 Button {
 //                     print("open sheet")
@@ -68,7 +56,7 @@ struct StatusTrackView: View {
                 } label: {
                     ZStack{
                         Text("Deactivate Alert")
-                            .foregroundStyle(Color.appPinkSecondary)
+                            .foregroundStyle(Color.yellowDeactivate)
                             .bold()
                     }
                     .onTapGesture {
@@ -76,7 +64,7 @@ struct StatusTrackView: View {
                     }
 
                 }
-                .padding(.top,20)
+                
 
             }
             Spacer()
@@ -112,27 +100,29 @@ struct sent:View {
     var body: some View {
         ZStack{
             Color.white
-                .frame(width: 350, height: 400)
+                .frame(width: 361, height: 535)
                 .cornerRadius(10)
                 .padding()
             
             VStack{
-               
+                Image("sent")
+                    .resizable()
+                    .frame(width: 297, height: 285)
+                    .foregroundStyle(Color.appPinkSecondary)
                 Text("SOS Alert Has Been Sent")
-                    .font(.headline)
+                    .font(.title2)
                     .fontWeight(.bold)
-                    .padding(.top, 8)
+                    .foregroundStyle(Color.appPinkSecondary)
+                    .padding(.top,52)
                 
                 Text("Emergency notifications has been sent to your emergency contacts")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
+                    .font(.callout)
+                    .foregroundColor(.black)
                     .multilineTextAlignment(.center)
+                    .padding(.top,-4)
                     .padding(.horizontal, 32)
                 Spacer().frame(height: 50)
-                Image(systemName: "checkmark.bubble.fill")
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    .foregroundStyle(Color.appPinkSecondary)
+                
             }
             
         }
@@ -143,27 +133,29 @@ struct track:View {
     var body: some View {
         ZStack{
             Color.white
-                .frame(width: 350, height: 400)
+                .frame(width: 361, height: 535)
                 .cornerRadius(10)
                 .padding()
             
             VStack{
-               
-                Text("Emergency Contact is Tracking")
-                    .font(.headline)
+                Image("tracking")
+                    .resizable()
+                    .frame(width: 297, height: 285)
+                    .foregroundStyle(Color.appPinkSecondary)
+                Text("Ayah is tracking you")
+                    .font(.title2)
                     .fontWeight(.bold)
-                    .padding(.top, 8)
+                    .foregroundStyle(Color.appPinkSecondary)
+                    .padding(.top,52)
                 
-                Text("Your emergency contact is currently tracking you")
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
+                Text("Your emergency contact is currently tracking your live location")
+                    .font(.callout)
+                    .foregroundColor(.black)
                     .multilineTextAlignment(.center)
+                    .padding(.top,-4)
                     .padding(.horizontal, 32)
                 Spacer().frame(height: 50)
-                Image(systemName: "location.fill")
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    .foregroundStyle(Color.appPinkSecondary)
+                
             }
             
         }
