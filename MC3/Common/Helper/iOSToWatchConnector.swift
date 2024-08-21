@@ -59,11 +59,11 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
                     body: "We already sent you live location",
                     category: action
                 )
-                if let emergencyContacts = emergencyContactSaved, !emergencyContacts.isEmpty {
-                    for contact in emergencyContacts.first?.emergencyContacts ?? [] {
-                        let fcmToken = TokenManager.shared.fcmToken ?? ""
-
-                        messageViewModel.startSendingNotifications(emergencyContactSaved: emergencyContactSaved, userTracked: &userTracked)
+//                if let emergencyContacts = emergencyContactSaved, !emergencyContacts.isEmpty {
+//                    for contact in emergencyContacts.first?.emergencyContacts ?? [] {
+//                        let fcmToken = TokenManager.shared.fcmToken ?? ""
+//
+////                        messageViewModel.startSendingNotifications(emergencyContactSaved: emergencyContactSaved, userTracked: &userTracked)
 //                        messageViewModel.sendPushNotification(
 //                            token: contact.fcm ?? "",
 //                            title: "\(UserDefaults.standard.string(forKey: "fullName") ?? "Name Not Found") needs your help!",
@@ -71,12 +71,12 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
 //                            locationLink: "\(UserDefaults.standard.string(forKey: "idFirebase") ?? "No ID Firebase")",
 //                            senderFCM: fcmToken
 //                        )
-                    }
-
-                    print("Emergency contact is not empty")
-                } else {
-                    print("Test")
-                }
+//                    }
+//
+//                    print("Emergency contact is not empty")
+//                } else {
+//                    print("Test")
+//                }
 
                 messageViewModel.startSendingNotifications(
                     emergencyContactSaved: emergencyContactSaved,
