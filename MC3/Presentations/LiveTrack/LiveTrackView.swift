@@ -27,7 +27,7 @@ struct LiveTrackView: View {
                         UserAnnotation()
                     }
                 }
-                .frame(height: 550)
+                .frame(height: 480)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .padding()
                 .overlay(
@@ -82,6 +82,7 @@ struct LiveTrackView: View {
                 }
                 Spacer()
             }
+            .padding()
             .onAppear {
                 socketVM.setupSocket {
                     socketVM.createOrJoinRoom(roomName: "testing", isListener: true)
