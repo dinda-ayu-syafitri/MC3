@@ -54,13 +54,13 @@ class DependencyInjection: ObservableObject {
     func deactivateViewModel() -> DeactivateViewModel {
         DeactivateViewModel(userDefaultUseCase: userDefaultUseCase)
     }
-
-    func profileViewModel() -> ProfileViewModel {
-        ProfileViewModel(
-            firebaseUseCase: firebaseUseCase,
-            userDefaultUseCase: userDefaultUseCase
-        )
-    }
+//
+//    func profileViewModel() -> ProfileViewModel {
+//        ProfileViewModel(
+//            firebaseUseCase: firebaseUseCase,
+//            userDefaultUseCase: userDefaultUseCase
+//        )
+//    }
 
     func emergencyContactsViewModel() -> EmergencyContactViewModel {
         EmergencyContactViewModel(

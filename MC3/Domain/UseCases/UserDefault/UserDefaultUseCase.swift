@@ -29,17 +29,12 @@ class UserDefaultUseCase: UserDefaultUseCaseProtocol {
         userDefaultRepository.deleteData(key: .idFirebase)
         userDefaultRepository.deleteData(key: .status)
     }
-    
+
     func saveData(data: Any, key: KeyUserDefaultEnum) {
         userDefaultRepository.saveData(data: data, key: key)
-    } 
-    
+    }
+
     func getData(key: KeyUserDefaultEnum) -> Any? {
         userDefaultRepository.getData(key: key)
-    }
-    
-    func saveProfileData(fullName: String, phoneNumber: String) {
-        userDefaultRepository.saveData(data: fullName, key: .fullname)
-        userDefaultRepository.saveData(data: phoneNumber, key: .phoneNumber)
     }
 }

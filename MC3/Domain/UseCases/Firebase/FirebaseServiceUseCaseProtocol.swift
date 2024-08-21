@@ -12,6 +12,5 @@ protocol FirebaseServiceUseCaseProtocol {
     func registerAccount(idFirestore: String, fcm: String) async throws
     func updateProfileData(idFirestore: String, fullName: String, phoneNumber: String) async throws
     func updateFcm(idFirestore: String, fcm: String) async throws
-    func updateProfileData(idFirestore: String, fullName: String, phoneNumber: String) async throws
     func insertUserEmergencyContacts(idFirestore: String, emergencyContacts: [EmergencyContact]) async throws
 }
