@@ -11,6 +11,7 @@ import MapKit
 struct LiveTrackView: View {
     @StateObject private var socketVM = SocketHelper()
     @StateObject private var liveTrackVM = LiveTrackViewModel()
+    @StateObject private var locationVM = LocationManager()
     
     var body: some View {
         if liveTrackVM.showLiveTrack {
@@ -20,42 +21,26 @@ struct LiveTrackView: View {
                     .bold()
                     .foregroundColor(.appPink)
                 
-//                Text("longlat: \(socketVM.longitude), \(socketVM.latitude)")
-                
-//                Map(position: $socketVM.mapCamera) {
-//                    Annotation("Victim Location", coordinate: CLLocationCoordinate2D(latitude: socketVM.latitude, longitude: socketVM.longitude)) {
-//                        UserAnnotation()
-//                    }
-//                }
-                Map(position: $socketVM.mapCamera) {
-                    ForEach(Array(socketVM.userLocations.keys), id: \.self) { userId in
-                        if let coordinate = socketVM.userLocations[userId] {
-                            Annotation("User \(userId)", coordinate: coordinate) {
-                                UserAnnotation() 
-                            }
+                MapComponent()
+                    .environmentObject(socketVM)
+                    .environmentObject(locationVM)
+                    .overlay(
+                        VStack(alignment: .leading) {
+                            Text("Current Location")
+                                .font(.headline)
+                                .padding(.bottom, 2)
+                            
+                            Text("Kompleks Ruko Flourite, Jl. Raya Kelapa Gading Utara No.49, Tangerang Selatan")
+                                .font(.subheadline)
                         }
-                    }
-                }
-                .frame(height: 480)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-                .padding()
-                .overlay(
-                    VStack(alignment: .leading) {
-                        Text("Current Location")
-                            .font(.headline)
-                            .padding(.bottom, 2)
-                        
-                        Text("Kompleks Ruko Flourite, Jl. Raya Kelapa Gading Utara No.49, Tangerang Selatan")
-                            .font(.subheadline)
-                    }
-                        .frame(width: 300)
-                        .padding()
-                        .background(Color.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                        .shadow(radius: 5)
-                        .padding(.top, 30),
-                    alignment: .top
-                )
+                            .frame(width: 300)
+                            .padding()
+                            .background(Color.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .shadow(radius: 5)
+                            .padding(.top, 30),
+                        alignment: .top
+                    )
                 
                 HStack {
                     Button {
@@ -93,9 +78,33 @@ struct LiveTrackView: View {
             }
             .padding()
             .onAppear {
-                socketVM.setupSocket {
-                    socketVM.createOrJoinRoom(roomName: "realTest", isListener: true)
+                locationVM.checkLocationAuthorization()
+                socketVM.getInitializeMapCamera(center: locationVM.lastKnownLocation)
+            }
+            .onChange(of: locationVM.userAcceptLocation) { oldValue, newValue in
+                if (newValue) {
+                    socketVM.setupSocket {
+                        socketVM.createOrJoinRoom(roomName: "realTest", isListener: true)
+                    }
                 }
+            }
+            .onChange(of: locationVM.lastKnownLocation) { oldValue, newValue in
+                socketVM.sendMessageToRoom(roomName: "realTest", message: [
+                    "longitude" : (locationVM.lastKnownLocation.longitude) as Double,
+                    "latitude" : (locationVM.lastKnownLocation.latitude) as Double,
+                    "user" : locationVM.userNumber
+                ])
+            }
+            .alert("Location Access Needed", isPresented: $locationVM.alertingAlwaysUseLocation) {
+                Button("Go to Settings") {
+                    if let appSettings = URL(string: UIApplication.openSettingsURLString) {
+                        UserDefaults.standard.setValue(true, forKey: KeyUserDefaultEnum.locationPrivacy.toString)
+                        UIApplication.shared.open(appSettings)
+                    }
+                }
+                Button("Cancel", role: .cancel) { }
+            } message: {
+                Text("This app requires access to your location at all times to provide certain features. Please go to Settings and enable 'Always' location access.")
             }
             .onDisappear {
                 socketVM.disconnectSocket()

@@ -18,9 +18,6 @@ final class SocketHelper: ObservableObject {
     @Published var isListener: Bool = false
     @Published var mapRegion: MKCoordinateRegion = MKCoordinateRegion()
     @Published var mapCamera: MapCameraPosition = .region(.userRegion)
-//    @Published var longitude: CLLocationDegrees = -6.303338
-//    @Published var latitude: CLLocationDegrees = 106.638168
-//    @Published var userId: Double = 0
     @Published var userLocations: [Double: CLLocationCoordinate2D] = [:]
     
     init() {
@@ -81,21 +78,9 @@ final class SocketHelper: ObservableObject {
                 return
             }
             
-//            DispatchQueue.main.async {
-//                self?.messages = "Longitude: \(longitude), Latitude: \(latitude), user: \(userId)"
-//                self?.longitude = longitude
-//                self?.latitude = latitude
-//                self?.userId = userId
-//                
-//                let newRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), latitudinalMeters: 1000, longitudinalMeters: 1000)
-//                self?.mapCamera = MapCameraPosition.region(newRegion)
-//            }
             DispatchQueue.main.async {
                 let userCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                 self?.userLocations[userId] = userCoordinate
-                
-//                let newRegion = MKCoordinateRegion(center: userCoordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
-//                self?.mapCamera = MapCameraPosition.region(newRegion)
             }
         }
     }

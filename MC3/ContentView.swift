@@ -16,7 +16,7 @@ struct ContentView: View {
     
     var body: some View {
         RouterView {
-            StatusTrackView()
+            LiveTrackView()
 //            ZStack {
 //                if logStatus {
 //                   OnboardingViewWrapper()

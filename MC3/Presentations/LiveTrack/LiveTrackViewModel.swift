@@ -8,5 +8,5 @@
 import Foundation
 
 class LiveTrackViewModel: ObservableObject {
-    @Published var showLiveTrack = false
+    @Published var showLiveTrack = true
 }

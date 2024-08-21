@@ -108,42 +108,6 @@ struct ContactFormView: View {
     }
 }
 
-//struct ContactPickerView: View {
-//    @Environment(\.presentationMode) var presentationMode
-//    @Binding var selectedContact: Contact
-//
-//    var body: some View {
-//        NavigationView {
-//            List {
-//                // Mock data for contacts list, replace with real data fetching from user's contacts
-//                Button(action: {
-//                    selectedContact.name = "John Doe"
-//                    selectedContact.phoneNumber = "123456789"
-//                    presentationMode.wrappedValue.dismiss()
-//                }) {
-//                    Text("John Doe")
-//                }
-//
-//                Button(action: {
-//                    selectedContact.name = "Jane Smith"
-//                    selectedContact.phoneNumber = "987654321"
-//                    presentationMode.wrappedValue.dismiss()
-//                }) {
-//                    Text("Jane Smith")
-//                }
-//                // More contacts...
-//            }
-//            .navigationTitle("Add Contact")
-//            .navigationBarItems(leading: Button("Cancel") {
-//                presentationMode.wrappedValue.dismiss()
-//            }, trailing: Button("Add") {
-//                // Implement the add action
-//                presentationMode.wrappedValue.dismiss()
-//            })
-//        }
-//    }
-//}
-
 struct Contact: Identifiable {
     var id = UUID()
     var name: String

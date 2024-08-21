@@ -200,18 +200,6 @@ struct AddEmergencyContactView: View {
             .padding(.top, 32)
             .padding()
 
-//            if !emergencyContactSaved.isEmpty {
-//                ForEach(emergencyContactSaved.first!.emergencyContacts, id: \.id) { contact in
-//                    VStack {
-//                        Text(contact.fullName)
-//                        Text("\(emergencyContactSaved.first?.emergencyContacts.count)")
-//                    }
-//                }
-//            } else {
-//                Text("Emergency Contact Empty")
-//            }
-
-
             Spacer()
             Button(action: {
                 Task {
@@ -234,23 +222,6 @@ struct AddEmergencyContactView: View {
                 
             })
             .padding()
-
-//            Button(action: {
-//                Task {
-//                    for contact in emergencyContactSaved {
-//                        context.delete(contact)
-//                    }
-//
-//                    do {
-//                        try context.save()
-//                    } catch {
-//                        print("Failed to delete contacts: \(error.localizedDescription)")
-//                    }
-//                }
-//            }, label: {
-//                Text("Delete All Local Contacts")
-//            })
-
         }
         .background(Color.bg)
     }
