@@ -60,46 +60,24 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
                     category: action
                 )
 
-//                if !emergencyContactSaved?.isEmpty {
-//                    for contact in emergencyContacts.first?.emergencyContacts ?? [] {
-//                        let fcmToken = TokenManager.shared.fcmToken ?? ""
-//
-//                        messageViewModel.sendPushNotification(
-//                            token: contact.fcm ?? "",
-//                            title: "\(contact.fullName) needs your help!",
-//                            body: "\(contact.fullName) sent you an SOS message. Reach out to her immediately!",
-//                            locationLink: "testing",
-//                            senderFCM: fcmToken
-//                        )
-//                    }
-////                    ForEach(emergencyContactSaved.first!.emergencyContacts, id: \.id) { contact in
-////                        VStack {
-////                            Text(contact.fullName)
-////                            Text("\(emergencyContactSaved.first?.emergencyContacts.count)")
-////                        }
-////                    }
-//                } else {
-//                    Text("Emergency Contact Empty")
-//                }
+                // Send Push Notification to Emergency Contact
+                if let emergencyContacts = emergencyContactSaved, !emergencyContacts.isEmpty {
+                    for contact in emergencyContacts.first?.emergencyContacts ?? [] {
+                        let fcmToken = TokenManager.shared.fcmToken ?? ""
 
-                // Unwrapping emergencyContactSaved to ensure it is not nil and not empty
-//                if let emergencyContacts = emergencyContactSaved, !emergencyContacts.isEmpty {
-//                    for contact in emergencyContacts.first?.emergencyContacts ?? [] {
-//                        let fcmToken = TokenManager.shared.fcmToken ?? ""
-//
-//                        messageViewModel.sendPushNotification(
-//                            token: contact.fcm ?? "",
-//                            title: "\(contact.fullName) needs your help!",
-//                            body: "\(contact.fullName) sent you an SOS message. Reach out to her immediately!",
-//                            locationLink: "testing",
-//                            senderFCM: fcmToken
-//                        )
-//                    }
-//
-//                    print("Emergency contact is not empty")
-//                } else {
-//                    print("Test")
-//                }
+                        messageViewModel.sendPushNotification(
+                            token: contact.fcm ?? "",
+                            title: "\(contact.fullName) needs your help!",
+                            body: "\(contact.fullName) sent you an SOS message. Reach out to her immediately!",
+                            locationLink: "testing",
+                            senderFCM: fcmToken
+                        )
+                    }
+
+                    print("Emergency contact is not empty")
+                } else {
+                    print("Test")
+                }
             }
         } else {
             print("Unknown action received: \(message)")

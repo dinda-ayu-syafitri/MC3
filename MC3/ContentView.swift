@@ -5,11 +5,13 @@
 //  Created by Dinda Ayu Syafitri on 09/08/24.
 //
 
+import SwiftData
 import SwiftUI
 
 struct ContentView: View {
 //     @State var reachable = "No"
     @StateObject var watchConnector = iOSToWatchConnector()
+    @Query private var emergencyContactSaved: [EmergencyContacts]
 
 //     var body: some View {
 //         VStack {
@@ -54,6 +56,9 @@ struct ContentView: View {
                 }
             }
             .padding()
+        }
+        .onAppear {
+            watchConnector.emergencyContactSaved = emergencyContactSaved
         }
     }
 }
