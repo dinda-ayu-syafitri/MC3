@@ -9,6 +9,7 @@ import Foundation
 
 class MessageNotificationViewModel: ObservableObject {
     @Published var fcmToken: String = ""
+    var dispatchTimer: DispatchSourceTimer?
 
     func sendPushNotification(token: String, title: String, body: String, locationLink: String, senderFCM: String) {
         let url = URL(string: "https://mc-3-server.vercel.app/send")!
@@ -33,5 +34,49 @@ class MessageNotificationViewModel: ObservableObject {
         }
 
         task.resume()
+    }
+
+    func startSendingNotifications(emergencyContactSaved: [EmergencyContacts]?, userTracked: inout Bool) {
+        guard !userTracked else {
+            print("User is already tracked, not starting notifications.")
+            return
+        }
+
+        guard let emergencyContacts = emergencyContactSaved, !emergencyContacts.isEmpty else {
+            print("No emergency contacts available, not starting notifications.")
+            return
+        }
+
+        // Cancel any existing timer
+        dispatchTimer?.cancel()
+
+        dispatchTimer = DispatchSource.makeTimerSource(queue: DispatchQueue.global())
+        dispatchTimer?.schedule(deadline: .now(), repeating: .seconds(1))
+
+        dispatchTimer?.setEventHandler { [weak self] in
+            guard let self = self else {
+                print("Self is nil, stopping the timer.")
+                return
+            }
+
+            print("Timer fired, sending notifications...")
+
+            for contact in emergencyContacts.first?.emergencyContacts ?? [] {
+                let fcmToken = TokenManager.shared.fcmToken ?? ""
+                print("Sending notification to contact with FCM token: \(contact.fcm ?? "nil")")
+
+                self.sendPushNotification(
+                    token: contact.fcm ?? "",
+                    title: "\(UserDefaults.standard.string(forKey: "fullName") ?? "Name Not Found") needs your help!",
+                    body: "\(UserDefaults.standard.string(forKey: "fullName") ?? "Name Not Found") sent you an SOS message. Reach out to her immediately!",
+                    locationLink: "\(UserDefaults.standard.string(forKey: "idFirebase") ?? "No ID Firebase")",
+                    senderFCM: fcmToken
+                )
+            }
+
+            print("Repeated notification sent")
+        }
+        dispatchTimer?.resume()
+        print("Notification timer started.")
     }
 }
