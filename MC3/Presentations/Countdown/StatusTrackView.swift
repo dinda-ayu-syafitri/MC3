@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import MessageUI
 
 struct StatusTrackView: View {
     @State private var status: Int = 2
     @EnvironmentObject var router: Router
-
+    @State private var showingMessageCompose = false
+    @State private var messageSent = false
    // @State private var isOpened: Bool = false
     
     var body: some View {
@@ -19,6 +21,13 @@ struct StatusTrackView: View {
                    VStack {
                        if status == 1{
                            sent()
+                               .onAppear {
+                                   makeCall()
+                                   sendMessage()
+                               }
+                               .sheet(isPresented: $showingMessageCompose) {
+                                   MessageComposeViewControllerWrapper(isPresented: $showingMessageCompose, messageSent: $messageSent)
+                               }
                        }else{
                            track()
                        }
@@ -85,6 +94,20 @@ struct StatusTrackView: View {
 //         .background(Color.grayBrand)
 //         .ignoresSafeArea()
     }
+    
+    func makeCall() {
+        let phoneNumber = "+6287780605052"
+        if let phoneURL = URL(string: "tel://\(phoneNumber)") {
+            print("Attempting to call: \(phoneNumber)")
+            UIApplication.shared.open(phoneURL, options: [:], completionHandler: nil)
+        } else {
+            print("Failed to create URL for the phone number.")
+        }
+    }
+
+    func sendMessage() {
+        showingMessageCompose = true
+    }
 }
 
 struct sent:View {
@@ -147,6 +170,38 @@ struct track:View {
             
         }
     }
+}
+
+struct MessageComposeViewControllerWrapper: UIViewControllerRepresentable {
+    @Binding var isPresented: Bool
+    @Binding var messageSent: Bool
+
+    class Coordinator: NSObject, MFMessageComposeViewControllerDelegate {
+        var parent: MessageComposeViewControllerWrapper
+
+        init(parent: MessageComposeViewControllerWrapper) {
+            self.parent = parent
+        }
+
+        func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+            parent.isPresented = false
+            parent.messageSent = (result == .sent)
+        }
+    }
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(parent: self)
+    }
+
+    func makeUIViewController(context: Context) -> MFMessageComposeViewController {
+        let composeVC = MFMessageComposeViewController()
+        composeVC.body = "Someone is calling you"
+        composeVC.recipients = ["+6287780605052"] // You can set the recipient's number here
+        composeVC.messageComposeDelegate = context.coordinator
+        return composeVC
+    }
+
+    func updateUIViewController(_ uiViewController: MFMessageComposeViewController, context: Context) {}
 }
 
 #Preview {
