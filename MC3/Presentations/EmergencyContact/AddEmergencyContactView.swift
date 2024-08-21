@@ -22,11 +22,11 @@ struct AddEmergencyContactView: View {
                 .font(.title2)
                 .multilineTextAlignment(.center)
                 .fontWeight(.bold)
-
+            
             Text("Emergency contacts are notified when the SOS Alert is activated. ")
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
-
+            
             VStack(spacing: 16) {
                 VStack {
                     HStack {
@@ -37,7 +37,7 @@ struct AddEmergencyContactView: View {
                             RoundedRectangle(cornerRadius: 25.0)
                                 .fill(emergencyContactVM.emergencyContacts.first(where: { $0.isPrimary }) != nil ? .gray : Color.appPink)
                                 .frame(width: 80, height: 35)
-                                
+                            
                             Button(action: {
                                 emergencyContactVM.isShowingPicker = true
                                 emergencyContactVM.isPrimary = true
@@ -57,7 +57,7 @@ struct AddEmergencyContactView: View {
                             }
                         }
                     }
-
+                    
                     if let primaryContact = emergencyContactVM.emergencyContacts.first(where: { $0.isPrimary }) {
                         List {
                             RoundedRectangle(cornerRadius: 10)
@@ -69,7 +69,7 @@ struct AddEmergencyContactView: View {
                                             .bold()
                                             .multilineTextAlignment(.leading)
                                             .frame(maxWidth: .infinity, alignment: .leading)
-
+                                        
                                         Text("\(primaryContact.phoneNumber)")
                                             .frame(maxWidth: .infinity, alignment: .leading)
                                             .multilineTextAlignment(.leading)
@@ -77,7 +77,7 @@ struct AddEmergencyContactView: View {
                                     
                                     .frame(maxWidth: .infinity)
                                     .multilineTextAlignment(.leading)
-
+                                    
                                 })
                                 .swipeActions(edge: .trailing) {
                                     Button(role: .destructive) {
@@ -102,7 +102,7 @@ struct AddEmergencyContactView: View {
                                     .padding(5)
                                     .foregroundStyle(.gray)
                                     .multilineTextAlignment(.leading)
-
+                                
                             })
                     }
                 }
@@ -123,7 +123,7 @@ struct AddEmergencyContactView: View {
                             }, label: {
                                 Image(systemName: "plus")
                                 Text("Add")
-                                    
+                                
                             })
                             .foregroundStyle(Color.white)
                             .sheet(isPresented: $emergencyContactVM.isShowingPicker, onDismiss: nil) {
@@ -131,7 +131,7 @@ struct AddEmergencyContactView: View {
                             }
                         }
                     }
-
+                    
                     if emergencyContactVM.emergencyContacts.first(where: { $0.isPrimary == false }) != nil {
                         VStack {
                             List {
@@ -139,7 +139,7 @@ struct AddEmergencyContactView: View {
                                     if !contact.isPrimary {
                                         RoundedRectangle(cornerRadius: 15.0)
                                             .fill(.clear)
-                                            //.stroke(.gray, lineWidth: 1)
+                                        //.stroke(.gray, lineWidth: 1)
                                             .frame(height: 80)
                                             .frame(maxWidth: .infinity)
                                             .overlay(content: {
@@ -148,16 +148,16 @@ struct AddEmergencyContactView: View {
                                                         .bold()
                                                         .multilineTextAlignment(.leading)
                                                         .frame(maxWidth: .infinity, alignment: .leading)
-
+                                                    
                                                     Text("\(contact.phoneNumber)")
                                                         .frame(maxWidth: .infinity, alignment: .leading)
                                                         .multilineTextAlignment(.leading)
                                                 }
                                                 //.padding()
-
+                                                
                                                 .frame(maxWidth: .infinity)
                                                 .multilineTextAlignment(.leading)
-
+                                                
                                             })
                                             .padding(0)
                                             .swipeActions(edge: .trailing) {
@@ -172,13 +172,13 @@ struct AddEmergencyContactView: View {
                                     }
                                 }
                             }
-                           
+                            
                             .listStyle(PlainListStyle())
                             .clipShape(RoundedRectangle(cornerRadius: 15.0))
                             //.padding(.horizontal,-20)
                             
                         }
-
+                        
                     } else {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.clear)
@@ -188,32 +188,32 @@ struct AddEmergencyContactView: View {
                                 Text("Emergency notifications will be sent to all emergency contact")
                                     .foregroundStyle(.gray)
                                     .multilineTextAlignment(.leading)
-
+                                
                             })
                     }
                 }
             }
             .padding(.top, 32)
             .padding()
-
-//            if !emergencyContactSaved.isEmpty {
-//                ForEach(emergencyContactSaved.first!.emergencyContacts, id: \.id) { contact in
-//                    VStack {
-//                        Text(contact.fullName)
-//                        Text("\(emergencyContactSaved.first?.emergencyContacts.count)")
-//                    }
-//                }
-//            } else {
-//                Text("Emergency Contact Empty")
-//            }
-
-
+            
+            //            if !emergencyContactSaved.isEmpty {
+            //                ForEach(emergencyContactSaved.first!.emergencyContacts, id: \.id) { contact in
+            //                    VStack {
+            //                        Text(contact.fullName)
+            //                        Text("\(emergencyContactSaved.first?.emergencyContacts.count)")
+            //                    }
+            //                }
+            //            } else {
+            //                Text("Emergency Contact Empty")
+            //            }
+            
+            
             Spacer()
             Button(action: {
                 Task {
                     let firebaseID = Auth.auth().currentUser?.uid
                     await emergencyContactVM.insertUserEmergencyContacts(idFirestore: firebaseID ?? "", emergencyContacts: emergencyContactVM.emergencyContacts)
-
+                    
                     emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
                 }
             }, label: {
@@ -230,23 +230,23 @@ struct AddEmergencyContactView: View {
                 
             })
             .padding()
-
-//            Button(action: {
-//                Task {
-//                    for contact in emergencyContactSaved {
-//                        context.delete(contact)
-//                    }
-//
-//                    do {
-//                        try context.save()
-//                    } catch {
-//                        print("Failed to delete contacts: \(error.localizedDescription)")
-//                    }
-//                }
-//            }, label: {
-//                Text("Delete All Local Contacts")
-//            })
-
+            
+            //            Button(action: {
+            //                Task {
+            //                    for contact in emergencyContactSaved {
+            //                        context.delete(contact)
+            //                    }
+            //
+            //                    do {
+            //                        try context.save()
+            //                    } catch {
+            //                        print("Failed to delete contacts: \(error.localizedDescription)")
+            //                    }
+            //                }
+            //            }, label: {
+            //                Text("Delete All Local Contacts")
+            //            })
+            
         }
         .background(Color.bg)
     }
