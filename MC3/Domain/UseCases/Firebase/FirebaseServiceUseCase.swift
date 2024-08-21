@@ -12,27 +12,49 @@ class FirebaseServiceUseCase: FirebaseServiceUseCaseProtocol {
     init(firebaseServiceRepository: FirebaseServiceRepositoryProtocol) {
         self.firebaseServiceRepository = firebaseServiceRepository
     }
-    
+
     func registerAccount(idFirestore: String, fcm: String) async throws {
         let data = [
             "idFirestore": idFirestore,
-            "fcm": fcm
-        ] as [String : Any]
-        
+            "fcm": fcm,
+        ] as [String: Any]
+
         try await firebaseServiceRepository.submitDataWithIDFirebase(idFirestore: idFirestore, data: data)
     }
-    
-    func submitDataWithIDFirebase(idFirestore: String, data: [String : Any]) async throws {
-        try await firebaseServiceRepository.submitDataWithIDFirebase(idFirestore: idFirestore, data: data)
+
+    func updateFcm(idFirestore: String, fcm: String) async throws {
+        let data = [
+            "idFirestore": idFirestore,
+            "fcm": fcm,
+        ] as [String: Any]
+
+        try await firebaseServiceRepository.updateDataWithIDFirebase(idFirestore: idFirestore, data: data)
     }
-    
+
     func updateProfileData(idFirestore: String, fullName: String, phoneNumber: String) async throws {
         let data = [
             "idFirestore": idFirestore,
             "fullName": fullName,
             "phoneNumber": phoneNumber,
         ] as [String: Any]
-        
+
         try await firebaseServiceRepository.updateDataWithIDFirebase(idFirestore: idFirestore, data: data)
+    }
+
+    func insertUserEmergencyContacts(idFirestore: String, emergencyContacts: [EmergencyContact]) async throws {
+        let emergencyContactsData = try emergencyContacts.map { contact in
+            let data = try JSONEncoder().encode(contact)
+            return try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+        }
+
+        let data = [
+            "emergencyContacts": emergencyContactsData,
+        ]
+
+        try await firebaseServiceRepository.updateDataWithIDFirebase(idFirestore: idFirestore, data: data)
+    }
+
+    func submitDataWithIDFirebase(idFirestore: String, data: [String: Any]) async throws {
+        try await firebaseServiceRepository.submitDataWithIDFirebase(idFirestore: idFirestore, data: data)
     }
 }
