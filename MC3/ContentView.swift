@@ -13,8 +13,6 @@ struct ContentView: View {
     @EnvironmentObject var router: Router
     @AppStorage(KeyUserDefaultEnum.status.toString) private var logStatus: Bool = false
     @Query private var emergencyContactSaved: [EmergencyContacts]
-
-    @AppStorage(KeyUserDefaultEnum.status.toString) private var logStatus: Bool = false
     
     var body: some View {
         RouterView {

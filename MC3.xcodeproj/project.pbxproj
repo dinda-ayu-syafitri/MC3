@@ -11,6 +11,8 @@
 		20190CF82C6A336B001A2AB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CF72C6A336B001A2AB6 /* Assets.xcassets */; };
 		20190CFB2C6A336B001A2AB6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */; };
 		20190CFE2C6A336B001A2AB6 /* Pulse Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 20190CF12C6A336A001A2AB6 /* Pulse Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2020C9942C7590B400CEF9A1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2020C9922C7590B400CEF9A1 /* OnboardingViewController.swift */; };
+		2020C9952C7590B400CEF9A1 /* OnboardingViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2020C9932C7590B400CEF9A1 /* OnboardingViewWrapper.swift */; };
 		203E3E922C743A76000A04E0 /* CountdownManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E3E912C743A76000A04E0 /* CountdownManager.swift */; };
 		203E3E932C743A76000A04E0 /* CountdownManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E3E912C743A76000A04E0 /* CountdownManager.swift */; };
 		2058D15D2C65C65200D0557D /* MC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15C2C65C65200D0557D /* MC3App.swift */; };
@@ -160,6 +162,8 @@
 		20190CF32C6A336B001A2AB6 /* WatchMC3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchMC3App.swift; sourceTree = "<group>"; };
 		20190CF72C6A336B001A2AB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2020C9922C7590B400CEF9A1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		2020C9932C7590B400CEF9A1 /* OnboardingViewWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewWrapper.swift; sourceTree = "<group>"; };
 		203AB9A42C6C710A00D7AD86 /* MC3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MC3.entitlements; sourceTree = "<group>"; };
 		203AB9A52C6C712B00D7AD86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		203E3E912C743A76000A04E0 /* CountdownManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownManager.swift; sourceTree = "<group>"; };
@@ -830,6 +834,8 @@
 		DD6543672C738F4B00BFB0FD /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				2020C9922C7590B400CEF9A1 /* OnboardingViewController.swift */,
+				2020C9932C7590B400CEF9A1 /* OnboardingViewWrapper.swift */,
 				DD6543682C738F5500BFB0FD /* OnboardingView.swift */,
 			);
 			path = Onboarding;
@@ -1186,6 +1192,7 @@
 				DD65433C2C738D5F00BFB0FD /* FirebaseServiceDataSource.swift in Sources */,
 				DD6543822C73907000BFB0FD /* NoAlertsView.swift in Sources */,
 				DD65438E2C7390E300BFB0FD /* ContactPickerView.swift in Sources */,
+				2020C9942C7590B400CEF9A1 /* OnboardingViewController.swift in Sources */,
 				DD6543302C738CD300BFB0FD /* DependencyInjection.swift in Sources */,
 				DD6543542C738E5500BFB0FD /* EmergencyContact.swift in Sources */,
 				DD6543422C738DA900BFB0FD /* UserDefaultRepository.swift in Sources */,
@@ -1198,6 +1205,7 @@
 				DD65434C2C738E0900BFB0FD /* ProviderIdEnum.swift in Sources */,
 				DD65432E2C738CBA00BFB0FD /* SHA256.swift in Sources */,
 				DD6543742C738FCA00BFB0FD /* HomeView.swift in Sources */,
+				2020C9952C7590B400CEF9A1 /* OnboardingViewWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
