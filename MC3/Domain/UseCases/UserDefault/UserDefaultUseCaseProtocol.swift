@@ -15,4 +15,3 @@ protocol UserDefaultUseCaseProtocol {
     func getData(key: KeyUserDefaultEnum) -> Any?
 //    func saveProfileData(fullName: String, phoneNumber: String)
 }
-

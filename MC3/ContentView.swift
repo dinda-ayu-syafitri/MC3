@@ -17,12 +17,12 @@ struct ContentView: View {
     var body: some View {
         RouterView {
             ZStack {
-                if logStatus {
-                   OnboardingViewWrapper()
-                    //OnboardingView()
-                } else {
-                    LoginView()
-                }
+                AddEmergencyContactView()
+//                if logStatus {
+//                   OnboardingViewWrapper()
+//                } else {
+//                    LoginView()
+//                }
             }
         }
         .onAppear {
