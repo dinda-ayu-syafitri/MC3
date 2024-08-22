@@ -23,7 +23,7 @@ struct AddEmergencyContactView: View {
                 .multilineTextAlignment(.center)
                 .fontWeight(.bold)
                 .foregroundStyle(.blackBrand)
-            
+                .padding(.top,28)
             Text("Emergency contacts are notified when the SOS Alert is activated. ")
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
@@ -189,7 +189,7 @@ struct AddEmergencyContactView: View {
                     }
                 }
             }
-            .padding(.top, 32)
+            .padding(.top, 2)
             .padding()
             Spacer()
             Button(action: {

@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ProfileView: View {
     @StateObject private var profileVM = ProfileViewModel()
-    
+    @State private var isPickerExpanded = false
+        @State private var selectedDelayTime = 5
+        let delayTimes = Array(1...10) // Range from 1 to 10 seconds
     var body: some View {
         NavigationView { // Add this line
             ScrollView{
@@ -23,71 +25,91 @@ struct ProfileView: View {
                         
                         Circle()
                             .fill(Color.appPinkSecondary)
-                            .frame(width: 80, height: 80)
+                            .frame(width: 120, height: 120)
                         
                         Text("Syafiqah A")
-                            .font(.headline)
+                            .font(.title2)
+                            .bold()
                         
                         Text("6287821285607")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
+                            .font(.callout)
+                            .foregroundColor(.black)
                     }
                     .padding(.top)
                     
                     // Contacts Section
-                    SectionHeader(title: "Contacts")
-                    
-                    NavigationLink(destination: AddEmergencyContactView()) {
-                        ProfileRow(title: "Emergency Contacts")
-                    }
-                    
-                    // Security Section
-                    SectionHeader(title: "Security")
-                    
-                    NavigationLink(destination: Text("Pin Input View")) {
-                        ProfileRow(title: "Personal Pin")
-                    }
-                    
-                    // Settings Section
-                    SectionHeader(title: "Settings")
-                    
-                    // SOS Alert Delay Time with Picker
-                    Button(action: {
-                        withAnimation {
-                            profileVM.isPickerExpanded.toggle()
-                        }
-                    }) {
-                        HStack {
-                            Text("SOS Alert Delay Time")
-                                .foregroundColor(.black)
-                            Spacer()
-                            Text("\(profileVM.selectedDelayTime) seconds")
-                                .foregroundColor(.gray)
-                            Image(systemName: "chevron.right")
-                                .rotationEffect(.degrees(profileVM.isPickerExpanded ? 90 : 0))
-                                .animation(.easeInOut, value: profileVM.isPickerExpanded)
-                                .foregroundStyle(Color.appPinkSecondary)
-                        }
-                        .padding()
-                        .background(Color.white)
-                        .cornerRadius(10)
+
+                    Section(header: Text("Contacts")
+                        .font(.title2)
+                        .fontWeight(.bold)
                         .padding(.horizontal)
-                    }
-                    
-                    if profileVM.isPickerExpanded {
-                        Picker("Select Delay Time", selection: $profileVM.selectedDelayTime) {
-                            ForEach(profileVM.delayTimes, id: \.self) { time in
-                                Text("\(time) seconds").tag(time)
+                        .frame(maxWidth: .infinity, alignment: .leading)){
+                            NavigationLink(destination: AddEmergencyContactView()) {
+                                ProfileRow(title: "Emergency Contacts")
+
                             }
-                        }
-                        .pickerStyle(WheelPickerStyle())
-                        .frame(height: 150)
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
-                        .transition(.move(edge: .bottom))
                     }
+                       
+                    Section(header: Text("Security")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .padding(.horizontal)
+                        .padding(.top)
+                        .frame(maxWidth: .infinity, alignment: .leading)){
+                            NavigationLink(destination: Text("Pin Input View")) {
+                                ProfileRow(title: "Personal Pin")
+                            }
+                    }
+                        
                     
+                    Section(header: Text("Settings")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .padding(.horizontal)
+                        .padding(.top)
+                        .frame(maxWidth: .infinity, alignment: .leading)){
+                            // SOS Alert Delay Time with Picker
+                            Button(action: {
+                                withAnimation {
+                                    isPickerExpanded.toggle()
+                                }
+                            }) {
+                                HStack {
+                                    Text("SOS Alert Delay Time")
+                                        .foregroundColor(.black)
+                                    Spacer()
+                                    Text("\(selectedDelayTime) seconds")
+                                        .foregroundColor(.gray)
+                                    Image(systemName: "chevron.right")
+                                        .rotationEffect(.degrees(isPickerExpanded ? 90 : 0))
+                                        .animation(.easeInOut, value: isPickerExpanded)
+                                        .foregroundStyle(Color.appPinkSecondary)
+                                }
+                                .padding()
+                                .background(Color.white)
+                                .cornerRadius(10)
+                                .padding(.horizontal)
+                            }
+                            //.padding(.vertical, -5)
+                            
+                            if isPickerExpanded {
+                                Picker("Select Delay Time", selection: $selectedDelayTime) {
+                                    ForEach(delayTimes, id: \.self) { time in
+                                        Text("\(time) seconds").tag(time)
+                                    }
+                                }
+                                .pickerStyle(WheelPickerStyle())
+                                .frame(height: 150)
+                                .background(Color.white)
+                                .cornerRadius(10)
+                                .padding(.horizontal)
+                                .transition(.move(edge: .bottom))
+                            }
+
+                            Spacer()
+                        }
+                    }
+
                     Toggle(isOn: $profileVM.enableAlertSound) {
                         Text("Enable Alert Sound")
                             .foregroundColor(.black)
@@ -129,10 +151,11 @@ struct ProfileView: View {
                     
                     Spacer()
                 }
+
             }
             .background(Color(.bg).ignoresSafeArea())
         } 
-    }
+    
 }
 
 struct SectionHeader: View {
