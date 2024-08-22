@@ -6,6 +6,7 @@
 //
 import ContactsUI
 import SwiftUI
+import UIKit
 
 struct ContactPickerView: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
@@ -59,7 +60,7 @@ struct ContactPickerView: UIViewControllerRepresentable {
                     // Create a new emergency contact with the correct isPrimary flag and FCM key
                     let newEmergencyContact = EmergencyContact(
                         fullName: fullName,
-                        phoneNumber: phoneNumber,
+                        phoneNumber: phoneNumber.standardizedPhoneNumber(),
                         fcm: fcm,
                         isPrimary: parent.isPrimary
                     )

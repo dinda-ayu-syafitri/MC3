@@ -50,7 +50,6 @@ struct NoAlertsView: View {
                }
                .background(Color(.bg).ignoresSafeArea())
     }
-
 }
 
 

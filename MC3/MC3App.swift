@@ -25,6 +25,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
         UNUserNotificationCenter.current().delegate = self
         requestNotificationAuthorization()
         Messaging.messaging().delegate = self
+        BackgroundTaskManager.shared.scheduleBackgroundTask()
         return true
     }
 
@@ -42,7 +43,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
     }
 
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        print("FCM Token: \(fcmToken ?? "")")
+//        print("FCM Token: \(fcmToken ?? "")")
         TokenManager.shared.fcmToken = fcmToken
         let firebaseID = Auth.auth().currentUser?.uid
 

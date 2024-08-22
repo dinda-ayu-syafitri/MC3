@@ -34,9 +34,6 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
 
     func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
         print("foreground")
-//        print("foreground emergency contact: \(emergencyContactSaved)")
-//        print("foreground emergency contact: \(emergencyContactSaved?.first)")
-//        print("foreground emergency contact: \(emergencyContactSaved?.first?.emergencyContacts.first?.fullName)")
         handleReceivedMessage(message)
     }
 

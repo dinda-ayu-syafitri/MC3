@@ -62,16 +62,9 @@ struct Home: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .ignoresSafeArea()
         .fullScreenCover(isPresented: $homeVM.isCountdownViewPresented, content: {
-//            CountdownView()
-//            CallView()
             DeactivateView()
         })
         .navigationTitle("Home")
-//        .onAppear {
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//                heartRateViewModel.createNotificatiown(notificationType: .ABNORMALHEARTRATE)
-//            }
-//        }
     }
 }
 
