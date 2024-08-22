@@ -14,33 +14,33 @@ import SwiftUI
 import UserNotifications
 
 class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate, ObservableObject {
-    @Environment(\.managedObjectContext) private var context
     @StateObject var loginVM = DependencyInjection.shared.loginViewModel()
     @StateObject var messageVM = DependencyInjection.shared.MessageNotifViewModel()
+    @StateObject var router = Router()
 //    @StateObject var messageVM = MessageNotificationViewModel()
 //    @EnvironmentObject var messageVM: MessageNotificationViewModel
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         UNUserNotificationCenter.current().delegate = self
-        requestNotificationAuthorization()
+        //requestNotificationAuthorization()
         Messaging.messaging().delegate = self
         BackgroundTaskManager.shared.scheduleBackgroundTask()
         return true
     }
 
-    func requestNotificationAuthorization() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
-            if granted {
-                DispatchQueue.main.async {
-                    UIApplication.shared.registerForRemoteNotifications()
-                }
-                print("Notification permission granted")
-            } else {
-                print("Notification permission denied: \(error?.localizedDescription ?? "No error information")")
-            }
-        }
-    }
+//    func requestNotificationAuthorization() {
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+//            if granted {
+//                DispatchQueue.main.async {
+//                    UIApplication.shared.registerForRemoteNotifications()
+//                }
+//                print("Notification permission granted")
+//            } else {
+//                print("Notification permission denied: \(error?.localizedDescription ?? "No error information")")
+//            }
+//        }
+//    }
 
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
 //        print("FCM Token: \(fcmToken ?? "")")
@@ -95,7 +95,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
             if customMessage == "userTracked" {
                 print("user Tracked sent")
                 messageVM.stopSendingNotifications()
-                messageVM.userTrackedMessage = "userTracked"
             } else {
                 print("Notification received")
             }
@@ -120,12 +119,14 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
         print("Tapped on notification: \(userInfo)")
-        //        let userInfo = response.notification.request.content.userInfo
 
         // Access custom data here
         if let locationLink = userInfo["locationLink"] as? String,
-           let senderFCM = userInfo["senderFCM"] as? String, let customMessage = userInfo["customMessage"] as? String
+           let senderFCM = userInfo["senderFCM"] as? String, 
+            let customMessage = userInfo["customMessage"] as? String
         {
+            UserDefaults.standard.set(locationLink, forKey: KeyUserDefaultEnum.roomLiveLocation.toString)
+            Router.shared.resetAndNavigateTo(.LiveTrackView)
             if customMessage != "userTracked" {
                 messageVM.sendPushNotification(token: senderFCM, title: "\(UserDefaults.standard.string(forKey: "fullName") ?? "Emergency Contact") is tracking!", body: "\(UserDefaults.standard.string(forKey: "fullName") ?? "") is currently tracking you", locationLink: "", senderFCM: "\(TokenManager.shared.fcmToken ?? "")", customMessage: "userTracked")
             }
@@ -140,8 +141,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
                 print("user Tracked sent")
                 DispatchQueue.main.async {
                     self.messageVM.stopSendingNotifications()
-                    self.messageVM.userTrackedMessage = "userTracked"
-                    print("USER TRACKEDD \(self.messageVM.userTrackedMessage)") // Moved inside the async block
                 }
                 messageVM.saveTrackStatus(status: "userTracked", locationID: userInfo["locationLink"] as? String ?? "")
             } else {
@@ -170,6 +169,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
 
 @main
 struct MC3App: App {
+    @Environment(\.managedObjectContext) private var context
     private let notificationDelegate = NotificationDelegate()
 
     init() {
@@ -178,15 +178,6 @@ struct MC3App: App {
 
         // Register notification categories here if needed
         NotificationManager.shared.registerActionsWithCategories()
-
-        // Request notification permissions
-        NotificationManager.shared.requestAuthorization { granted in
-            if granted {
-                print("Notification permission granted.")
-            } else {
-                print("Notification permission denied.")
-            }
-        }
     }
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate

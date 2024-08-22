@@ -40,6 +40,6 @@ class HomeViewModel: ObservableObject {
         
         UserDefaults.standard.removeObject(forKey: KeyUserDefaultEnum.idFirebase.toString)
         UserDefaults.standard.removeObject(forKey: KeyUserDefaultEnum.email.toString)
-        UserDefaults.standard.removeObject(forKey: KeyUserDefaultEnum.status.toString)
+        UserDefaults.standard.removeObject(forKey: KeyUserDefaultEnum.statusBoarding.toString)
     }
 }

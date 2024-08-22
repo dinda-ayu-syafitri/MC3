@@ -24,11 +24,12 @@
 		2084E3652C73B03B00ECA12E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E3642C73B03B00ECA12E /* Router.swift */; };
 		2084E3682C73B62900ECA12E /* RouterWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E3672C73B62900ECA12E /* RouterWatchView.swift */; };
 		2084E36A2C73B65A00ECA12E /* RouterWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2084E3692C73B65A00ECA12E /* RouterWatch.swift */; };
+		209B9AE62C776A6000B4A4FC /* SOSActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209B9AE52C776A6000B4A4FC /* SOSActiveView.swift */; };
+		209B9AE82C776E7800B4A4FC /* custom.wav in Resources */ = {isa = PBXBuildFile; fileRef = 209B9AE72C776E7800B4A4FC /* custom.wav */; };
 		20B8BDAD2C743EAE004561AE /* EmergencyContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8BDAC2C743EAE004561AE /* EmergencyContacts.swift */; };
 		20F95A6A2C6E11A5005B3DA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20F95A692C6E11A5005B3DA1 /* GoogleService-Info.plist */; };
 		81D354D42C75CE570055DF21 /* CallViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D354D32C75CE570055DF21 /* CallViewModel.swift */; };
 		81D354D62C75CEDB0055DF21 /* MessageComposeViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D354D52C75CEDB0055DF21 /* MessageComposeViewControllerWrapper.swift */; };
-		81D354D82C76EBAD0055DF21 /* MarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D354D72C76EBAD0055DF21 /* MarkerView.swift */; };
 		DA221D3C2C71C1E400F88958 /* CallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D3B2C71C1E400F88958 /* CallView.swift */; };
 		DA221D3F2C71C8DB00F88958 /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D3E2C71C8DB00F88958 /* TrackingView.swift */; };
 		DA221D442C71CC7F00F88958 /* HBJumpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA221D432C71CC7F00F88958 /* HBJumpView.swift */; };
@@ -62,6 +63,7 @@
 		DD0B05E02C750DDE0010F718 /* BackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05DF2C750DDE0010F718 /* BackgroundTaskManager.swift */; };
 		DD4C625F2C767A400027A13A /* MapComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C625E2C767A400027A13A /* MapComponent.swift */; };
 		DD4C62612C76EF110027A13A /* MarkerLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C62602C76EF110027A13A /* MarkerLogo.swift */; };
+		DD4C62632C76FFB70027A13A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C62622C76FFB70027A13A /* ProfileViewModel.swift */; };
 		DD4C77512C6A59A800CEDFB2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = DD4C77502C6A59A800CEDFB2 /* SocketIO */; };
 		DD4DFAC72C75B2F100E53681 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4DFAC62C75B2F100E53681 /* String+Extension.swift */; };
 		DD6542F32C7387B100BFB0FD /* AllViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542F22C7387B100BFB0FD /* AllViews.swift */; };
@@ -175,7 +177,6 @@
 		20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2020C9922C7590B400CEF9A1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		2020C9932C7590B400CEF9A1 /* OnboardingViewWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewWrapper.swift; sourceTree = "<group>"; };
-		2020C9982C75AF4600CEF9A1 /* custom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = custom.wav; sourceTree = "<group>"; };
 		203AB9A42C6C710A00D7AD86 /* MC3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MC3.entitlements; sourceTree = "<group>"; };
 		203AB9A52C6C712B00D7AD86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		203E3E912C743A76000A04E0 /* CountdownManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownManager.swift; sourceTree = "<group>"; };
@@ -188,11 +189,12 @@
 		2084E3642C73B03B00ECA12E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		2084E3672C73B62900ECA12E /* RouterWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterWatchView.swift; sourceTree = "<group>"; };
 		2084E3692C73B65A00ECA12E /* RouterWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterWatch.swift; sourceTree = "<group>"; };
+		209B9AE52C776A6000B4A4FC /* SOSActiveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SOSActiveView.swift; path = "WatchMC3 Watch App/Presentation/Views/Tracking/SOSActiveView.swift"; sourceTree = SOURCE_ROOT; };
+		209B9AE72C776E7800B4A4FC /* custom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = custom.wav; sourceTree = "<group>"; };
 		20B8BDAC2C743EAE004561AE /* EmergencyContacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContacts.swift; sourceTree = "<group>"; };
 		20F95A692C6E11A5005B3DA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81D354D32C75CE570055DF21 /* CallViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallViewModel.swift; sourceTree = "<group>"; };
 		81D354D52C75CEDB0055DF21 /* MessageComposeViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageComposeViewControllerWrapper.swift; sourceTree = "<group>"; };
-		81D354D72C76EBAD0055DF21 /* MarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerView.swift; sourceTree = "<group>"; };
 		DA221D2D2C6F9BB700F88958 /* WatchMC3-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "WatchMC3-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		DA221D3B2C71C1E400F88958 /* CallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallView.swift; sourceTree = "<group>"; };
 		DA221D3E2C71C8DB00F88958 /* TrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrackingView.swift; path = "WatchMC3 Watch App/Presentation/Views/Tracking/TrackingView.swift"; sourceTree = SOURCE_ROOT; };
@@ -228,6 +230,7 @@
 		DD0B05DF2C750DDE0010F718 /* BackgroundTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTaskManager.swift; sourceTree = "<group>"; };
 		DD4C625E2C767A400027A13A /* MapComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapComponent.swift; sourceTree = "<group>"; };
 		DD4C62602C76EF110027A13A /* MarkerLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerLogo.swift; sourceTree = "<group>"; };
+		DD4C62622C76FFB70027A13A /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		DD4DFAC62C75B2F100E53681 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		DD6542F22C7387B100BFB0FD /* AllViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViews.swift; sourceTree = "<group>"; };
 		DD6542F42C7387C400BFB0FD /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -418,7 +421,7 @@
 				DD6543602C738EDB00BFB0FD /* Presentations */,
 				2058D15C2C65C65200D0557D /* MC3App.swift */,
 				2058D15E2C65C65200D0557D /* ContentView.swift */,
-				2020C9982C75AF4600CEF9A1 /* custom.wav */,
+				209B9AE72C776E7800B4A4FC /* custom.wav */,
 				2058D1602C65C65400D0557D /* Assets.xcassets */,
 				2058D1622C65C65400D0557D /* Preview Content */,
 			);
@@ -495,6 +498,7 @@
 			children = (
 				DA221D3E2C71C8DB00F88958 /* TrackingView.swift */,
 				DA90D7732C77854900AF4204 /* TrackingViewModel.swift */,
+				209B9AE52C776A6000B4A4FC /* SOSActiveView.swift */,
 			);
 			path = Tracking;
 			sourceTree = "<unknown>";
@@ -885,6 +889,7 @@
 			isa = PBXGroup;
 			children = (
 				DD65436B2C738F7100BFB0FD /* ProfileView.swift */,
+				DD4C62622C76FFB70027A13A /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -924,7 +929,6 @@
 				DD65437B2C73902C00BFB0FD /* LiveTrackView.swift */,
 				DD65437D2C73904D00BFB0FD /* LocationManagerViewModel.swift */,
 				DD6543812C73907000BFB0FD /* NoAlertsView.swift */,
-				81D354D72C76EBAD0055DF21 /* MarkerView.swift */,
 			);
 			path = LiveTrack;
 			sourceTree = "<group>";
@@ -1123,7 +1127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2058D1642C65C65400D0557D /* Preview Assets.xcassets in Resources */,
-				2020C9992C75AF4600CEF9A1 /* custom.wav in Resources */,
+				209B9AE82C776E7800B4A4FC /* custom.wav in Resources */,
 				2058D1612C65C65400D0557D /* Assets.xcassets in Resources */,
 				20F95A6A2C6E11A5005B3DA1 /* GoogleService-Info.plist in Resources */,
 			);
@@ -1178,6 +1182,7 @@
 				DA6FC70C2C745E9A00847046 /* CountdownViewModel.swift in Sources */,
 				DD65431A2C738A7900BFB0FD /* HeartRateManager.swift in Sources */,
 				DA221D3C2C71C1E400F88958 /* CallView.swift in Sources */,
+				209B9AE62C776A6000B4A4FC /* SOSActiveView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1206,12 +1211,12 @@
 				DD65437C2C73902C00BFB0FD /* LiveTrackView.swift in Sources */,
 				20B8BDAD2C743EAE004561AE /* EmergencyContacts.swift in Sources */,
 				DA8B4A512C6CC07E00BC5987 /* NotificationManager.swift in Sources */,
-				81D354D82C76EBAD0055DF21 /* MarkerView.swift in Sources */,
 				DD0B05DA2C74D9AE0010F718 /* LocationManager.swift in Sources */,
 				DD6543252C738C5000BFB0FD /* CLLocationCoordinate2D+Extension.swift in Sources */,
 				DD0B05C52C749E3C0010F718 /* StatusTrackView.swift in Sources */,
 				2058D15F2C65C65200D0557D /* ContentView.swift in Sources */,
 				DD65433A2C738D5000BFB0FD /* FirebaseServiceDataSourceProtocol.swift in Sources */,
+				DD4C62632C76FFB70027A13A /* ProfileViewModel.swift in Sources */,
 				81D354D62C75CEDB0055DF21 /* MessageComposeViewControllerWrapper.swift in Sources */,
 				DD6543352C738D0600BFB0FD /* UserDefaultDataSourceProtocol.swift in Sources */,
 				DD6543722C738FB000BFB0FD /* HomeViewModel.swift in Sources */,

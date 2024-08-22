@@ -8,37 +8,44 @@
 import SwiftUI
 
 struct DeactivateView: View {
+    @EnvironmentObject private var router: Router
     @StateObject private var deactivateVM = DependencyInjection.shared.deactivateViewModel()
     @FocusState private var focusedField: FocusedFieldEnum?
     @Binding var isActive: Bool
+    var isSetting: Bool = false
     
     var body: some View {
         VStack(alignment: .center, spacing: 120) {
             ZStack(alignment: .center) {
                 HStack(alignment: .center) {
-                    Text("Deactivate SOS Alert")
+                    Text(isSetting ? "Enter Personal Pin" : "Deactivate SOS Alert")
                         .font(.title3)
                         .bold()
                         .foregroundStyle(.black)
                 }
                 
-                HStack(alignment: .center) {
-                    Spacer()
-                    
-                    Button(action: {
-                        print("Cancel")
-                        self.isActive = false
-                    }, label: {
-                        Text("Cancel")
-                            .foregroundStyle(.red)
-                            .font(.body)
-                    })
+                if !isSetting {
+                    HStack(alignment: .center) {
+                        Spacer()
+                        
+                        Button(action: {
+                            if isSetting {
+                                router.navigateBack()
+                            } else {
+                                self.isActive = false
+                            }
+                        }, label: {
+                            Text("Cancel")
+                                .foregroundStyle(.red)
+                                .font(.body)
+                        })
+                    }                    
                 }
             }
             .padding(.horizontal, 16)
             
             VStack(alignment: .center, spacing: 8) {
-                Text("Enter personal pin to deacticate SOS Alert")
+                Text(isSetting ? "Enter your personal pin" : "Enter personal pin to deacticate SOS Alert")
                     .foregroundStyle(.black)
                     .font(.body)
                 

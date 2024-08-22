@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var enableAlertSound = true
-    @State private var enableHaptic = true
-    @State private var enableAutomaticAlert = true
+    @StateObject private var profileVM = ProfileViewModel()
     @State private var isPickerExpanded = false
     @State private var selectedDelayTime = 5
     let delayTimes = Array(1...10) // Range from 1 to 10 seconds
@@ -41,27 +39,28 @@ struct ProfileView: View {
                     .padding(.top)
                     
                     // Contacts Section
+                    
                     Section(header: Text("Contacts")
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding(.horizontal)
                         .frame(maxWidth: .infinity, alignment: .leading)){
-                            NavigationLink(destination: AddEmergencyContactView()) {
+                            NavigationLink(destination: AddEmergencyContactView(fromSetting: true)) {
                                 ProfileRow(title: "Emergency Contacts")
                             }
-                    }
-                       
+                        }
+                    
                     Section(header: Text("Security")
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding(.horizontal)
                         .padding(.top)
                         .frame(maxWidth: .infinity, alignment: .leading)){
-                            NavigationLink(destination: Text("Pin Input View")) {
+                            NavigationLink(destination: DeactivateView(isActive: .constant(true), isSetting: true)) {
                                 ProfileRow(title: "Personal Pin")
                             }
-                    }
-                        
+                        }
+                    
                     
                     Section(header: Text("Settings")
                         .font(.title2)
@@ -107,36 +106,56 @@ struct ProfileView: View {
                                 .transition(.move(edge: .bottom))
                             }
                             
-                            
-                            Toggle(isOn: $enableHaptic) {
-                                Text("Enable haptic")
-                                    .foregroundColor(.black)
-                            }
-                            .padding()
-                            .background(Color.white)
-                            .cornerRadius(10)
-                            .padding(.horizontal)
-                            .padding(.vertical, -5)
-                            
-                            Toggle(isOn: $enableAutomaticAlert) {
-                                Text("Enable automatic alert")
-                                    .foregroundColor(.black)
-                            }
-                            .padding()
-                            .background(Color.white)
-                            .cornerRadius(10)
-                            .padding(.horizontal)
-                            
                             Spacer()
                         }
-                    }
-                    
-                    
-                    
+                }
+                
+                Toggle(isOn: $profileVM.enableAlertSound) {
+                    Text("Enable Alert Sound")
+                        .foregroundColor(.black)
+                }
+                .padding()
+                .background(Color.white)
+                .cornerRadius(10)
+                .padding(.horizontal)
+                
+                Toggle(isOn: $profileVM.enableHaptic) {
+                    Text("Enable haptic")
+                        .foregroundColor(.black)
+                }
+                .padding()
+                .background(Color.white)
+                .cornerRadius(10)
+                .padding(.horizontal)
+                
+                Toggle(isOn: $profileVM.enableAutomaticAlert) {
+                    Text("Enable automatic alert")
+                        .foregroundColor(.black)
+                }
+                .padding()
+                .background(Color.white)
+                .cornerRadius(10)
+                .padding(.horizontal)
+                
+                Button(action: {
+                    profileVM.logOut()
+                }, label: {
+                    Text("Log out")
+                        .foregroundStyle(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.red)
+                        .cornerRadius(10)
+                        .padding(.horizontal)
+                })
+                
+                Spacer()
             }
-            .background(Color(.bg).ignoresSafeArea())
-        } // Close NavigationView here
+            
+        }
+        .background(Color(.bg).ignoresSafeArea())
     }
+    
 }
 
 struct SectionHeader: View {
@@ -167,7 +186,6 @@ struct ProfileRow: View {
         .background(Color.white)
         .cornerRadius(10)
         .padding(.horizontal)
-
     }
 }
 
