@@ -23,16 +23,19 @@ struct AddEmergencyContactView: View {
                 .font(.title2)
                 .multilineTextAlignment(.center)
                 .fontWeight(.bold)
-            
+                .foregroundStyle(.blackBrand)
+                .padding(.top,28)
             Text("Emergency contacts are notified when the SOS Alert is activated. ")
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
+                .foregroundStyle(.blackBrand)
             
             VStack(spacing: 16) {
                 VStack {
                     HStack {
                         Text("Primary Contact")
                             .bold()
+                            .foregroundStyle(.blackBrand)
                         Spacer()
                         ZStack {
                             RoundedRectangle(cornerRadius: 25.0)
@@ -111,6 +114,7 @@ struct AddEmergencyContactView: View {
                     HStack {
                         Text("Other Contacts")
                             .bold()
+                            .foregroundStyle(.blackBrand)
                         Spacer()
                         ZStack {
                             RoundedRectangle(cornerRadius: 20)
@@ -186,7 +190,7 @@ struct AddEmergencyContactView: View {
                     }
                 }
             }
-            .padding(.top, 32)
+            .padding(.top, 2)
             .padding()
             Spacer()
             Button(action: {

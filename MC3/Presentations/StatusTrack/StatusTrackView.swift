@@ -74,11 +74,11 @@ struct StatusTrackView: View {
                     }
                 }
             }
-            .onChange(of: locationVM.lastKnownLocation) { _, _ in
-                socketVM.sendMessageToRoom(roomName: "realTest", message: [
-                    "longitude": (locationVM.lastKnownLocation.longitude) as Double,
-                    "latitude": (locationVM.lastKnownLocation.latitude) as Double,
-                    "user": locationVM.userNumber
+            .onChange(of: locationVM.lastKnownLocation) { oldValue, newValue in
+                socketVM.sendMessageToRoom(roomName: UserDefaults.standard.string(forKey: KeyUserDefaultEnum.idFirebase.toString)!, message: [
+                    "longitude" : (locationVM.lastKnownLocation.longitude) as Double,
+                    "latitude" : (locationVM.lastKnownLocation.latitude) as Double,
+                    "user" : locationVM.userNumber
                 ])
             }
             .onDisappear {

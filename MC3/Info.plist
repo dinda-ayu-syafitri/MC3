@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>MC3.Untouchable</string>
+	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -24,13 +28,5 @@
 		<string>remote-notification</string>
 		<string>location</string>
 	</array>
-	<key>BGTaskSchedulerPermittedIdentifiers</key>
-	<array>
-		<string>MC3.Untouchable</string>
-	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need your location to provide personalized content while using the app.</string> 
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We need your location to provide services even when the app is in the background.</string>
 </dict>
 </plist>

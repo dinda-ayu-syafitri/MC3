@@ -28,100 +28,111 @@ struct ProfileView: View {
                         
                         Circle()
                             .fill(Color.appPinkSecondary)
-                            .frame(width: 80, height: 80)
+                            .frame(width: 120, height: 120)
                         
                         Text("Syafiqah A")
-                            .font(.headline)
+                            .font(.title2)
+                            .bold()
                         
                         Text("6287821285607")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
+                            .font(.callout)
+                            .foregroundColor(.black)
                     }
                     .padding(.top)
                     
                     // Contacts Section
-                    SectionHeader(title: "Contacts")
-                    
-                    NavigationLink(destination: AddEmergencyContactView()) {
-                        ProfileRow(title: "Emergency Contacts")
-                    }
-                    
-                    // Security Section
-                    SectionHeader(title: "Security")
-                    
-                    NavigationLink(destination: Text("Pin Input View")) {
-                        ProfileRow(title: "Personal Pin")
-                    }
-                    
-                    // Settings Section
-                    SectionHeader(title: "Settings")
-                    
-                    // SOS Alert Delay Time with Picker
-                    Button(action: {
-                        withAnimation {
-                            isPickerExpanded.toggle()
-                        }
-                    }) {
-                        HStack {
-                            Text("SOS Alert Delay Time")
-                                .foregroundColor(.black)
-                            Spacer()
-                            Text("\(selectedDelayTime) seconds")
-                                .foregroundColor(.gray)
-                            Image(systemName: "chevron.right")
-                                .rotationEffect(.degrees(isPickerExpanded ? 90 : 0))
-                                .animation(.easeInOut, value: isPickerExpanded)
-                                .foregroundStyle(Color.appPinkSecondary)
-                        }
-                        .padding()
-                        .background(Color.white)
-                        .cornerRadius(10)
+                    Section(header: Text("Contacts")
+                        .font(.title2)
+                        .fontWeight(.bold)
                         .padding(.horizontal)
-                    }
-                    
-                    if isPickerExpanded {
-                        Picker("Select Delay Time", selection: $selectedDelayTime) {
-                            ForEach(delayTimes, id: \.self) { time in
-                                Text("\(time) seconds").tag(time)
+                        .frame(maxWidth: .infinity, alignment: .leading)){
+                            NavigationLink(destination: AddEmergencyContactView()) {
+                                ProfileRow(title: "Emergency Contacts")
                             }
-                        }
-                        .pickerStyle(WheelPickerStyle())
-                        .frame(height: 150)
-                        .background(Color.white)
-                        .cornerRadius(10)
+                    }
+                       
+                    Section(header: Text("Security")
+                        .font(.title2)
+                        .fontWeight(.bold)
                         .padding(.horizontal)
-                        .transition(.move(edge: .bottom))
+                        .padding(.top)
+                        .frame(maxWidth: .infinity, alignment: .leading)){
+                            NavigationLink(destination: Text("Pin Input View")) {
+                                ProfileRow(title: "Personal Pin")
+                            }
+                    }
+                        
+                    
+                    Section(header: Text("Settings")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .padding(.horizontal)
+                        .padding(.top)
+                        .frame(maxWidth: .infinity, alignment: .leading)){
+                            // SOS Alert Delay Time with Picker
+                            Button(action: {
+                                withAnimation {
+                                    isPickerExpanded.toggle()
+                                }
+                            }) {
+                                HStack {
+                                    Text("SOS Alert Delay Time")
+                                        .foregroundColor(.black)
+                                    Spacer()
+                                    Text("\(selectedDelayTime) seconds")
+                                        .foregroundColor(.gray)
+                                    Image(systemName: "chevron.right")
+                                        .rotationEffect(.degrees(isPickerExpanded ? 90 : 0))
+                                        .animation(.easeInOut, value: isPickerExpanded)
+                                        .foregroundStyle(Color.appPinkSecondary)
+                                }
+                                .padding()
+                                .background(Color.white)
+                                .cornerRadius(10)
+                                .padding(.horizontal)
+                            }
+                            //.padding(.vertical, -5)
+                            
+                            if isPickerExpanded {
+                                Picker("Select Delay Time", selection: $selectedDelayTime) {
+                                    ForEach(delayTimes, id: \.self) { time in
+                                        Text("\(time) seconds").tag(time)
+                                    }
+                                }
+                                .pickerStyle(WheelPickerStyle())
+                                .frame(height: 150)
+                                .background(Color.white)
+                                .cornerRadius(10)
+                                .padding(.horizontal)
+                                .transition(.move(edge: .bottom))
+                            }
+                            
+                            
+                            Toggle(isOn: $enableHaptic) {
+                                Text("Enable haptic")
+                                    .foregroundColor(.black)
+                            }
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                            .padding(.vertical, -5)
+                            
+                            Toggle(isOn: $enableAutomaticAlert) {
+                                Text("Enable automatic alert")
+                                    .foregroundColor(.black)
+                            }
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                            
+                            Spacer()
+                        }
                     }
                     
-                    Toggle(isOn: $enableAlertSound) {
-                        Text("Enable Alert Sound")
-                            .foregroundColor(.black)
-                    }
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .padding(.horizontal)
                     
-                    Toggle(isOn: $enableHaptic) {
-                        Text("Enable haptic")
-                            .foregroundColor(.black)
-                    }
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .padding(.horizontal)
                     
-                    Toggle(isOn: $enableAutomaticAlert) {
-                        Text("Enable automatic alert")
-                            .foregroundColor(.black)
-                    }
-                    .padding()
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .padding(.horizontal)
-                    
-                    Spacer()
-                }
             }
             .background(Color(.bg).ignoresSafeArea())
         } // Close NavigationView here
