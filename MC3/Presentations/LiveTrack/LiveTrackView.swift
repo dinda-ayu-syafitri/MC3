@@ -23,6 +23,8 @@ struct LiveTrackView: View {
                     .foregroundColor(.appPinkSecondary)
                 
                 MapComponent()
+                    .environmentObject(locationVM)
+                    .environmentObject(socketVM)
                 .frame(width: 361, height: 530)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .padding()
