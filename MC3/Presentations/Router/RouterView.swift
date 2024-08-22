@@ -9,7 +9,6 @@ import SwiftUI
 
 struct RouterView<Content: View>: View {
     @StateObject var router: Router = Router.shared
-    // Our root view content
     private let content: Content
 
     init(@ViewBuilder content: @escaping () -> Content) {
