@@ -4,7 +4,6 @@
 //
 //  Created by Dinda Ayu Syafitri on 15/08/24.
 //
-
 import ContactsUI
 import SwiftUI
 
@@ -21,6 +20,10 @@ struct ContactPickerView: UIViewControllerRepresentable {
         let navController = UINavigationController()
         let controller = CNContactPickerViewController()
         controller.delegate = context.coordinator
+
+        // Filter to only show contacts with at least one phone number
+        controller.predicateForEnablingContact = NSPredicate(format: "phoneNumbers.@count > 0")
+
         navController.present(controller, animated: false, completion: nil)
         return navController
     }

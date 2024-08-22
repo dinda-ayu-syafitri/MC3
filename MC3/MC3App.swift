@@ -16,6 +16,9 @@ import UserNotifications
 class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate, ObservableObject {
     @Environment(\.managedObjectContext) private var context
     @StateObject var loginVM = DependencyInjection.shared.loginViewModel()
+    @StateObject var messageVM = DependencyInjection.shared.MessageNotifViewModel()
+//    @StateObject var messageVM = MessageNotificationViewModel()
+//    @EnvironmentObject var messageVM: MessageNotificationViewModel
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
@@ -75,43 +78,168 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
         Messaging.messaging().apnsToken = deviceToken
     }
 
+//    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+//        let userInfo = notification.request.content.userInfo
+    ////        print("Received push notification: \(userInfo)")
+//        print("Received data message: \(userInfo["customMessage"] as? String ?? "")")
+//
+//        if userInfo["customMessage"] as? String == "userTracked" {
+//            print("user Tracked sent")
+//            messageVM.stopSendingNotifications()
+//            messageVM.userTrackedMessage = "userTracked"
+//            DispatchQueue.main.async {
+//                self.messageVM.userTrackedMessage = "userTracked"
+//            }
+//            print("Updated userTrackedMessage in VM: \(messageVM.userTrackedMessage)")
+//
+//        } else {
+//            print("Notification received")
+//        }
+//    }
+
     // Handle incoming notifications while app is in foreground
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        let userInfo = notification.request.content.userInfo
-        print("Received notification: \(userInfo)")
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+//        let userInfo = notification.request.content.userInfo
+        print("Received push notification")
 
-        // Access custom data here
+//        // Access custom data here
+//        if let locationLink = userInfo["locationLink"] as? String,
+//           let senderFCM = userInfo["senderFCM"] as? String
+//        {
+//            print("LocationLink: \(locationLink)")
+//            print("SenderFCM: \(senderFCM)")
+//        }
+//
+//
+        let userInfo = response.notification.request.content.userInfo
+
+        print("customMessage: \(String(describing: userInfo["customMessage"]))")
+
         if let locationLink = userInfo["locationLink"] as? String,
-           let senderFCM = userInfo["senderFCM"] as? String
+           let senderFCM = userInfo["senderFCM"] as? String, let customMessage = userInfo["customMessage"] as? String
         {
-            print("LocationLink: \(locationLink)")
-            print("SenderFCM: \(senderFCM)")
-        }
+            if customMessage == "userTracked" {
+                print("user Tracked sent")
+                messageVM.stopSendingNotifications()
+                messageVM.userTrackedMessage = "userTracked"
+            } else {
+                print("Notification received")
+            }
 
+            print("customMessage: \(customMessage)")
+
+//            print("LocationLink: \(locationLink)")
+//            print("SenderFCM: \(senderFCM)")
+        }
         completionHandler([.banner, .sound, .badge])
     }
 
     // Handle notification tap
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let userInfo = response.notification.request.content.userInfo
-        print("Tapped on notification: \(userInfo)")
+//    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+//        let userInfo = response.notification.request.content.userInfo
+//        print("Tapped on notification: \(userInfo)")
+//
+//        // Access custom data here
+//        if let locationLink = userInfo["locationLink"] as? String,
+//           let senderFCM = userInfo["senderFCM"] as? String, let customMessage = userInfo["customMessage"] as? String
+//        {
+//            if customMessage != "userTracked" {
+//                messageVM.sendPushNotification(token: senderFCM, title: "Your Location Tracked", body: "", locationLink: "locationLink", senderFCM: "asdad", customMessage: "userTracked")
+//                messageVM.userTrackedMessage = "userTracked"
+//            }
+//        }
+//
+//        completionHandler()
+//    }
 
-        // Access custom data here
-        if let locationLink = userInfo["locationLink"] as? String,
-           let senderFCM = userInfo["senderFCM"] as? String
-        {
-            print("LocationLink: \(locationLink)")
-            print("SenderFCM: \(senderFCM)")
-        }
+    func notifyVictim(senderFCM: String) {
+        let notificationContent = UNMutableNotificationContent()
+        notificationContent.title = "You Are Being Tracked"
+        notificationContent.body = "Someone has acknowledged your SOS message."
+        notificationContent.sound = .default
 
-        completionHandler()
+        let request = UNNotificationRequest(
+            identifier: UUID().uuidString,
+            content: notificationContent,
+            trigger: nil
+        )
+
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+
+        messageVM.sendPushNotification(token: senderFCM, title: "Your Location Tracked", body: "", locationLink: "locationLink", senderFCM: "", customMessage: "userTracked")
     }
 
     // Handle FCM data message directly when the app is in foreground or background
     func messaging(_ messaging: Messaging, didReceive remoteMessage: [String: Any]) {
-        print("Received data message: \(remoteMessage)")
+//        print("Received data message: \(remoteMessage)")
+        print("Received data message: \(remoteMessage["customMessage"] as? String ?? "")")
+    }
 
-        // Typically, the custom data should be accessed within userNotificationCenter delegate methods
+//    func messaging(_ messaging: Messaging, didReceive response: UNNotificationResponse, remoteMessage: [String: Any]) {
+//        print("Received push notification")
+//        let userInfo = response.notification.request.content.userInfo
+//
+//        if let locationLink = userInfo["locationLink"] as? String,
+//           let senderFCM = userInfo["senderFCM"] as? String, let customMessage = userInfo["customMessage"] as? String
+//        {
+//            if customMessage == "userTracked" {
+//                print("user Tracked sent")
+//                messageVM.stopSendingNotifications()
+//            } else {
+//                print("Notification received")
+//            }
+//
+//            print("customMessage: \(customMessage)")
+//
+    ////            print("LocationLink: \(locationLink)")
+    ////            print("SenderFCM: \(senderFCM)")
+//        }
+//
+//        // Typically, the custom data should be accessed within userNotificationCenter delegate methods
+//    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+        print("Received push notification: \(userInfo)")
+        handleNotification(userInfo: userInfo)
+        completionHandler([.banner, .sound, .badge])
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        print("Tapped on notification: \(userInfo)")
+        //        let userInfo = response.notification.request.content.userInfo
+
+        // Access custom data here
+        if let locationLink = userInfo["locationLink"] as? String,
+           let senderFCM = userInfo["senderFCM"] as? String, let customMessage = userInfo["customMessage"] as? String
+        {
+            if customMessage != "userTracked" {
+                messageVM.sendPushNotification(token: senderFCM, title: "Your Location Tracked", body: "", locationLink: "locationLink", senderFCM: "asdad", customMessage: "userTracked")
+                messageVM.userTrackedMessage = "userTracked"
+                messageVM.saveTrackStatus(status: "userTracked")
+            }
+        }
+        handleNotification(userInfo: userInfo)
+        completionHandler()
+    }
+
+    private func handleNotification(userInfo: [AnyHashable: Any]) {
+        if let customMessage = userInfo["customMessage"] as? String {
+            if customMessage == "userTracked" {
+                print("user Tracked sent")
+                DispatchQueue.main.async {
+                    self.messageVM.stopSendingNotifications()
+                    self.messageVM.userTrackedMessage = "userTracked"
+                    print("USER TRACKEDD \(self.messageVM.userTrackedMessage)") // Moved inside the async block
+                }
+                messageVM.saveTrackStatus(status: "userTracked")
+            } else {
+                print("Notification received with message: \(customMessage)")
+            }
+        } else {
+            print("Notification received without a customMessage")
+        }
     }
 
     func application(
@@ -152,7 +280,6 @@ struct MC3App: App {
     }
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    @StateObject var messageNotifViewModel = MessageNotificationViewModel()
 
     var body: some Scene {
         WindowGroup {
@@ -161,7 +288,7 @@ struct MC3App: App {
                 .onOpenURL { url in
                     GIDSignIn.sharedInstance.handle(url)
                 }
-                .environmentObject(messageNotifViewModel)
+//                .environmentObject(messageNotifViewModel)
                 .modelContainer(for: [EmergencyContacts.self])
         }
     }

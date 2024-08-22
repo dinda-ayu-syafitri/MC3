@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 // Grouping UseCase ke dalam satu fungsi
 class DependencyInjection: ObservableObject {
     static let shared = DependencyInjection()
@@ -38,21 +39,25 @@ class DependencyInjection: ObservableObject {
             userDefaultUseCase: userDefaultUseCase
         )
     }
-    
+
     // MARK: FUNCTIONS PIN INPUT VIEW MODEL
+
     func personalPinViewModel() -> PersonalPinViewModel {
         PersonalPinViewModel(userDefaultUseCase: userDefaultUseCase)
     }
-    
+
     // MARK: FUNCTIONS PROFILE SETUP VIEW MODEL
+
     func profileSetUpViewModel() -> ProfileSetUpViewModel {
         ProfileSetUpViewModel(firebaseUseCase: firebaseUseCase, userDefaultUseCase: userDefaultUseCase)
     }
-    
+
     // MARK: FUNCTIONS DEACTIVATE VIEW MODEL
+
     func deactivateViewModel() -> DeactivateViewModel {
         DeactivateViewModel(userDefaultUseCase: userDefaultUseCase)
     }
+
 //
 //    func profileViewModel() -> ProfileViewModel {
 //        ProfileViewModel(
@@ -65,5 +70,9 @@ class DependencyInjection: ObservableObject {
         EmergencyContactViewModel(
             firebaseUseCase: firebaseUseCase
         )
+    }
+
+    func MessageNotifViewModel() -> MessageNotificationViewModel {
+        MessageNotificationViewModel(userDefaultUseCase: userDefaultUseCase)
     }
 }
