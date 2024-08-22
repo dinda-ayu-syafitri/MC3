@@ -12,29 +12,21 @@ import SwiftUI
 
 struct AddEmergencyContactView: View {
     @Environment(\.modelContext) public var context
-
-    @State private var selectedContact: CNContact?
-    @State var isPrimary = false
-    @State private var isShowingPicker = false
-    @State private var emergencyContacts: [EmergencyContact] = []
-    @State private var tempEmergencyContact: EmergencyContact?
-
     @Query public var emergencyContactSaved: [EmergencyContacts]
-
     @StateObject var emergencyContactVM = DependencyInjection.shared.emergencyContactsViewModel()
-
     @EnvironmentObject var router: Router
+    
     var body: some View {
         VStack {
             Text("Add your emergency contacts")
                 .font(.title2)
                 .multilineTextAlignment(.center)
                 .fontWeight(.bold)
-
+            
             Text("Emergency contacts are notified when the SOS Alert is activated. ")
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
-
+            
             VStack(spacing: 16) {
                 VStack {
                     HStack {
@@ -43,29 +35,33 @@ struct AddEmergencyContactView: View {
                         Spacer()
                         ZStack{
                             RoundedRectangle(cornerRadius: 25.0)
-                                .fill(Color.appPink)
+                                .fill(emergencyContactVM.emergencyContacts.first(where: { $0.isPrimary }) != nil ? .gray : Color.appPink)
                                 .frame(width: 80, height: 35)
-                                
+                            
                             Button(action: {
-                                isShowingPicker = true
-                                isPrimary = true
+                                emergencyContactVM.isShowingPicker = true
+                                emergencyContactVM.isPrimary = true
                             }, label: {
                                 Image(systemName: "plus")
                                 Text("Add")
                             })
-                            .foregroundColor(Color.bg)
-                            .disabled(emergencyContacts.first(where: { $0.isPrimary }) != nil).sheet(isPresented: $isShowingPicker) {
-                                ContactPickerView(selectedContact: $selectedContact, emergencyContacts: $emergencyContacts, tempEmergencyContact: $tempEmergencyContact, isPrimary: $isPrimary)
+                            .foregroundColor(emergencyContactVM.emergencyContacts.first(where: { $0.isPrimary }) != nil ? .black : Color.bg)
+                            .disabled(emergencyContactVM.emergencyContacts.first(where: { $0.isPrimary }) != nil)
+                            .sheet(isPresented: $emergencyContactVM.isShowingPicker) {
+                                ContactPickerView(
+                                    selectedContact: $emergencyContactVM.selectedContact,
+                                    emergencyContacts: $emergencyContactVM.emergencyContacts,
+                                    tempEmergencyContact: $emergencyContactVM.tempEmergencyContact,
+                                    isPrimary: $emergencyContactVM.isPrimary
+                                )
                             }
                         }
-                        
                     }
-
-                    if let primaryContact = emergencyContacts.first(where: { $0.isPrimary }) {
+                    
+                    if let primaryContact = emergencyContactVM.emergencyContacts.first(where: { $0.isPrimary }) {
                         List {
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(.clear)
-                               // .stroke(.gray, lineWidth: 1)
                                 .frame(height: 80)
                                 .overlay(content: {
                                     VStack(alignment: .leading) {
@@ -73,7 +69,7 @@ struct AddEmergencyContactView: View {
                                             .bold()
                                             .multilineTextAlignment(.leading)
                                             .frame(maxWidth: .infinity, alignment: .leading)
-
+                                        
                                         Text("\(primaryContact.phoneNumber)")
                                             .frame(maxWidth: .infinity, alignment: .leading)
                                             .multilineTextAlignment(.leading)
@@ -81,12 +77,12 @@ struct AddEmergencyContactView: View {
                                     
                                     .frame(maxWidth: .infinity)
                                     .multilineTextAlignment(.leading)
-
+                                    
                                 })
                                 .swipeActions(edge: .trailing) {
                                     Button(role: .destructive) {
-                                        if let index = emergencyContacts.firstIndex(where: { $0.id == primaryContact.id }) {
-                                            emergencyContacts.remove(at: index)
+                                        if let index = emergencyContactVM.emergencyContacts.firstIndex(where: { $0.id == primaryContact.id }) {
+                                            emergencyContactVM.emergencyContacts.remove(at: index)
                                         }
                                     } label: {
                                         Label("Delete", systemImage: "trash")
@@ -106,7 +102,7 @@ struct AddEmergencyContactView: View {
                                     .padding(5)
                                     .foregroundStyle(.gray)
                                     .multilineTextAlignment(.leading)
-
+                                
                             })
                     }
                 }
@@ -122,28 +118,28 @@ struct AddEmergencyContactView: View {
                                 .fill(Color.appPink)
                                 .frame(width: 80, height: 35)
                             Button(action: {
-                                isShowingPicker = true
-                                isPrimary = false
+                                emergencyContactVM.isShowingPicker = true
+                                emergencyContactVM.isPrimary = false
                             }, label: {
                                 Image(systemName: "plus")
                                 Text("Add")
-                                    
+                                
                             })
                             .foregroundStyle(Color.white)
-                            .sheet(isPresented: $isShowingPicker, onDismiss: nil) {
-                                ContactPickerView(selectedContact: $selectedContact, emergencyContacts: $emergencyContacts, tempEmergencyContact: $tempEmergencyContact, isPrimary: $isPrimary)
+                            .sheet(isPresented: $emergencyContactVM.isShowingPicker, onDismiss: nil) {
+                                ContactPickerView(selectedContact: $emergencyContactVM.selectedContact, emergencyContacts: $emergencyContactVM.emergencyContacts, tempEmergencyContact: $emergencyContactVM.tempEmergencyContact, isPrimary: $emergencyContactVM.isPrimary)
                             }
                         }
                     }
-
-                    if emergencyContacts.first(where: { $0.isPrimary == false }) != nil {
+                    
+                    if emergencyContactVM.emergencyContacts.first(where: { $0.isPrimary == false }) != nil {
                         VStack {
                             List {
-                                ForEach(emergencyContacts) { contact in
+                                ForEach(emergencyContactVM.emergencyContacts) { contact in
                                     if !contact.isPrimary {
                                         RoundedRectangle(cornerRadius: 15.0)
                                             .fill(.clear)
-                                            //.stroke(.gray, lineWidth: 1)
+                                        //.stroke(.gray, lineWidth: 1)
                                             .frame(height: 80)
                                             .frame(maxWidth: .infinity)
                                             .overlay(content: {
@@ -152,22 +148,22 @@ struct AddEmergencyContactView: View {
                                                         .bold()
                                                         .multilineTextAlignment(.leading)
                                                         .frame(maxWidth: .infinity, alignment: .leading)
-
+                                                    
                                                     Text("\(contact.phoneNumber)")
                                                         .frame(maxWidth: .infinity, alignment: .leading)
                                                         .multilineTextAlignment(.leading)
                                                 }
                                                 //.padding()
-
+                                                
                                                 .frame(maxWidth: .infinity)
                                                 .multilineTextAlignment(.leading)
-
+                                                
                                             })
                                             .padding(0)
                                             .swipeActions(edge: .trailing) {
                                                 Button(role: .destructive) {
-                                                    if let index = emergencyContacts.firstIndex(where: { $0.id == contact.id }) {
-                                                        emergencyContacts.remove(at: index)
+                                                    if let index = emergencyContactVM.emergencyContacts.firstIndex(where: { $0.id == contact.id }) {
+                                                        emergencyContactVM.emergencyContacts.remove(at: index)
                                                     }
                                                 } label: {
                                                     Label("Delete", systemImage: "trash")
@@ -176,13 +172,13 @@ struct AddEmergencyContactView: View {
                                     }
                                 }
                             }
-                           
+                            
                             .listStyle(PlainListStyle())
                             .clipShape(RoundedRectangle(cornerRadius: 15.0))
                             //.padding(.horizontal,-20)
                             
                         }
-
+                        
                     } else {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.clear)
@@ -192,21 +188,20 @@ struct AddEmergencyContactView: View {
                                 Text("Emergency notifications will be sent to all emergency contact")
                                     .foregroundStyle(.gray)
                                     .multilineTextAlignment(.leading)
-
+                                
                             })
                     }
                 }
             }
             .padding(.top, 32)
             .padding()
-
             Spacer()
             Button(action: {
                 Task {
                     let firebaseID = Auth.auth().currentUser?.uid
-                    await emergencyContactVM.insertUserEmergencyContacts(idFirestore: firebaseID ?? "", emergencyContacts: emergencyContacts)
-
-                    emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContacts)
+                    await emergencyContactVM.insertUserEmergencyContacts(idFirestore: firebaseID ?? "", emergencyContacts: emergencyContactVM.emergencyContacts)
+                    
+                    emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
                 }
             }, label: {
                 ZStack{
