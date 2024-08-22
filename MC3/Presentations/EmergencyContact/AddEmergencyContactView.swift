@@ -27,18 +27,6 @@ struct AddEmergencyContactView: View {
     @EnvironmentObject var router: Router
     var body: some View {
         VStack {
-            Button(action: { messageVM.userTrackedMessage = "userTracked"
-                messageVM.saveTrackStatus(status: "userTracked")
-            }, label: {
-                Text("Cek Stop Notif")
-                    .bold()
-            })
-            Button(action: { messageVM.userTrackedMessage = "userTracked"
-                messageVM.saveTrackStatus(status: "")
-            }, label: {
-                Text("Delete Track Status")
-                    .bold()
-            })
             Text("Add your emergency contacts")
                 .font(.title2)
                 .multilineTextAlignment(.center)

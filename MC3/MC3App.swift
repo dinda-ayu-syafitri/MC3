@@ -78,39 +78,11 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
         Messaging.messaging().apnsToken = deviceToken
     }
 
-//    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-//        let userInfo = notification.request.content.userInfo
-    ////        print("Received push notification: \(userInfo)")
-//        print("Received data message: \(userInfo["customMessage"] as? String ?? "")")
-//
-//        if userInfo["customMessage"] as? String == "userTracked" {
-//            print("user Tracked sent")
-//            messageVM.stopSendingNotifications()
-//            messageVM.userTrackedMessage = "userTracked"
-//            DispatchQueue.main.async {
-//                self.messageVM.userTrackedMessage = "userTracked"
-//            }
-//            print("Updated userTrackedMessage in VM: \(messageVM.userTrackedMessage)")
-//
-//        } else {
-//            print("Notification received")
-//        }
-//    }
-
     // Handle incoming notifications while app is in foreground
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
 //        let userInfo = notification.request.content.userInfo
         print("Received push notification")
 
-//        // Access custom data here
-//        if let locationLink = userInfo["locationLink"] as? String,
-//           let senderFCM = userInfo["senderFCM"] as? String
-//        {
-//            print("LocationLink: \(locationLink)")
-//            print("SenderFCM: \(senderFCM)")
-//        }
-//
-//
         let userInfo = response.notification.request.content.userInfo
 
         print("customMessage: \(String(describing: userInfo["customMessage"]))")
@@ -127,30 +99,9 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
             }
 
             print("customMessage: \(customMessage)")
-
-//            print("LocationLink: \(locationLink)")
-//            print("SenderFCM: \(senderFCM)")
         }
         completionHandler([.banner, .sound, .badge])
     }
-
-    // Handle notification tap
-//    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-//        let userInfo = response.notification.request.content.userInfo
-//        print("Tapped on notification: \(userInfo)")
-//
-//        // Access custom data here
-//        if let locationLink = userInfo["locationLink"] as? String,
-//           let senderFCM = userInfo["senderFCM"] as? String, let customMessage = userInfo["customMessage"] as? String
-//        {
-//            if customMessage != "userTracked" {
-//                messageVM.sendPushNotification(token: senderFCM, title: "Your Location Tracked", body: "", locationLink: "locationLink", senderFCM: "asdad", customMessage: "userTracked")
-//                messageVM.userTrackedMessage = "userTracked"
-//            }
-//        }
-//
-//        completionHandler()
-//    }
 
     func notifyVictim(senderFCM: String) {
         let notificationContent = UNMutableNotificationContent()
@@ -174,29 +125,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
 //        print("Received data message: \(remoteMessage)")
         print("Received data message: \(remoteMessage["customMessage"] as? String ?? "")")
     }
-
-//    func messaging(_ messaging: Messaging, didReceive response: UNNotificationResponse, remoteMessage: [String: Any]) {
-//        print("Received push notification")
-//        let userInfo = response.notification.request.content.userInfo
-//
-//        if let locationLink = userInfo["locationLink"] as? String,
-//           let senderFCM = userInfo["senderFCM"] as? String, let customMessage = userInfo["customMessage"] as? String
-//        {
-//            if customMessage == "userTracked" {
-//                print("user Tracked sent")
-//                messageVM.stopSendingNotifications()
-//            } else {
-//                print("Notification received")
-//            }
-//
-//            print("customMessage: \(customMessage)")
-//
-    ////            print("LocationLink: \(locationLink)")
-    ////            print("SenderFCM: \(senderFCM)")
-//        }
-//
-//        // Typically, the custom data should be accessed within userNotificationCenter delegate methods
-//    }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let userInfo = notification.request.content.userInfo
