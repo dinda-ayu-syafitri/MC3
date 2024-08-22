@@ -13,6 +13,7 @@
 		20190CFE2C6A336B001A2AB6 /* Pulse Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 20190CF12C6A336A001A2AB6 /* Pulse Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2020C9942C7590B400CEF9A1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2020C9922C7590B400CEF9A1 /* OnboardingViewController.swift */; };
 		2020C9952C7590B400CEF9A1 /* OnboardingViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2020C9932C7590B400CEF9A1 /* OnboardingViewWrapper.swift */; };
+		2020C9992C75AF4600CEF9A1 /* custom.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2020C9982C75AF4600CEF9A1 /* custom.wav */; };
 		203E3E922C743A76000A04E0 /* CountdownManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E3E912C743A76000A04E0 /* CountdownManager.swift */; };
 		203E3E932C743A76000A04E0 /* CountdownManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E3E912C743A76000A04E0 /* CountdownManager.swift */; };
 		2058D15D2C65C65200D0557D /* MC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15C2C65C65200D0557D /* MC3App.swift */; };
@@ -170,6 +171,7 @@
 		20190CFA2C6A336B001A2AB6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2020C9922C7590B400CEF9A1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		2020C9932C7590B400CEF9A1 /* OnboardingViewWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewWrapper.swift; sourceTree = "<group>"; };
+		2020C9982C75AF4600CEF9A1 /* custom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = custom.wav; sourceTree = "<group>"; };
 		203AB9A42C6C710A00D7AD86 /* MC3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MC3.entitlements; sourceTree = "<group>"; };
 		203AB9A52C6C712B00D7AD86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		203E3E912C743A76000A04E0 /* CountdownManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownManager.swift; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 				DD6543602C738EDB00BFB0FD /* Presentations */,
 				2058D15C2C65C65200D0557D /* MC3App.swift */,
 				2058D15E2C65C65200D0557D /* ContentView.swift */,
+				2020C9982C75AF4600CEF9A1 /* custom.wav */,
 				2058D1602C65C65400D0557D /* Assets.xcassets */,
 				2058D1622C65C65400D0557D /* Preview Content */,
 			);
@@ -1098,6 +1101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2058D1642C65C65400D0557D /* Preview Assets.xcassets in Resources */,
+				2020C9992C75AF4600CEF9A1 /* custom.wav in Resources */,
 				2058D1612C65C65400D0557D /* Assets.xcassets in Resources */,
 				20F95A6A2C6E11A5005B3DA1 /* GoogleService-Info.plist in Resources */,
 			);

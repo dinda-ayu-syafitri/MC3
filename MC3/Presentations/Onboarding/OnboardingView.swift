@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    
     @EnvironmentObject var router: Router
 
     var body: some View {
-        NavigationStack{
-            VStack{
-                VStack{
+        NavigationStack {
+            VStack {
+                VStack {
                     Text("Automatic Alert System")
                         .font(.title2)
                         .bold()
@@ -23,16 +22,14 @@ struct OnboardingView: View {
                         .multilineTextAlignment(.center)
                 }
                 .padding()
-                
+
                 Image("onboarding")
                     .resizable()
                     .frame(width: 350, height: 400)
                 Spacer()
-                VStack{
-                    Button {
-                        
-                    } label: {
-                        ZStack{
+                VStack {
+                    Button {} label: {
+                        ZStack {
                             RoundedRectangle(cornerRadius: 15.0)
                                 .frame(width: 350, height: 60)
                                 .foregroundStyle(Color.appPink)
@@ -44,33 +41,28 @@ struct OnboardingView: View {
                             router.navigateTo(.AddEmergencyContact)
                         }
                     }
-                    
-                    Button {
-                        
-                    } label: {
+
+                    Button {} label: {
                         Text("Skip for now")
-                             .font(.headline)
-                             .foregroundColor(Color.appPinkSecondary)
-                             .padding()
-                             .overlay(
+                            .font(.headline)
+                            .foregroundColor(Color.appPinkSecondary)
+                            .padding()
+                            .overlay(
                                 RoundedRectangle(cornerRadius: 15.0)
-                                     .stroke(Color.appPinkSecondary, lineWidth: 1)
-                                     .frame(width: 350, height: 60)
-                             )
-                             .onTapGesture {
-                                 router.navigateTo(.AddEmergencyContact)
-                             }
+                                    .stroke(Color.appPinkSecondary, lineWidth: 1)
+                                    .frame(width: 350, height: 60)
+                            )
+                            .onTapGesture {
+                                router.navigateTo(.AddEmergencyContact)
+                            }
                     }
                 }
-                
             }
         }
-        
+
         .background(Color(.bg).ignoresSafeArea())
     }
-        
 }
-
 
 #Preview {
     OnboardingView()

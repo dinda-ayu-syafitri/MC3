@@ -14,6 +14,7 @@ struct AddEmergencyContactView: View {
     @Environment(\.modelContext) public var context
     @Query public var emergencyContactSaved: [EmergencyContacts]
     @StateObject var emergencyContactVM = DependencyInjection.shared.emergencyContactsViewModel()
+    @StateObject var messageVM = DependencyInjection.shared.MessageNotifViewModel()
     @EnvironmentObject var router: Router
     
     var body: some View {
@@ -33,12 +34,11 @@ struct AddEmergencyContactView: View {
                         Text("Primary Contact")
                             .bold()
                         Spacer()
-                        ZStack{
+                        ZStack {
                             RoundedRectangle(cornerRadius: 25.0)
                                 .fill(emergencyContactVM.emergencyContacts.first(where: { $0.isPrimary }) != nil ? .gray : Color.appPink)
                                 .frame(width: 80, height: 35)
-                            
-                            Button(action: {
+             Button(action: {
                                 emergencyContactVM.isShowingPicker = true
                                 emergencyContactVM.isPrimary = true
                             }, label: {
@@ -74,7 +74,7 @@ struct AddEmergencyContactView: View {
                                             .frame(maxWidth: .infinity, alignment: .leading)
                                             .multilineTextAlignment(.leading)
                                     }
-                                    
+
                                     .frame(maxWidth: .infinity)
                                     .multilineTextAlignment(.leading)
                                     
@@ -106,14 +106,13 @@ struct AddEmergencyContactView: View {
                             })
                     }
                 }
-                
-                
+
                 VStack {
                     HStack {
                         Text("Other Contacts")
                             .bold()
                         Spacer()
-                        ZStack{
+                        ZStack {
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(Color.appPink)
                                 .frame(width: 80, height: 35)
@@ -123,7 +122,6 @@ struct AddEmergencyContactView: View {
                             }, label: {
                                 Image(systemName: "plus")
                                 Text("Add")
-                                
                             })
                             .foregroundStyle(Color.white)
                             .sheet(isPresented: $emergencyContactVM.isShowingPicker, onDismiss: nil) {
@@ -139,7 +137,6 @@ struct AddEmergencyContactView: View {
                                     if !contact.isPrimary {
                                         RoundedRectangle(cornerRadius: 15.0)
                                             .fill(.clear)
-                                        //.stroke(.gray, lineWidth: 1)
                                             .frame(height: 80)
                                             .frame(maxWidth: .infinity)
                                             .overlay(content: {
@@ -153,8 +150,6 @@ struct AddEmergencyContactView: View {
                                                         .frame(maxWidth: .infinity, alignment: .leading)
                                                         .multilineTextAlignment(.leading)
                                                 }
-                                                //.padding()
-                                                
                                                 .frame(maxWidth: .infinity)
                                                 .multilineTextAlignment(.leading)
                                                 
@@ -172,11 +167,9 @@ struct AddEmergencyContactView: View {
                                     }
                                 }
                             }
-                            
                             .listStyle(PlainListStyle())
                             .clipShape(RoundedRectangle(cornerRadius: 15.0))
-                            //.padding(.horizontal,-20)
-                            
+                            // .padding(.horizontal,-20)
                         }
                         
                     } else {
@@ -204,7 +197,7 @@ struct AddEmergencyContactView: View {
                     emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
                 }
             }, label: {
-                ZStack{
+                ZStack {
                     RoundedRectangle(cornerRadius: 15.0)
                         .fill(Color.appPink)
                         .frame(width: 360, height: 60)
@@ -214,7 +207,7 @@ struct AddEmergencyContactView: View {
                 .onTapGesture {
                     router.navigateTo(.HomeView)
                 }
-                
+
             })
             .padding()
         }

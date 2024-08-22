@@ -10,6 +10,7 @@ import Foundation
 enum NotificationTypeEnumIos {
     case ABNORMALHEARTRATE
     case SOSALERT
+    case USERTRACKED
 }
 
 extension NotificationTypeEnumIos {
@@ -19,6 +20,8 @@ extension NotificationTypeEnumIos {
             return "abnormalHeartRate"
         case .SOSALERT:
             return "sosAlert"
+        case .USERTRACKED:
+            return "userTracked"
         }
     }
 }
