@@ -126,7 +126,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
             let customMessage = userInfo["customMessage"] as? String
         {
             UserDefaults.standard.set(locationLink, forKey: KeyUserDefaultEnum.roomLiveLocation.toString)
-            Router.shared.resetAndNavigateTo(.LiveTrackView)
+            Router.shared.resetAndNavigateTo(.HomeView(.liveTrack))
             if customMessage != "userTracked" {
                 messageVM.sendPushNotification(token: senderFCM, title: "\(UserDefaults.standard.string(forKey: "fullName") ?? "Emergency Contact") is tracking!", body: "\(UserDefaults.standard.string(forKey: "fullName") ?? "") is currently tracking you", locationLink: "", senderFCM: "\(TokenManager.shared.fcmToken ?? "")", customMessage: "userTracked")
             }
