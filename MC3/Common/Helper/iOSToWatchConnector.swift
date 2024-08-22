@@ -57,10 +57,10 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
                     category: action
                 )
                 messageViewModel.startSendingNotifications(
-                    emergencyContactSaved: emergencyContactSaved,
-                    userTracked: &userTracked
+                    emergencyContactSaved: emergencyContactSaved ?? []
                 )
-                print("Starting notifications, userTrackedMessage: \(messageViewModel.userTrackedMessage)")
+            
+//                print("Starting notifications, userTrackedMessage: \(messageViewModel.userTrackedMessage)")
 //
 //                // Check if user is already tracked
 //                if messageViewModel.userTrackedMessage != "userTracked" {

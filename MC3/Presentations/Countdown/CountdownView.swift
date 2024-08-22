@@ -5,6 +5,7 @@
 //  Created by Giventus Marco Victorio Handojo on 15/08/24.
 //
 
+import SwiftData
 import SwiftUI
 
 struct CountdownView: View {
@@ -14,18 +15,21 @@ struct CountdownView: View {
     @State private var ripple3 = false
     @State private var isCountingDown = true
     @EnvironmentObject var router: Router
-    
+    @StateObject var messageVM = DependencyInjection.shared.MessageNotifViewModel()
+    @Query private var emergencyContactSaved: [EmergencyContacts]
+    @StateObject private var trackedVM = StatusTrackViewModel()
+
     var body: some View {
         VStack {
             Spacer()
-            
+
             Text("Alerting emergency contacts in")
                 .font(.title)
                 .bold()
                 .foregroundColor(.white)
                 .padding(20)
                 .multilineTextAlignment(.center)
-            
+
             Spacer()
             ZStack {
                 // Ripple effect layers
@@ -38,7 +42,7 @@ struct CountdownView: View {
                     .onAppear {
                         ripple1.toggle()
                     }
-                
+
                 Circle()
                     .fill(Color.white.opacity(0.3))
                     .frame(width: 247.54, height: 247.54)
@@ -48,7 +52,7 @@ struct CountdownView: View {
                     .onAppear {
                         ripple2.toggle()
                     }
-                
+
                 Circle()
                     .fill(Color.white.opacity(0.3))
                     .frame(width: 247.54, height: 247.54)
@@ -58,12 +62,12 @@ struct CountdownView: View {
                     .onAppear {
                         ripple3.toggle()
                     }
-                
+
                 // White circle behind the countdown number
                 Circle()
                     .fill(Color.white)
                     .frame(width: 247.54, height: 247.54)
-                
+
                 Text("\(countdown)")
                     .font(.system(size: 128, weight: .bold))
                     .foregroundColor(.black)
@@ -71,11 +75,14 @@ struct CountdownView: View {
             .onTapGesture {
                 // Stop the countdown and navigate to StatusTrackView
                 isCountingDown = false
+                messageVM.startSendingNotifications(
+                    emergencyContactSaved: emergencyContactSaved
+                )
                 router.navigateTo(.StatusTrackView)
             }
             .frame(width: 200, height: 200)
             .onAppear {
-               // startCountdown()
+                startCountdown()
             }
             Spacer()
             VStack {
@@ -94,7 +101,7 @@ struct CountdownView: View {
         .ignoresSafeArea()
         .background(Gradient(colors: [Color.pinkLinearTopBrand, Color.pinkLinearBottomBrand]))
     }
-    
+
     // Countdown function
     func startCountdown() {
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
@@ -103,12 +110,20 @@ struct CountdownView: View {
             } else {
                 timer.invalidate()
                 if isCountingDown { // Only navigate if the countdown finished normally
+                    messageVM.startSendingNotifications(
+                        emergencyContactSaved: emergencyContactSaved
+                    )
+                    emergencyContactSaved {
+                        trackedVM.makeCall(phoneNumber: <#T##String#>)
+
+                    }
                     router.navigateTo(.StatusTrackView)
                 }
             }
         }
     }
 }
+
 struct SlideToCancelButton: View {
     @State private var offset: CGFloat = 8
     @State private var buttonWidth: CGFloat = UIScreen.main.bounds.width - 25 // Adjust the width based on your design
@@ -125,8 +140,7 @@ struct SlideToCancelButton: View {
                         .fontWeight(.bold)
                         .padding(.leading, 16)
                 )
-               
-            
+
             // Draggable foreground
             HStack {
                 Circle()
@@ -142,7 +156,7 @@ struct SlideToCancelButton: View {
                         DragGesture()
                             .onChanged { gesture in
                                 // Move the button only within the width of the track
-                                if gesture.translation.width > 0 && gesture.translation.width <= (buttonWidth - 70) {
+                                if gesture.translation.width > 0, gesture.translation.width <= (buttonWidth - 70) {
                                     offset = gesture.translation.width
                                 }
                             }
@@ -162,13 +176,14 @@ struct SlideToCancelButton: View {
                                 }
                             }
                     )
-                
+
                 Spacer()
             }
         }
         .padding(.horizontal)
     }
 }
-#Preview {
-    CountdownView()
-}
+
+// #Preview {
+//    CountdownView()
+// }

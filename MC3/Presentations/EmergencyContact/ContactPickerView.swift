@@ -4,9 +4,9 @@
 //
 //  Created by Dinda Ayu Syafitri on 15/08/24.
 //
+
 import ContactsUI
 import SwiftUI
-import UIKit
 
 struct ContactPickerView: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
@@ -21,10 +21,6 @@ struct ContactPickerView: UIViewControllerRepresentable {
         let navController = UINavigationController()
         let controller = CNContactPickerViewController()
         controller.delegate = context.coordinator
-
-        // Filter to only show contacts with at least one phone number
-        controller.predicateForEnablingContact = NSPredicate(format: "phoneNumbers.@count > 0")
-
         navController.present(controller, animated: false, completion: nil)
         return navController
     }
@@ -60,7 +56,7 @@ struct ContactPickerView: UIViewControllerRepresentable {
                     // Create a new emergency contact with the correct isPrimary flag and FCM key
                     let newEmergencyContact = EmergencyContact(
                         fullName: fullName,
-                        phoneNumber: phoneNumber.standardizedPhoneNumber(),
+                        phoneNumber: phoneNumber,
                         fcm: fcm,
                         isPrimary: parent.isPrimary
                     )

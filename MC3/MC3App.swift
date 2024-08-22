@@ -95,7 +95,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
             if customMessage == "userTracked" {
                 print("user Tracked sent")
                 messageVM.stopSendingNotifications()
-                messageVM.userTrackedMessage = "userTracked"
             } else {
                 print("Notification received")
             }
@@ -140,8 +139,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
                 print("user Tracked sent")
                 DispatchQueue.main.async {
                     self.messageVM.stopSendingNotifications()
-                    self.messageVM.userTrackedMessage = "userTracked"
-                    print("USER TRACKEDD \(self.messageVM.userTrackedMessage)") // Moved inside the async block
                 }
                 messageVM.saveTrackStatus(status: "userTracked", locationID: userInfo["locationLink"] as? String ?? "")
             } else {
