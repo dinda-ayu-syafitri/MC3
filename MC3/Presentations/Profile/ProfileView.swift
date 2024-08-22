@@ -8,12 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var enableAlertSound = true
-    @State private var enableHaptic = true
-    @State private var enableAutomaticAlert = true
-    @State private var isPickerExpanded = false
-    @State private var selectedDelayTime = 5
-    let delayTimes = Array(1...10) // Range from 1 to 10 seconds
+    @StateObject private var profileVM = ProfileViewModel()
     
     var body: some View {
         NavigationView { // Add this line
@@ -59,18 +54,18 @@ struct ProfileView: View {
                     // SOS Alert Delay Time with Picker
                     Button(action: {
                         withAnimation {
-                            isPickerExpanded.toggle()
+                            profileVM.isPickerExpanded.toggle()
                         }
                     }) {
                         HStack {
                             Text("SOS Alert Delay Time")
                                 .foregroundColor(.black)
                             Spacer()
-                            Text("\(selectedDelayTime) seconds")
+                            Text("\(profileVM.selectedDelayTime) seconds")
                                 .foregroundColor(.gray)
                             Image(systemName: "chevron.right")
-                                .rotationEffect(.degrees(isPickerExpanded ? 90 : 0))
-                                .animation(.easeInOut, value: isPickerExpanded)
+                                .rotationEffect(.degrees(profileVM.isPickerExpanded ? 90 : 0))
+                                .animation(.easeInOut, value: profileVM.isPickerExpanded)
                                 .foregroundStyle(Color.appPinkSecondary)
                         }
                         .padding()
@@ -79,9 +74,9 @@ struct ProfileView: View {
                         .padding(.horizontal)
                     }
                     
-                    if isPickerExpanded {
-                        Picker("Select Delay Time", selection: $selectedDelayTime) {
-                            ForEach(delayTimes, id: \.self) { time in
+                    if profileVM.isPickerExpanded {
+                        Picker("Select Delay Time", selection: $profileVM.selectedDelayTime) {
+                            ForEach(profileVM.delayTimes, id: \.self) { time in
                                 Text("\(time) seconds").tag(time)
                             }
                         }
@@ -93,7 +88,7 @@ struct ProfileView: View {
                         .transition(.move(edge: .bottom))
                     }
                     
-                    Toggle(isOn: $enableAlertSound) {
+                    Toggle(isOn: $profileVM.enableAlertSound) {
                         Text("Enable Alert Sound")
                             .foregroundColor(.black)
                     }
@@ -102,7 +97,7 @@ struct ProfileView: View {
                     .cornerRadius(10)
                     .padding(.horizontal)
                     
-                    Toggle(isOn: $enableHaptic) {
+                    Toggle(isOn: $profileVM.enableHaptic) {
                         Text("Enable haptic")
                             .foregroundColor(.black)
                     }
@@ -111,7 +106,7 @@ struct ProfileView: View {
                     .cornerRadius(10)
                     .padding(.horizontal)
                     
-                    Toggle(isOn: $enableAutomaticAlert) {
+                    Toggle(isOn: $profileVM.enableAutomaticAlert) {
                         Text("Enable automatic alert")
                             .foregroundColor(.black)
                     }
@@ -120,11 +115,23 @@ struct ProfileView: View {
                     .cornerRadius(10)
                     .padding(.horizontal)
                     
+                    Button(action: {
+                        profileVM.logOut()
+                    }, label: {
+                        Text("Log out")
+                            .foregroundStyle(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.red)
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                    })
+                    
                     Spacer()
                 }
             }
             .background(Color(.bg).ignoresSafeArea())
-        } // Close NavigationView here
+        } 
     }
 }
 

@@ -9,7 +9,6 @@ import FirebaseAuth
 import Foundation
 
 class ProfileSetUpViewModel: ObservableObject {
-    @Published var nonce: String = ""
     @Published var isLoading: Bool = false
     @Published var userModel: User = .init()
     @Published var fullName: String = "" {
@@ -34,6 +33,7 @@ class ProfileSetUpViewModel: ObservableObject {
     }
     
     func submitProfileSetUp() async {
+        self.phoneNumber = self.phoneNumber.standardizedPhoneNumber()
         await self.saveProfileToLocal()
         await self.updateProfileToFirebase()
         
@@ -51,6 +51,7 @@ class ProfileSetUpViewModel: ObservableObject {
     
     private func saveProfileToLocal() async {
         self.userDefaultUseCase.saveProfileData(fullName: self.fullName, phoneNumber: self.phoneNumber)
+        self.userDefaultUseCase.saveData(data: 3, key: .statusBoarding)
     }
     
     private func updateProfileToFirebase() async {

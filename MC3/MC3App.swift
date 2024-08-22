@@ -14,7 +14,6 @@ import SwiftUI
 import UserNotifications
 
 class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate, ObservableObject {
-    @Environment(\.managedObjectContext) private var context
     @StateObject var loginVM = DependencyInjection.shared.loginViewModel()
     @StateObject var messageVM = DependencyInjection.shared.MessageNotifViewModel()
 //    @StateObject var messageVM = MessageNotificationViewModel()
@@ -23,24 +22,24 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         UNUserNotificationCenter.current().delegate = self
-        requestNotificationAuthorization()
+        //requestNotificationAuthorization()
         Messaging.messaging().delegate = self
         BackgroundTaskManager.shared.scheduleBackgroundTask()
         return true
     }
 
-    func requestNotificationAuthorization() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
-            if granted {
-                DispatchQueue.main.async {
-                    UIApplication.shared.registerForRemoteNotifications()
-                }
-                print("Notification permission granted")
-            } else {
-                print("Notification permission denied: \(error?.localizedDescription ?? "No error information")")
-            }
-        }
-    }
+//    func requestNotificationAuthorization() {
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+//            if granted {
+//                DispatchQueue.main.async {
+//                    UIApplication.shared.registerForRemoteNotifications()
+//                }
+//                print("Notification permission granted")
+//            } else {
+//                print("Notification permission denied: \(error?.localizedDescription ?? "No error information")")
+//            }
+//        }
+//    }
 
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
 //        print("FCM Token: \(fcmToken ?? "")")
@@ -189,6 +188,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
 
 @main
 struct MC3App: App {
+    @Environment(\.managedObjectContext) private var context
     private let notificationDelegate = NotificationDelegate()
 
     init() {
@@ -197,15 +197,6 @@ struct MC3App: App {
 
         // Register notification categories here if needed
         NotificationManager.shared.registerActionsWithCategories()
-
-        // Request notification permissions
-        NotificationManager.shared.requestAuthorization { granted in
-            if granted {
-                print("Notification permission granted.")
-            } else {
-                print("Notification permission denied.")
-            }
-        }
     }
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate

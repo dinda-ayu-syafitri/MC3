@@ -16,7 +16,7 @@ class UserDefaultUseCase: UserDefaultUseCaseProtocol {
     func saveLoginData(email: String, firebaseID: String) {
         userDefaultRepository.saveData(data: email, key: .email)
         userDefaultRepository.saveData(data: firebaseID, key: .idFirebase)
-        userDefaultRepository.saveData(data: true, key: .status)
+        userDefaultRepository.saveData(data: 2, key: .statusBoarding)
     }
 
     func saveProfileData(fullName: String, phoneNumber: String) {
@@ -27,7 +27,6 @@ class UserDefaultUseCase: UserDefaultUseCaseProtocol {
     func clearDataWhenLogOut(email: String, firebaseID: String) {
         userDefaultRepository.deleteData(key: .email)
         userDefaultRepository.deleteData(key: .idFirebase)
-        userDefaultRepository.deleteData(key: .status)
     }
 
     func saveData(data: Any, key: KeyUserDefaultEnum) {

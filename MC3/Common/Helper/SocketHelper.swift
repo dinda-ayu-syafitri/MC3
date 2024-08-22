@@ -95,7 +95,9 @@ final class SocketHelper: ObservableObject {
     }
     
     func disconnectSocket() {
-        socket.disconnect()
+        if socket != nil {
+            socket.disconnect()
+        }
         self.socket = nil
     }
     

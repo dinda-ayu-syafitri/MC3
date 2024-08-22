@@ -92,11 +92,35 @@ class OnboardingViewController: UIViewController {
     }
     
     @objc func permissionButtonTapped() {
-        router?.navigateTo(.AddEmergencyContact)
+//        router?.navigateTo(.AddEmergencyContact)
+        requestNotificationAuthorization()
+        NotificationManager.shared.requestAuthorization { granted in
+            if granted {
+                print("Notification permission granted.")
+                UserDefaults.standard.set(1, forKey: KeyUserDefaultEnum.statusBoarding.toString)
+            } else {
+                print("Notification permission denied.")
+                UserDefaults.standard.set(1, forKey: KeyUserDefaultEnum.statusBoarding.toString)
+            }
+        }
     }
     
     @objc func skipButtonTapped() {
-        router?.navigateTo(.AddEmergencyContact)
+        UserDefaults.standard.set(1, forKey: KeyUserDefaultEnum.statusBoarding.toString)
+//        router?.navigateTo(.AddEmergencyContact)
+    }
+    
+    func requestNotificationAuthorization() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+            if granted {
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+                print("Notification permission granted")
+            } else {
+                print("Notification permission denied: \(error?.localizedDescription ?? "No error information")")
+            }
+        }
     }
 }
 

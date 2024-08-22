@@ -9,7 +9,6 @@ import SwiftUI
 import UIKit
 
 struct OnboardingViewWrapper: UIViewControllerRepresentable {
-    
     @EnvironmentObject var router: Router  // Use EnvironmentObject
 
     func makeUIViewController(context: Context) -> OnboardingViewController {

@@ -38,6 +38,6 @@ class PersonalPinViewModel: ObservableObject {
     
     func saveToUserDefault() {
         userDefaultUseCase.saveData(data: self.personalPin, key: .pin)
-        print("data: \(String(describing: userDefaultUseCase.getData(key: .pin)))")
+        userDefaultUseCase.saveData(data: 5, key: .statusBoarding)
     }
 }

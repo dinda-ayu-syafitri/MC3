@@ -15,7 +15,6 @@ struct AddEmergencyContactView: View {
     @Query public var emergencyContactSaved: [EmergencyContacts]
     @StateObject var emergencyContactVM = DependencyInjection.shared.emergencyContactsViewModel()
     @StateObject var messageVM = DependencyInjection.shared.MessageNotifViewModel()
-    @EnvironmentObject var router: Router
     
     var body: some View {
         VStack {
@@ -209,9 +208,9 @@ struct AddEmergencyContactView: View {
                         .foregroundStyle(Color.white)
                 }
                 .onTapGesture {
-                    router.navigateTo(.HomeView)
+                    UserDefaults.standard.set(4, forKey: KeyUserDefaultEnum.statusBoarding.toString)
+//                    router.navigateTo(.HomeView)
                 }
-
             })
             .padding()
         }

@@ -10,7 +10,6 @@ import Foundation
 enum KeyUserDefaultEnum {
     case email
     case idFirebase
-    case status
     case roomLiveLocation
     case pin
     case fullname
@@ -19,7 +18,8 @@ enum KeyUserDefaultEnum {
     case fcm
     case trackedStatus
     case locationPrivacy
-    case onboarding
+    // MARK: Logic Views
+    case statusBoarding
 }
 
 extension KeyUserDefaultEnum {
@@ -29,7 +29,7 @@ extension KeyUserDefaultEnum {
             return "email"
         case .idFirebase:
             return "idFirebase"
-        case .status:
+        case .statusBoarding:
             return "status"
         case .roomLiveLocation:
             return "roomLiveLocation"
@@ -47,8 +47,6 @@ extension KeyUserDefaultEnum {
             return "trackedStatus"
         case .locationPrivacy:
             return "acceptLocationPrivacy"
-        case .onboarding:
-            return "onboarding"
         }
     }
 }
