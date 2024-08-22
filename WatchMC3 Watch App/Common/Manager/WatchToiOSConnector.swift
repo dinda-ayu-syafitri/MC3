@@ -23,7 +23,7 @@ class WatchToiOSConnector: NSObject, WCSessionDelegate, ObservableObject {
     }
     
     func sendTriggerToiOS(notificationType: NotificationTypeEnum) {
-        print("Send trigger to ios from apple watch")
+        print("Send trigger to ios from apple watch: \(notificationType)")
         
         if session.isReachable {
             let message = ["action" : notificationType.toString]

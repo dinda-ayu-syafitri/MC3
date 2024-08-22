@@ -6,15 +6,15 @@
 //
 
 import Foundation
-import SwiftUI
 import MessageUI
+import SwiftUI
 
 class StatusTrackViewModel: ObservableObject {
     @Published var isSheetOpened: Bool = false
     @Published var status: Int = 1
-    
-    func makeCall() {
-        let phoneNumber = "+6281385316329"
+
+    func makeCall(phoneNumber: String) {
+//        let phoneNumber = phoneNumber
         if let phoneURL = URL(string: "tel://\(phoneNumber)") {
             print("Attempting to call: \(phoneNumber)")
             UIApplication.shared.open(phoneURL, options: [:], completionHandler: nil)

@@ -8,33 +8,47 @@
 import SwiftUI
 
 class RouterWatch: ObservableObject {
+    static let shared = RouterWatch()
     // Contains the possible destinations in our Router
     enum Route: Hashable {
-//        case viewApa
+        case homeView, settingView, countdownView, jumpView, deactivateView, callView, trackingView
     }
-
+    
     // Used to programatically control our navigation stack
     @Published var path: NavigationPath = .init()
-
-//     Builds the views
+    
+    //     Builds the views
     @ViewBuilder func view(for route: Route) -> some View {
-//        switch route {
-//        case .LoginView:
-//            LoginView()
-//
-//        }
+        switch route {
+        case .homeView:
+            AllViews()
+        case .countdownView:
+            CountdownView()
+        case .jumpView:
+            HBJumpView()
+        case .deactivateView:
+            DeactivateView()
+        case .settingView:
+            SettingsView(homeVM: HomeViewModel())
+        case .callView:
+            CallView()
+        case .trackingView:
+            TrackingView()
+            
+        }
+        
     }
-
+    
     // Used by views to navigate to another view
     func navigateTo(_ appRoute: Route) {
         path.append(appRoute)
     }
-
+    
     // Used to go back to the previous screen
     func navigateBack() {
         path.removeLast()
     }
-
+    
     // Pop to the root screen in our hierarchy
     func popToRoot() {
         path.removeLast(path.count)
