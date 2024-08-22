@@ -499,6 +499,7 @@
 				DA221D412C71CC3C00F88958 /* SOSActiveView.swift */,
 			);
 			path = Tracking;
+        };
 		DD0B05952C73ADEC0010F718 /* PersonalPin */ = {
 			isa = PBXGroup;
 			children = (
