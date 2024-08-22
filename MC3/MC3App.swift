@@ -95,7 +95,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
             if customMessage == "userTracked" {
                 print("user Tracked sent")
                 messageVM.stopSendingNotifications()
-                messageVM.userTrackedMessage = "userTracked"
             } else {
                 print("Notification received")
             }
@@ -124,8 +123,11 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
 
         // Access custom data here
         if let locationLink = userInfo["locationLink"] as? String,
-           let senderFCM = userInfo["senderFCM"] as? String, let customMessage = userInfo["customMessage"] as? String
+           let senderFCM = userInfo["senderFCM"] as? String,
+           let customMessage = userInfo["customMessage"] as? String
         {
+            UserDefaults.standard.set(locationLink, forKey: KeyUserDefaultEnum.roomLiveLocation.toString)
+
             if customMessage != "userTracked" {
                 messageVM.sendPushNotification(token: senderFCM, title: "\(UserDefaults.standard.string(forKey: "fullName") ?? "Emergency Contact") is tracking!", body: "\(UserDefaults.standard.string(forKey: "fullName") ?? "") is currently tracking you", locationLink: "", senderFCM: "\(TokenManager.shared.fcmToken ?? "")", customMessage: "userTracked")
             }
@@ -140,8 +142,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
                 print("user Tracked sent")
                 DispatchQueue.main.async {
                     self.messageVM.stopSendingNotifications()
-                    self.messageVM.userTrackedMessage = "userTracked"
-                    print("USER TRACKEDD \(self.messageVM.userTrackedMessage)") // Moved inside the async block
                 }
                 messageVM.saveTrackStatus(status: "userTracked", locationID: userInfo["locationLink"] as? String ?? "")
             } else {
