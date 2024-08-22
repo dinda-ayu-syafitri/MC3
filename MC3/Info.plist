@@ -2,26 +2,35 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
-    <key>GIDClientID</key>
-    <string>715783712109-5g24553veqj01j39tl2tdfusscsi3nfi.apps.googleusercontent.com</string>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>com.googleusercontent.apps.715783712109-5g24553veqj01j39tl2tdfusscsi3nfi</string>
-            </array>
-        </dict>
-    </array>
-    <key>UIBackgroundModes</key>
-    <array>
-        <string>fetch</string>
-        <string>remote-notification</string>
-    </array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.715783712109-5g24553veqj01j39tl2tdfusscsi3nfi</string>
+			</array>
+		</dict>
+	</array>
+	<key>GIDClientID</key>
+	<string>715783712109-5g24553veqj01j39tl2tdfusscsi3nfi.apps.googleusercontent.com</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+		<string>location</string>
+	</array>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>MC3.Untouchable</string>
+	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need your location to provide personalized content while using the app.</string> 
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We need your location to provide services even when the app is in the background.</string>
 </dict>
 </plist>

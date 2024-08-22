@@ -11,33 +11,41 @@ import SwiftData
 
 class EmergencyContactViewModel: ObservableObject {
     @Published var contacts: [CNContact] = []
+    @Published var selectedContact: CNContact?
+    @Published var isPrimary = false
+    @Published var isShowingPicker = false
+    @Published var emergencyContacts: [EmergencyContact] = []
+    @Published var tempEmergencyContact: EmergencyContact?
+    
     private var firebaseUseCase: FirebaseServiceUseCaseProtocol
-
+    
     init(firebaseUseCase: FirebaseServiceUseCaseProtocol) {
         self.firebaseUseCase = firebaseUseCase
     }
-
+    
     func fetchAllContacts() async {
         let store = CNContactStore()
-
+        
         let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
         let fetchRequest = CNContactFetchRequest(keysToFetch: keys)
-
+        
         do {
-            try store.enumerateContacts(with: fetchRequest, usingBlock: { contact,
-                    _ in
-                self.contacts.append(contact)
+            try store.enumerateContacts(with: fetchRequest, usingBlock: { contact, _ in
+                if !contact.phoneNumbers.isEmpty {
+                    print("not empty")
+                    self.contacts.append(contact)
+                }
             })
         } catch {
             print("Error fetcch all contact")
         }
     }
-
+    
     func SaveLocalEmergencyContacts(context: ModelContext, emergencyContacts: [EmergencyContact]) {
         let formattedEmergencyContacts = EmergencyContacts(emergencyContacts: emergencyContacts)
         context.insert(formattedEmergencyContacts)
     }
-
+    
     func insertUserEmergencyContacts(idFirestore: String, emergencyContacts: [EmergencyContact]) async {
         do {
             try await self.firebaseUseCase.insertUserEmergencyContacts(idFirestore: idFirestore, emergencyContacts: emergencyContacts)
