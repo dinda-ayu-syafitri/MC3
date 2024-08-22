@@ -12,11 +12,15 @@ class Router: ObservableObject {
     // Contains the possible destinations in our Router
     enum Route: Hashable {
         case LoginView
-        case HomeView
+        case HomeView(Tab)
         case AddEmergencyContact
         case CountdownView
         case StatusTrackView
         case LiveTrackView
+        
+        enum Tab {
+                case sos, liveTrack, settings
+            }
     }
     
     // Used to programatically control our navigation stack
@@ -27,8 +31,8 @@ class Router: ObservableObject {
         switch route {
         case .LoginView:
             LoginView()
-        case .HomeView:
-            HomeView()
+        case .HomeView(let tab):
+            HomeView(selectedTab: tab)
         case .AddEmergencyContact:
             AddEmergencyContactView(fromSetting: true)
         case .CountdownView:

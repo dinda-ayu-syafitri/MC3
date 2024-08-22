@@ -8,30 +8,32 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var selectedTab: Router.Route.Tab
+
     var body: some View {
-        TabView(){
+        TabView(selection: $selectedTab) {
             SOSView()
                 .tabItem {
-                    Image(systemName: "sos.circle.fill")
-                    Text("SOS")
+                    Label("SOS", systemImage: "sos.circle.fill")
                 }
+                .tag(Router.Route.Tab.sos)
+
             LiveTrackView()
                 .tabItem {
-                    Image(systemName: "map")
-                    Text("Live Track")
+                    Label("Live Track", systemImage: "map")
                 }
+                .tag(Router.Route.Tab.liveTrack)
+
             ProfileView()
                 .tabItem {
-                    Image(systemName: "gear")
-                    Text("Settings")
+                    Label("Settings", systemImage: "gearshape.fill")
                 }
-
+                .tag(Router.Route.Tab.settings)
         }
-        .accentColor(.appPink)
-        .background(Color.bg)
+        .accentColor(.appPinkSecondary)
     }
 }
 
 #Preview {
-    HomeView()
+    HomeView(selectedTab: .sos)
 }

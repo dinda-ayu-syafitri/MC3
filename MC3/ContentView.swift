@@ -29,7 +29,7 @@ struct ContentView: View {
                 case 4:
                     PersonalPinView()
                 default:
-                    HomeView()
+                    HomeView(selectedTab: .liveTrack)
                 }
             }
         }
