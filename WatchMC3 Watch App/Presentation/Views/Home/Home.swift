@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct Home: View {
-    @StateObject private var homeVM = HomeViewModel()
-    
+//    @EnvironmentObject var router: RouterWatch
+
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             // SOS State
             HStack {
                 Text("SOS Inactive")
-                    .onTapGesture {
-                        homeVM.isCountdownViewPresented = true
-                    }
+//                    .onTapGesture {
+//                        homeVM.isCountdownViewPresented = true
+//                    }
                     .font(.system(size: 17) .weight(.semibold))
                     .foregroundColor(.pastelPink)
                     .frame(alignment: .leading)
@@ -28,7 +28,8 @@ struct Home: View {
             
             // SOS button
             Button(action: {
-                homeVM.createNotification(notificationType: .SOSALERT)
+                RouterWatch.shared.navigateTo(.countdownView)
+                // To keep array empty after cancelling countdown that appears from tapping SOS button, we need to remove heart rates array in home view model here (but im still figuring out how to call the same instance)
             }) {
                 VStack(alignment: .center, spacing: 8) {
                     Image(systemName: "bell.and.waves.left.and.right.fill")
@@ -61,10 +62,10 @@ struct Home: View {
         .padding(10)
         .frame(maxWidth: .infinity, alignment: .leading)
         .ignoresSafeArea()
-        .fullScreenCover(isPresented: $homeVM.isCountdownViewPresented, content: {
-            DeactivateView()
-        })
-        .navigationTitle("Home")
+        .navigationBarBackButtonHidden()
+//        .fullScreenCover(isPresented: $homeVM.isCountdownViewPresented, content: {
+//            DeactivateView()
+//        })
     }
 }
 

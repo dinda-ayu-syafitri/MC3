@@ -13,12 +13,13 @@ struct AllViews: View {
             TabView {
                 // Home View
                 Home()
-
                 // Settings View
-                SettingsView(heartRateViewModel: HomeViewModel())
+                SettingsView(homeVM: HomeViewModel())
             }
             .tabViewStyle(.verticalPage)
         }
+        .navigationBarBackButtonHidden()
+        
     }
 }
 

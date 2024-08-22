@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RouterWatchView<Content: View>: View {
-    @StateObject var router: RouterWatch = .init()
+    @StateObject var router: RouterWatch = RouterWatch.shared
     // Our root view content
     private let content: Content
 
