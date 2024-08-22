@@ -16,15 +16,14 @@ struct ContentView: View {
     
     var body: some View {
         RouterView {
-            ZStack {
-//                AddEmergencyContactView()
-                StatusTrackView()
+            StatusTrackView()
+//            ZStack {
 //                if logStatus {
 //                   OnboardingViewWrapper()
 //                } else {
 //                    LoginView()
 //                }
-            }
+//            }
         }
         .onAppear {
             watchConnector.emergencyContactSaved = emergencyContactSaved

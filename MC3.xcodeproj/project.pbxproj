@@ -57,6 +57,7 @@
 		DD0B05DC2C74FB9E0010F718 /* StatusTrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05DB2C74FB9E0010F718 /* StatusTrackViewModel.swift */; };
 		DD0B05E02C750DDE0010F718 /* BackgroundTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05DF2C750DDE0010F718 /* BackgroundTaskManager.swift */; };
 		DD4C625F2C767A400027A13A /* MapComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C625E2C767A400027A13A /* MapComponent.swift */; };
+		DD4C62612C76EF110027A13A /* MarkerLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4C62602C76EF110027A13A /* MarkerLogo.swift */; };
 		DD4C77512C6A59A800CEDFB2 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = DD4C77502C6A59A800CEDFB2 /* SocketIO */; };
 		DD4DFAC72C75B2F100E53681 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4DFAC62C75B2F100E53681 /* String+Extension.swift */; };
 		DD6542F32C7387B100BFB0FD /* AllViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542F22C7387B100BFB0FD /* AllViews.swift */; };
@@ -218,6 +219,7 @@
 		DD0B05DB2C74FB9E0010F718 /* StatusTrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTrackViewModel.swift; sourceTree = "<group>"; };
 		DD0B05DF2C750DDE0010F718 /* BackgroundTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTaskManager.swift; sourceTree = "<group>"; };
 		DD4C625E2C767A400027A13A /* MapComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapComponent.swift; sourceTree = "<group>"; };
+		DD4C62602C76EF110027A13A /* MarkerLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerLogo.swift; sourceTree = "<group>"; };
 		DD4DFAC62C75B2F100E53681 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		DD6542F22C7387B100BFB0FD /* AllViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViews.swift; sourceTree = "<group>"; };
 		DD6542F42C7387C400BFB0FD /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -890,7 +892,9 @@
 			isa = PBXGroup;
 			children = (
 				DD6543762C738FEF00BFB0FD /* InputPinComponent.swift */,
+				DD65437F2C73905F00BFB0FD /* UserAnnotation.swift */,
 				DD4C625E2C767A400027A13A /* MapComponent.swift */,
+				DD4C62602C76EF110027A13A /* MarkerLogo.swift */,
 			);
 			path = ReusableComponents;
 			sourceTree = "<group>";
@@ -901,7 +905,6 @@
 				DD6543792C73901800BFB0FD /* LiveTrackViewModel.swift */,
 				DD65437B2C73902C00BFB0FD /* LiveTrackView.swift */,
 				DD65437D2C73904D00BFB0FD /* LocationManagerViewModel.swift */,
-				DD65437F2C73905F00BFB0FD /* UserAnnotation.swift */,
 				DD6543812C73907000BFB0FD /* NoAlertsView.swift */,
 			);
 			path = LiveTrack;
@@ -1224,6 +1227,7 @@
 				DD6543472C738DD500BFB0FD /* FirebaseServiceRepository.swift in Sources */,
 				DD4DFAC72C75B2F100E53681 /* String+Extension.swift in Sources */,
 				DD6543802C73905F00BFB0FD /* UserAnnotation.swift in Sources */,
+				DD4C62612C76EF110027A13A /* MarkerLogo.swift in Sources */,
 				DD65434E2C738E1900BFB0FD /* KeyUserDefaultEnum.swift in Sources */,
 				DD0B05D82C74D4230010F718 /* trackComponent.swift in Sources */,
 				DD0B059F2C7435FB0010F718 /* NumberFormatHelper.swift in Sources */,
