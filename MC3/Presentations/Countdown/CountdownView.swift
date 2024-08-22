@@ -17,7 +17,6 @@ struct CountdownView: View {
     @EnvironmentObject var router: Router
     @StateObject var messageVM = DependencyInjection.shared.MessageNotifViewModel()
     @Query private var emergencyContactSaved: [EmergencyContacts]
-    @StateObject private var trackedVM = StatusTrackViewModel()
 
     var body: some View {
         VStack {
@@ -113,10 +112,7 @@ struct CountdownView: View {
                     messageVM.startSendingNotifications(
                         emergencyContactSaved: emergencyContactSaved
                     )
-                    emergencyContactSaved {
-                        trackedVM.makeCall(phoneNumber: <#T##String#>)
 
-                    }
                     router.navigateTo(.StatusTrackView)
                 }
             }

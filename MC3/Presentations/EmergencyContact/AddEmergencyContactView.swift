@@ -26,16 +26,6 @@ struct AddEmergencyContactView: View {
 
     var body: some View {
         VStack {
-            Text("Test")
-            if !emergencyContactSaved.isEmpty {
-                ForEach(emergencyContactSaved, id: \.self) { contact in
-                    ForEach(contact.emergencyContacts, id: \.self) { data in
-                        Text(data.fullName)
-                    }
-                }
-            } else {
-                Text("Emergency Contact Empty")
-            }
             Text("Add your emergency contacts")
                 .font(.title2)
                 .multilineTextAlignment(.center)
@@ -185,7 +175,6 @@ struct AddEmergencyContactView: View {
                             }
                             .listStyle(PlainListStyle())
                             .clipShape(RoundedRectangle(cornerRadius: 15.0))
-                            // .padding(.horizontal,-20)
                         }
 
                     } else {
@@ -231,9 +220,9 @@ struct AddEmergencyContactView: View {
             .padding()
         }
         .background(Color.bg)
-        .onAppear {
-            emergencyContactVM.getLocalEmergencyContacts(context: context)
-//            Task {
+//        .onAppear {
+//            emergencyContactVM.getLocalEmergencyContacts(context: context)
+        ////            Task {
 //                let contact1 = emergencyContactVM.getLocalEmergencyContacts(context: context)
 //                print("emergency contacts: \(contact1)")
 //            }
@@ -247,7 +236,7 @@ struct AddEmergencyContactView: View {
 //                    print(contact.fcm)
 //                }
 //            }
-        }
+//        }
     }
 }
 
