@@ -21,7 +21,7 @@ struct MapComponent: View {
             ForEach(Array(socketVM.userLocations.keys).filter { $0 != locationVM.userNumber }, id: \.self) { userId in
                 if let coordinate = socketVM.userLocations[userId] {
                     Annotation("User \(userId)", coordinate: coordinate) {
-                        UserAnnotation()
+                        UserAnnotation(isOther: true)
                     }
                 }
             }
