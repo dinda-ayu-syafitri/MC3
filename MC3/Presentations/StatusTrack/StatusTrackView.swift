@@ -5,6 +5,7 @@
 //  Created by Giventus Marco Victorio Handojo on 19/08/24.
 //
 
+import SwiftData
 import SwiftUI
 
 struct StatusTrackView: View {
@@ -12,7 +13,9 @@ struct StatusTrackView: View {
     @StateObject private var trackedVM = StatusTrackViewModel()
     @StateObject private var locationVM = LocationManager()
     @StateObject private var socketVM = SocketHelper()
-    
+
+    @Query public var emergencyContactSaved: [EmergencyContacts]
+
     var body: some View {
         ScrollView {
             VStack(alignment: .center, spacing: 24) {
@@ -21,18 +24,21 @@ struct StatusTrackView: View {
                         .environmentObject(locationVM)
                         .environmentObject(socketVM)
                         .environmentObject(trackedVM)
-                    
+
                     Text("Latitude: \(locationVM.lastKnownLocation.latitude)")
                         .foregroundStyle(.blackBrand)
                         .font(.caption)
-                    
+
                     Text("Longitude: \(locationVM.lastKnownLocation.longitude)")
                         .foregroundStyle(.blackBrand)
                         .font(.caption)
-                    
+
                     VStack(alignment: .center, spacing: 12) {
                         Button {
-                            trackedVM.makeCall()
+                            if let primaryContact = emergencyContactSaved.first?.emergencyContacts.first(where: { $0.isPrimary }) {
+                                let phoneNumber = primaryContact.phoneNumber
+                                trackedVM.makeCall(phoneNumber: phoneNumber)
+                            }
                         } label: {
                             Text("Call Siapa")
                                 .font(.title2)
@@ -43,7 +49,7 @@ struct StatusTrackView: View {
                                 .background(.redBrand)
                                 .clipShape(RoundedRectangle(cornerRadius: 12))
                         }
-                        
+
                         Button {
                             trackedVM.isSheetOpened = true
                         } label: {
@@ -61,8 +67,8 @@ struct StatusTrackView: View {
                 locationVM.checkLocationAuthorization()
                 socketVM.getInitializeMapCamera(center: locationVM.lastKnownLocation)
             }
-            .onChange(of: locationVM.userAcceptLocation) { oldValue, newValue in
-                if (newValue) {
+            .onChange(of: locationVM.userAcceptLocation) { _, newValue in
+                if newValue {
                     socketVM.setupSocket {
                         socketVM.createOrJoinRoom(roomName: "realTest", isListener: true)
                     }
@@ -85,7 +91,7 @@ struct StatusTrackView: View {
                         UIApplication.shared.open(appSettings)
                     }
                 }
-                Button("Cancel", role: .cancel) { }
+                Button("Cancel", role: .cancel) {}
             } message: {
                 Text("This app requires access to your location at all times to provide certain features. Please go to Settings and enable 'Always' location access.")
             }
