@@ -36,15 +36,16 @@ class MessageNotificationViewModel: ObservableObject {
             }
 
             if let data = data, let responseString = String(data: data, encoding: .utf8) {
-//                print("Response: \(responseString)")
+                print("Response: \(responseString)")
             }
         }
 
         task.resume()
     }
 
-    func saveTrackStatus(status: String) {
+    func saveTrackStatus(status: String, locationID: String) {
         userDefaultUseCase.saveData(data: status, key: .trackedStatus)
+        userDefaultUseCase.saveData(data: locationID, key: .roomLiveLocation)
     }
 
     func startSendingNotifications(emergencyContactSaved: [EmergencyContacts]?, userTracked: inout Bool) {
@@ -53,7 +54,7 @@ class MessageNotificationViewModel: ObservableObject {
             return
         }
 
-        saveTrackStatus(status: "")
+        saveTrackStatus(status: "", locationID: "")
 
         guard let emergencyContacts = emergencyContactSaved, !emergencyContacts.isEmpty else {
             print("No emergency contacts available, not starting notifications.")
@@ -88,7 +89,6 @@ class MessageNotificationViewModel: ObservableObject {
                             senderFCM: fcmToken,
                             customMessage: ""
                         )
-                        print("1 Notification Sent")
                     }
                 }
             }

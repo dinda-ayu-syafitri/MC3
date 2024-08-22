@@ -143,7 +143,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
                     self.messageVM.userTrackedMessage = "userTracked"
                     print("USER TRACKEDD \(self.messageVM.userTrackedMessage)") // Moved inside the async block
                 }
-                messageVM.saveTrackStatus(status: "userTracked")
+                messageVM.saveTrackStatus(status: "userTracked", locationID: userInfo["locationLink"] as? String ?? "")
             } else {
                 print("Notification received with message: \(customMessage)")
             }
