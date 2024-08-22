@@ -53,7 +53,11 @@ struct CountdownView: View {
         .padding(10)
         .frame(maxWidth: .infinity, alignment: .leading)
         .ignoresSafeArea()
-        .background(.black)
+        .background(LinearGradient(
+            gradient: Gradient(colors: [Color(.melonPink), Color(.darkPink)]),
+            startPoint: .top,
+            endPoint: .bottom
+        ))
         .navigationBarBackButtonHidden()
         .onAppear {
             countdownVM.startCountdown()
@@ -91,11 +95,11 @@ struct SlideToCancelButton: View {
                 // Draggable foreground
                 HStack {
                     Circle()
-                        .fill(Color.red)
+                        .fill(Color.white)
                         .frame(width: 34, height: 34)
                         .overlay(
                             Image(systemName: "arrow.right")
-                                .foregroundColor(.white)
+                                .foregroundColor(.melonPink)
                                 .font(.system(size: 16, weight: .bold))
                         )
                         .offset(x: offset)

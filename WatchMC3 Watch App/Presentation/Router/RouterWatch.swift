@@ -11,7 +11,7 @@ class RouterWatch: ObservableObject {
     static let shared = RouterWatch()
     // Contains the possible destinations in our Router
     enum Route: Hashable {
-        case homeView, settingView, countdownView, jumpView, deactivateView, callView, trackingView
+        case homeView, settingView, countdownView, jumpView, deactivateView, trackingView
     }
     
     // Used to programatically control our navigation stack
@@ -30,8 +30,6 @@ class RouterWatch: ObservableObject {
             DeactivateView()
         case .settingView:
             SettingsView(homeVM: HomeViewModel())
-        case .callView:
-            CallView()
         case .trackingView:
             TrackingView()
             

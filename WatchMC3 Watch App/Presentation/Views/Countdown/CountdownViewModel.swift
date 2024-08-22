@@ -38,7 +38,7 @@ class CountdownViewModel: ObservableObject {
                         HomeViewModel.shared.emergencySessionIsActive = true
                         print("emergedncy session aktif? \(HomeViewModel.shared.emergencySessionIsActive)")
                         
-                        self.router.navigateTo(.callView)
+                        self.router.navigateTo(.trackingView)
                         
                     }
                 }

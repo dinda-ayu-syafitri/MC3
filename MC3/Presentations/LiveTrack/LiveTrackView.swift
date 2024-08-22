@@ -21,24 +21,26 @@ struct LiveTrackView: View {
                     .font(.title2)
                     .bold()
                     .foregroundColor(.appPinkSecondary)
-                
+
+                // Text("longlat: \(socketVM.longitude), \(socketVM.latitude)")
+
                 MapComponent()
-                    .environmentObject(locationVM)
                     .environmentObject(socketVM)
-                .frame(width: 361, height: 530)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-                .padding()
-                .overlay(
-                    VStack(alignment: .leading) {
-                        Text("Current Location")
-                            .font(.callout)
-                            .bold()
-                            .padding(.bottom, 2)
-                            .foregroundColor(.appPinkSecondary)
-                        
-                        Text("Kompleks Ruko Flourite, Jl. Raya Kelapa Gading Utara No.49, Tangerang Selatan")
-                            .font(.subheadline)
-                    }
+                    .environmentObject(locationVM)
+                    .frame(width: 361, height: 530)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                    .padding()
+                    .overlay(
+                        VStack(alignment: .leading) {
+                            Text("Current Location")
+                                .font(.callout)
+                                .bold()
+                                .padding(.bottom, 2)
+                                .foregroundColor(.appPinkSecondary)
+
+                            Text("Kompleks Ruko Flourite, Jl. Raya Kelapa Gading Utara No.49, Tangerang Selatan")
+                                .font(.subheadline)
+                        }
                         .frame(width: 300)
                         .padding()
                         .background(Color.white)

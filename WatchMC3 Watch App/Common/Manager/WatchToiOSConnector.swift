@@ -22,6 +22,24 @@ class WatchToiOSConnector: NSObject, WCSessionDelegate, ObservableObject {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
     }
     
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        if let name = message["name"] as? String,
+           let phone = message["phone"] as? String {
+            print("Received message on watch: name = \(name), phone = \(phone)")
+
+            //store primary number to user default
+            UserDefaults.standard.set(name, forKey: "EmergencyContactName")
+            UserDefaults.standard.set(phone, forKey: "EmergencyContactPhone")
+            
+            // Update TrackingViewModel
+            TrackingViewModel.shared.updateEmergencyContact(name: name, phone: phone)            
+            
+        } else {
+            print("Unknown message received: \(message)")
+        }
+        
+    }
+    
     func sendTriggerToiOS(notificationType: NotificationTypeEnum) {
         print("Send trigger to ios from apple watch: \(notificationType)")
         
@@ -34,10 +52,10 @@ class WatchToiOSConnector: NSObject, WCSessionDelegate, ObservableObject {
         } else {
             // fallback to using updateApplicationContext
             
-//            NotificationManager.shared.scheduleNotification(
-//                title: "Abnormal Heart Rate",
-//                body: "are you okay?",
-//                category: NotificationTypeEnum.ABNORMALHEARTRATE.toString)
+            //            NotificationManager.shared.scheduleNotification(
+            //                title: "Abnormal Heart Rate",
+            //                body: "are you okay?",
+            //                category: NotificationTypeEnum.ABNORMALHEARTRATE.toString)
             
             let context = ["action": "sosAlert"]
             do {

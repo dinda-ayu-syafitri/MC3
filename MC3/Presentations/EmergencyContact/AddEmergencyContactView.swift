@@ -196,7 +196,35 @@ struct AddEmergencyContactView: View {
             .padding(.top, 2)
             .padding()
             Spacer()
-            // <<<<<<< Bachul/LogicViews
+            
+            //Testing Send Data Emergency Contact
+            // Button{
+            //     print("Button Pressed")
+
+            //     iOSToWatchConnector.shared.sendPrimaryContact(name: "Papa", phone: "081388910174")
+            // } label: {
+            //     Text("send primary contact")
+            // }
+            
+            Button(action: {
+                Task {
+                    let firebaseID = Auth.auth().currentUser?.uid
+                    await emergencyContactVM.insertUserEmergencyContacts(idFirestore: firebaseID ?? "", emergencyContacts: emergencyContactVM.emergencyContacts)
+                    
+                    emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
+                }
+            )
+            }, label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 15.0)
+                        .fill(Color.appPink)
+                        .frame(width: 360, height: 60)
+                    Text("Confirm Emergency Contact")
+                        .foregroundStyle(Color.white)
+                }
+                .onTapGesture {
+                    router.navigateTo(.HomeView)
+                }
 
             if !fromSetting {
                 Button(action: {
@@ -219,7 +247,6 @@ struct AddEmergencyContactView: View {
                 })
                 .padding()
             }
-            // =======
 //             Button(action: {
 //                 Task {
 //                     emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)

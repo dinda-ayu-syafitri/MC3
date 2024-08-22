@@ -13,6 +13,7 @@
 		20190CFE2C6A336B001A2AB6 /* Pulse Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 20190CF12C6A336A001A2AB6 /* Pulse Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2020C9942C7590B400CEF9A1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2020C9922C7590B400CEF9A1 /* OnboardingViewController.swift */; };
 		2020C9952C7590B400CEF9A1 /* OnboardingViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2020C9932C7590B400CEF9A1 /* OnboardingViewWrapper.swift */; };
+		2020C9992C75AF4600CEF9A1 /* custom.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2020C9982C75AF4600CEF9A1 /* custom.wav */; };
 		203E3E932C743A76000A04E0 /* CountdownManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203E3E912C743A76000A04E0 /* CountdownManager.swift */; };
 		2058D15D2C65C65200D0557D /* MC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15C2C65C65200D0557D /* MC3App.swift */; };
 		2058D15F2C65C65200D0557D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2058D15E2C65C65200D0557D /* ContentView.swift */; };
@@ -39,6 +40,8 @@
 		DA8B4A4B2C6BAE9D00BC5987 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */; };
 		DA8B4A512C6CC07E00BC5987 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3D2C6B923400BC5987 /* NotificationManager.swift */; };
 		DA8B4A522C6CC08100BC5987 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */; };
+		DA90D7742C77854900AF4204 /* TrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA90D7732C77854900AF4204 /* TrackingViewModel.swift */; };
+		DAF1DC062C779D00005787AE /* EmergencyContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF1DC052C779D00005787AE /* EmergencyContact.swift */; };
 		DD0B05972C73ADFD0010F718 /* PersonalPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05962C73ADFD0010F718 /* PersonalPinView.swift */; };
 		DD0B05992C73B3200010F718 /* PersonalPinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05982C73B3200010F718 /* PersonalPinViewModel.swift */; };
 		DD0B059F2C7435FB0010F718 /* NumberFormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B059E2C7435FB0010F718 /* NumberFormatHelper.swift */; };
@@ -69,7 +72,6 @@
 		DD6542FA2C73882000BFB0FD /* MessageNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542F92C73882000BFB0FD /* MessageNotificationViewModel.swift */; };
 		DD6542FD2C73884800BFB0FD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6542FC2C73884800BFB0FD /* SettingsView.swift */; };
 		DD6543012C7388C600BFB0FD /* NotificationTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6543002C7388C600BFB0FD /* NotificationTypeEnum.swift */; };
-		DD6543042C7388E000BFB0FD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6543032C7388E000BFB0FD /* Router.swift */; };
 		DD6543072C73894000BFB0FD /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6543062C73894000BFB0FD /* CountdownView.swift */; };
 		DD65430C2C73899400BFB0FD /* RepoFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65430B2C73899400BFB0FD /* RepoFile.swift */; };
 		DD65430E2C7389A200BFB0FD /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD65430D2C7389A200BFB0FD /* DataSource.swift */; };
@@ -203,6 +205,8 @@
 		DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationDelegate.swift; path = Shared/NotificationDelegate.swift; sourceTree = SOURCE_ROOT; };
 		DA8B4A462C6BA53F00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS10.2.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 		DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		DA90D7732C77854900AF4204 /* TrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewModel.swift; sourceTree = SOURCE_ROOT; };
+		DAF1DC052C779D00005787AE /* EmergencyContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContact.swift; sourceTree = "<group>"; };
 		DD0B05962C73ADFD0010F718 /* PersonalPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPinView.swift; sourceTree = "<group>"; };
 		DD0B05982C73B3200010F718 /* PersonalPinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPinViewModel.swift; sourceTree = "<group>"; };
 		DD0B059E2C7435FB0010F718 /* NumberFormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatHelper.swift; sourceTree = "<group>"; };
@@ -234,7 +238,6 @@
 		DD6542F92C73882000BFB0FD /* MessageNotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNotificationViewModel.swift; sourceTree = "<group>"; };
 		DD6542FC2C73884800BFB0FD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DD6543002C7388C600BFB0FD /* NotificationTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTypeEnum.swift; sourceTree = "<group>"; };
-		DD6543032C7388E000BFB0FD /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		DD6543062C73894000BFB0FD /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		DD65430B2C73899400BFB0FD /* RepoFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoFile.swift; sourceTree = "<group>"; };
 		DD65430D2C7389A200BFB0FD /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
@@ -494,6 +497,7 @@
 			isa = PBXGroup;
 			children = (
 				DA221D3E2C71C8DB00F88958 /* TrackingView.swift */,
+				DA90D7732C77854900AF4204 /* TrackingViewModel.swift */,
 				209B9AE52C776A6000B4A4FC /* SOSActiveView.swift */,
 			);
 			path = Tracking;
@@ -592,6 +596,7 @@
 			isa = PBXGroup;
 			children = (
 				DD6543002C7388C600BFB0FD /* NotificationTypeEnum.swift */,
+				DAF1DC052C779D00005787AE /* EmergencyContact.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -599,7 +604,6 @@
 		DD6543022C7388D600BFB0FD /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				DD6543032C7388E000BFB0FD /* Router.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1164,8 +1168,9 @@
 				2084E3682C73B62900ECA12E /* RouterWatchView.swift in Sources */,
 				DA8B4A3E2C6B923400BC5987 /* NotificationManager.swift in Sources */,
 				DD6542FD2C73884800BFB0FD /* SettingsView.swift in Sources */,
+				DA90D7742C77854900AF4204 /* TrackingViewModel.swift in Sources */,
 				DD6543152C738A4100BFB0FD /* ext.swift in Sources */,
-				DD6543042C7388E000BFB0FD /* Router.swift in Sources */,
+				DAF1DC062C779D00005787AE /* EmergencyContact.swift in Sources */,
 				DA8B4A402C6B935F00BC5987 /* NotificationDelegate.swift in Sources */,
 				DD6543122C738A2700BFB0FD /* OverlayPlayerForTimeRemove.swift in Sources */,
 				DD6542F72C7387D900BFB0FD /* HomeViewModel.swift in Sources */,
