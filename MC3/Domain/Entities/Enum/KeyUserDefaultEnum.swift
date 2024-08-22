@@ -19,6 +19,7 @@ enum KeyUserDefaultEnum {
     case fcm
     case trackedStatus
     case locationPrivacy
+    case onboarding
 }
 
 extension KeyUserDefaultEnum {
@@ -46,6 +47,8 @@ extension KeyUserDefaultEnum {
             return "trackedStatus"
         case .locationPrivacy:
             return "acceptLocationPrivacy"
+        case .onboarding:
+            return "onboarding"
         }
     }
 }

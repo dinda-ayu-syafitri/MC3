@@ -176,7 +176,7 @@
 		203AB9A42C6C710A00D7AD86 /* MC3.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MC3.entitlements; sourceTree = "<group>"; };
 		203AB9A52C6C712B00D7AD86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		203E3E912C743A76000A04E0 /* CountdownManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountdownManager.swift; sourceTree = "<group>"; };
-		2058D1592C65C65200D0557D /* MC3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MC3.app; path = Pulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2058D1592C65C65200D0557D /* Pulse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pulse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2058D15C2C65C65200D0557D /* MC3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3App.swift; sourceTree = "<group>"; };
 		2058D15E2C65C65200D0557D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2058D1602C65C65400D0557D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -390,7 +390,7 @@
 		2058D15A2C65C65200D0557D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2058D1592C65C65200D0557D /* MC3.app */,
+				2058D1592C65C65200D0557D /* Pulse.app */,
 				20190CF12C6A336A001A2AB6 /* Pulse Watch.app */,
 				DD0B05AB2C74842A0010F718 /* PulseUITests.xctest */,
 				DD0B05BA2C7484510010F718 /* PulseUnitTests.xctest */,
@@ -998,7 +998,7 @@
 				207BA47A2C6CF90E00B9B3FC /* FirebaseMessaging */,
 			);
 			productName = MC3;
-			productReference = 2058D1592C65C65200D0557D /* MC3.app */;
+			productReference = 2058D1592C65C65200D0557D /* Pulse.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DD0B05AA2C74842A0010F718 /* PulseUITests */ = {
@@ -1484,11 +1484,14 @@
 				INFOPLIST_FILE = MC3/Info.plist;
 				INFOPLIST_KEY_NSContactsUsageDescription = "We need your contacts information for the Emergency Contact Access";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We would to like access your location to share it to your emergency contacts";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to provide services even when the app is in the background.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide personalized content while using the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1523,11 +1526,14 @@
 				INFOPLIST_FILE = MC3/Info.plist;
 				INFOPLIST_KEY_NSContactsUsageDescription = "We need your contacts information for the Emergency Contact Access";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We would to like access your location to share it to your emergency contacts";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "We need your location to provide services even when the app is in the background.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to provide personalized content while using the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
