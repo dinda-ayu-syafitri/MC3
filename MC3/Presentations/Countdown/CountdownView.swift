@@ -118,7 +118,7 @@ struct SlideToCancelButton: View {
             // Background track
             RoundedRectangle(cornerRadius: 40)
                 .fill(Color.white.opacity(0.3))
-                .frame(width: buttonWidth, height: 85)
+                .frame(width: buttonWidth, height: 88)
                 .overlay(
                     Text("Slide to cancel")
                         .foregroundColor(.white)
@@ -131,7 +131,7 @@ struct SlideToCancelButton: View {
             HStack {
                 Circle()
                     .fill(Color.white)
-                    .frame(width: 70, height: 70)
+                    .frame(width: 72, height: 72)
                     .overlay(
                         Image(systemName: "arrow.right")
                             .foregroundColor(.appPink)

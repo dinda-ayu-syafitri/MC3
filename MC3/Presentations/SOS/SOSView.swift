@@ -61,7 +61,7 @@ struct SOSView: View {
                                 .scaleEffect(scale)
                                 .onAppear {
                                     withAnimation(Animation.easeInOut(duration: 0.6).repeatForever(autoreverses: true)) {
-                                        scale = 1.2
+                                        scale = 1.05
                                     }
                                 }
                             

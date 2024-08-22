@@ -121,7 +121,7 @@ struct sent:View {
                     .multilineTextAlignment(.center)
                     .padding(.top,-4)
                     .padding(.horizontal, 32)
-                Spacer().frame(height: 50)
+                Spacer().frame(height: 0)
                 
             }
             
@@ -154,7 +154,7 @@ struct track:View {
                     .multilineTextAlignment(.center)
                     .padding(.top,-4)
                     .padding(.horizontal, 32)
-                Spacer().frame(height: 50)
+                Spacer().frame(height: 0)
                 
             }
             

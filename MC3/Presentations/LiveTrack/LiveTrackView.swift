@@ -18,23 +18,25 @@ struct LiveTrackView: View {
                 Text("Live Track")
                     .font(.title2)
                     .bold()
-                    .foregroundColor(.appPink)
+                    .foregroundColor(.appPinkSecondary)
                 
-                Text("longlat: \(socketVM.longitude), \(socketVM.latitude)")
+                //Text("longlat: \(socketVM.longitude), \(socketVM.latitude)")
                 
                 Map(position: $socketVM.mapCamera) {
                     Annotation("Victim Location", coordinate: CLLocationCoordinate2D(latitude: socketVM.latitude, longitude: socketVM.longitude)) {
                         UserAnnotation()
                     }
                 }
-                .frame(height: 480)
+                .frame(width: 361, height: 530)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .padding()
                 .overlay(
                     VStack(alignment: .leading) {
                         Text("Current Location")
-                            .font(.headline)
+                            .font(.callout)
+                            .bold()
                             .padding(.bottom, 2)
+                            .foregroundColor(.appPinkSecondary)
                         
                         Text("Kompleks Ruko Flourite, Jl. Raya Kelapa Gading Utara No.49, Tangerang Selatan")
                             .font(.subheadline)
@@ -53,14 +55,13 @@ struct LiveTrackView: View {
                         //action goes here
                     } label: {
                         HStack {
-                            Image(systemName: "person.fill")
-                                .resizable()
-                                .frame(width: 40, height: 40)
+                            Circle()
+                                .frame(width: 48, height: 48)
                                 .foregroundStyle(Color.white)
                                 .padding()
                             
                             Text("Syafiqah")
-                                .font(.headline)
+                                .font(.title2)
                                 .padding(.leading, 5)
                                 .foregroundStyle(Color.white)
                                 .bold()
@@ -71,10 +72,10 @@ struct LiveTrackView: View {
                                 .font(.title)
                                 .foregroundColor(.white)
                                 .padding()
-                            
+                                .frame(width: 48, height: 48)
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
                         }
-                        .frame(width: 320, height: 35)
+                        .frame(width: 345, height: 55)
                         .padding()
                         .background(Color.appPink)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
