@@ -15,9 +15,6 @@ struct Home: View {
             // SOS State
             HStack {
                 Text("SOS Inactive")
-//                    .onTapGesture {
-//                        homeVM.isCountdownViewPresented = true
-//                    }
                     .font(.system(size: 17) .weight(.semibold))
                     .foregroundColor(.pastelPink)
                     .frame(alignment: .leading)

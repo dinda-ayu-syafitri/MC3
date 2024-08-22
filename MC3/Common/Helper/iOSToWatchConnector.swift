@@ -10,6 +10,7 @@ import SwiftUI
 import WatchConnectivity
 
 class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
+    static let shared = iOSToWatchConnector()
     var session: WCSession
     var messageViewModel = DependencyInjection.shared.MessageNotifViewModel()
     @Published var messageText = ""
@@ -24,7 +25,13 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
         session.activate()
     }
 
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        if let error = error {
+                print("WCSession activation failed with error: \(error.localizedDescription)")
+            } else {
+                print("WCSession activated with state: \(activationState.rawValue)")
+            }
+    }
 
     func sessionDidBecomeInactive(_ session: WCSession) {}
 
@@ -82,6 +89,26 @@ class iOSToWatchConnector: NSObject, WCSessionDelegate, ObservableObject {
 
         DispatchQueue.main.async {
             self.messageText = message["action"] as? String ?? "no data"
+        }
+    }
+    
+    
+    func sendPrimaryContact(name: String, phone: String) {
+        
+        if session.isReachable {
+            let message = [
+                "name" : name,
+                "phone" : phone
+            ]
+            
+            session.sendMessage(message, replyHandler: nil) { error in
+                print("Error sending message: \(error.localizedDescription)")
+            }
+            
+            print("primary emergency contact sent!")
+            
+        } else {
+            print("Watch is not reachable")
         }
     }
 }
