@@ -13,7 +13,6 @@ enum KeyUserDefaultEnum {
     case status
     case roomLiveLocation
     case pin
-    case fullname
     case phoneNumber
     case fullName
     case fcm
@@ -34,8 +33,6 @@ extension KeyUserDefaultEnum {
             return "roomLiveLocation"
         case .pin:
             return "pin"
-        case .fullname:
-            return "fullname"
         case .phoneNumber:
             return "phoneNumber"
         case .fullName:

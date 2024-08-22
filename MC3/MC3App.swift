@@ -57,23 +57,24 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
 //        saveUserToFirebase(fcmToken: fcmToken)
     }
 
-    func saveUserToFirebase(fcmToken: String?) {
-        let db = Firestore.firestore()
-        let phoneNumber = "0812 0213131"
-        let name = "Ipad Testt"
-
-        db.collection("users").document(phoneNumber).setData([
-            "name": name,
-            "fcm_token": fcmToken ?? "",
-            "created_at": Timestamp(date: Date())
-        ]) { error in
-            if let error = error {
-                print("Error adding user: \(error.localizedDescription)")
-            } else {
-                print("User added successfully")
-            }
-        }
-    }
+//
+//    func saveUserToFirebase(fcmToken: String?) {
+//        let db = Firestore.firestore()
+//        let phoneNumber = "0812 0213131"
+//        let name = "Ipad Testt"
+//
+//        db.collection("users").document(phoneNumber).setData([
+//            "name": name,
+//            "fcm_token": fcmToken ?? "",
+//            "created_at": Timestamp(date: Date())
+//        ]) { error in
+//            if let error = error {
+//                print("Error adding user: \(error.localizedDescription)")
+//            } else {
+//                print("User added successfully")
+//            }
+//        }
+//    }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
@@ -104,26 +105,8 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
         completionHandler([.banner, .sound, .badge])
     }
 
-    func notifyVictim(senderFCM: String) {
-        let notificationContent = UNMutableNotificationContent()
-        notificationContent.title = "You Are Being Tracked"
-        notificationContent.body = "Someone has acknowledged your SOS message."
-        notificationContent.sound = .default
-
-        let request = UNNotificationRequest(
-            identifier: UUID().uuidString,
-            content: notificationContent,
-            trigger: nil
-        )
-
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-
-        messageVM.sendPushNotification(token: senderFCM, title: "Your Location Tracked", body: "", locationLink: "locationLink", senderFCM: "", customMessage: "userTracked")
-    }
-
     // Handle FCM data message directly when the app is in foreground or background
     func messaging(_ messaging: Messaging, didReceive remoteMessage: [String: Any]) {
-//        print("Received data message: \(remoteMessage)")
         print("Received data message: \(remoteMessage["customMessage"] as? String ?? "")")
     }
 
@@ -144,9 +127,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
            let senderFCM = userInfo["senderFCM"] as? String, let customMessage = userInfo["customMessage"] as? String
         {
             if customMessage != "userTracked" {
-                messageVM.sendPushNotification(token: senderFCM, title: "Your Location Tracked", body: "", locationLink: "locationLink", senderFCM: "asdad", customMessage: "userTracked")
-                messageVM.userTrackedMessage = "userTracked"
-                messageVM.saveTrackStatus(status: "userTracked")
+                messageVM.sendPushNotification(token: senderFCM, title: "\(UserDefaults.standard.string(forKey: "fullName") ?? "Emergency Contact") is tracking!", body: "\(UserDefaults.standard.string(forKey: "fullName") ?? "") is currently tracking you", locationLink: "", senderFCM: "\(TokenManager.shared.fcmToken ?? "")", customMessage: "userTracked")
             }
         }
         handleNotification(userInfo: userInfo)
