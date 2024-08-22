@@ -15,10 +15,6 @@ struct CountdownView: View {
             HStack {
                 Text("SOS Inactive")
                     .font(.system(size: 17) .weight(.semibold))
-//                    Font.custom("SF Compact", size: 17)
-//                    .weight(.medium)
-//                    )
-//                    .font(.headline)
                     .foregroundColor(.pastelPink)
                     .frame(alignment: .leading)
                 

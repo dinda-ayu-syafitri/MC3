@@ -17,6 +17,7 @@ enum KeyUserDefaultEnum {
     case phoneNumber
     case fullName
     case fcm
+    case locationPrivacy
 }
 
 extension KeyUserDefaultEnum {
@@ -40,6 +41,8 @@ extension KeyUserDefaultEnum {
             return "fullName"
         case .fcm:
             return "fcm"
+        case .locationPrivacy:
+            return "acceptLocationPrivacy"
         }
     }
 }
