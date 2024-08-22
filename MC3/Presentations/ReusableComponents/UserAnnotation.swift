@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct UserAnnotation: View {
+    var isOther: Bool = false
+    
     var body: some View {
         ZStack {
             Circle()
                 .frame(width: 48, height: 48)
-                .foregroundStyle(Color.blue.opacity(0.3))
+                .foregroundStyle(isOther ? Color.darkPinkBrand.opacity(0.3) : Color.blue.opacity(0.3))
             
             Circle()
                 .frame(width: 32, height: 32)
@@ -20,7 +22,7 @@ struct UserAnnotation: View {
             
             Circle()
                 .frame(width: 16, height: 16)
-                .foregroundStyle(Color.blue)
+                .foregroundStyle(isOther ? Color.darkPinkBrand : Color.blue)
         }
     }
 }

@@ -9,4 +9,5 @@ import Foundation
 
 protocol FirebaseServiceRepositoryProtocol {
     func submitDataWithIDFirebase(idFirestore: String, data: [String: Any]) async throws
+    func updateDataWithIDFirebase(idFirestore: String, data: [String: Any]) async throws
 }

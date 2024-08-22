@@ -5,56 +5,27 @@
 //  Created by Dinda Ayu Syafitri on 09/08/24.
 //
 
+import SwiftData
 import SwiftUI
 
 struct ContentView: View {
-//     @State var reachable = "No"
     @StateObject var watchConnector = iOSToWatchConnector()
-    
-//     var body: some View {
-//         VStack {
-//             Spacer()
-            
-//             if watchConnector.messageText == "sosAlert" {
-//                 Text(watchConnector.messageText)
-//             }
-            
-//             Spacer()
-            
-//             Text("Reachable \(reachable)")
-            
-//             Button(action: {
-//                 if watchConnector.session.isReachable{
-//                     self.reachable = "Yes"
-//                 }
-//                 else{
-//                     self.reachable = "No"
-//                 }
-                
-//             }) {
-//                 Text("Update")
-//             }
-            
-//             Spacer()
-            
-    //            Image(systemName: "globe")
-    //                .imageScale(.large)
-    //                .foregroundStyle(.tint)
-    //            Text("Hello, world!")
+    @EnvironmentObject var router: Router
     @AppStorage(KeyUserDefaultEnum.status.toString) private var logStatus: Bool = false
-
+    @Query private var emergencyContactSaved: [EmergencyContacts]
+    
     var body: some View {
         RouterView {
             ZStack {
                 if logStatus {
-                    OnboardingView()
-//                    HomeView()
-//                CountdownView()
+                   OnboardingViewWrapper()
                 } else {
                     LoginView()
                 }
             }
-            .padding()
+        }
+        .onAppear {
+            watchConnector.emergencyContactSaved = emergencyContactSaved
         }
     }
 }

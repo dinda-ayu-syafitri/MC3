@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2058D1582C65C65200D0557D"
-               BuildableName = "MC3.app"
-               BlueprintName = "MC3"
+               BuildableName = "Pulse.app"
+               BlueprintName = "Pulse"
                ReferencedContainer = "container:MC3.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,6 +29,30 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DD0B05AA2C74842A0010F718"
+               BuildableName = "PulseUITests.xctest"
+               BlueprintName = "PulseUITests"
+               ReferencedContainer = "container:MC3.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DD0B05B92C7484510010F718"
+               BuildableName = "PulseUnitTests.xctest"
+               BlueprintName = "PulseUnitTests"
+               ReferencedContainer = "container:MC3.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -45,8 +69,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2058D1582C65C65200D0557D"
-            BuildableName = "MC3.app"
-            BlueprintName = "MC3"
+            BuildableName = "Pulse.app"
+            BlueprintName = "Pulse"
             ReferencedContainer = "container:MC3.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -69,8 +93,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2058D1582C65C65200D0557D"
-            BuildableName = "MC3.app"
-            BlueprintName = "MC3"
+            BuildableName = "Pulse.app"
+            BlueprintName = "Pulse"
             ReferencedContainer = "container:MC3.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

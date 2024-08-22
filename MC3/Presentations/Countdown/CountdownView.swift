@@ -9,9 +9,12 @@ import SwiftUI
 
 struct CountdownView: View {
     @State private var countdown = 5
-    @State private var pulse = false
-    @State private var bounce = false
-    @State var viewState = CGSize(width: 0, height: 50)
+    @State private var ripple1 = false
+    @State private var ripple2 = false
+    @State private var ripple3 = false
+    @State private var isCountingDown = true
+    @EnvironmentObject var router: Router
+    
     var body: some View {
         VStack {
             Spacer()
@@ -20,91 +23,118 @@ struct CountdownView: View {
                 .font(.title)
                 .bold()
                 .foregroundColor(.white)
-                .padding(.bottom, 10)
+                .padding(20)
                 .multilineTextAlignment(.center)
+            
             Spacer()
             ZStack {
-                withAnimation(
-                    Animation.easeInOut(duration: 1.2)
-                        .repeatForever(autoreverses: true)
-                ) {
-                    Circle()
-                        .fill(Color.white.opacity(0.3))
-                        .scaleEffect(pulse ? 1.2 : 1.0)
-                }
+                // Ripple effect layers
+                Circle()
+                    .fill(Color.white.opacity(0.3))
+                    .frame(width: 247.54, height: 247.54)
+                    .scaleEffect(ripple1 ? 1.3 : 1.0)
+                    .opacity(ripple1 ? 0 : 1)
+                    .animation(Animation.easeOut(duration: 1.5).repeatForever(autoreverses: false), value: ripple1)
+                    .onAppear {
+                        ripple1.toggle()
+                    }
                 
-                withAnimation(
-                    Animation.easeInOut(duration: 1.2)
-                        .repeatForever(autoreverses: true)
-                ) {
-                    Circle()
-                        .fill(Color.white.opacity(0.1))
-                        .scaleEffect(pulse ? 1.5 : 1.2)
-                }
+                Circle()
+                    .fill(Color.white.opacity(0.3))
+                    .frame(width: 247.54, height: 247.54)
+                    .scaleEffect(ripple2 ? 1.3 : 1.0)
+                    .opacity(ripple2 ? 0 : 1)
+                    .animation(Animation.easeOut(duration: 1.5).delay(0.5).repeatForever(autoreverses: false), value: ripple2)
+                    .onAppear {
+                        ripple2.toggle()
+                    }
+                
+                Circle()
+                    .fill(Color.white.opacity(0.3))
+                    .frame(width: 247.54, height: 247.54)
+                    .scaleEffect(ripple3 ? 1.3 : 1.0)
+                    .opacity(ripple3 ? 0 : 1)
+                    .animation(Animation.easeOut(duration: 1.5).delay(1.0).repeatForever(autoreverses: false), value: ripple3)
+                    .onAppear {
+                        ripple3.toggle()
+                    }
                 
                 // White circle behind the countdown number
                 Circle()
                     .fill(Color.white)
-                    .frame(width: 150, height: 150)
+                    .frame(width: 247.54, height: 247.54)
                 
                 Text("\(countdown)")
-                    .font(.system(size: 100, weight: .bold))
+                    .font(.system(size: 128, weight: .bold))
                     .foregroundColor(.black)
             }
+            .onTapGesture {
+                // Stop the countdown and navigate to StatusTrackView
+                isCountingDown = false
+                router.navigateTo(.StatusTrackView)
+            }
             .frame(width: 200, height: 200)
-            .scaleEffect(bounce ? 1.05 : 1.0)
             .onAppear {
-                withAnimation (
-                    Animation.easeInOut(duration: 0.6)
-                        .repeatForever(autoreverses: true)
-                ) {
-                    pulse.toggle()
-                    bounce.toggle()
-                }
+               // startCountdown()
             }
             Spacer()
-            VStack{
-                Text("Tap the screen once to skip countdown and activate SOS alert immediately")
-                    .font(.subheadline)
+            VStack {
+                Text("Tap screen to skip countdown")
+                    .font(.title2)
+                    .bold()
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
+                    .padding(.horizontal, 40)
             }
             .padding()
-            SlideToCancelButton()
             Spacer()
-            
-            
+            SlideToCancelButton()
+            Spacer().frame(height: 40)
         }
-        
         .ignoresSafeArea()
-        .background(Color.red)
+        .background(Gradient(colors: [Color.pinkLinearTopBrand, Color.pinkLinearBottomBrand]))
+    }
+    
+    // Countdown function
+    func startCountdown() {
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            if countdown > 0 && isCountingDown {
+                countdown -= 1
+            } else {
+                timer.invalidate()
+                if isCountingDown { // Only navigate if the countdown finished normally
+                    router.navigateTo(.StatusTrackView)
+                }
+            }
+        }
     }
 }
-
 struct SlideToCancelButton: View {
-    @State private var offset: CGFloat = 20
-    @State private var buttonWidth: CGFloat = UIScreen.main.bounds.width - 60 // Adjust the width based on your design
-    
+    @State private var offset: CGFloat = 8
+    @State private var buttonWidth: CGFloat = UIScreen.main.bounds.width - 25 // Adjust the width based on your design
+    @EnvironmentObject var router: Router
     var body: some View {
         ZStack {
             // Background track
             RoundedRectangle(cornerRadius: 40)
                 .fill(Color.white.opacity(0.3))
-                .frame(width: buttonWidth, height: 85)
+                .frame(width: buttonWidth, height: 88)
                 .overlay(
                     Text("Slide to cancel")
                         .foregroundColor(.white)
                         .fontWeight(.bold)
+                        .padding(.leading, 16)
                 )
+               
             
             // Draggable foreground
             HStack {
                 Circle()
                     .fill(Color.white)
-                    .frame(width: 70, height: 70)
+                    .frame(width: 72, height: 72)
                     .overlay(
                         Image(systemName: "arrow.right")
-                            .foregroundColor(.red)
+                            .foregroundColor(.appPink)
                             .font(.system(size: 24, weight: .bold))
                     )
                     .offset(x: offset)
@@ -123,7 +153,7 @@ struct SlideToCancelButton: View {
                                         offset = buttonWidth - 70
                                     }
                                     // Perform your cancel action here
-                                    print("Action Canceled")
+                                    router.navigateTo(.HomeView)
                                 } else {
                                     // Otherwise, reset the button
                                     withAnimation {
