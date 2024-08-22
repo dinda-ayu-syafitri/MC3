@@ -163,7 +163,7 @@ struct SlideToCancelButton: View {
                                         offset = buttonWidth - 70
                                     }
                                     // Perform your cancel action here
-                                    router.navigateTo(.HomeView)
+                                    router.popToRoot()
                                 } else {
                                     // Otherwise, reset the button
                                     withAnimation {
@@ -176,6 +176,7 @@ struct SlideToCancelButton: View {
                 Spacer()
             }
         }
+        .navigationBarBackButtonHidden()
         .padding(.horizontal)
     }
 }

@@ -14,7 +14,6 @@ struct SOSView: View {
                 .ignoresSafeArea()
             VStack {
                 Button(action: {
-                    // Action to be performed when the button is tapped
                     router.navigateTo(.CountdownView)
                 }, label: {
                     ZStack {

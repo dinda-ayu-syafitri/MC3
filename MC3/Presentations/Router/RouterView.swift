@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RouterView<Content: View>: View {
-    @StateObject var router: Router = .init()
+    @StateObject var router: Router = Router.shared
     // Our root view content
     private let content: Content
 

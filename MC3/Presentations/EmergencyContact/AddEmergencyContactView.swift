@@ -23,6 +23,8 @@ struct AddEmergencyContactView: View {
     @Query public var emergencyContactSaved: [EmergencyContacts]
 
     @StateObject var emergencyContactVM = DependencyInjection.shared.emergencyContactsViewModel()
+    @StateObject var messageVM = DependencyInjection.shared.MessageNotifViewModel()
+    var fromSetting: Bool
 
     var body: some View {
         VStack {
@@ -194,30 +196,55 @@ struct AddEmergencyContactView: View {
             .padding(.top, 2)
             .padding()
             Spacer()
-            Button(action: {
-                Task {
-                    emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
-//                    await emergencyContactVM.insertUserEmergencyContacts(idFirestore: firebaseID ?? "", emergencyContacts: emergencyContactVM.emergencyContacts)
-//
-//                    emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContacts)
+// <<<<<<< Bachul/LogicViews
+            
+            if !fromSetting {
+                Button(action: {
+                    Task {
+                        let firebaseID = Auth.auth().currentUser?.uid
+                        await emergencyContactVM.insertUserEmergencyContacts(idFirestore: firebaseID ?? "", emergencyContacts: emergencyContactVM.emergencyContacts)
+                        
+                        emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
+                    }
+                }, label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 15.0)
+                            .fill(Color.appPink)
+                            .frame(width: 360, height: 60)
+                        Text("Confirm Emergency Contact")
+                            .foregroundStyle(Color.white)
+                    }
+                    .onTapGesture {
+                        UserDefaults.standard.set(4, forKey: KeyUserDefaultEnum.statusBoarding.toString)
+                    }
+                })
+                .padding()
+            }
+// =======
+//             Button(action: {
+//                 Task {
+//                     emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
+// //                    await emergencyContactVM.insertUserEmergencyContacts(idFirestore: firebaseID ?? "", emergencyContacts: emergencyContactVM.emergencyContacts)
+// //
+// //                    emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContacts)
 
-//                    emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
-//
-                    ////                    print(<#T##items: Any...##Any#>)
+// //                    emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
+// //
+//                     ////                    print(<#T##items: Any...##Any#>)
 
-                    router.navigateTo(.HomeView)
-                }
-            }, label: {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 15.0)
-                        .fill(Color.appPink)
-                        .frame(width: 360, height: 60)
-                    Text("Confirm Emergency Contact")
-                        .foregroundStyle(Color.white)
-                }
+//                     router.navigateTo(.HomeView)
+//                 }
+//             }, label: {
+//                 ZStack {
+//                     RoundedRectangle(cornerRadius: 15.0)
+//                         .fill(Color.appPink)
+//                         .frame(width: 360, height: 60)
+//                     Text("Confirm Emergency Contact")
+//                         .foregroundStyle(Color.white)
+//                 }
 
-            })
-            .padding()
+//             })
+//             .padding()
         }
         .background(Color.bg)
 //        .onAppear {
@@ -241,5 +268,5 @@ struct AddEmergencyContactView: View {
 }
 
 #Preview {
-    AddEmergencyContactView()
+    AddEmergencyContactView(fromSetting: false)
 }

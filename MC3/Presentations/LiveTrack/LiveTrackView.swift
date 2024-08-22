@@ -9,37 +9,36 @@ import MapKit
 import SwiftUI
 
 struct LiveTrackView: View {
+    @AppStorage(KeyUserDefaultEnum.roomLiveLocation.toString) private var roomLiveLocation: String = ""
     @StateObject private var socketVM = SocketHelper()
     @StateObject private var liveTrackVM = LiveTrackViewModel()
     @StateObject private var locationVM = LocationManager()
 
     var body: some View {
-        if liveTrackVM.showLiveTrack {
+        if roomLiveLocation != "" {
             VStack {
                 Text("Live Track")
                     .font(.title2)
                     .bold()
                     .foregroundColor(.appPinkSecondary)
-
-                // Text("longlat: \(socketVM.longitude), \(socketVM.latitude)")
-
+                
                 MapComponent()
-                    .environmentObject(socketVM)
                     .environmentObject(locationVM)
-                    .frame(width: 361, height: 530)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .padding()
-                    .overlay(
-                        VStack(alignment: .leading) {
-                            Text("Current Location")
-                                .font(.callout)
-                                .bold()
-                                .padding(.bottom, 2)
-                                .foregroundColor(.appPinkSecondary)
-
-                            Text("Kompleks Ruko Flourite, Jl. Raya Kelapa Gading Utara No.49, Tangerang Selatan")
-                                .font(.subheadline)
-                        }
+                    .environmentObject(socketVM)
+                .frame(width: 361, height: 530)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                .padding()
+                .overlay(
+                    VStack(alignment: .leading) {
+                        Text("Current Location")
+                            .font(.callout)
+                            .bold()
+                            .padding(.bottom, 2)
+                            .foregroundColor(.appPinkSecondary)
+                        
+                        Text("Kompleks Ruko Flourite, Jl. Raya Kelapa Gading Utara No.49, Tangerang Selatan")
+                            .font(.subheadline)
+                    }
                         .frame(width: 300)
                         .padding()
                         .background(Color.white)
@@ -110,15 +109,15 @@ struct LiveTrackView: View {
             .onChange(of: locationVM.userAcceptLocation) { _, newValue in
                 if newValue {
                     socketVM.setupSocket {
-                        socketVM.createOrJoinRoom(roomName: "realTest", isListener: true)
+                        socketVM.createOrJoinRoom(roomName: roomLiveLocation, isListener: true)
                     }
                 }
             }
-            .onChange(of: locationVM.lastKnownLocation) { _, _ in
-                socketVM.sendMessageToRoom(roomName: "realTest", message: [
-                    "longitude": (locationVM.lastKnownLocation.longitude) as Double,
-                    "latitude": (locationVM.lastKnownLocation.latitude) as Double,
-                    "user": locationVM.userNumber
+            .onChange(of: locationVM.lastKnownLocation) { oldValue, newValue in
+                socketVM.sendMessageToRoom(roomName: roomLiveLocation, message: [
+                    "longitude" : (locationVM.lastKnownLocation.longitude) as Double,
+                    "latitude" : (locationVM.lastKnownLocation.latitude) as Double,
+                    "user" : locationVM.userNumber
                 ])
             }
             .alert("Location Access Needed", isPresented: $locationVM.alertingAlwaysUseLocation) {
@@ -135,7 +134,7 @@ struct LiveTrackView: View {
             .onDisappear {
                 socketVM.disconnectSocket()
             }
-            .background(Color.bg)
+            .background(Color.grayBrand)
         } else {
             NoAlertsView()
         }

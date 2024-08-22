@@ -26,6 +26,7 @@ class LoginViewModel: ObservableObject {
         self.userDefaultUseCase = userDefaultUseCase
     }
 
+    @MainActor
     func appleRequest(request: ASAuthorizationAppleIDRequest) {
         self.isLoading = true
         self.nonce = randomNonceString()

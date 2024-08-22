@@ -25,14 +25,6 @@ struct StatusTrackView: View {
                         .environmentObject(socketVM)
                         .environmentObject(trackedVM)
 
-                    Text("Latitude: \(locationVM.lastKnownLocation.latitude)")
-                        .foregroundStyle(.blackBrand)
-                        .font(.caption)
-
-                    Text("Longitude: \(locationVM.lastKnownLocation.longitude)")
-                        .foregroundStyle(.blackBrand)
-                        .font(.caption)
-
                     VStack(alignment: .center, spacing: 12) {
                         Button {
                             if let primaryContact = emergencyContactSaved.first?.emergencyContacts.first(where: { $0.isPrimary }) {
@@ -96,6 +88,7 @@ struct StatusTrackView: View {
                 Text("This app requires access to your location at all times to provide certain features. Please go to Settings and enable 'Always' location access.")
             }
         }
+        .navigationBarBackButtonHidden()
         .padding(.horizontal, 16)
         .padding(.top, 98)
         .padding(.bottom, 40)

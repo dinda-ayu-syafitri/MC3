@@ -99,7 +99,7 @@ final class SocketHelper: ObservableObject {
         if socket != nil {
             socket.disconnect()
         }
-        socket = nil
+        self.socket = nil
     }
     
     deinit {
