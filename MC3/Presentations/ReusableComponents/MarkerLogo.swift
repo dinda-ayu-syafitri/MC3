@@ -9,29 +9,28 @@ import SwiftUI
 
 struct MarkerLogo: View {
     var body: some View {
-        VStack{
-            ZStack{
+        VStack {
+            ZStack {
                 Circle()
                     .stroke(.redBrand, lineWidth: 5)
                     .fill(.whiteBrand)
                     .frame(width: 50)
-                
+
                 Image("marker")
                     .resizable()
                     .frame(width: 35, height: 35)
             }
-            
+
             Triangle()
                 .fill(Color.redBrand)
                 .frame(width: 12, height: 12)
                 .offset(y: -9)
-            
+
             Circle()
                 .fill(.redBrand)
                 .frame(width: 6)
                 .offset(y: -15)
         }
-        
     }
 }
 

@@ -5,15 +5,15 @@
 //  Created by Luthfi Misbachul Munir on 15/08/24.
 //
 
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct LiveTrackView: View {
     @AppStorage(KeyUserDefaultEnum.roomLiveLocation.toString) private var roomLiveLocation: String = ""
     @StateObject private var socketVM = SocketHelper()
     @StateObject private var liveTrackVM = LiveTrackViewModel()
     @StateObject private var locationVM = LocationManager()
-    
+
     var body: some View {
         if roomLiveLocation != "" {
             VStack {
@@ -45,8 +45,8 @@ struct LiveTrackView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .shadow(radius: 5)
                         .padding(.top, 30),
-                    alignment: .top
-                )
+                        alignment: .top
+                    )
 //                 MapComponent()
 //                     .environmentObject(socketVM)
 //                     .environmentObject(locationVM)
@@ -55,7 +55,7 @@ struct LiveTrackView: View {
 //                             Text("Current Location")
 //                                 .font(.headline)
 //                                 .padding(.bottom, 2)
-                            
+
 //                             Text("Kompleks Ruko Flourite, Jl. Raya Kelapa Gading Utara No.49, Tangerang Selatan")
 //                                 .font(.subheadline)
 //                         }
@@ -67,24 +67,24 @@ struct LiveTrackView: View {
 //                             .padding(.top, 30),
 //                         alignment: .top
 //                     )
-                
+
                 HStack {
                     Button {
-                        //action goes here
+                        // action goes here
                     } label: {
                         HStack {
                             Circle()
                                 .frame(width: 48, height: 48)
                                 .foregroundStyle(Color.white)
                                 .padding()
-                            
+
                             Text("Syafiqah")
                                 .font(.title2)
                                 .padding(.leading, 5)
                                 .foregroundStyle(Color.white)
                                 .bold()
-                                .padding(.horizontal,-10)
-                            
+                                .padding(.horizontal, -10)
+
                             Spacer()
                             Image(systemName: "phone.arrow.up.right.fill")
                                 .font(.title)
@@ -106,8 +106,8 @@ struct LiveTrackView: View {
                 locationVM.checkLocationAuthorization()
                 socketVM.getInitializeMapCamera(center: locationVM.lastKnownLocation)
             }
-            .onChange(of: locationVM.userAcceptLocation) { oldValue, newValue in
-                if (newValue) {
+            .onChange(of: locationVM.userAcceptLocation) { _, newValue in
+                if newValue {
                     socketVM.setupSocket {
                         socketVM.createOrJoinRoom(roomName: roomLiveLocation, isListener: true)
                     }
@@ -127,7 +127,7 @@ struct LiveTrackView: View {
                         UIApplication.shared.open(appSettings)
                     }
                 }
-                Button("Cancel", role: .cancel) { }
+                Button("Cancel", role: .cancel) {}
             } message: {
                 Text("This app requires access to your location at all times to provide certain features. Please go to Settings and enable 'Always' location access.")
             }

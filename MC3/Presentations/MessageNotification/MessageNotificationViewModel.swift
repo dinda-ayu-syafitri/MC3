@@ -9,7 +9,6 @@ import Foundation
 
 class MessageNotificationViewModel: ObservableObject {
     @Published var fcmToken: String = ""
-    @Published var userTrackedMessage = ""
     var dispatchTimer: DispatchSourceTimer?
 
     private var userDefaultUseCase: UserDefaultUseCaseProtocol
@@ -36,122 +35,30 @@ class MessageNotificationViewModel: ObservableObject {
             }
 
             if let data = data, let responseString = String(data: data, encoding: .utf8) {
-//                print("Response: \(responseString)")
+                print("fcm : \(token) Response: \(responseString)")
             }
         }
 
         task.resume()
     }
 
-    func saveTrackStatus(status: String) {
+    func saveTrackStatus(status: String, locationID: String) {
         userDefaultUseCase.saveData(data: status, key: .trackedStatus)
+        userDefaultUseCase.saveData(data: locationID, key: .roomLiveLocation)
     }
 
-//    func startSendingNotifications(emergencyContactSaved: [EmergencyContacts]?, userTracked: inout Bool) {
-//        if userTrackedMessage == "userTracked" {
-//            userTracked = true
+    func startSendingNotifications(emergencyContactSaved: [EmergencyContacts]) {
+//        print("guyg")
+//        for contact in emergencyContactSaved?.first?.emergencyContacts ?? [] {
+//            print("Nama: \(contact.fullName) | fcm: \(String(describing: contact.fcm))")
 //        }
 //
-//        guard !userTracked else {
-//            print("User is already tracked, not starting notifications.")
-//            return
-//        }
+        saveTrackStatus(status: "", locationID: "")
 //
 //        guard let emergencyContacts = emergencyContactSaved, !emergencyContacts.isEmpty else {
 //            print("No emergency contacts available, not starting notifications.")
 //            return
 //        }
-//
-//        // Cancel any existing timer
-//        dispatchTimer?.cancel()
-//
-//        dispatchTimer = DispatchSource.makeTimerSource(queue: DispatchQueue.global())
-//        dispatchTimer?.schedule(deadline: .now(), repeating: .seconds(1))
-//
-//        dispatchTimer?.setEventHandler { [weak self] in
-//            guard let self = self else {
-//                print("Self is nil, stopping the timer.")
-//                return
-//            }
-//
-//            print("Timer fired, sending notifications...")
-//
-//            for contact in emergencyContacts.first?.emergencyContacts ?? [] {
-//                let fcmToken = TokenManager.shared.fcmToken ?? ""
-//                print("Sending notification to contact with FCM token: \(contact.fcm ?? "nil")")
-//
-//                self.sendPushNotification(
-//                    token: contact.fcm ?? "",
-//                    title: "\(UserDefaults.standard.string(forKey: "fullName") ?? "Name Not Found") needs your help!",
-//                    body: "\(UserDefaults.standard.string(forKey: "fullName") ?? "Name Not Found") sent you an SOS message. Reach out to her immediately!",
-//                    locationLink: "\(UserDefaults.standard.string(forKey: "idFirebase") ?? "No ID Firebase")",
-//                    senderFCM: fcmToken,
-//                    customMessage: ""
-//                )
-//            }
-//
-//            print("Repeated notification sent")
-//        }
-//        dispatchTimer?.resume()
-//        print("Notification timer started.")
-//    }
-
-//    func startSendingNotifications(emergencyContactSaved: [EmergencyContacts]?, userTracked: inout Bool) {
-//        if userTrackedMessage == "userTracked" {
-//            userTracked = true
-//        }
-//
-//        guard !userTracked else {
-//            print("User is already tracked, not starting notifications.")
-//            return
-//        }
-//
-//        guard let emergencyContacts = emergencyContactSaved, !emergencyContacts.isEmpty else {
-//            print("No emergency contacts available, not starting notifications.")
-//            return
-//        }
-//
-//        dispatchTimer?.cancel()
-//        dispatchTimer = DispatchSource.makeTimerSource(queue: DispatchQueue.global())
-//        dispatchTimer?.schedule(deadline: .now(), repeating: .seconds(1))
-//
-//        dispatchTimer?.setEventHandler { [weak self] in
-//            guard let self = self else { return }
-//
-//            if self.userTrackedMessage == "userTracked" {
-//                self.stopSendingNotifications()
-//                return
-//            }
-//
-//            for contact in emergencyContacts.first?.emergencyContacts ?? [] {
-//                let fcmToken = TokenManager.shared.fcmToken ?? ""
-//                self.sendPushNotification(
-//                    token: contact.fcm ?? "",
-//                    title: "SOS! Help Needed",
-//                    body: "Someone needs your help immediately!",
-//                    locationLink: "SomeLocationLink",
-//                    senderFCM: fcmToken,
-//                    customMessage: ""
-//                )
-//
-//                print("1 Notification Sent")
-//            }
-//        }
-//        dispatchTimer?.resume()
-//    }
-
-    func startSendingNotifications(emergencyContactSaved: [EmergencyContacts]?, userTracked: inout Bool) {
-        guard !userTracked else {
-            print("User is already tracked, not starting notifications.")
-            return
-        }
-
-        saveTrackStatus(status: "")
-
-        guard let emergencyContacts = emergencyContactSaved, !emergencyContacts.isEmpty else {
-            print("No emergency contacts available, not starting notifications.")
-            return
-        }
 
         // Cancel any existing timer
         dispatchTimer?.cancel()
@@ -161,7 +68,6 @@ class MessageNotificationViewModel: ObservableObject {
         dispatchTimer?.setEventHandler { [weak self] in
             guard let self = self else { return }
 
-            print("\(userTrackedMessage)")
             print("\(UserDefaults.standard.string(forKey: "trackedStatus") ?? "No trackedStatus")")
             // Immediate check before sending another notification
             if UserDefaults.standard.string(forKey: "trackedStatus") == "userTracked" {
@@ -172,18 +78,76 @@ class MessageNotificationViewModel: ObservableObject {
                 return
             } else {
                 DispatchQueue.main.async {
-                    for contact in emergencyContacts.first?.emergencyContacts ?? [] {
-                        let fcmToken = TokenManager.shared.fcmToken ?? ""
-                        self.sendPushNotification(
-                            token: contact.fcm ?? "",
-                            title: "SOS! Help Needed",
-                            body: "Someone needs your help immediately!",
-                            locationLink: "SomeLocationLink",
-                            senderFCM: fcmToken,
-                            customMessage: ""
-                        )
-                        print("1 Notification Sent")
+                    if !emergencyContactSaved.isEmpty {
+                        for contact in emergencyContactSaved {
+                            for data in contact.emergencyContacts {
+                                let fcmToken = TokenManager.shared.fcmToken ?? ""
+                                self.sendPushNotification(
+                                    token: data.fcm ?? "",
+                                    title: "\(UserDefaults.standard.string(forKey: "fullName") ?? "Name Not Found") needs your help!",
+                                    body: "\(UserDefaults.standard.string(forKey: "fullName") ?? "Name Not Found") sent you an SOS message. Reach out to her immediately!",
+                                    locationLink: "\(UserDefaults.standard.string(forKey: "idFirebase") ?? "No ID Firebase")",
+                                    senderFCM: fcmToken,
+                                    customMessage: ""
+                                )
+                            }
+                        }
+                    } else {
+                        print("Emergency Contact Empty")
                     }
+
+//                    if let emergencyContacts = emergencyContactSaved, !emergencyContacts.isEmpty {
+//                        for contact in emergencyContacts {
+//                            if let c = contact, c
+//                        }
+                    ////                        for contacts in emergencyContacts {
+                    ////                            if let contact = contacts {
+                    ////                                for c in contact {
+                    ////                                    let fcmToken = TokenManager.shared.fcmToken ?? ""
+                    ////                                    self.sendPushNotification(
+                    ////                                        token: contact.fcm ?? "",
+                    ////                                        title: "\(UserDefaults.standard.string(forKey: "fullName") ?? "Name Not Found") needs your help!",
+                    ////                                        body: "\(UserDefaults.standard.string(forKey: "fullName") ?? "Name Not Found") sent you an SOS message. Reach out to her immediately!",
+                    ////                                        locationLink: "\(UserDefaults.standard.string(forKey: "idFirebase") ?? "No ID Firebase")",
+                    ////                                        senderFCM: fcmToken,
+                    ////                                        customMessage: ""
+                    ////                                    )
+                    ////                                }
+                    ////                            }
+                    ////                        }
+//                    } else {
+//                        print("Emergency Contact Empty")
+//                    }
+//
+//                    if !emergencyContactSaved.isEmpty {
+//                        for contact in emergencyContactSaved {
+//                            for data in contact {
+//                                let fcmToken = TokenManager.shared.fcmToken ?? ""
+//                                self.sendPushNotification(
+//                                    token: data.fcm ?? "",
+//                                    title: "\(UserDefaults.standard.string(forKey: "fullName") ?? "Name Not Found") needs your help!",
+//                                    body: "\(UserDefaults.standard.string(forKey: "fullName") ?? "Name Not Found") sent you an SOS message. Reach out to her immediately!",
+//                                    locationLink: "\(UserDefaults.standard.string(forKey: "idFirebase") ?? "No ID Firebase")",
+//                                    senderFCM: fcmToken,
+//                                    customMessage: ""
+//                                )
+//                            }
+//                        }
+//                    } else {
+//                        print("Emergency Contact Empty")
+//                    }
+
+//                    for contact in emergencyContacts.first?.emergencyContacts ?? [] {
+//                        let fcmToken = TokenManager.shared.fcmToken ?? ""
+//                        self.sendPushNotification(
+//                            token: contact.fcm ?? "",
+//                            title: "\(UserDefaults.standard.string(forKey: "fullName") ?? "Name Not Found") needs your help!",
+//                            body: "\(UserDefaults.standard.string(forKey: "fullName") ?? "Name Not Found") sent you an SOS message. Reach out to her immediately!",
+//                            locationLink: "\(UserDefaults.standard.string(forKey: "idFirebase") ?? "No ID Firebase")",
+//                            senderFCM: fcmToken,
+//                            customMessage: ""
+//                        )
+//                    }
                 }
             }
         }

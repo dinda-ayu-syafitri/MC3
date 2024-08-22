@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CallView: View {
+    var router = RouterWatch.shared
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 24) {
             // SOS State
@@ -42,40 +44,58 @@ struct CallView: View {
                 // Call Buttons
                 HStack(alignment: .center, spacing: 8) {
                     //Mute Button
-                    ZStack() {
-                        Circle()
-                            .fill(.grey)
-                            .frame(width: 35, height: 35)
+                    Button {
                         
-                        Image(systemName: "mic.slash")
-                            .font(.system(size: 19))
-                            .frame(width: 35, height: 35)
-                            .foregroundColor(.white.opacity(0.3))
+                    } label: {
+                        ZStack() {
+                            Circle()
+                                .fill(.grey)
+                                .frame(width: 35, height: 35)
+                            
+                            Image(systemName: "mic.slash")
+                                .font(.system(size: 19))
+                                .frame(width: 35, height: 35)
+                                .foregroundColor(.white.opacity(0.3))
+                        }
                     }
+                    .buttonStyle(.plain)
+
                     
                     //End Button
-                    ZStack() {
-                        Circle()
-                            .fill(.red)
-                            .frame(width: 51, height: 51)
-                        
-                        Image(systemName: "phone.down.fill")
-                            .font(.system(size: 28))
-                            .frame(width: 35, height: 35)
-                            .foregroundColor(.white)
+                    Button {
+                        router.navigateTo(.trackingView)
+                    } label: {
+                        ZStack() {
+                            Circle()
+                                .fill(.red)
+                                .frame(width: 51, height: 51)
+                            
+                            Image(systemName: "phone.down.fill")
+                                .font(.system(size: 28))
+                                .frame(width: 35, height: 35)
+                                .foregroundColor(.white)
+                        }
                     }
+                    .buttonStyle(.plain)
+
                     
                     //Option Button
-                    ZStack() {
-                        Circle()
-                            .fill(.grey)
-                            .frame(width: 35, height: 35)
+                    Button {
                         
-                        Image(systemName: "ellipsis")
-                            .font(.system(size: 19))
-                            .frame(width: 35, height: 35)
-                            .foregroundColor(.white)
+                    } label: {
+                        ZStack() {
+                            Circle()
+                                .fill(.grey)
+                                .frame(width: 35, height: 35)
+                            
+                            Image(systemName: "ellipsis")
+                                .font(.system(size: 19))
+                                .frame(width: 35, height: 35)
+                                .foregroundColor(.white)
+                        }
                     }
+                    .buttonStyle(.plain)
+                    
                     
                 }
                 .padding()
@@ -90,6 +110,7 @@ struct CallView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         .ignoresSafeArea()
         .background(.black)
+        .navigationBarBackButtonHidden()
         
     }
 }

@@ -1,3 +1,4 @@
+import SwiftData
 import SwiftUI
 
 struct SOSView: View {
@@ -13,7 +14,7 @@ struct SOSView: View {
                 .ignoresSafeArea()
             VStack {
                 Button(action: {
-                    /// Action to be performed when the button is tapped
+                    router.navigateTo(.CountdownView)
                 }, label: {
                     ZStack {
                         // Ripple effect layers with different pink opacities
@@ -26,7 +27,7 @@ struct SOSView: View {
                             .onAppear {
                                 ripple1.toggle()
                             }
-                        
+
                         RoundedRectangle(cornerRadius: 20.0)
                             .fill(Color.appPink.opacity(0.6))
                             .frame(width: 334, height: 634)
@@ -36,7 +37,7 @@ struct SOSView: View {
                             .onAppear {
                                 ripple2.toggle()
                             }
-                        
+
                         RoundedRectangle(cornerRadius: 20.0)
                             .fill(Color.appPink.opacity(0.8))
                             .frame(width: 334, height: 634)
@@ -46,12 +47,12 @@ struct SOSView: View {
                             .onAppear {
                                 ripple3.toggle()
                             }
-                        
+
                         // Main rectangle that does not fade out
                         RoundedRectangle(cornerRadius: 20.0)
                             .fill(Gradient(colors: [Color.pinkLinearTopBrand, Color.pinkLinearBottomBrand]))
                             .frame(width: 334, height: 634)
-                        
+
                         // Content inside the main rectangle
                         VStack {
                             Image(systemName: "bell.and.waves.left.and.right.fill")
@@ -64,27 +65,23 @@ struct SOSView: View {
                                         scale = 1.05
                                     }
                                 }
-                            
+
                             Text("Tap to activate alert")
                                 .font(.title2)
                                 .bold()
                                 .foregroundColor(.white)
                                 .padding(.vertical, 10)
-                            
+
                             Text("Emergency alerts and live location will be sent to listed contacts")
                                 .font(.callout)
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 60)
                         }
                     }
-                    .onTapGesture {
-                        router.navigateTo(.CountdownView)
-                    }
+
                 })
             }
         }
-       
-        
     }
 }
 

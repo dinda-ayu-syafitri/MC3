@@ -34,6 +34,8 @@ class DeactivateViewModel: ObservableObject {
             pinMessage = "PIN Correct"
             isPinCorrect = true
             // Perform the action for correct PIN:
+            RouterWatch.shared.navigateTo(.homeView)
+            HomeViewModel.shared.emergencySessionIsActive = false
             
         } else {
             // Incorrect PIN entered, reset and show error
