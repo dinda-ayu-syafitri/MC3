@@ -196,15 +196,16 @@ struct AddEmergencyContactView: View {
             .padding(.top, 2)
             .padding()
             Spacer()
-// <<<<<<< Bachul/LogicViews
-            
+            // <<<<<<< Bachul/LogicViews
+
             if !fromSetting {
                 Button(action: {
                     Task {
                         let firebaseID = Auth.auth().currentUser?.uid
                         await emergencyContactVM.insertUserEmergencyContacts(idFirestore: firebaseID ?? "", emergencyContacts: emergencyContactVM.emergencyContacts)
-                        
+
                         emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
+                        UserDefaults.standard.set(4, forKey: KeyUserDefaultEnum.statusBoarding.toString)
                     }
                 }, label: {
                     ZStack {
@@ -214,22 +215,20 @@ struct AddEmergencyContactView: View {
                         Text("Confirm Emergency Contact")
                             .foregroundStyle(Color.white)
                     }
-                    .onTapGesture {
-                        UserDefaults.standard.set(4, forKey: KeyUserDefaultEnum.statusBoarding.toString)
-                    }
+
                 })
                 .padding()
             }
-// =======
+            // =======
 //             Button(action: {
 //                 Task {
 //                     emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
-// //                    await emergencyContactVM.insertUserEmergencyContacts(idFirestore: firebaseID ?? "", emergencyContacts: emergencyContactVM.emergencyContacts)
-// //
-// //                    emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContacts)
+            // //                    await emergencyContactVM.insertUserEmergencyContacts(idFirestore: firebaseID ?? "", emergencyContacts: emergencyContactVM.emergencyContacts)
+            // //
+            // //                    emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContacts)
 
-// //                    emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
-// //
+            // //                    emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
+            // //
 //                     ////                    print(<#T##items: Any...##Any#>)
 
 //                     router.navigateTo(.HomeView)
