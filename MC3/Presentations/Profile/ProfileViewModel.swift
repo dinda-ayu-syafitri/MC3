@@ -16,6 +16,7 @@ class ProfileViewModel: ObservableObject {
     @Published var enableAutomaticAlert = true
     @Published var isPickerExpanded = false
     @Published var selectedDelayTime = 5
+    @Published var fromSetting = false
     let delayTimes = Array(1...10) // Range from 1 to 10 seconds
     
     func logOut() {

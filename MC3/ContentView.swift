@@ -25,7 +25,7 @@ struct ContentView: View {
                 case 2:
                     ProfileSetUpView()
                 case 3:
-                    AddEmergencyContactView()
+                    AddEmergencyContactView(fromSetting: false)
                 case 4:
                     PersonalPinView()
                 default:

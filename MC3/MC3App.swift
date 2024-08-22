@@ -16,6 +16,7 @@ import UserNotifications
 class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate, ObservableObject {
     @StateObject var loginVM = DependencyInjection.shared.loginViewModel()
     @StateObject var messageVM = DependencyInjection.shared.MessageNotifViewModel()
+    @StateObject var router = Router()
 //    @StateObject var messageVM = MessageNotificationViewModel()
 //    @EnvironmentObject var messageVM: MessageNotificationViewModel
 
@@ -136,12 +137,14 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
         print("Tapped on notification: \(userInfo)")
-        //        let userInfo = response.notification.request.content.userInfo
 
         // Access custom data here
         if let locationLink = userInfo["locationLink"] as? String,
-           let senderFCM = userInfo["senderFCM"] as? String, let customMessage = userInfo["customMessage"] as? String
+           let senderFCM = userInfo["senderFCM"] as? String, 
+            let customMessage = userInfo["customMessage"] as? String
         {
+            UserDefaults.standard.set(locationLink, forKey: KeyUserDefaultEnum.roomLiveLocation.toString)
+            Router.shared.navigateTo(.LiveTrackView)
             if customMessage != "userTracked" {
                 messageVM.sendPushNotification(token: senderFCM, title: "Your Location Tracked", body: "", locationLink: "locationLink", senderFCM: "asdad", customMessage: "userTracked")
                 messageVM.userTrackedMessage = "userTracked"

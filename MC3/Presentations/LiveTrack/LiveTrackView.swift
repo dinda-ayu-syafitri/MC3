@@ -9,25 +9,20 @@ import SwiftUI
 import MapKit
 
 struct LiveTrackView: View {
+    @AppStorage(KeyUserDefaultEnum.roomLiveLocation.toString) private var roomLiveLocation: String = ""
     @StateObject private var socketVM = SocketHelper()
     @StateObject private var liveTrackVM = LiveTrackViewModel()
     @StateObject private var locationVM = LocationManager()
     
     var body: some View {
-        if liveTrackVM.showLiveTrack {
+        if roomLiveLocation != "" {
             VStack {
                 Text("Live Track")
                     .font(.title2)
                     .bold()
                     .foregroundColor(.appPinkSecondary)
                 
-                //Text("longlat: \(socketVM.longitude), \(socketVM.latitude)")
-                
-                Map(position: $socketVM.mapCamera) {
-                    Annotation("Victim Location", coordinate: CLLocationCoordinate2D(latitude: socketVM.latitude, longitude: socketVM.longitude)) {
-                        UserAnnotation()
-                    }
-                }
+                MapComponent()
                 .frame(width: 361, height: 530)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .padding()
@@ -112,12 +107,12 @@ struct LiveTrackView: View {
             .onChange(of: locationVM.userAcceptLocation) { oldValue, newValue in
                 if (newValue) {
                     socketVM.setupSocket {
-                        socketVM.createOrJoinRoom(roomName: "realTest", isListener: true)
+                        socketVM.createOrJoinRoom(roomName: roomLiveLocation, isListener: true)
                     }
                 }
             }
             .onChange(of: locationVM.lastKnownLocation) { oldValue, newValue in
-                socketVM.sendMessageToRoom(roomName: "realTest", message: [
+                socketVM.sendMessageToRoom(roomName: roomLiveLocation, message: [
                     "longitude" : (locationVM.lastKnownLocation.longitude) as Double,
                     "latitude" : (locationVM.lastKnownLocation.latitude) as Double,
                     "user" : locationVM.userNumber
@@ -137,7 +132,7 @@ struct LiveTrackView: View {
             .onDisappear {
                 socketVM.disconnectSocket()
             }
-            .background(Color.bg)
+            .background(Color.grayBrand)
         } else {
             NoAlertsView()
         }

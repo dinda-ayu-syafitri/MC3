@@ -13,7 +13,7 @@ struct SOSView: View {
                 .ignoresSafeArea()
             VStack {
                 Button(action: {
-                    // Action to be performed when the button is tapped
+                    /// Action to be performed when the button is tapped
                 }, label: {
                     ZStack {
                         // Ripple effect layers with different pink opacities

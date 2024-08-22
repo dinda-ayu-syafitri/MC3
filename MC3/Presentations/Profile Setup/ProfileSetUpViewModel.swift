@@ -9,6 +9,7 @@ import FirebaseAuth
 import Foundation
 
 class ProfileSetUpViewModel: ObservableObject {
+    @Published var fromSetting: Bool = false
     @Published var fullName: String = "" {
         didSet {
             self.isFilled()

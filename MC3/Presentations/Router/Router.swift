@@ -8,6 +8,7 @@
 import SwiftUI
 
 class Router: ObservableObject {
+    static let shared = Router()
     // Contains the possible destinations in our Router
     enum Route: Hashable {
         case LoginView
@@ -15,6 +16,7 @@ class Router: ObservableObject {
         case AddEmergencyContact
         case CountdownView
         case StatusTrackView
+        case LiveTrackView
     }
 
     // Used to programatically control our navigation stack
@@ -28,11 +30,13 @@ class Router: ObservableObject {
         case .HomeView:
             HomeView()
         case .AddEmergencyContact:
-            AddEmergencyContactView()
+            AddEmergencyContactView(fromSetting: true)
         case .CountdownView:
             CountdownView()
         case .StatusTrackView:
             StatusTrackView()
+        case .LiveTrackView:
+            LiveTrackView()
         }
     
     }
