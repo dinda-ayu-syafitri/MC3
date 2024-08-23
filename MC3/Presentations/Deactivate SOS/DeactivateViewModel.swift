@@ -29,6 +29,7 @@ class DeactivateViewModel: ObservableObject {
             print("here")
             self.isMatched = true
             self.stringChecked = "The Password Matched"
+            Router.shared.popToRoot()
         } else {
             self.isMatched = false
             self.stringChecked = "The pin doesn't correct"

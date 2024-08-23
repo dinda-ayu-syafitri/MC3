@@ -11,16 +11,27 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var watchConnector = iOSToWatchConnector()
     @EnvironmentObject var router: Router
-    @AppStorage(KeyUserDefaultEnum.status.toString) private var logStatus: Bool = false
+    @AppStorage(KeyUserDefaultEnum.statusBoarding.toString) private var logStatus: Int = 0
     @Query private var emergencyContactSaved: [EmergencyContacts]
     
     var body: some View {
         RouterView {
             ZStack {
-                if logStatus {
-                   OnboardingViewWrapper()
-                } else {
+                switch logStatus {
+                case 0:
+                    OnboardingViewWrapper()
+                case 1:
                     LoginView()
+                case 2:
+                    ProfileSetUpView()
+                case 3:
+                    AddEmergencyContactView(fromSetting: false)
+                case 4:
+                    PersonalPinView()
+                case 5:
+                    HomeView(selectedTab: .liveTrack)
+                default:
+                    HomeView(selectedTab: .sos)
                 }
             }
         }
