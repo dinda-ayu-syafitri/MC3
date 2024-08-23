@@ -198,7 +198,7 @@ struct AddEmergencyContactView: View {
             Button{
                 print("Button Pressed")
 
-                iOSToWatchConnector.shared.sendPrimaryContact(name: "Papa", phone: "081388910174")
+                iOSToWatchConnector.shared.sendPrimaryContact(name: "Michelle", phone: "081388910174")
             } label: {
                 Text("send primary contact")
             }

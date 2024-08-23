@@ -11,6 +11,7 @@ struct TrackingView: View {
     var route = RouterWatch.shared
     @StateObject var trackingVM = TrackingViewModel.shared
     @Environment(\.openURL) var openURL
+    let hapticFeedbackManager = HapticFeedbackManager()
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -86,7 +87,9 @@ struct TrackingView: View {
         .ignoresSafeArea()
         .background(.black)
         .navigationBarBackButtonHidden()
-
+//        .onAppear {
+//            hapticFeedbackManager.stopContinuousHaptic()
+//        }
         
     }
 }

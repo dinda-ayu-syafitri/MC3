@@ -11,7 +11,7 @@ import UIKit
 struct CountdownView: View {
 //    @StateObject var countdownManager = CountdownManager.shared
     @StateObject var countdownVM = CountdownViewModel.shared
-    
+//    let hapticFeedbackManager = HapticFeedbackManager()
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -61,6 +61,7 @@ struct CountdownView: View {
         .navigationBarBackButtonHidden()
         .onAppear {
             countdownVM.startCountdown()
+            HapticFeedbackManager.shared.startContinuousHaptic()
         }
 //        .navigationTitle("Countdown")
     }
@@ -120,6 +121,8 @@ struct SlideToCancelButton: View {
                                         // Perform your cancel action here
                                         
                                         CountdownViewModel.shared.stopCountdown()
+                                        HapticFeedbackManager.shared.stopContinuousHaptic()
+
                                         
                                         RouterWatch.shared.navigateTo(.homeView)
                                         

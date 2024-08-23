@@ -41,6 +41,7 @@
 		DA8B4A522C6CC08100BC5987 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8B4A3F2C6B935F00BC5987 /* NotificationDelegate.swift */; };
 		DA90D7742C77854900AF4204 /* TrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA90D7732C77854900AF4204 /* TrackingViewModel.swift */; };
 		DAF1DC062C779D00005787AE /* EmergencyContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF1DC052C779D00005787AE /* EmergencyContact.swift */; };
+		DAF1DC082C77B01B005787AE /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF1DC072C77B01B005787AE /* HapticManager.swift */; };
 		DD0B05972C73ADFD0010F718 /* PersonalPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05962C73ADFD0010F718 /* PersonalPinView.swift */; };
 		DD0B05992C73B3200010F718 /* PersonalPinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B05982C73B3200010F718 /* PersonalPinViewModel.swift */; };
 		DD0B059F2C7435FB0010F718 /* NumberFormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B059E2C7435FB0010F718 /* NumberFormatHelper.swift */; };
@@ -205,6 +206,7 @@
 		DA8B4A4A2C6BAE9D00BC5987 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
 		DA90D7732C77854900AF4204 /* TrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DAF1DC052C779D00005787AE /* EmergencyContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContact.swift; sourceTree = "<group>"; };
+		DAF1DC072C77B01B005787AE /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		DD0B05962C73ADFD0010F718 /* PersonalPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPinView.swift; sourceTree = "<group>"; };
 		DD0B05982C73B3200010F718 /* PersonalPinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPinViewModel.swift; sourceTree = "<group>"; };
 		DD0B059E2C7435FB0010F718 /* NumberFormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatHelper.swift; sourceTree = "<group>"; };
@@ -670,6 +672,7 @@
 				DD6543172C738A6000BFB0FD /* HealthKitManager.swift */,
 				DD6543192C738A7900BFB0FD /* HeartRateManager.swift */,
 				DD65431B2C738A8B00BFB0FD /* WatchToiOSConnector.swift */,
+				DAF1DC072C77B01B005787AE /* HapticManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1174,6 +1177,7 @@
 				DD6543072C73894000BFB0FD /* CountdownView.swift in Sources */,
 				20190CF42C6A336B001A2AB6 /* WatchMC3App.swift in Sources */,
 				DD6543012C7388C600BFB0FD /* NotificationTypeEnum.swift in Sources */,
+				DAF1DC082C77B01B005787AE /* HapticManager.swift in Sources */,
 				2084E36A2C73B65A00ECA12E /* RouterWatch.swift in Sources */,
 				DA6FC70C2C745E9A00847046 /* CountdownViewModel.swift in Sources */,
 				DD65431A2C738A7900BFB0FD /* HeartRateManager.swift in Sources */,
