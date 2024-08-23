@@ -69,6 +69,7 @@ final class SocketHelper: ObservableObject {
     }
     
     func listenRoom(roomName: String) {
+        
         socket.on("message") { [weak self] data, _ in
             guard let message = data.first as? [String: Double],
                   let longitude = message["longitude"],
@@ -88,7 +89,9 @@ final class SocketHelper: ObservableObject {
 
     func sendMessageToRoom(roomName: String, message: [String: Double]) {
         let data: [String: Any] = ["roomName": roomName, "message": message]
-        socket.emit("sendMessageToRoom", data)
+        if socket != nil {
+            socket.emit("sendMessageToRoom", data)
+        }
     }
     
     func stopListeningSocket(event: String) {

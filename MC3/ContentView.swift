@@ -28,8 +28,10 @@ struct ContentView: View {
                     AddEmergencyContactView(fromSetting: false)
                 case 4:
                     PersonalPinView()
-                default:
+                case 5:
                     HomeView(selectedTab: .liveTrack)
+                default:
+                    HomeView(selectedTab: .sos)
                 }
             }
         }
