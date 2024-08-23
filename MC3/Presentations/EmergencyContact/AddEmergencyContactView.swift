@@ -13,19 +13,19 @@ import SwiftUI
 struct AddEmergencyContactView: View {
     @Environment(\.modelContext) public var context
     @EnvironmentObject var router: Router
-
+    
     @State private var selectedContact: CNContact?
     @State var isPrimary = false
     @State private var isShowingPicker = false
     @State private var emergencyContacts: [EmergencyContact] = []
     @State private var tempEmergencyContact: EmergencyContact?
-
+    
     @Query public var emergencyContactSaved: [EmergencyContacts]
-
+    
     @StateObject var emergencyContactVM = DependencyInjection.shared.emergencyContactsViewModel()
     @StateObject var messageVM = DependencyInjection.shared.MessageNotifViewModel()
     var fromSetting: Bool
-
+    
     var body: some View {
         VStack {
             Text("Add your emergency contacts")
@@ -34,12 +34,12 @@ struct AddEmergencyContactView: View {
                 .fontWeight(.bold)
                 .foregroundStyle(.blackBrand)
                 .padding(.top, 28)
-
+            
             Text("Emergency contacts are notified when the SOS Alert is activated. ")
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
                 .foregroundStyle(.blackBrand)
-
+            
             VStack(spacing: 16) {
                 VStack {
                     HStack {
@@ -64,7 +64,7 @@ struct AddEmergencyContactView: View {
                             }
                         }
                     }
-
+                    
                     if let primaryContact = emergencyContactVM.emergencyContacts.first(where: { $0.isPrimary }) {
                         List {
                             RoundedRectangle(cornerRadius: 10)
@@ -76,15 +76,15 @@ struct AddEmergencyContactView: View {
                                             .bold()
                                             .multilineTextAlignment(.leading)
                                             .frame(maxWidth: .infinity, alignment: .leading)
-
+                                        
                                         Text("\(primaryContact.phoneNumber)")
                                             .frame(maxWidth: .infinity, alignment: .leading)
                                             .multilineTextAlignment(.leading)
                                     }
-
+                                    
                                     .frame(maxWidth: .infinity)
                                     .multilineTextAlignment(.leading)
-
+                                    
                                 })
                                 .swipeActions(edge: .trailing) {
                                     Button(role: .destructive) {
@@ -109,11 +109,11 @@ struct AddEmergencyContactView: View {
                                     .padding(5)
                                     .foregroundStyle(.gray)
                                     .multilineTextAlignment(.leading)
-
+                                
                             })
                     }
                 }
-
+                
                 VStack {
                     HStack {
                         Text("Other Contacts")
@@ -137,7 +137,7 @@ struct AddEmergencyContactView: View {
                             }
                         }
                     }
-
+                    
                     if emergencyContactVM.emergencyContacts.first(where: { $0.isPrimary == false }) != nil {
                         VStack {
                             List {
@@ -153,14 +153,14 @@ struct AddEmergencyContactView: View {
                                                         .bold()
                                                         .multilineTextAlignment(.leading)
                                                         .frame(maxWidth: .infinity, alignment: .leading)
-
+                                                    
                                                     Text("\(contact.phoneNumber)")
                                                         .frame(maxWidth: .infinity, alignment: .leading)
                                                         .multilineTextAlignment(.leading)
                                                 }
                                                 .frame(maxWidth: .infinity)
                                                 .multilineTextAlignment(.leading)
-
+                                                
                                             })
                                             .padding(0)
                                             .swipeActions(edge: .trailing) {
@@ -178,7 +178,7 @@ struct AddEmergencyContactView: View {
                             .listStyle(PlainListStyle())
                             .clipShape(RoundedRectangle(cornerRadius: 15.0))
                         }
-
+                        
                     } else {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(.clear)
@@ -188,7 +188,7 @@ struct AddEmergencyContactView: View {
                                 Text("Emergency notifications will be sent to all emergency contact")
                                     .foregroundStyle(.gray)
                                     .multilineTextAlignment(.leading)
-
+                                
                             })
                     }
                 }
@@ -200,38 +200,18 @@ struct AddEmergencyContactView: View {
             //Testing Send Data Emergency Contact
             // Button{
             //     print("Button Pressed")
-
+            
             //     iOSToWatchConnector.shared.sendPrimaryContact(name: "Papa", phone: "081388910174")
             // } label: {
             //     Text("send primary contact")
             // }
             
-            Button(action: {
-                Task {
-                    let firebaseID = Auth.auth().currentUser?.uid
-                    await emergencyContactVM.insertUserEmergencyContacts(idFirestore: firebaseID ?? "", emergencyContacts: emergencyContactVM.emergencyContacts)
-                    
-                    emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
-                }
-            )
-            }, label: {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 15.0)
-                        .fill(Color.appPink)
-                        .frame(width: 360, height: 60)
-                    Text("Confirm Emergency Contact")
-                        .foregroundStyle(Color.white)
-                }
-                .onTapGesture {
-                    router.navigateTo(.HomeView)
-                }
-
             if !fromSetting {
                 Button(action: {
                     Task {
                         let firebaseID = Auth.auth().currentUser?.uid
                         await emergencyContactVM.insertUserEmergencyContacts(idFirestore: firebaseID ?? "", emergencyContacts: emergencyContactVM.emergencyContacts)
-
+                        
                         emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
                         UserDefaults.standard.set(4, forKey: KeyUserDefaultEnum.statusBoarding.toString)
                     }
@@ -243,53 +223,53 @@ struct AddEmergencyContactView: View {
                         Text("Confirm Emergency Contact")
                             .foregroundStyle(Color.white)
                     }
-
+                    
                 })
                 .padding()
             }
-//             Button(action: {
-//                 Task {
-//                     emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
+            //             Button(action: {
+            //                 Task {
+            //                     emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
             // //                    await emergencyContactVM.insertUserEmergencyContacts(idFirestore: firebaseID ?? "", emergencyContacts: emergencyContactVM.emergencyContacts)
             // //
             // //                    emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContacts)
-
+            
             // //                    emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
             // //
-//                     ////                    print(<#T##items: Any...##Any#>)
-
-//                     router.navigateTo(.HomeView)
-//                 }
-//             }, label: {
-//                 ZStack {
-//                     RoundedRectangle(cornerRadius: 15.0)
-//                         .fill(Color.appPink)
-//                         .frame(width: 360, height: 60)
-//                     Text("Confirm Emergency Contact")
-//                         .foregroundStyle(Color.white)
-//                 }
-
-//             })
-//             .padding()
+            //                     ////                    print(<#T##items: Any...##Any#>)
+            
+            //                     router.navigateTo(.HomeView)
+            //                 }
+            //             }, label: {
+            //                 ZStack {
+            //                     RoundedRectangle(cornerRadius: 15.0)
+            //                         .fill(Color.appPink)
+            //                         .frame(width: 360, height: 60)
+            //                     Text("Confirm Emergency Contact")
+            //                         .foregroundStyle(Color.white)
+            //                 }
+            
+            //             })
+            //             .padding()
         }
         .background(Color.bg)
-//        .onAppear {
-//            emergencyContactVM.getLocalEmergencyContacts(context: context)
+        //        .onAppear {
+        //            emergencyContactVM.getLocalEmergencyContacts(context: context)
         ////            Task {
-//                let contact1 = emergencyContactVM.getLocalEmergencyContacts(context: context)
-//                print("emergency contacts: \(contact1)")
-//            }
-//            ForEach(contact1, id: \.id) { contact in
-//                print(contact.fcm ?? "No FCM")
-//                print(contact.fullName)
-//            }
-//            if let contacts = emergencyContactSaved.first?.emergencyContacts {
-//                for contact in contacts {
-//                    print(contact.fullName)
-//                    print(contact.fcm)
-//                }
-//            }
-//        }
+        //                let contact1 = emergencyContactVM.getLocalEmergencyContacts(context: context)
+        //                print("emergency contacts: \(contact1)")
+        //            }
+        //            ForEach(contact1, id: \.id) { contact in
+        //                print(contact.fcm ?? "No FCM")
+        //                print(contact.fullName)
+        //            }
+        //            if let contacts = emergencyContactSaved.first?.emergencyContacts {
+        //                for contact in contacts {
+        //                    print(contact.fullName)
+        //                    print(contact.fcm)
+        //                }
+        //            }
+        //        }
     }
 }
 
