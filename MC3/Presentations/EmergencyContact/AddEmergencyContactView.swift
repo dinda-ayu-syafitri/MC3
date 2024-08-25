@@ -197,15 +197,6 @@ struct AddEmergencyContactView: View {
             .padding()
             Spacer()
             
-            //Testing Send Data Emergency Contact
-            // Button{
-            //     print("Button Pressed")
-            
-            //     iOSToWatchConnector.shared.sendPrimaryContact(name: "Papa", phone: "081388910174")
-            // } label: {
-            //     Text("send primary contact")
-            // }
-            
             if !fromSetting {
                 Button(action: {
                     Task {
@@ -213,6 +204,8 @@ struct AddEmergencyContactView: View {
                         await emergencyContactVM.insertUserEmergencyContacts(idFirestore: firebaseID ?? "", emergencyContacts: emergencyContactVM.emergencyContacts)
                         
                         emergencyContactVM.SaveLocalEmergencyContacts(context: context, emergencyContacts: emergencyContactVM.emergencyContacts)
+                        
+                        iOSToWatchConnector.shared.sendPrimaryContact(name: "Michelle", phone: "081388910174")
                         UserDefaults.standard.set(4, forKey: KeyUserDefaultEnum.statusBoarding.toString)
                     }
                 }, label: {

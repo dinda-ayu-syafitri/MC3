@@ -30,6 +30,7 @@ class CountdownViewModel: ObservableObject {
                     
                 } else {
                     self.stopCountdown()
+                    HapticFeedbackManager.shared.stopContinuousHaptic()
                     if !HomeViewModel.shared.emergencySessionIsActive {
                         // Send message to iPhone when countdown expires
                             //            print("Countdown ends, sending message to iOS")
